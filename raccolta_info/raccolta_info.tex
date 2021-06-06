@@ -1,0 +1,450 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{systeme}
+\usepackage{circuitikz}
+\usepackage{amsmath}
+\usepackage{epsf}
+\usepackage{hyperref}
+\usepackage{graphicx}  
+\usepackage{epstopdf}
+\usepackage{geometry}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{tikz-feynman}
+
+\usepackage{physics}
+\usepackage{siunitx}
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{mcode}
+
+% for other code
+
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+\lstset{
+    literate={~} {$\sim$}{1}
+}
+%===================================
+\begin{document}
+
+\sisetup{exponent-product = \cdot}
+\noindent{Alessandro Ruzza, 931750} \hfill {Giugno 2021}\\
+
+\mytitle{Raccolta informazioni}
+
+\section{Grandezze fisiche}
+
+\subsection{Idrodinamica}
+
+\begin{center}
+\begin{tabular}{l l | c c c c }
+\toprule
+       &              & valori tipici & phantom & mcfost & DB\\
+\midrule       
+ $M_P$ & \hyperref[mp]{planet mass} &  $(10-10^2) \text{M}_\oplus$  &  in & & \checkmark \\
+ $M_*$ & star mass & $\sim 1\text{M}_\odot$& in & & \checkmark \\
+ $M_g$ & gas mass & $\sim (1-10)\text{M}_j$ & in & & \checkmark \\
+ $M_d$ & \hyperref[dustmass] {dust mass} & $\sim (10^{-3}-1)\text{M}_j$& comp & & \checkmark \\
+ $\frac  HR$ & \hyperref[aspectratio]{aspect ratio} & (0.001)-0.1 & in (at $R_{ref}$) & & \checkmark \\
+ $R_p$ & planet orbital radius & $(1-100)\text{au}$ & in & & \checkmark \\
+ $R_{in} - R_{out}$ & simulation boundaries & $\sim (1-10^2)$au& in & \\
+ $\alpha_{SS}$ & \hyperref[visc]{Shakura-Sunyaev viscosity} & $10^{-4}-10^{-2}$& \shortstack{in: desired,\\ out: min, max} & & \checkmark \\
+ $\alpha_{AV}$ & \hyperref[artvisc]{artificial viscosity} &  & in &  & \\
+ $St$ & \hyperref[stnum]{ Stokes' number} & $10^{-2} - 10^{-3}$& &&\checkmark (?)\\
+ $s$ & grain size & $(1-10^5)\mu$m& in & & \checkmark\\
+ $\rho_g$ & grain density & $\sim \SI{1}{\g\per\cubic\cm}$& in & &\checkmark \\
+ $\epsilon$ & dust-gas ratio & 0.01 &  in\\
+ $p$ & \hyperref[pind]{p index ($\Sigma_g$)} & &in \\
+ $q$ & \hyperref[qind]{q index ($c_s$)} & 0.25 &in \\
+ $T$ & \hyperref[temp]{temperature} & $(20-100)\text{K}$& \shortstack{in (at \\ $R_{in}, R_{ref}, R_{out}$)}& \\
+ %$R^*_{accr}$ & star acccretion radius & & \\
+ \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Radiativo}
+\begin{center}
+\begin{tabular}{l l | c c c c}
+\toprule
+       &              & valori tipici & phantom & mcfost & DB\\
+\midrule       
+
+ $\kappa$ & opacity & & & \\
+$\tau$ & optical depth & & & \\
+$\beta$ & spectral index & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Osservazioni}
+
+
+\begin{center}
+\begin{tabular}{l l | c c c c }
+\toprule
+        &              & valori tipici & phantom & mcsoft & DB \\
+     \midrule    
+     $d_b$ & beam dimension & & & & \checkmark \\
+     $i$ & inclination &&in& &\checkmark \\
+     $d$ & distance & $\sim 150\text{pc}$ & & &(?)\\
+     $\lambda$ & wavelength & & & \checkmark\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Grandezze fisiche approfondite}
+
+\subsubsection{Planet mass}
+\label{mp}
+%TODO: specificare quali sono i limiti e perchè
+Per dischi con $St \ll 1$ la massa minima in grado di aprire un gap è \hyperref[source]{$^1$} 
+\begin{equation}
+ \frac{M_{min}}{M_*} = 0.3 \left(\frac HR \right)^3
+\end{equation}
+
+Per masse superiori alla massa termica $M_{th} = \left(\frac {H}{ R_p} \right)^3\cdot 3M_*$, massa per la quale il raggio di Hill è pari ad $H$, si possono presentare strutture più complesse: strutture a spirale, bordi del gap con vortici,...
+
+\subsubsection{Dust mass}
+\label{dustmass}
+Viene ricavata dalle osservazioni nel continuo di emissione termica della polvere utilizzando la relazione
+\begin{equation}
+ I_\nu \propto \tau_\nu B_\nu(T) \propto \kappa_\nu \Sigma_s B_\nu(T)
+\end{equation}
+valida assumendo sia prevalente il limite otticamente sottile.
+
+Misure ad una data lunghezza d'onda sono in pratica una misura della massa della componente solida di dimensioni comparabili con tale lunghezza d'onda.
+
+Le misure a disposizione sono probabilmente valori sottostimati.
+
+\subsubsection{Aspect ratio}
+\label{aspectratio}
+Definito come
+\begin{equation}
+h =H/R
+\end{equation}
+Imponendo la condizione di equilibrio idrostatico per il gas lungo z (ad R fissato) si ottiene che la densità assume una distribuzione
+\begin{equation}
+\rho_g = \rho_0 \cdot \exp(-\frac{\Omega_k^2z^2}{2c_s^2})
+\end{equation}
+che è una gaussiana con deviazione standard $H \equiv c_s/\Omega_k$
+
+Sempre da questa relazione si ha anche $h = c_S/v_K$
+Per un fluido perfetto $c_S=(\frac{k_BT}{\mu m_p})^{1/2}$, $H$ è quindi legato alla temperatura del disco
+
+Legato anche alla stabilità/instabilità gravitazionale. Dall'espressione del parametro di Toomre, con alcune approssimazioni si ottiene la condizione per la stabilità
+\begin{equation}
+\frac{M_{disk}}{M_*} \gtrsim h
+\end{equation}
+Solitamente si assumono dischi sottili in cui $h \ll 1$, questa condizione impone anche una condizione sulle velocità: $c_s \ll v_\phi$.
+
+Dalla componente radiale dell'equazione di Eulero si trova che la velocità angolare del gas presenta una correzione del secondo ordine in $h$ rispetto a quella Kepleriana
+\begin{equation}
+v_{\phi, gas} = v_K(1-qh^2)^{1/2}
+\end{equation}
+
+Misure che rivelano l'andamento della temperatura in funzione di R permettono di ottenere anche la curva di $h$.
+
+\subsubsection{Stokes' number}
+\label{stnum}
+Il gas esercita sulle particelle di polvere una forza di diversa natura a seconda della dimensione della particella $s$
+
+$s \lesssim \frac94 \lambda$, regime di Epstein $\bold{F_D} = -\frac{4\pi}3 \rho s^2 v_{th} \bold{v}$
+
+$s \gtrsim \frac94 \lambda$, regime di Stokes $\bold{F_D} = -\frac{C_D}2 \pi s^2 \rho v \bold{v}$
+
+Il numero di Stokes è definito come 
+\begin{equation}
+St = t_{stop}\Omega_K
+\end{equation}
+
+dove $t_{stop}$  è il tempo caratteristico di frenamento dovuto al drag viscoso in uno dei due regimi.
+
+Per particelle $\lesssim 10\text{m}$ prevale il regime di epstein, nel quale
+\begin{equation}
+St = \frac\pi2 \frac{s\rho_g}{\Sigma_g}
+\end{equation}
+dove $\rho_g$  è la densità del materiale che costituisce la componente solida del disco
+
+Il suo valore può variare con la posizione e anche con l'evoluzione del disco. 
+Può essere fissato nelle simulazioni per non fissare la dimensione delle particelle solide. O viceversa può essere fissata la dimensione della polvere.
+
+\subsubsection{Shakura-Sunyaev viscosity}
+\label{visc}
+Parametrizza la viscosità cinematica $\nu = \mu/\rho$ 
+
+\begin{equation}
+\nu = \alpha \cdot H \cdot c_s
+\end{equation}
+La viscosità influenza l'evoluzione radiale della densità superficiale $\Sigma_g$ 
+\begin{equation}
+\frac{\partial\Sigma}{\partial t}= \frac{3}{r} \frac{\partial}{\partial r} [r^{1/2}\frac{\partial}{\partial r}(\nu\Sigma r^{1/2})]
+\end{equation}
+da cui si ottiene una scala temporale legata alla viscosità
+\begin{equation}
+t_\nu \sim R^2/\nu
+\end{equation}
+Misure o stime:
+
+viene stimato richiedendo quale deve essere il suo valore per riprodurre le scale di tempo tipiche dell'evoluzione del disco, come? analisi di indicatori di accrescimento:
+
+- eccesso ultravioletto \\
+- emissione H$\alpha$  dalla fotosfera della stella\\
+- osservazioni nel (sub-)mm risolte spazialmente
+
+Viene solitamente considerato costante in tutto il disco, potrebbe non esserlo ma l'utilità del modello risiede nel considerarlo costante
+
+Si riescono ad ottenere prevalentemente limiti superiori, l'evoluzione radiale potrebbe infatti essere dovuta anche ad altri meccanismi
+
+\subsubsection{Artificial Viscosity\hyperref[source]{$^2$}}
+\label{artvisc}
+
+Utilizzata per modellizzare la viscosità nelle simulazioni SPH.
+Legata alla $\alpha_{SS}$ dalla relazione 
+\begin{equation}
+\alpha_{SS} \simeq \frac{\alpha_{AV}}{10}\frac{\ev{h_s}}{H}
+\end{equation}
+
+dove $\ev{h_s}$ è il valor medio azimutale (ad R fissato) della smoothing length delle particelle.
+Per ottenere $\alpha_{SS}$ costante è necesario risolvere $H(R)$.
+
+$\alpha_{AV}$ viene assunto costante in tutto il disco.
+
+Vantaggi:
+\begin{enumerate}
+ \item[-] forza a considerare se $H$ è risolto o meno
+ \item[-] è utile conoscere $\alpha_{AV}$ perchè $\alpha_{AV} \simeq 0.1$ rappresenta il limite inferiore sotto il quale la viscosità non è risolta dal metodo SPH.
+\end{enumerate}
+
+Svantaggi:
+\begin{enumerate}
+ \item[-] si ottengono alte viscosità di bulk $\frac 16 \alpha_{AV} c_s h$, tuttavia questo coefficiente è applicato a $\div v$ che per le simulazioni di dischi assume generalmente valori bassi.
+\end{enumerate}
+
+
+\subsubsection{Temperature}
+\label{temp}
+La temperatura del disco è determinata dal bilancio di calore proveniente principalmente da due sorgenti
+
+- disco passivo: radiazione emessa dalla stella che viene intercettata dal disco \\($P=fL_*, \hspace{5pt} f\sim 1/4$) \\
+- disco attivo: dissipazione dell'energia potenziale gravitazionale ($P \sim 
+G \frac{M_*\dot{M}}{R_*}$)
+
+La scelta del limite in cui trascurare una delle due sorgenti dipende principalmente dal rate di accrescimento $\dot{M}$  della stella. Dai valori ottenuti con le osservazioni sì può concludere che entrambi i processi possono essere rilevanti a seconda della situazione.
+
+Fortemente legata alla forma del disco.
+
+Per un disco piatto sottile (passivo): $T \propto R^{-3/4} \implies h \propto R^{1/8}$
+
+Per un disco "flared" (passivo): $T \propto R^{-1/2} \implies h \propto R^{1/4}$ 
+
+T(z) cresce con |z|
+
+Temperature tipiche vanno da 10K, che è circa la temperatura del mezzo interstellare, a qualche 50/100K. Valori tipici sono 20/30K.
+
+Per determinare la distribuzione di temperatura:
+
+- simulare la distribuzione spettrale nell'infrarosso proponendo densità ed opacità del disco. Problema: degenerazioni del modello\\
+- osservazioni in regime otticamente spesso
+
+\subsubsection{p index}
+\label{pind}
+Indice della legge di potenza che descrive l'andamento della densità in funzione del raggio
+\begin{equation}
+    \Sigma_g(R) = \Sigma_{ref} \left( \frac{R}{R_{ref}}\right)^{-p}
+\end{equation}
+
+può essere attivata una modifica al profilo di densità chiamata ``exponential taper'' consistente in un termine moltipicativo che modifica la densità soprattutto ai bordi. Può assumere diverse forme a seconda di quella impostata.
+Il profilo di densità utilizzato durante la simulazione viene scritto in *.discparams
+
+\subsubsection{q index}
+\label{qind}
+Indice della legge di potenza che descrive il profilo radiale di $c_s$ (e quindi di $H/R$ e $T$)
+\begin{equation}
+ c_s(R) = c_s(R_{ref}) \left(\frac{R}{R_{ref}} \right)^{-q}
+\end{equation}
+
+\section{Workflow simulazioni}
+
+
+\begin{tikzpicture}
+
+\tikzstyle{block} = [rectangle, rounded corners, minimum width=3cm, minimum height=3cm,text centered, draw=black, fill=gray!30]
+\tikzstyle{io} = [rectangle, minimum width=3cm, minimum height=1cm,text centered, align=left, font=\scriptsize]
+\node (phantom) [block] {PHANTOM};
+\node (mcfost) [block, below of=phantom, yshift=-3cm] {MCFOST};
+\node (pymcfost) [block, below of=mcfost, yshift=-3cm] {PYMCFOST};
+\node (iph) [io, right of=phantom, xshift=3cm, yshift=0.5cm] {$\leftarrow$ *.setup\\$\leftarrow$ *.in \\
+    $\rightarrow$ *.ev \\
+    $\rightarrow$ *.discparams \\
+
+};
+\node (iph2) [io, below of=iph, yshift=-0.5cm] 
+{
+    $    \rightarrow
+    \begin{cases}
+     *\_00001 \\
+     *\_00002 \\
+     ... \\
+    \end{cases}$
+};
+\coordinate [right of=mcfost, yshift=1.3cm, xshift=2cm] (fn1) ;
+\coordinate  [right of=iph2, xshift=1cm] (fn2);
+\draw [->] (iph2) -- (fn2) |- (fn1);
+\draw [->] (phantom) -- (mcfost);
+\draw [->] (mcfost) -- (pymcfost);
+
+\node (imcf) [io, right of=mcfost, xshift=2.6cm, yshift=0.7cm]{ $\leftarrow$ *.para};
+\node (uuoutmcf) [io, below of=imcf, xshift=1.5cm, yshift=0.3cm]{ $\rightleftarrows$ data\_th/Temperature.fits.gz};
+\node (outmcf) [io, below of=uuoutmcf, xshift=-0.55cm, yshift=0.3cm]{ $\rightarrow$ data\_***/RT.fits.gz};
+
+\coordinate [right of=pymcfost, yshift=1.3cm, xshift=2cm] (fn3) ;
+\coordinate  [right of=outmcf, xshift=1cm] (fn4);
+\draw[->] (outmcf) -- (fn4) |- (fn3);
+\end{tikzpicture}
+
+\subsection{Phantom}
+
+Programma realizzato in fortran per simulazioni idrodinamiche mediante il metodo SPH (Smoothed-particle hydrodynamics). Per le simulazioni di dischi costituiti da gas e polvere i passaggi da seguire sono i seguenti:
+
+Si utilizza lo script fornito con phantom per la generazione del makefile specificando il valore della variabile \lstinline{SETUP}, da porre uguale a \lstinline{dustydisc} per simulare dischi costituiti da gas e polvere solida
+\begin{lstlisting}
+~/sim_dir $ ~/phantom/scripts/writemake.sh dustydisc > Makefile       
+\end{lstlisting}
+
+Si utilizza il makefile così creato per generare \lstinline{phantom} e \lstinline{phantomsetup} specificando con il valore della variabile \lstinline{SYSTEM} il compilatore fortran da utilizzare
+
+\begin{lstlisting}
+~/sim_dir $ make SYSTEM=gfortran setup
+~/sim_dir $ make SYSTEM=gfortran 
+\end{lstlisting}
+
+Si può quindi utilizzare phantomsetup per generare il file *.setup tramite l'interfaccia a riga di comando con cui vengono richieste informazioni sul sistema che si vuole simulare.
+
+\begin{lstlisting}
+~/sim_dir $ ./phantomsetup sim_name      
+\end{lstlisting}
+
+Il file \lstinline{*.setup} deve poi essere modificato manualmente per settare i parametri coi quali eseguire la simulazione. Infine si deve utilizzare nuovamente phantomsetup per generare il file \lstinline{*.in} che viene utilizzato come input per la simulazione.
+
+\begin{lstlisting}
+~/sim_dir $ ./phantomsetup sim_name.setup     
+\end{lstlisting}
+
+A questo punto si può eseguire la simulazione
+
+\begin{lstlisting}
+~/sim_dir $ ./phantom sim_name.in    
+\end{lstlisting}
+
+Vengono prodotti i seguenti file:
+\begin{enumerate}
+ \item[-] \lstinline{*.ev}, file ascii contenenti informazioni globali sul disco in funzione del tempo 
+ \item[-] \lstinline{*.discparams}, file ascii contenente i valori delle principali grandezze fisiche del disco con le quali è stata eseguita la simulazione. Vengono generati due file di questo tipo: uno per la componente solida ed uno per la componente gassosa.
+ \item[-] file dump con nomi nel formato \lstinline{*\_00001, *\_00002, ...}. Solo alcuni di questi (a seconda di quanto specificato in \lstinline{*.in} sono ``full dumps'' ovvero contengono tutte le informazioni ottenute dalla simulazione e necessarie per, ipoteticamente, farla ripartire da quello stato. Gli altri file dump contengono solo la posizione delle particelle e le smoothing lengths.
+\end{enumerate}
+
+\subsection{MCFOST}
+Codice che simula il rasferimento radiativo permettendo di ottenere una immagine della radiazione emessa dal disco.
+Può essere utilizzato per generare l'emessione nel continuo, l'emissione di linee spettrali specifiche, e l'emissione di radiazione scatterata.
+
+\lstinline{MCFOST} è in grado di leggere direttamente i file dump di phantom. L'istruzione per eseguire una simulazione è la seguente
+
+\begin{lstlisting}
+ ~/sim_dir $ mcfost *.para -phantom <dump_file>
+\end{lstlisting}
+
+Il file \lstinline{*.para} può essere ottenuto tramite \lstinline{mcfost -get_para}. Costituisce il file di configurazione in cui modificare i parametri prima di eseguire la simulazione. Se si utilizzano i file prodotti da \lstinline{PHANTOM}:
+\begin{enumerate}
+ \item[-] usare 100 più pacchetti di fotoni rispetto al numero di particelle SPH 
+ \item[-] spegnere calcolo della SED (?)
+ \item[-] spegnere le simmetrie
+\end{enumerate}
+Vengono ignorate le seguenti sezioni del file \lstinline{*.para}
+\begin{enumerate}
+ \item[-] Grid geometry and size
+ \item[-] Disk physics
+ \item[-] Number of zones
+ \item[-] Density structures (except for gas/mass ratio)
+\end{enumerate}
+
+Dopo la prima esecuzione viene generato il file \lstinline{data_th/Temperature.fits.gz} che è un archivio gzip contenente un file fits con la temperatura calcolata nel disco. (Come è rappresentata l'informazione? il file fits contiene una sola HDU con un array monodimensionale)
+A questo punto si può eseguire nuovamente \lstinline{MCFOST} per determinare l'emissione ad una data lunghezza d'onda 
+\begin{lstlisting}
+~/sim_dir $ mcfost *.para -phantom <dump_file> -img 870 -casa
+\end{lstlisting}
+dopo \lstinline{-img} deve essere specificata la lunghezza d'onda a cui si vuole eseguire la simulazione in $\SI{}{\micro\m}$ (in questo esempio 870). L'opzione \lstinline{-casa} può invece essere utilizzata per ottenere un file pronto per \lstinline{CASA}.
+
+Viene generato un file fits (compresso).
+
+\section{Formati}
+
+\subsection{File FITS}
+Flexible Image Transport System
+Costituito da segmenti chiamati Header/Data Units, ciascuno di questi segmenti è costituito da un header, che contiene varie informazioni sui dati, e un blocco di dati che può essere un array da 1 a 999 dimensionale, una tabella ascii, una tabella binaria (...)
+
+header.WAVE contains info on wavelenght
+\section{DB}
+\subsection{data}
+\begin{center}
+\begin{tabular}{l | c c c }
+\toprule
+       & dipendenze & data type & from \\
+\midrule       
+ $M_P$ & \\
+ $M_*$ & \\
+ $M_g$ & \\
+ $M_d$ & \\
+ $\frac  HR$ & \\
+ $R_p$ & \\
+ $\alpha_{SS}$ & \\
+ $St (?)$ & \\
+ $s$ & \\
+ $\rho_g$ & \\
+ $d_b$ & \\
+ $i$ & \\
+ $\lambda$ & \\
+ \bottomrule
+\end{tabular}
+\end{center}
+\section{Da valutare}
+\begin{enumerate}
+ \item[-] architettura (o almeno tipologia) rete neurale: \\ convolutional neural network (?), è trasparente nell'implementazione o l'immagine deve essere processata (es. sezionata, identificare il centro,...) ?
+ \item[-] dimensione minima necessaria per il database
+ \item[-] considerare il tempo?
+ \item[-] cosa usare per implementare il database? \\ pandas \\ MLDB 
+ \item[-] variabili adimensionali ? in funzione di cosa ? \\ proposta: database con variabili salvate in SI con possibilità di estrarle in c.u. (da decidere)
+ \item[-] distribuzione dati
+ \item[-] coerenza temperatura tra mcfost e phantom
+\end{enumerate}
+
+\section{Fonti}
+
+\subsection{Paper}
+\label{source}
+ $^1$\url{https://doi.org/10.1093/mnras/stz913} \\
+ $^2$\url{http://dx.doi.org/10.1017/pasa.2018.25}
+\subsection{Phantom docs}
+\url{https://phantomsph.readthedocs.io/en/latest/index.html}
+
+\subsection{MCFOST docs}
+\url{https://ipag.osug.fr/~pintec/mcfost/docs/html/index.html}
+
+\end{document}
