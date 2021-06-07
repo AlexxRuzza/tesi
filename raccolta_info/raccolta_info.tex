@@ -68,28 +68,29 @@
  $R_{in} - R_{out}$ & simulation boundaries & $\sim (1-10^2)$au& in & \\
  $\alpha_{SS}$ & \hyperref[visc]{Shakura-Sunyaev viscosity} & $10^{-4}-10^{-2}$& \shortstack{in: desired,\\ out: min, max} & & \checkmark \\
  $\alpha_{AV}$ & \hyperref[artvisc]{artificial viscosity} &  & in &  & \\
- $St$ & \hyperref[stnum]{ Stokes' number} & $10^{-2} - 10^{-3}$& &&\checkmark (?)\\
+ $St$ & \hyperref[stnum]{ Stokes' number} & $10^{-2} - 10^{-3}$& &&\checkmark\\
  $s$ & grain size & $(1-10^5)\mu$m& in & & \checkmark\\
  $\rho_g$ & grain density & $\sim \SI{1}{\g\per\cubic\cm}$& in & &\checkmark \\
  $\epsilon$ & dust-gas ratio & 0.01 &  in\\
- $p$ & \hyperref[pind]{p index ($\Sigma_g$)} & &in \\
- $q$ & \hyperref[qind]{q index ($c_s$)} & 0.25 &in \\
- $T$ & \hyperref[temp]{temperature} & $(20-100)\text{K}$& \shortstack{in (at \\ $R_{in}, R_{ref}, R_{out}$)}& \\
+ $p$ & \hyperref[pind]{p index ($\Sigma_g$)} & &in & &\checkmark \\
+ $q$ & \hyperref[qind]{q index ($c_s$)} & 0.25 &in & & \checkmark \\
+ $T$ & \hyperref[temp]{temperature} & $(20-100)\text{K}$& \shortstack{in (at \\ $R_{in}, R_{ref}, R_{out}$)}& &  \checkmark \\
  %$R^*_{accr}$ & star acccretion radius & & \\
  \bottomrule
 \end{tabular}
 \end{center}
 
-\subsection{Radiativo}
+\subsection{Trasferimento radiativo}
 \begin{center}
 \begin{tabular}{l l | c c c c}
 \toprule
        &              & valori tipici & phantom & mcfost & DB\\
 \midrule       
 
- $\kappa$ & opacity & & & \\
+ $\kappa$ & opacity & & & &\checkmark \\
 $\tau$ & optical depth & & & \\
-$\beta$ & spectral index & & & \\
+$\beta$ & opacity spectral index & & & &\checkmark \\
+$T_*$ & star temperature & & & & \checkmark \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -103,9 +104,10 @@ $\beta$ & spectral index & & & \\
         &              & valori tipici & phantom & mcsoft & DB \\
      \midrule    
      $d_b$ & beam dimension & & & & \checkmark \\
+     $d$ & distance & $\sim 150\text{pc}$ & & & \checkmark \\
+     $\lambda$ & wavelength & & & & \checkmark\\
      $i$ & inclination &&in& &\checkmark \\
-     $d$ & distance & $\sim 150\text{pc}$ & & &(?)\\
-     $\lambda$ & wavelength & & & \checkmark\\
+     $p.a.$ & position angle & & in & & \checkmark \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -134,6 +136,7 @@ Misure ad una data lunghezza d'onda sono in pratica una misura della massa della
 
 Le misure a disposizione sono probabilmente valori sottostimati.
 
+Nota: in alcuni casi potrebbe essere interessante il solo rapporto $M_P/M_*$ 
 \subsubsection{Aspect ratio}
 \label{aspectratio}
 Definito come
@@ -274,12 +277,49 @@ Indice della legge di potenza che descrive l'andamento della densità in funzion
 può essere attivata una modifica al profilo di densità chiamata ``exponential taper'' consistente in un termine moltipicativo che modifica la densità soprattutto ai bordi. Può assumere diverse forme a seconda di quella impostata.
 Il profilo di densità utilizzato durante la simulazione viene scritto in *.discparams
 
+Due tipi di exponential taper
+\begin{align}
+ \Sigma_g(R) = \Sigma_{ref} \left( \frac{R}{R_{ref}}\right)^{-p} &\cdot 
+ \exp[-(R/R_c)^{(2-p)}] \\
+ \Sigma_g(R) = \Sigma_{ref} \left( \frac{R}{R_{ref}}\right)^{-p} &\cdot
+ [1-\exp(R-R_{out})]
+\end{align}
+
+viene usato il (14) nelle simulazioni di DSTau
+
+\begin{center}
+ \begin{tikzpicture}
+  \draw[->] (-0.2, 0) -- (12, 0) node[above] {$R$};
+  \draw[->] (0, -0.2) -- (0, 2) node[left] {$\Sigma_g$};
+  \draw[domain=1:10, variable=\x, blue, smooth, thick] plot ({\x}, {2*\x^(-1)*2.718^(-(\x/7))});
+  \draw[domain=1:10, variable=\x, red, smooth, thick] plot ({\x}, {2*\x^(-1)});
+  \draw[red, thick] (7,2) -- (7.2, 2);
+  \node at (9.5, 2) {without exponential taper};
+  \draw[blue, thick] (7,1.5) -- (7.2, 1.5);
+  \node at (9.25, 1.5) {with exponential taper};
+ \end{tikzpicture}
+\end{center}
+Per calcolare $\Sigma_{ref}$:
+\begin{align}
+ M_g = \int_{R_{in}}^{R_{out}} \Sigma_g(R) \cdot 2  \pi R \dd R =\int_{R_{in}}^{R_{out}} 2  \pi R \cdot \Sigma_{ref} \left( \frac{R}{R_{ref}}\right)^{-p} \cdot 
+ \exp[-(R/R_c)^{(2-p)}] \dd R \\
+ \simeq \int_{R_{in}}^{R_{out}} \Sigma_{ref} \left( \frac{R}{R_{ref}}\right)^{-p} \cdot 2  \pi R \dd R =  \begin{cases}
+                        2 \pi \Sigma_{ref}R_{ref}^{p} \eval{\frac{R^{-p+2}}{(2-p)}}_{R_{in}}^{R_{out}} , \hspace{5pt} p \neq 2 \\
+                        2 \pi \Sigma_{ref}R_{ref}^{2} \eval{\ln R}_{R_{in}}^{R_{out}} , \hspace{5pt} p = 2 \\
+\end{cases}
+\end{align}
+
+serve quindi inserire gli estremi della simulazione nel DB?
+
+
 \subsubsection{q index}
 \label{qind}
 Indice della legge di potenza che descrive il profilo radiale di $c_s$ (e quindi di $H/R$ e $T$)
 \begin{equation}
  c_s(R) = c_s(R_{ref}) \left(\frac{R}{R_{ref}} \right)^{-q}
 \end{equation}
+
+
 
 \section{Workflow simulazioni}
 
@@ -406,7 +446,7 @@ header.WAVE contains info on wavelenght
 \begin{center}
 \begin{tabular}{l | c c c }
 \toprule
-       & dipendenze & data type & from \\
+  & dipendenze & data type & from \\
 \midrule       
  $M_P$ & \\
  $M_*$ & \\
@@ -414,26 +454,43 @@ header.WAVE contains info on wavelenght
  $M_d$ & \\
  $\frac  HR$ & \\
  $R_p$ & \\
+ $\Sigma_g(R_p)$ \\
  $\alpha_{SS}$ & \\
- $St (?)$ & \\
+ $St$ & \\
  $s$ & \\
  $\rho_g$ & \\
+ $p$ & \\
+ $q$ & \\
+ $T$ (from phantom) & \\
+ $T$ (from mcfost) & \\
+ $\kappa$ & \\
+ $\beta$ & \\
+ $T_*$ \\
  $d_b$ & \\
  $i$ & \\
+ $p.a.$ & \\
+ $d$ & \\
  $\lambda$ & \\
  \bottomrule
+ 23 variabili & \\
 \end{tabular}
 \end{center}
 \section{Da valutare}
 \begin{enumerate}
- \item[-] architettura (o almeno tipologia) rete neurale: \\ convolutional neural network (?), è trasparente nell'implementazione o l'immagine deve essere processata (es. sezionata, identificare il centro,...) ?
+ \item[-] architettura (o almeno tipologia) rete neurale: \\ convolutional neural network (?), è trasparente nell'implementazione o l'immagine deve essere processata (es. sezionata, identificare il centro,...) ? (serve?)
  \item[-] dimensione minima necessaria per il database
  \item[-] considerare il tempo?
- \item[-] cosa usare per implementare il database? \\ pandas \\ MLDB 
+ \item[-] cosa usare per implementare il database? \\ pandas \\ MLDB \\ Globe \\ MySQL \\ MongoDB \\ file fits con header modificato
  \item[-] variabili adimensionali ? in funzione di cosa ? \\ proposta: database con variabili salvate in SI con possibilità di estrarle in c.u. (da decidere)
  \item[-] distribuzione dati
- \item[-] coerenza temperatura tra mcfost e phantom
+ \item[-] coerenza temperatura tra mcfost e phantom: provare a fare una verifica.
 \end{enumerate}
+
+\section{TODO}
+\begin{enumerate}
+ \item[-] riempire tabella subsection 4.1, aggiungere anche dove vanno misurati i parametri
+\end{enumerate}
+
 
 \section{Fonti}
 
