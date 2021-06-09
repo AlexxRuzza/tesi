@@ -19,7 +19,6 @@
 \usepackage{booktabs}
 \usepackage{verbatim}
 \usepackage{tikz-feynman}
-
 \usepackage{physics}
 \usepackage{siunitx}
 % for matlab code
@@ -42,6 +41,7 @@
 \lstset{
     literate={~} {$\sim$}{1}
 }
+
 %===================================
 \begin{document}
 
@@ -440,41 +440,71 @@ Viene generato un file fits (compresso).
 Flexible Image Transport System
 Costituito da segmenti chiamati Header/Data Units, ciascuno di questi segmenti è costituito da un header, che contiene varie informazioni sui dati, e un blocco di dati che può essere un array da 1 a 999 dimensionale, una tabella ascii, una tabella binaria (...)
 
-header.WAVE contains info on wavelenght
-\section{DB}
-\subsection{data}
+Il file fits di interesse è \lstinline{RT.fits} generato da mcfost
+\subsubsection{Primary HDU}
+
+I dati possono essere reucuperati in un array numpy multidimensionale:
+\begin{lstlisting}
+ data[S,A,I,X,Y]
+\end{lstlisting}
+
+\lstinline{S}: può avere diverse dimensioni, questo indice permette di accedere a vari contributi (se calcolati, es. luce scatterata,...) e ai valori dei parametri di Stokes che permettono se combinati di ottenere varie polarizzazioni della luce. La componente non polarizzata è la 0
+
+\lstinline{A}: immagini a diverse inclinazioni azimuthali
+
+\lstinline{I}: immagini a diverse inclinazioni
+
+\lstinline{X,Y}: valori dell'immagine, l'intensità è solitamente salvata in $\frac{\text{W}}{\text{m}\cdot \text{pixel}}$
+
+\section{Data}
 \begin{center}
 \begin{tabular}{l | c c c }
 \toprule
-  & dipendenze & data type & from \\
+  & quando & data type & from \\
 \midrule       
- $M_P$ & \\
- $M_*$ & \\
- $M_g$ & \\
- $M_d$ & \\
- $\frac  HR$ & \\
- $R_p$ & \\
- $\Sigma_g(R_p)$ \\
- $\alpha_{SS}$ & \\
- $St$ & \\
- $s$ & \\
- $\rho_g$ & \\
- $p$ & \\
- $q$ & \\
+ $M_P$ & t snapshot & float & image.log \\ 
+ $M_*$ & t snapshot & float & image.log\\
+ $M_g$ & t snapshot & float & image.log\\
+ $M_d$ & t snapshot & float & image.log\\
+ $\frac  HR$ & $R_p$ (?) & float & fixed=0.6 (*.discparams)\\
+ $R_p$ & t snapshot & float & image.log\\
+ $\Sigma_g(R_p)$ &unperturbed & float & computed  \\
+ $\alpha_{SS}$ & unperturbed & float & fixed=0.005\\
+ $St(R_p)$ & unperturbed &float & computed \\
+ $s(\lambda)$ &  & float & computed\\
+ $\rho_g$ & & float & fixed=$\SI{1}{\g\per\cm\cubic}$, from paper \\
+ $p$ & & float & fixed=1, from paper\\
+ $q$ & & float & fixed=0.25, from paper\\
  $T$ (from phantom) & \\
  $T$ (from mcfost) & \\
  $\kappa$ & \\
  $\beta$ & \\
- $T_*$ \\
- $d_b$ & \\
- $i$ & \\
- $p.a.$ & \\
+ $T_*$ & & float & *.para\\
+ $b_{maj}$ & &float & pymcfost in\\
+ $b_{min}$ & & float & pymcfost in\\
+ $b_{pa}$ & & float & pymcfost in\\
+ $i$ & & float & phantom (?)\\
+ $p.a.$ & & float &phantom (?)\\
  $d$ & \\
- $\lambda$ & \\
+ $\lambda$ & & float & RT.fits\\
  \bottomrule
  23 variabili & \\
 \end{tabular}
 \end{center}
+
+\section{Organizzazione file ONEDRIVE}
+
+\begin{enumerate}
+ \item[-] \lstinline{mcfost_dstau/dstau_Racc} contiene i file dump di phantom
+ \item[-] \lstinline{mcfost_dstau/nocasa} contiene cartelle nel formato \lstinline{MP1_time100}, il nome indica la massa del pianeta e il tempo in termini di numero di orbite effettuate dal pianeta al dump in esame. Ogni cartella contiene
+ altre cartelle ognuna delle quali si riferisce a simulazioni con diversi gas/dust ($\epsilon$). Formato: \lstinline{gd100}. All'interno di queste cartelle si trovano (che mi possono servire):
+ \begin{enumerate}
+ \item[-] file \lstinline{.para}, input della simulazione mcfost 
+ \item[-] file \lstinline{data_1300/RT.fits.gz} immagine da dare in pasto a pymcfost per ottenere la convoluzione che riproduca la risoluzione del telescopio. Il nome della cartella indica la lunghezza d'onda in micrometri a cui è realizzata l'immagine.
+\end{enumerate}
+\end{enumerate}
+
+
 \section{Da valutare}
 \begin{enumerate}
  \item[-] architettura (o almeno tipologia) rete neurale: \\ convolutional neural network (?), è trasparente nell'implementazione o l'immagine deve essere processata (es. sezionata, identificare il centro,...) ? (serve?)
@@ -483,12 +513,16 @@ header.WAVE contains info on wavelenght
  \item[-] cosa usare per implementare il database? \\ pandas \\ MLDB \\ Globe \\ MySQL \\ MongoDB \\ file fits con header modificato
  \item[-] variabili adimensionali ? in funzione di cosa ? \\ proposta: database con variabili salvate in SI con possibilità di estrarle in c.u. (da decidere)
  \item[-] distribuzione dati
- \item[-] coerenza temperatura tra mcfost e phantom: provare a fare una verifica.
+ \item[-] coerenza temperatura tra mcfost e phantom: provare a fare una verifica. \item[-] cosa hanno in meno i file \lstinline{with_casa} ? passano da circa 10/12 MB a circa 2/3 MB.
+ \item[-] posangle beam diverso da posangle disco?
 \end{enumerate}
 
 \section{TODO}
 \begin{enumerate}
  \item[-] riempire tabella subsection 4.1, aggiungere anche dove vanno misurati i parametri
+ \item[-] spiegare cosa contiene il file RT.fits
+ \item[-] spiegare come si usa mcfost.py
+ \item[-] realizzare script che scarica file e info
 \end{enumerate}
 
 
