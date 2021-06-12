@@ -358,6 +358,7 @@ Indice della legge di potenza che descrive il profilo radiale di $c_s$ (e quindi
 \coordinate [right of=pymcfost, yshift=1.3cm, xshift=2cm] (fn3) ;
 \coordinate  [right of=outmcf, xshift=1cm] (fn4);
 \draw[->] (outmcf) -- (fn4) |- (fn3);
+\node (ipymc) [io, below of=fn3, xshift=1.28cm, yshift=0.1cm] {$\leftarrow$ bpa, bmaj, bmin};
 \end{tikzpicture}
 
 \subsection{Phantom}
@@ -434,6 +435,64 @@ dopo \lstinline{-img} deve essere specificata la lunghezza d'onda a cui si vuole
 
 Viene generato un file fits (compresso).
 
+\subsection{pymcfost}
+Libreria python che fornisce una interfaccia python per l'utilizzo di mcfost. Tra le varie funzioni è interessante per la possibilità di eseguire una convoluzione dell'immagine ottenuta di \lstinline{MCFOST} con beam gaussiani in modo da riprodurre la risoluzione del telescopio.
+
+Utilizzo:
+\begin{lstlisting}
+import pymcfost as mcfost
+mcfost.__version__
+%matplotlib inline
+import matplotlib 
+from matplotlib.patches import Circle
+
+directory = './'
+image =  mcfost.Image(directory+"/data_1300/")
+
+img = image.plot(i=0, bpa=159,
+                 bmaj=0.14, bmin=0.1, ax=ax[0,1],
+                 scale='lin', Jy=True, per_beam=True,
+                 no_ylabel=True, no_xlabel=True,
+                 plot_stars=False, s=17, limits=[0.8,-0.8,-0.8,0.8])
+\end{lstlisting}
+
+il metodo di interesse è quindi il metodo \lstinline{plot()} dell'oggetto \lstinline{Image}. I parametri più importanti di questo metodo sono:
+
+\begin{enumerate}
+ \item[-] \lstinline{i}, seleziona quale delle immagini a diverse inclinazioni utilizzare (se nel file file RT.fits sono presenti immagini a diverse inclinazioni)
+ \item[-] \lstinline{bpa}, position angle del beam. Se è pari a 0 il beam ha l'asse minore coincidente con l'asse x, crescendo l'asse minore viene ruotato in senso antiorario di un angolo pari a bpa rispetto al semiasse positivo delle ascisse.
+\item[-] \lstinline{bmaj}, asse maggiore del beam
+\item[-] \lstinline{bmin}, asse minore del beam
+\item[-] \lstinline{scale}, scala con cui viene realizzata l'immagine \item[-] \lstinline{Jy=True, per_beam=True}, imposta le unità di misura in $\frac {\text{Jy}}{beam}$. Senza questi parametri le unità di misura sono $\frac {\SI{}{\W\per\m\squared}}{pixel}$. Nota: $1\text{Jy} = \SI{1e-26}{\W\per\m\squared\per\Hz}$
+\end{enumerate}
+
+Nota: il parametro \lstinline{s=17} non è più presente nella versione di pymcfost corrente. TODO: capire cos'è e se qualche parametro ora lo sostituisce.
+
+Si può usare
+\begin{lstlisting}
+ image.writeto(filename='pymcfostsaving.fit')
+\end{lstlisting}
+per salvare un file fits con i dati dell'immagine ottenuta dall'ultima chiamata di \lstinline{.plot()} e lo stesso header del file utilizzato in input. Non viene aggiornato l'header per cui l'unità di misura è ancora quella di mcfost anche se l'immagine viene prodotta in Jy/beam.       
+
+Realizzo una funzione che utilizza le funzioni precedenti per generare e salvare l'immagine in un file fits. Inoltre modifica l'header del file fits aggiornando o aggiungendo le seguenti informazioni
+
+\begin{center}
+\begin{tabular}{l l l}
+\toprule
+keyword & descrizione & aggiornata o nuova\\
+\midrule       
+BUNIT & unità di misura dei dati dell'immagine & updated \\ \\
+NSTARS & numero di stelle nella simulazione & new \\
+TSTAR & temperatura della stella (K) & new \\
+MSTAR\# & massa della stella in masse solari & new \\
+RSTAR\# & raggio della stella in raggi solari & new (?) \\ \\
+BMAJ & dimensione asse maggiore beam & new \\
+BMIN & dimensione asse minore beam & new \\
+BPA & pposition angle beam & new \\ \\
+
+ \bottomrule
+\end{tabular}
+\end{center}
 \section{Formati}
 
 \subsection{File FITS}
@@ -463,7 +522,7 @@ I dati possono essere reucuperati in un array numpy multidimensionale:
   & quando & data type & from \\
 \midrule       
  $M_P$ & t snapshot & float & image.log \\ 
- $M_*$ & t snapshot & float & image.log\\
+ $M_*$ & t snapshot & float & ph:image.log, mc:*.para\\
  $M_g$ & t snapshot & float & image.log\\
  $M_d$ & t snapshot & float & image.log\\
  $\frac  HR$ & $R_p$ (?) & float & fixed=0.6 (*.discparams)\\
@@ -515,6 +574,7 @@ I dati possono essere reucuperati in un array numpy multidimensionale:
  \item[-] distribuzione dati
  \item[-] coerenza temperatura tra mcfost e phantom: provare a fare una verifica. \item[-] cosa hanno in meno i file \lstinline{with_casa} ? passano da circa 10/12 MB a circa 2/3 MB.
  \item[-] posangle beam diverso da posangle disco?
+ \item[-] come scegliere dimensione e orientazione beam ? 
 \end{enumerate}
 
 \section{TODO}
@@ -523,6 +583,7 @@ I dati possono essere reucuperati in un array numpy multidimensionale:
  \item[-] spiegare cosa contiene il file RT.fits
  \item[-] spiegare come si usa mcfost.py
  \item[-] realizzare script che scarica file e info
+ \item[-] controllare come sono definiti p.a. e i
 \end{enumerate}
 
 
