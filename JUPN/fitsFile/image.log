@@ -1,0 +1,129 @@
+ You are running MCFOST 3.0.35
+ Git SHA = 999a9dfd7dc95ae7556a5f3bdde6056701b91c8e
+ *******************************************
+ *          MCFOST DISCLAIMER              *
+ *    @ C. Pinte, F. Menard, G. Duchene    *
+ *                                         *
+ * MCFOST is available on a collaborative  *
+ * basis. Using MCFOST implies that you    *
+ * agree to :                              *
+ *  - offer us co-author right on any      *
+ * resulting publication.                  *
+ *  - NOT distribute MCFOST without our    *
+ * explicit agreement.                     *
+ *  - contact us if you initiate a new     *
+ * scientific project with MCFOST.         *
+ *******************************************
+ Input file read successfully
+ Scattered light + thermal emission map calculation
+ Calculating image at wavelength =   1300.000      microns
+ Parallelized code on  16 processors
+  
+Fri Feb 14 13:53:01 AEDT 2020
+ Creating directory ././data_1300
+ Using ray-tracing method 1
+ Reading /fred/oz015/bverones/mcfost_sim/Dust/nk2_Mg07Fe03SiO3.dat
+ Reading /fred/oz015/bverones/mcfost_sim/Dust/nk2_amC_Zubko_BE.dat
+ WARNING : T_sub is set to the minimum T_sub of the individual components
+ Number of regions detected: 1
+ zone 1 --> region= 1 : R=1.00 to 300.00 AU
+ Performing phantom2mcfost setup
+ Reading phantom density file: /home/bverones/runs/mcfost_sim/dstau_Racc/dstau1m
+ jRn_00100
+ ---- Reading header file #           1
+ ERROR: could not find ndusttypes in header
+ ---- Done
+ ---- Reading data file #           1
+ FT:Phantom:1.3.0:931253a (hydro+1dust): 14/10/2019 12:25:56.3
+ ERROR: could not find ndusttypes in header
+  npart =      1000000  ntypes =           17  ndusttypes =           11
+  npartoftype =      1000000           0           0           0           0
+           0           0           0           0           0           0
+           0           0           0           0           0           0
+  nptmass =            2
+ ---- Done
+ Found           2 point masses in the phantom file
+ 
+ *** Using gas particles for Voronoi mesh ***           1
+ 
+ SPH gas mass is    2.9160036E-03 Msun
+ SPH dust mass is   1.8799945E-05 Msun
+ 
+ # Sink particles:
+ Sink #           1 xyz= -1.3696206E-02 -0.1111333      1.1947134E-04 au, M=
+  0.8303548     Msun
+ Sink #           2 xyz=   10.22975       30.25599     -3.0577136E-04 au, M=
+   2.03694933615489      Mjup
+        distance=   32.04825     au
+ 
+ Stellar parameters will not be updated, only the star positions and masses
+ WARNING: sink with id >           1 will be ignored in the RT
+ Using   601279 particles from Phantom file
+ Phantom dump file processed ok
+ Done
+  
+ # Farthest particules :
+ x =  -654.328526716843        639.755416501852     
+ y =  -630.048228861099        650.429717604378     
+ z =  -108.615367262031        107.246344992314     
+ Found      601279  SPH particles with           11 dust grains
+ Selecting spatial range which contains
+   99.90000     % of particles in each dimension
+ # Model limits :
+ x =  -230.547836303711        231.239501953125     
+ y =  -231.907150268555        230.722839355469     
+ z =  -55.2183227539062        55.4870262145996     
+ Finding            6 walls
+ Trying to allocate   91.52420     MB for neighbours list
+ Performing Voronoi tesselation on       599813 SPH particles
+ Reading previous Voronoi tesselation
+ Tesselation done
+ Building the kd-trees for the model walls
+ Tesselation Time =  0.92s
+ Found      599813 cells
+ Neighbours list size =     9245645
+ Average number of neighbours =   15.41421    
+ Voronoi volume =   22315851.4069329     
+ Using n_cells =      599813
+ Found the following grain sizes in SPH calculation:
+ WARNING: Grain sizes are adjusted for porosity
+   1.512649     microns   --->     1.779588     microns
+   3.461106     microns   --->     4.071889     microns
+   7.919385     microns   --->     9.316924     microns
+   18.12041     microns   --->     21.31813     microns
+   41.46147     microns   --->     48.77819     microns
+   94.86833     microns   --->     111.6098     microns
+   217.0690     microns   --->     255.3753     microns
+   496.6775     microns   --->     584.3264     microns
+   1136.452     microns   --->     1337.002     microns
+   2600.325     microns   --->     3059.206     microns
+   5949.825     microns   --->     6999.794     microns
+ WARNING: assuming dust grains smaller than 1mum are following the gas
+ Total  gas mass in model :  2.9088890E-03  Msun
+ Total dust mass in model :  2.9088891E-05  Msun
+ Using      599813 cells
+ Using a Voronoi mesh
+ Using scattering method 2
+ Trying to allocate   2.011030     GB for scattering matrices
+ Integ tau dans plan eq. =    11.87120    
+ Integ tau (i =75.0 deg)   =  0.54372E-02
+ 
+ Dust properties in cell #           1
+ albedo          0.3801140    
+ polarisability  0.3783384    
+ Reading temperature file : ././data_th/Temperature.fits.gz
+ frac. energy emitted by star :   1.0639772E-05
+ Initialization complete in   0h  1m 32s
+ Computing MC radiation field ...
+   0% |                                                  |   2% |=                                                 |   4% |==                                                |   6% |===                                               |   8% |====                                              |  10% |=====                                             |  12% |======                                            |  14% |=======                                           |  16% |========                                          |  18% |=========                                         |  20% |==========                                        |  22% |===========                                       |  24% |============                                      |  26% |=============                                     |  28% |==============                                    |  30% |===============                                   |  32% |================                                  |  34% |=================                                 |  36% |==================                                |  38% |===================                               |  40% |====================                              |  42% |=====================                             |  44% |======================                            |  46% |=======================                           |  48% |========================                          |  50% |=========================                         |  52% |==========================                        |  54% |===========================                       |  56% |============================                      |  58% |=============================                     |  60% |==============================                    |  62% |===============================                   |  64% |================================                  |  66% |=================================                 |  68% |==================================                |  70% |===================================               |  72% |====================================              |  74% |=====================================             |  76% |======================================            |  78% |=======================================           |  80% |========================================          |  82% |=========================================         |  84% |==========================================        |  86% |===========================================       |  88% |============================================      |  90% |=============================================     |  92% |==============================================    |  94% |===============================================   |  96% |================================================  |  98% |================================================= | 100% |==================================================|
+ Time =   0h  6m  0s
+ i=   65.00000     az=  0.0000000E+00
+ Vector to observer =  0.0000000E+00 -0.9063078      0.4226183    
+ Ray-tracing ...
+ Optical depth from star # 1 is  0.15784E-05
+ Done
+ Time =   0h  6m 12s
+ Source fct time  2.9299999E-02 s
+ RT time           11.22820     s
+ Processing complete in   0h  6m 12s
+ CPU time used            1h 32m 24s

@@ -483,13 +483,24 @@ keyword & descrizione & aggiornata o nuova\\
 \midrule       
 BUNIT & unità di misura dei dati dell'immagine & updated \\ \\
 NSTARS & numero di stelle nella simulazione & new \\
-TSTAR & temperatura della stella (K) & new \\
+TSTAR\# & temperatura della stella (K) & new \\
 MSTAR\# & massa della stella in masse solari & new \\
 RSTAR\# & raggio della stella in raggi solari & new (?) \\ \\
 BMAJ & dimensione asse maggiore beam & new \\
 BMIN & dimensione asse minore beam & new \\
-BPA & pposition angle beam & new \\ \\
-
+BPA & position angle del beam & new \\ \\
+MGAS & massa della componente gassosa & new\\
+MDUST & massa della componente solida & new \\
+MPLANET\# & massa dell pianeta in masse di giove & new \\
+RORB\# & distanza del pianeta dalla stella & new \\
+NPLANETS & numero di pianeti presenti & new \\ \\
+DISKPA & position angle del disco & new \\
+IMIN & inclinazione minima di quelle nel file RT & new \\
+IMAX & inclinazione massima di quelle nel file RT & new \\
+NI & numero di inclinazioni nel file RT & new \\
+IUSED & indice dell'inclinazione utilizzata nel fits in esame & new \\
+DISTANCE & distanza del disco dal telescopio (pc) & new \\
+WAVE & lunghezza d'onda a cui è generata l'immagine & kept \\
  \bottomrule
 \end{tabular}
 \end{center}
@@ -517,37 +528,38 @@ I dati possono essere reucuperati in un array numpy multidimensionale:
 
 \section{Data}
 \begin{center}
-\begin{tabular}{l | c c c }
+\begin{tabular}{l | c c c c}
 \toprule
-  & quando & data type & from \\
+  & quando & data type & from & py f\\
 \midrule       
- $M_P$ & t snapshot & float & image.log \\ 
- $M_*$ & t snapshot & float & ph:image.log, mc:*.para\\
- $M_g$ & t snapshot & float & image.log\\
- $M_d$ & t snapshot & float & image.log\\
- $\frac  HR$ & $R_p$ (?) & float & fixed=0.6 (*.discparams)\\
- $R_p$ & t snapshot & float & image.log\\
- $\Sigma_g(R_p)$ &unperturbed & float & computed  \\
- $\alpha_{SS}$ & unperturbed & float & fixed=0.005\\
- $St(R_p)$ & unperturbed &float & computed \\
- $s(\lambda)$ &  & float & computed\\
- $\rho_g$ & & float & fixed=$\SI{1}{\g\per\cm\cubic}$, from paper \\
- $p$ & & float & fixed=1, from paper\\
- $q$ & & float & fixed=0.25, from paper\\
+ $M_P$ & t snapshot & float & image.log & ilf \\ 
+ $M_*$ & t snapshot & float & ph:image.log, mc:*.para & pif\\
+ $M_g$ & t snapshot & float & image.log & ilf\\
+ $M_d$ & t snapshot & float & image.log & ilf \\
+ $\frac  HR$ & $R_p$ (?) & float & fixed=0.6 (*.discparams) & *\\
+ $R_p$ & t snapshot & float & image.log & ilf \\
+ $\Sigma_g(R_p)$ &unperturbed & float & computed  & -\\
+ $\alpha_{SS}$ & unperturbed & float & fixed=0.005 & * \\
+ $St(R_p)$ & unperturbed &float & computed & - \\
+ $s(\lambda)$ &  & float & computed & -\\
+ $\rho_g$ & & float & fixed=$\SI{1}{\g\per\cm\cubic}$, from paper & *\\
+ $p$ & & float & fixed=1, from paper & *\\
+ $q$ & & float & fixed=0.25, from paper & *\\
  $T$ (from phantom) & \\
  $T$ (from mcfost) & \\
  $\kappa$ & \\
  $\beta$ & \\
- $T_*$ & & float & *.para\\
- $b_{maj}$ & &float & pymcfost in\\
- $b_{min}$ & & float & pymcfost in\\
- $b_{pa}$ & & float & pymcfost in\\
- $i$ & & float & phantom (?)\\
- $p.a.$ & & float &phantom (?)\\
- $d$ & \\
- $\lambda$ & & float & RT.fits\\
+ $T_*$ & & float & *.para & pif\\
+ $b_{maj}$ & &float & pymcfost in & pif\\
+ $b_{min}$ & & float & pymcfost in & pif\\
+ $b_{pa}$ & & float & pymcfost in & pif\\
+ $i$ & & float & *.para & pif\\
+ $p.a.$ & & float & *.para & pif\\
+ $d$ & & float & *.para & pif\\
+ $\lambda$ & & float & RT.fits & ``pif''\\
+ $n.orbits$ & & int & name dir\\
  \bottomrule
- 23 variabili & \\
+ 26 variabili & \\
 \end{tabular}
 \end{center}
 
@@ -580,8 +592,6 @@ I dati possono essere reucuperati in un array numpy multidimensionale:
 \section{TODO}
 \begin{enumerate}
  \item[-] riempire tabella subsection 4.1, aggiungere anche dove vanno misurati i parametri
- \item[-] spiegare cosa contiene il file RT.fits
- \item[-] spiegare come si usa mcfost.py
  \item[-] realizzare script che scarica file e info
  \item[-] controllare come sono definiti p.a. e i
 \end{enumerate}
