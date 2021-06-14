@@ -70,11 +70,11 @@
  $\alpha_{AV}$ & \hyperref[artvisc]{artificial viscosity} &  & in &  & \\
  $St$ & \hyperref[stnum]{ Stokes' number} & $10^{-2} - 10^{-3}$& &&\checkmark\\
  $s$ & grain size & $(1-10^5)\mu$m& in & & \checkmark\\
- $\rho_g$ & grain density & $\sim \SI{1}{\g\per\cubic\cm}$& in & &\checkmark \\
+ $\rho_g$ & grain density & $\sim \SI{1}{\g\per\cubic\cm}$& in & in &\checkmark \\
  $\epsilon$ & dust-gas ratio & 0.01 &  in\\
- $p$ & \hyperref[pind]{p index ($\Sigma_g$)} & &in & &\checkmark \\
+ $p$ & \hyperref[pind]{p index ($\Sigma_g$)} & 1 &in & &\checkmark \\
  $q$ & \hyperref[qind]{q index ($c_s$)} & 0.25 &in & & \checkmark \\
- $T$ & \hyperref[temp]{temperature} & $(20-100)\text{K}$& \shortstack{in (at \\ $R_{in}, R_{ref}, R_{out}$)}& &  \checkmark \\
+ $T$ & \hyperref[temp]{temperature} & $(20-100)\text{K}$& \shortstack{in (at \\ $R_{in}, R_{ref}, R_{out}$)}& comp&  \checkmark \\
  %$R^*_{accr}$ & star acccretion radius & & \\
  \bottomrule
 \end{tabular}
@@ -87,10 +87,10 @@
        &              & valori tipici & phantom & mcfost & DB\\
 \midrule       
 
- $\kappa$ & opacity & & & &\checkmark \\
-$\tau$ & optical depth & & & \\
-$\beta$ & opacity spectral index & & & &\checkmark \\
-$T_*$ & star temperature & & & & \checkmark \\
+ $\kappa$ & opacity & & & in &\checkmark \\
+$\tau$ & optical depth & & in & \\
+$\beta$ & opacity spectral index & & & in &\checkmark \\
+$T_*$ & star temperature & $\sim 4000$K & & in & \checkmark \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -99,15 +99,17 @@ $T_*$ & star temperature & & & & \checkmark \\
 
 
 \begin{center}
-\begin{tabular}{l l | c c c c }
+\begin{tabular}{l l | c c c c c}
 \toprule
-        &              & valori tipici & phantom & mcsoft & DB \\
+        &              & valori tipici & phantom & mcsoft & pymcfost & DB \\
      \midrule    
-     $d_b$ & beam dimension & & & & \checkmark \\
-     $d$ & distance & $\sim 150\text{pc}$ & & & \checkmark \\
-     $\lambda$ & wavelength & & & & \checkmark\\
-     $i$ & inclination &&in& &\checkmark \\
-     $p.a.$ & position angle & & in & & \checkmark \\
+     $b_{maj}$ & FWHM beam (maj) & & & & in &\checkmark \\
+     $b_{min}$ & FWHM beam (maj) & & & & in &\checkmark \\
+     $b_{pa}$ & position angle beam (maj) & & & & in &\checkmark \\
+     $d$ & distance & $\sim 150\text{pc}$ & & in & & \checkmark \\
+     $\lambda$ & wavelength & & & &  &\checkmark\\
+     $i$ & inclination &&in& in&&\checkmark \\
+     $p.a.$ & position angle & & in &in & & \checkmark \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -481,13 +483,15 @@ Realizzo una funzione che utilizza le funzioni precedenti per generare e salvare
 \toprule
 keyword & descrizione & aggiornata o nuova\\
 \midrule       
-BUNIT & unità di misura dei dati dell'immagine & updated \\ \\
+BUNIT & unità di misura dei dati dell'immagine & updated \\ 
+CDELT1 & puixel scale x (deg) & kept \\
+CDELT2 & puixel scale y (deg) & kept \\
 NSTARS & numero di stelle nella simulazione & new \\
 TSTAR\# & temperatura della stella (K) & new \\
 MSTAR\# & massa della stella in masse solari & new \\
 RSTAR\# & raggio della stella in raggi solari & new (?) \\ \\
-BMAJ & dimensione asse maggiore beam & new \\
-BMIN & dimensione asse minore beam & new \\
+BMAJ & FWHM maggiore beam & new \\
+BMIN & FWHM minore beam & new \\
 BPA & position angle del beam & new \\ \\
 MGAS & massa della componente gassosa & new\\
 MDUST & massa della componente solida & new \\
