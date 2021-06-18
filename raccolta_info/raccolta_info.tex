@@ -69,7 +69,7 @@
  $\alpha_{SS}$ & \hyperref[visc]{Shakura-Sunyaev viscosity} & $10^{-4}-10^{-2}$& \shortstack{in: desired,\\ out: min, max} & & \checkmark \\
  $\alpha_{AV}$ & \hyperref[artvisc]{artificial viscosity} &  & in &  & \\
  $St$ & \hyperref[stnum]{ Stokes' number} & $10^{-2} - 10^{-3}$& &&\checkmark\\
- $s$ & grain size & $(1-10^5)\mu$m& in & & \checkmark\\
+ $s$ & \hyperref[grainsize]{grain size} & $(1-10^5)\mu$m& in & & \checkmark\\
  $\rho_g$ & grain density & $\sim \SI{1}{\g\per\cubic\cm}$& in & in &\checkmark \\
  $\epsilon$ & dust-gas ratio & 0.01 &  in\\
  $p$ & \hyperref[pind]{p index ($\Sigma_g$)} & 1 &in & &\checkmark \\
@@ -269,6 +269,12 @@ Per determinare la distribuzione di temperatura:
 - simulare la distribuzione spettrale nell'infrarosso proponendo densità ed opacità del disco. Problema: degenerazioni del modello\\
 - osservazioni in regime otticamente spesso
 
+Per generare i dati da inserire nel db calcolo T con
+\begin{equation}
+ T = c_s^2 \cdot\frac{\rho_g4\pi s^3}{3k_B}
+\end{equation}
+
+
 \subsubsection{p index}
 \label{pind}
 Indice della legge di potenza che descrive l'andamento della densità in funzione del raggio
@@ -321,6 +327,12 @@ Indice della legge di potenza che descrive il profilo radiale di $c_s$ (e quindi
  c_s(R) = c_s(R_{ref}) \left(\frac{R}{R_{ref}} \right)^{-q}
 \end{equation}
 
+\subsection{Grain size}
+\label{grainsize}
+
+\begin{equation}
+ s = \frac{\lambda}{2\pi}
+\end{equation}
 
 
 \section{Workflow simulazioni}
@@ -546,7 +558,7 @@ I dati possono essere reucuperati in un array numpy multidimensionale:
  $\alpha_{SS}$ & unperturbed & float & fixed=0.005 & * \\
  $St(R_p)$ & unperturbed &float & computed & - \\
  $s(\lambda)$ &  & float & computed & -\\
- $\rho_g$ & & float & fixed=$\SI{1}{\g\per\cm\cubic}$, from paper & *\\
+ $\rho_g$ & & float & fixed=$\SI{1}{\g\per\cubic\cm}$, from paper & *\\
  $p$ & & float & fixed=1, from paper & *\\
  $q$ & & float & fixed=0.25, from paper & *\\
  $T$ (from phantom) & \\
