@@ -87,7 +87,7 @@
        &              & valori tipici & phantom & mcfost & DB\\
 \midrule       
 
- $\kappa$ & opacity & & & in &\checkmark \\
+ $\kappa$ & \hyperref[opa]{opacity} & & & in &\checkmark \\
 $\tau$ & optical depth & & in & \\
 $\beta$ & opacity spectral index & & & in &\checkmark \\
 $T_*$ & star temperature & $\sim 4000$K & & in & \checkmark \\
@@ -327,13 +327,37 @@ Indice della legge di potenza che descrive il profilo radiale di $c_s$ (e quindi
  c_s(R) = c_s(R_{ref}) \left(\frac{R}{R_{ref}} \right)^{-q}
 \end{equation}
 
-\subsection{Grain size}
+\subsubsection{Grain size}
 \label{grainsize}
 
+Ad una data lunghezza d'onda l'emissione si piuò ricondurre principalmente a grani di dimensione
 \begin{equation}
  s = \frac{\lambda}{2\pi}
 \end{equation}
+in quanto corrisponde ad una risonanza in $\kappa(s)$.
 
+\subsubsection{Opacity}
+\label{opa}
+
+Dato un fascio di radiazione, la perdita di intensità dovuta all'assorbimento del mezzo che viene attraversato è data da
+\begin{equation}
+ \dd I_\nu = - \alpha_\nu I_\nu \dd s \equiv - \rho \kappa_\nu I_\nu \dd s
+\end{equation}
+
+
+$\kappa_\nu$ è l'opacità. Ha le dimensioni di $\SI{}{\cm\squared\per\g}$.
+
+Legata all'intensità della radiazione emessa dal disco da 
+
+\begin{equation}
+ I_\nu \propto \kappa_\nu B_\nu (T ) \Sigma_s
+\end{equation}
+
+In generale dipende dalla frequenza della radiazione. Si può approssimare un andamento del tipo 
+\begin{equation}
+ \kappa(\nu) \propto \nu^\beta
+\end{equation}
+dove $\beta$ è lo ``opacity spectral index''.
 
 \section{Workflow simulazioni}
 
@@ -509,14 +533,22 @@ MGAS & massa della componente gassosa & new\\
 MDUST & massa della componente solida & new \\
 MPLANET\# & massa dell pianeta in masse di giove & new \\
 RORB\# & distanza del pianeta dalla stella & new \\
-NPLANETS & numero di pianeti presenti & new \\ \\
+NPLANETS & numero di pianeti presenti & new \\
+HR & aspect ratio (i.c.)  a RORB & new \\ 
+TEMP & temperatura del gas a RORB (from phantom $c_s$) & new\\
+GRSIZE & grain size ($\lambda/2\pi$) & new \\
+ALPHASS & Hakura-Sunyaev viscosity & new\\
+RHOG & grain density & new \\
+PINDEX & p index & new \\
+QINDEX & q index & new \\ \\
 DISKPA & position angle del disco & new \\
-IMIN & inclinazione minima di quelle nel file RT & new \\
-IMAX & inclinazione massima di quelle nel file RT & new \\
-NI & numero di inclinazioni nel file RT & new \\
-IUSED & indice dell'inclinazione utilizzata nel fits in esame & new \\
+INCL & inclinazione del disco & new \\
 DISTANCE & distanza del disco dal telescopio (pc) & new \\
 WAVE & lunghezza d'onda a cui è generata l'immagine & kept \\
+RIN & raggio interno del dominio della simulazione idrodinamica & new \\
+ROUT & raggio esterno del dominio della simulazione idrodinamica & new \\
+RC & raggio per exponential taper & new \\
+
  \bottomrule
 \end{tabular}
 \end{center}
