@@ -97,15 +97,14 @@ $T_*$ & star temperature & $\sim 4000$K & & in & \checkmark \\
 
 \subsection{Osservazioni}
 
-
 \begin{center}
 \begin{tabular}{l l | c c c c c}
 \toprule
         &              & valori tipici & phantom & mcsoft & pymcfost & DB \\
      \midrule    
-     $b_{maj}$ & FWHM beam (maj) & & & & in &\checkmark \\
-     $b_{min}$ & FWHM beam (maj) & & & & in &\checkmark \\
-     $b_{pa}$ & position angle beam (maj) & & & & in &\checkmark \\
+     $b_{maj}$ & \hyperref[bs]{ FWHM beam maj} & & & & in &\checkmark \\
+     $b_{min}$ &   \hyperref[bs]{FWHM beam maj} & & & & in &\checkmark \\
+     $b_{pa}$ & \hyperref[bs]{position angle beam maj} & & & & in &\checkmark \\
      $d$ & distance & $\sim 150\text{pc}$ & & in & & \checkmark \\
      $\lambda$ & wavelength & & & &  &\checkmark\\
      $i$ & inclination &&in& in&&\checkmark \\
@@ -359,8 +358,23 @@ In generale dipende dalla frequenza della radiazione. Si può approssimare un an
 \end{equation}
 dove $\beta$ è lo ``opacity spectral index''.
 
-\section{Workflow simulazioni}
+\subsubsection{Beam size}
+\label{bs}
 
+Le immagini sintetiche verrano realizzate utilizzando diverse dimensioni dei beam. Per questa tesi usiamo solo beam circolari. 
+
+Valori ragionevoli:
+limite inferiore \- Da DSHARP (Disk Substructures at High Angular Resolution Project) si possono ottenere le migliori risoluzioni ottenibili nelle osservazioni $\sim 35 \text{mas}$. 
+limite superiore \- le dimensioni dei dischi sono di circa 100au e si trovano a distanze dell'ordine di $10^2 \text{pc}$. Le loro dimensioni osservative risultano quindi dell'ordine del secondo d'arco.
+
+Proposta per i valori: usare valori spaziati logaritmicamente tra 10 mas e 1000 mas. Questo permette di avere un buon numero di valori nell'intervallo di risoluzione tipica ed alcuni valori più estremi. Con questi ultimi è possibile predire il comportamento del nn con future osservazioni a più alta risoluzione e testare qual è la minima risoluzione che permette di rilevare la presenza di un pianeta.
+
+Es. 10 valori log spacced from 0.01 to 1
+
+array([0.01      , 0.01668101, 0.02782559, 0.04641589, 0.07742637,
+       0.12915497, 0.21544347, 0.35938137, 0.59948425, 1.        ])
+
+\section{Workflow simulazioni}
 
 \begin{tikzpicture}
 
@@ -633,8 +647,7 @@ I dati possono essere reucuperati in un array numpy multidimensionale:
  \item[-] variabili adimensionali ? in funzione di cosa ? \\ proposta: database con variabili salvate in SI con possibilità di estrarle in c.u. (da decidere)
  \item[-] distribuzione dati
  \item[-] coerenza temperatura tra mcfost e phantom: provare a fare una verifica. \item[-] cosa hanno in meno i file \lstinline{with_casa} ? passano da circa 10/12 MB a circa 2/3 MB.
- \item[-] posangle beam diverso da posangle disco?
- \item[-] come scegliere dimensione e orientazione beam ? 
+ \item[-] opacity
 \end{enumerate}
 
 \section{TODO}
