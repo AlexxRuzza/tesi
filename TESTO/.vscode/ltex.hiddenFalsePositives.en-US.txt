@@ -1,1 +1,0 @@
-{"rule":"POSSESSIVE_APOSTROPHE","sentence":"^\\QA remarkable example is the estimation of the planetary mass from the gaps morphology.\\E$"}
