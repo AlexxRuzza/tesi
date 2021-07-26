@@ -1,0 +1,320 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8]{inputenc}
+
+%opening
+\title{Design of a machine learning model for the detection of young planets}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\addcontentsline{toc}{chapter}{Abstract}
+\begin{abstract}
+    Protoplanetary discs present substructures,
+    such as axisymmetric regions of luminosity depletion (gaps),
+    that can be explained by the presence of forming planets. 
+    Features of these objects can be inferred from their
+    observation and analysis. A remarkable example is the 
+    estimation of the planetary mass from the gaps morphology.
+    The approaches currently used, empirical formulae or numerical
+    simulations, are both limited in precision or applicability.
+    In this thesis we propose a machine learning approach:
+    using a neural network to infer this information from 
+    disk images with the requirement of the least amount
+    of physical features not directly observable.
+    Possible future developments of such models require 
+    data for the train and test phases.
+    We design and build a database for this purpose collecting 
+    data obtained from numerical simulations and providing an 
+    easy-to-use interface for the implementation of machine learning
+    models using TensorFlow libraries.
+\end{abstract}
+
+\tableofcontents
+
+\chapter{Introduction}
+
+
+\chapter{Protoplanetary discs}
+Very brief introduction (1/2 sentences) about what a protoplanetary disc is,
+how they generate, where we can find them and why they are studied.
+
+\section{Structural properties}
+Here I am going to discuss some key properties of protoplanetary discs and give
+gross estimates of their typical values. I am going to discuss: 
+
+— what discs are made of
+
+— absolute and relative masses of gas and dust components
+
+— dimension and distance
+
+— their age
+
+— temperature
+
+\section{Disc dynamic and evolution}
+Here I am going to explain how the dynamic of gas and dust is modelled.
+
+I'm going to provide the equations describing the vertical structure, explain
+the meaning of the aspect ratio and the viscous forces at play.
+
+I will also explain the model describing the interaction
+between the gas and solid components (Epstein force, stokes number).
+
+Finally, I am going to cite other forces and effects which play a role in disc dynamic,
+such as magnetorotational instability, turbulence, winds, photoevaporation, ...
+
+\section{Observations}
+Here I am going to explain how discs are observed, present the different observational primers 
+for the gas and the dust component. I am going to present some links between structural and observational 
+properties (such as $\lambda \sim s/2\pi$).
+
+I am also going to explain which is the best image resolution currently achievable.
+
+\section{Planet formation}
+Here I am going to discuss how planets are formed within these discs. 
+I will explain: 
+
+    — how they accrete their mass
+
+    — the forces they experience and thus the radial drift
+
+    — the substructures they form in the disc
+
+    — typical mass values and their relation with substructures (qualitatively) 
+
+\section{Gaps}
+Here I am going to:
+
+— explain how planets are not the only thing that generates gaps
+
+— present the radial profile of a gap in dust and gas densities
+
+— explain the differences between gap structures in gas and dust 
+
+— explain how depth and width are defined
+
+
+\chapter{State-of-the-art investigative techniques}
+
+
+\section{Addressed questions}
+
+Here I am going to explain which features are commonly extrapolated 
+from discs images and why they are important.
+Then I am going to state that in the following paragraphs I will mainly focus 
+on methods for the determination of embedded planets' masses.
+
+\section{Empirical formulae}
+
+In this section I am going to explain that many disc features can be analytically 
+linked using simple linear or power laws.
+
+\subsection{Planet mass and gap width}
+I am going to focus on the link between planet's mass and gap width,
+providing the `Lodato' and `Kanagawa' models.
+
+\subsection{Strengths and limitations}
+Here I am going to discuss the strengths and limitations of the analytical approach.
+From this section it should be clear why numerical simulations are preferred.
+
+\section{Numerical approach}
+In this section I am going to explain how disc features can be inferred 
+from simulations of the entire disk. I am going to present the possibilities
+in the choices of the simulating software.
+I am then going to focus on a specific choice and discuss the main steps of the 
+simulation workflow.
+
+This section plays a double purpose: it presents the current approach for
+the study of protoplanetary discs and explains how the images used to build the 
+database were generated.
+
+\subsection{Hydrodynamical simulations}
+
+Here I am going to give some background about phantom and the type of 
+data it generates.
+
+\subsection{Radiative transfer}
+
+Here I am going to discuss the software used for radiative transfer: MCFOST.
+I will explain why this step is performed and the meaning of the results obtained.
+
+\subsection{Generation of synthetic images}
+
+Here I am going to discuss the different methods that can be used to simulate the limitations 
+of observing instruments. I will further explore some key features of pymcfost.
+
+\subsection{Strengths and limitations}
+
+Here I am going to discuss the strengths and limitations of numerical simulations in the context of 
+disc analysis. From this subsection the need for a faster method should emerge.
+
+\chapter{Machine learning and neural networks}
+
+Very brief introduction to machine learning. (Birth and definition)
+
+\section{Neural networks}
+
+Basic idea behind neural networks.
+
+\subsection{The perceptron}
+
+Here I am going to present the perceptron model explaining:
+
+— how outputs are generated from inputs
+
+— what are the weights tuned during the training process
+
+— what is the activation function
+
+\subsection{Architecture and types}
+
+In this subsection I am going to explain how perceptrons are organized 
+within a neural network. The concept of layer (and hidden layer) will be explained.
+After acknowledging the existence of many types of neural networks
+I am going to focus on the Feedforward model.
+
+Then I am going to discuss the possibility to improve a 
+feedforward neural network with convolutional layers.
+I will explain how they work, what they are designed for and how they can be exploited.
+
+\subsection{Training}
+
+Here I am going to explain the key steps of the training process.
+I will explain how it works, what algorithm can be used and the concepts
+of loss functions and metrics.
+
+\section{Strengths and limitations}
+
+In this section I am going to discuss the strengths and limitations 
+of machine learning techniques, focusing on aspects with direct relevance
+to this thesis.
+
+\subsection{The universal approximation theorem}
+
+Here I am going to discuss the flexibility of neural networks and the
+theoretical framework that prove their potential.
+
+\subsection{Hyperparameters}
+
+Here I am going to write about hyperparameters. I am going to list them
+providing basics explanations about how their value can affect the model.
+They will be presented as both a strength and a limitation.
+
+This subsection should highlight the importance of carefully tune the hyperparameters.
+
+I am going to cite the existence of algorithm for doing this job automatically and more
+efficiently than by simple trial and error.
+
+\subsection{Training data}
+
+Here I am going to discuss the importance of having a large dataset in the realization
+of a machine learning model. I am going to weight pro and cons of this data driven 
+approach.
+
+\subsection{Overlearning and underlearning}
+
+Here I am going to discuss overlearning and underlearning. 
+I am going to:
+
+    — define them
+
+    — explain their causes
+
+    — provide a method for their  detection 
+
+    — discuss the solutions (early stopping, vary the number of trainable parameters, ...)
+
+\subsection{Computational complexity}
+Here I am going to discuss the computational complexity of machine learning
+ algorithms in comparison with numerical hydrodynamical simulations.
+
+I have to highlight that the most resource requiring part is the training process.
+The aim is thus to obtain a trained neural network that can be deployed and used for the study of
+a wide range of different disc images without the need to re-train it.
+
+\section{Machine learning and protoplanetary discs}
+
+In this section I am going to develop the idea of applying machine learning methods to the  study of protoplanetary
+discs.
+
+\subsection{The proposed approach}
+
+Here I am going to discuss the approach we want to propose.
+ I am going to give some details about the 
+suggested architecture for the neural network and what 
+we expect to be able to predict with the trained
+model.
+
+I am going to think about possible scenarios which can take advantage from this approach
+(ex. large surveys with lots of disc images: the neural network could quickly provide measures of their physical properties)
+
+\subsection{Previous attempts in literature}
+
+Here I am going to discuss the Sayantan Auddy and Min-Kai Lin's paper citing their results
+and explaining the main differences with the approach we propose.
+
+\chapter{Dataset design}
+
+In this chapter I am going to unfold the main part of my work: the design and implementation of the dataset.
+Here I am going to recall the key features of a good dataset for machine learning.
+
+\section{The data}
+
+In this section I am going to present what the dataset is made of: fits images and the list of parameters included in the fits files 
+and in data.js. I am going to briefly explain why the were included and their possible use.
+
+I am also going to present images showing the data distribution over the parameters space discussing
+ which of them are properly explored and which not.
+
+\section{Structure and interface}
+
+Here I am going to discuss the structure we designed for the db and the interface provided to 
+access the data.
+
+\section{Supporting scripts}
+
+Here I am going to write about the scripts I wrote which allow the user to handle the database
+and preprocess the results coming from MCFOST simulations.
+
+\section{Expanding the dataset}
+
+Here I will explain how the tools provided allow to easily expand the dataset. 
+Then I am going to give future perspectives on how the database could be improved.
+
+\chapter{Proof of concept}
+
+Here I am going to present an example of model trained to predict planet's mass from 
+disc images.
+From the different models I tested (and I will test)
+I am going to report here the one which gives the best result.
+I am also going to cite the python libraries used to implement this model (TensorFlow).
+
+\section{Adopted model}
+
+Here I am going to explain the model used: number of layers, type of neural network, activation functions,
+optimizer, metrics.
+
+\section{Data pre-processing}
+
+Here I will explain how I have chosen the data used during the training process.
+This section should highlight the versatility of the dataset showing the possibility to split the 
+data according to our needs.
+
+\section{Results}
+
+Here I will discuss the results obtained.
+
+\chapter{Conclusions}
+\section{Conclusion}
+\section{Future perspectives}
+
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+
+\chapter*{Bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\end{document}
