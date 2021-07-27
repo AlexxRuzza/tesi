@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1627287633 "/home/alexxruzza/UNI/TESI/TESTO/tesi.tex" "/home/alexxruzza/UNI/TESI/TESTO/tesi.pdf" "tesi" 1627290385
-  "/home/alexxruzza/UNI/TESI/TESTO/tesi.aux" 1627287633 5637 e2894ac14f5adcc1d6b1aa01e75be789 ""
-  "/home/alexxruzza/UNI/TESI/TESTO/tesi.tex" 1627290385 11451 a74e8cadc24c676d908dffc5b285ebf6 ""
+["pdflatex"] 1627373018 "/home/alexxruzza/UNI/TESI/TESTO/tesi.tex" "/home/alexxruzza/UNI/TESI/TESTO/tesi.pdf" "tesi" 1627373041
+  "/home/alexxruzza/UNI/TESI/TESTO/tesi.aux" 1627373018 5638 078487f688c8a326949f613416ea90f1 ""
+  "/home/alexxruzza/UNI/TESI/TESTO/tesi.tex" 1627373040 11449 7374eaf668ab6a100de24b4daca2975f ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1617738065 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1617738065 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1617738065 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -29,13 +29,13 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1617738065 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1622896819 5045527 a0ef06d06af438d62994481e52c2af5f ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1622896796 2812672 7cb3407da7cf16d7b5a266fdc594d30f ""
-  "tesi.aux" 1627287633 5637 e2894ac14f5adcc1d6b1aa01e75be789 "pdflatex"
-  "tesi.tex" 1627290385 11451 a74e8cadc24c676d908dffc5b285ebf6 ""
-  "tesi.toc" 1627287633 3186 10655b7778ae13e7cc81454e51ebc753 "pdflatex"
+  "tesi.aux" 1627373018 5638 078487f688c8a326949f613416ea90f1 "pdflatex"
+  "tesi.tex" 1627373040 11449 7374eaf668ab6a100de24b4daca2975f ""
+  "tesi.toc" 1627373018 3187 9c39fc7597e340abeb8fbd98545847f4 "pdflatex"
   (generated)
-  "/home/alexxruzza/UNI/TESI/TESTO/tesi.pdf"
   "/home/alexxruzza/UNI/TESI/TESTO/tesi.log"
+  "/home/alexxruzza/UNI/TESI/TESTO/tesi.pdf"
+  "tesi.pdf"
   "tesi.log"
   "tesi.toc"
   "tesi.aux"
-  "tesi.pdf"

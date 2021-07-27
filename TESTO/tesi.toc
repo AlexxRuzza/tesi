@@ -2,7 +2,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{3}{}%
 \contentsline {chapter}{\numberline {2}Protoplanetary discs}{4}{}%
 \contentsline {section}{\numberline {2.1}Structural properties}{4}{}%
-\contentsline {section}{\numberline {2.2}Disc dynamic and evolution}{4}{}%
+\contentsline {section}{\numberline {2.2}Disc dynamics and evolution}{4}{}%
 \contentsline {section}{\numberline {2.3}Observations}{4}{}%
 \contentsline {section}{\numberline {2.4}Planet formation}{5}{}%
 \contentsline {section}{\numberline {2.5}Gaps}{5}{}%
