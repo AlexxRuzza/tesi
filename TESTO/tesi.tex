@@ -7,6 +7,12 @@
 %derivatives, ...
 \usepackage{physics}
 
+%for images
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{shapes,snakes}
+\usepackage{subfig}
+
 %math symbols
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -25,6 +31,9 @@
  right=30mm,
  top=30mm,
  }
+
+%code listing
+\usepackage{listings}
 
 %opening
 \title{Design of a machine learning model for the detection of young planets}
@@ -66,16 +75,60 @@
 %how they generate, where we can find them and why they are studied.
 
 Protoplanetary discs emerge in the context of star formation. 
-The process takes place in specific ``star forming'' regions filled with the interstellar medium: a mixture of gases, mainly hydrogen and helium, enriched with some
-heavier elements. The gravitational collapse of a denser zone gives birth to a star. Gradually the star
-accrete its mass drawing, from its surroundings, gas and dust that organizes in an accretion disc whose shape is due to angular momentum conservation.
-At some point, after $\sim 10^5$ yr, most of the matter has accreted into the star.
-Disc temperature and thermal emission are maintained by the star irradiation while gravitational collapse becomes negligible as a source of energy. 
-It is at this stage that the accretion discs get identified
-as protoplanetary discs due to their role as planet formation cradles.
+The process takes place in specific ``star forming'' regions filled with a mixture of gases, mainly hydrogen and helium enriched with some
+heavier elements, called interstellar medium. The gravitational collapse of a denser zone gives birth to a star. Gradually the star
+accrete its mass drawing, from its surroundings, gas and dust that organizes in an accretion disc whose shape is a consequence of angular momentum conservation.
+At some point, after $\sim 10^5$ yr, most of the matter has accreted into the star,
+the disc temperature and thermal emission are maintained by the star irradiation while gravitational collapse becomes negligible as a source of energy (passive disc). 
+It is at this stage that the accretion disc get identified
+as a protoplanetary disc due to its role as a planet formation cradle.
 Their study allows the development and test of theoretical models regarding planets and their genesis.
 
+In this chapter I am going to give an overview of the structure and observable features
+of protoplanetary discs and of their relation with young embedded planets. The discussion will not be
+exhaustive and neither detailed, the aim is to give
+the reader a picture of these objects, and provide a basic understanding of the 
+properties which I will be referring to in the next chapters.
+
 \section{Structural properties}
+
+\begin{figure}
+    \begin{center}
+    \raisebox{+0.2\height}{
+        \begin{tikzpicture}
+            \draw[ultra thick, color=black, domain=0.25:2, fill=gray, fill opacity=0.25] (0.25,0) -- plot (\x,{(\x*0.5)^(5/4)}) -- (2,0);
+            \draw[ultra thick,color=black, domain=-2:-0.25, fill=gray, fill opacity=0.25] (-2,0) -- plot (\x,{(-\x*0.5)^(5/4)}) -- (-0.25, 0);
+            \draw[ultra thick,color=black, domain=0.25:2, fill=gray, fill opacity=0.25] (0.25,0) -- plot (\x,{-(\x*0.5)^(5/4)}) -- (2,0);
+            \draw[ultra thick,color=black, domain=-2:-0.25, fill=gray, fill opacity=0.25] (-2,0) -- plot (\x,{-(-\x*0.5)^(5/4)}) -- (-0.25,0);
+            \draw[ultra thick,color=black] (2, 1) -- (2,-0.1);
+            \draw[ultra thick,color=black] (2, -1) -- (2,-0.45);
+            \draw[ultra thick,color=black] (-2, 1) -- (-2,-1);
+            \draw[ thick,->, color=gray] (-2.5, -1.5) -- (-2.5, 1.5) node[left, scale=1.4] {$z$};
+            \draw[ thick,color=gray, dashed] (-2.6, 0) node[left] {\small 0} -- (2.5, 0) node[below left, yshift=-1mm, xshift=3mm,  fill=white, rounded corners=2pt,inner sep=1.5pt] {\small midplane};
+            \draw[ultra thick, fill=gray, fill opacity=0.25] (0,4) circle [radius=2cm];
+            \draw[ultra thick, fill=white] (0,4) circle [radius=0.25cm];
+            \node[star, fill=black, scale=0.6] at (0,4) {};
+            \draw[ thick,color=gray] (-2.5,4) circle [radius=1mm] node[above left, scale=1.4] {$z$};
+            \draw[ thick,color=gray, fill=gray] (-2.5,4) circle [radius=0.1mm];
+            \draw[ thick,->, color=gray] (0,4) -- (2, 5.5) node[right, scale=1.4] {$r$};
+            \draw[ thick,color=gray] (1,4) node[above right, scale=1.4] {$\phi$} arc (0:36.5:1cm);
+            \draw[ thick,color=gray, dashed] (-2, 4) -- (2,4);
+            \node[star, fill=black, scale=0.6] at (0,0) {};
+            \draw[thin] (0, 1.5) circle [radius=0.1mm];
+            \draw[thin] (0.2, 1.5) -- (0.5, 1.5);
+            \draw[thin] (-0.2, 1.5) -- (-0.5, 1.5);
+            %\draw[thin] (3, 1.5) circle [radius=0.1mm];
+            %\draw[thin] (3, 1.3) -- (3, 1);
+            %\draw[thin] (3, 1.7) -- (3, 2);
+        \end{tikzpicture}}
+        %\quadd
+    \input{images/profile.pgf}
+    \end{center}
+    \caption{(a) left panel, scheme of the frame of reference used to refer to
+    spatial dependencies of disc properties. (b) right panel, map of the 
+    gas density in the $r-z$ plane for a flared disk ($H(r) \propto r^{5/4}$) at vertical hydrostatic equilibrium.
+}
+\end{figure}
 
 \begin{comment}
 Here I am going to discuss some key properties of protoplanetary discs and give
@@ -94,32 +147,30 @@ Most of protoplanetary discs are observed at distances of about 100-200 pc in th
 They exhibit typically a diameter of about 100 a.u. meaning that they span approximately
 1 arcsec of the sky as seen from earth.
 In the following sections I will use cylindrical coordinates 
-defining the frame of reference in figure 1 to discuss disc properties. Only axisymmetric discs will be considered.
-
-%TODO: insert image with the frame of reference of the disc
+defining the frame of reference in figure 2.1a to discuss disc properties. Only axisymmetric discs will be considered.
 
 After their shape and location, the first question we have to address regards what discs are made of.
 Two main structural constituents can be distinguished according to their physical state: gas and solids.
-The solid component consists in dust and debris of various dimensions, going from micrometers to a few 
-meters, which account for about the 1\% of the total mass. Despite being a small fraction of the disc, solid grains
+The solid component consists in dust and debris of various dimensions, going from the micrometers to a few 
+meters, and account for about the 1\% of the total mass. Despite being a small fraction of the disc, solid grains
 are actually easier to observe and measure through their thermal emission. Measures of their mass are, however, tied to
 some unknown optical properties whose estimation introduces a source of uncertainty.
 
-Dust and solid fragments are embedded in a gaseous medium which provides the vast majority of the disc mass.
+Dust and solid fragments are embedded in the gaseous medium which provides the vast majority of the disc mass.
 Molecular hydrogen (H$_2$) is the main constituent which is challenging to observe due to
 its lack of a dipole moment. 
-Measures related to less abundant molecules, such as HD or CO, provide insights into the properties of the gas component. 
+Measures related to less abundant molecules, such as HD or CO, are used to probe the properties of the gas component. 
 
-The overall mass of a typical protoplanetary disc is measured in some Jupyter masses.
-Estimates of these quantities are relevant as they can provide upper limits
+The overall mass of a typical protoplanetary disc has been measured to be some Jupyter masses.
+Estimates of these quantities are relevant, for example, to provide upper limits
 to the masses of forming planets.
 
-Another important property is the gas and dust temperature, closely related to sundry factors both in disc dynamics and radiative emission.
-Its value changes with the radial and vertical distance to the star going from hundreds of Kelvin to approximately 20K.
-The interstellar medium has observable features compatible with a temperature of about 10K. Protoplanetary discs are embedded in this medium 
-that hence constitutes the background of observations and makes it difficult to reveal colder parts of the disc.
+Another important property is the gas and dust temperature, closely related to sundry factors both in the disc dynamics and radiative emission.
+Its value changes with the radial and vertical distance from the star going from hundreds of Kelvin to approximately 20K.
+The interstellar medium instead has observable features compatible with a temperature of about 10K. Protoplanetary discs are embedded in this medium 
+that hence constitutes the background of observations and makes it difficult to reveal colder parts.
 
-\section{Disc dynamics and evolution}
+\section{Disc dynamics}
 
 \begin{comment}
 Here I am going to explain how the dynamic of gas and dust is modelled.
@@ -134,12 +185,15 @@ Finally, I am going to cite other forces and effects which play a role in disc d
 such as magnetorotational instability, turbulence, winds, photoevaporation, ...
 \end{comment}
 
-Disc evolution is governed and properly described by laws of fluidodynamics in the gravitational potential of the central star.
+Now that the discs composition and some of their properties have been established, I am going 
+to investigate the physics governing each component and explain how they are shaped by it.
+
+The disc evolution can be properly described by the laws of fluidodynamics in the gravitational potential of the central star.
 %add NS equations (?)
 Some assumptions need to be made in order to acquire a predictive model of practical use.
 The first one is called ``thin-disc approximation'' which consists in assuming that the radial distance is greater than 
-the vertical typical length scale $H$, thus requiring $H/R \ll 1$. This quantity, called aspect-ratio, has been measured 
-showing values close to $\sim 0.1$ which justify the assumption. The thin disk approximation allows the study of disc properties integrating
+the vertical typical length scale $H$, thus requiring $H/R \ll 1$. This quantity, called aspect-ratio, has been measured, 
+showing values in the range $10^{-3}-10^{-1}$ which justify the assumption. The thin disk approximation allows the study of disc properties integrating
 the equations along the vertical direction.
 The second simplification that is usually made consists in neglecting self-gravitation.
 The stability condition of the disc against self-gravity can be written in the form
@@ -157,43 +211,55 @@ by the equation of state
 where $\mu$ represent the mass of a single gas molecule expressed in masses of the proton ($m_p$).
 
 Investigating the gas component is sufficient to predict most of the macroscopical features of the discs structure due to its
-predominance over the solid elements. The vertical structure of the gas is determined by a steady-state solution of the hydrodynamical laws of motion integrated with the Poisson equation that
+predominance over the solid elements. 
+
+The vertical structure of the gas is determined by a steady-state solution of the hydrodynamical laws of motion together with the Poisson equation that
 accounts for the gravitational potential. The thin-disk approximation allows a great simplification
  of this problem leading to the vertical density profile
 \begin{equation}
     \rho(z, r) = \rho_0(r)\exp(-\frac{\Omega_K^2z^2}{2c_s^2}) \equiv \rho_0(r)\exp(-\frac{z^2}{2H^2})
 \end{equation}
-The equation above offers a quantitative definition of the previously introduced length scale
+which also offers a quantitative definition of the previously introduced length scale
 $H$: it is identified as the 
 standard deviation of the Gaussian vertical density profile.
 The following relation is also provided
 \begin{equation}
     H = \frac{c_s}{\Omega_K}
 \end{equation}
+where $\Omega_K$ is the Keplerian 
+angular velocity while $c_s$ is the sound speed defined as $c_s^2 \equiv \dv{P}{\rho}$, which is equal to 
+\begin{equation}
+    c_s = \sqrt{\frac{k_BT}{\mu m_p}}
+\end{equation}
+for an 
+ideal fluid described by the equation of state 2.2.
 
-Where $\Omega_K$ is the Keplerian 
-angular velocity while $c_s$ is the sound speed defined as $c_s^2 \equiv \dv{P}{\rho}$, which is equal to $\frac{k_BT}{\mu m_p}$ for an 
-ideal fluid described by the equation of state (-).
+The height scale $H$ is thus proportional to $T^{1/2}$. Its radial dependence
+can be studied computing the radiative equilibrium of the disc, in order to obtain the 
+radial temperature profile which is related to $H(r)$ through equations 2.4 and 2.5.
+Assuming a passive and flared disc, calculations lead to $T(r) \propto r^{-1/2}$ 
+meaning $H(r) \propto r^{5/4}$ which is consistent with the ``flared assumption'', requiring the index of this last
+power law to be greater than 1.
+Figure 2.1b shows the vertical density distribution in a disc characterized by the just mentioned $H(r)$ radial profile
+and equation 2.3.
 
 The overall dynamics of the gas is driven by the star accretion process. In order to explain this motion, some mechanisms of energy dissipation and angular momentum transport
 are needed. Viscosity plays a central role in this context. Detailed calculations show that shear viscosity, 
 as modelled in an ideal gas, caused by molecular collisions is too weak to account for these processes. 
 A proper model can be achieved assuming a highly turbulent regime that can produce a ``turbulent viscosity'' through the mixing of fluid elements
 at neighboring radii. The new parameter $\alpha$
-called ``Shakura-Seneyev viscosity'' gathers all the ignorance on this process.
-I am now going to explain the reasoning behind its introduction.
-In the case of laminar flow, kinematic viscosity is defined as the constant of 
-proportionality between the shear stress and the velocity gradient, normalized with the fluid density:
+called ``Shakura-Seneyev viscosity'' which gathers all the ignorance on this process is introduced through the following reasoning:
+in the case of laminar flow, kinematic viscosity $\nu$ is defined as the constant of 
+proportionality between the shear stress $\tau$ and the velocity gradient  $\pdv{u}{y}$, normalized with the fluid density $\rho$
 \begin{equation}
     \tau = \nu \cdot \rho \cdot \pdv{u}{y}
 \end{equation}
 The definition above is than generalized in its tensorial form to generic fluids.
 In an ideal gas the kinematic viscosity coefficient can be shown to satisfy $\nu = \frac{1}{3}c_s\lambda$,
 with $\lambda$ indicating the mean free path of particles in the fluid.
-To describe the turbulent viscosity we make use of dimensional arguments which lead to the
-assumption of $\nu_T \sim v_T \lambda_T$. In this equation $v_T$ indicates a typical velocity of the turbulent regime
+To describe the turbulent viscosity we proceed by analogy assuming $\nu_T \sim u_T \lambda_T$. In this equation $u_T$ indicates a typical velocity of the turbulent regime
 which should 
-satisfy $v_T \lesssim c_s$ because upper velocities would lead to shocks thermalizing the turbulent motion.
+satisfy $u_T \lesssim c_s$ because upper velocities would lead to shocks thermalizing the turbulent motion.
 The $\lambda_T$ factor 
 represents the typical length scale which, assuming isotropic turbulence, can not be greater than $H$, the disc height scale.
 Therefore, we obtain the equation
@@ -205,12 +271,12 @@ must take values less than 1.
 
 The dust component is modelled as a pressureless fluid with grains of different dimensions coupled with the gas medium. 
 The strength of the coupling is expressed by the Stokes number $St$.
-Two drag forces come into play depending on the grain size. 
-If $s \lesssim \lambda$ (with $\lambda$ indicating the mean free path of molecules within the disc), 
+Two drag forces come into play depending on the grain size $s$. 
+If $s \lesssim \lambda$, with $\lambda$ indicating the mean free path of molecules within the disc, 
 the drag force is called Epstein drag. 
 In this regime, which is usually the most relevant for most particle sizes, 
 the drag is caused by gas molecules which collide against the front and back sides of the grain with different 
-frequencies due to their motion relative to the gas medium.
+frequencies due to its motion relative to the gas medium.
 The Stokes number in the Epstein regime is related to the size and density of the particles that experience the drag.
 Once sizes much larger than the molecular 
 mean free path are reached, the solid grains begin to experience a force of different nature called Stokes drag.
@@ -219,7 +285,7 @@ The model described above is a simplification of the complex dynamics of protopl
 There are many secondary effects
 which contributes to the proper description of discs evolution such as magnetorotational instability, photoevaporation and 
 turbulences or vortices generated by the fluid motion in the turbulent regime. All 
-this effects must be taken into account to obtain a complete description of the disc evolution.
+this effects must be taken into account to obtain a complete description of the disc dynamics and evolution.
 
 \section{Observations}
 
@@ -234,15 +300,18 @@ I am also going to explain which is the best image resolution currently achievab
 Direct observations of protoplanetary discs are of crucial importance for the detection and study of their morphology.
 Properties of substructures, such as their shape and dimension, had, in fact, 
 been proved to reveal key features of the disc itself and
-of the objects that drive their formation.
+of the objects that drive their formation. I am going to discuss how they are detected.
 
-We can identify three sources of light.
+Due to their distance we can only look at their electromagnetic emission
+and exploit the natural diversity of structures and properties. 
+Three sources of light can be identified.
 
-The first one is the radiation, usually of micrometric wavelength, emitted by the host star and scattered by dust grains. This tracer is sensitive to the vertical structure 
-of the disc allowing measures of the height and dust distribution.
+The first one is the radiation, usually of micrometric wavelength, emitted by the host star and scattered by dust grains.
+This tracer is especially sensitive to the vertical structure 
+of the disc allowing measures of the height and of the dust distribution along this direction.
 
-The second tracer is the thermal continuum emission of solids, typically at millimetric wavelengths.
-This light is emitted in the optically thin regime implying direct proportionality between the intensity of the radiation observed and the
+The second tracer is the thermal continuum emission of solids, typically at millimetric wavelengths,
+emitted in the optically thin regime which implies direct proportionality between the intensity of the radiation observed and the
 mass density of the dust. Images of the disc thermal emission are, thus, of specific interest in the investigation of the solid grains.
 
 On the contrary, the gas component eludes direct observations due to the nature of $H_2$ the dominant molecule.
@@ -252,13 +321,13 @@ the uncertainties in the molecular abundance of the revealed gases along with ot
 which make gas observation complex and uncertain.
 
 In all of these cases the range of wavelengths probed is approximately $\SI{1}{\micro\m} - \SI{10}{\mm}$, hence going from infrared to radio waves.
-As anticipated, protoplanetary discs have a diameter of about 100 au at a typical distance of 100/150 pc. Therefore, telescopes need to acquire an angular
+As anticipated, protoplanetary discs have a diameter of about 100 a.u. at a typical distance of 100/150 pc. Therefore, telescopes need to acquire an angular
 resolution under the arc second which is done using interferometric techniques. The leader observatory able to carry out this type of observations is the Atacama Large Millimiter Array (ALMA)
 which is an array of 66 high precision antennas that can be moved to achieve different configurations. 
-Other facilities that have given a significant contribution to the detection of protoplanetary discs are the Very Large Telescope (VLT) and the NASA
+Other facilities that have given a significant contribution to the detection of protoplanetary discs are the Very Large Telescope (VLT), the W. M. Keck Observatory and the NASA
 Hubble Space Telescope.
 
-The images with the best resolution currently obtained are those of the DSHARP (Disk Substructures at High Angular Resolution Project) survey, $\sim 3.5$ arcsec, designed to examine properties
+The images with the best resolution currently obtained are those of the DSHARP (Disk Substructures at High Angular Resolution Project) survey, $\sim 0.035$ arcsec, designed to examine properties
 of small-scale substructures and inquire how they relate to the planet formation process. 
 
 \section{Planet formation}
@@ -293,11 +362,12 @@ The study of extrasolar planets, often referred to as exoplanets, is of primary 
 involving planets and their formation. Protoplanetary discs are the planets' birthplace. 
 Different mechanisms of planet formation have been proposed and some parts of the theories are not completely
 understood yet. 
+
 The core accretion process is believed to be the origin of planets from the dust component of the disc. 
 The process starts from the small dust grains which are well coupled with the gas.
-The coupling made them acquire low relative velocities that result in gentle collisions forming aggregates called, when a significant mass is reached, planetesimals.
+The coupling makes them acquire low relative velocities that result in gentle collisions forming aggregates called, when a significant mass is reached, planetesimals.
 While gradually accreting their mass, this aggregates settle towards the mid-plane and start to decouple from the gas experiencing a radial force 
-which makes them spiral inwards toward the global maximum in the gas pressure (radial drift). This drift is usually more effective for grains of sizes in the range 
+which makes them spiral inwards toward the global maximum in the gas pressure. This motion is called radial drift and it is usually more effective for grains of sizes in the range 
 1-10 mm.
 The accretion process of planetesimals continues until the local dust population is depleted by radial migration or the collisions become destructive.
 
@@ -320,29 +390,34 @@ Here I am going to:
 — explain how depth and width are defined
 \end{comment}
 
-Gaps are one of the most common feature observed in images of protoplanetary discs and
+Gaps are going to be the object of application for the investigative approach proposed in this thesis due
+to their role in the detection of young planets.
+For this reason I am going to throw some light on their properties.
+
+They are one of the most common substructure observed in images of protoplanetary discs, and
 planets are often the cause of their formation. However, other mechanisms were recognized to generate gaps
 including magnetorotational instability turbulence, gravitational instabilities, condensation of molecular species along different snowlines,
-large-sale vortices and self-induced dust pileups. The effective presence of a planet must hence be cautiously investigated and confirmed 
-before inferring its features from gaps properties. 
+large-scale vortices and self-induced dust pileups. The effective presence of a planet must hence be cautiously investigated and confirmed 
+before inferring its features from the gaps properties. 
 
-The figure () presents the radial profile of gas and dust densities at a gap. Taking into exam 
-the graph relative to the dust density, I am going to highlight some recurrent features.
-At the core of the depletion zone, we can observe two minimums separated by a local maximum which usually coincides with the planet orbit.
+The figure 2.2 presents the radial profile of the gas and dust densities at a gap. Taking into exam 
+the graph relative to the dust density, I am going to highlight some recurrent features:
+at the core of the depletion zone, we can observe two minimums separated by a local maximum which usually coincides with the planet orbit.
 Sometimes this maximum reaches values comparable with the density of the unperturbed disc, a substructure that can be identified as a double gap. 
-The border also presents usually a local maximum.
+The border also presents usually a local maximum. Gaps are usually wider and deeper in the dust rather than in the gas component where they could even
+fail to form.
 
 Width and depths are the crucial properties of gaps used to investigate planet properties. Despite their importance there are not agreed on definitions.
 For the work done in this thesis they are not needed as the neural network model we aim to build would work directly with disc images.
 However, currently used methods, which will be discussed in the next chapter, include analytical tools which explicitly require the width
-value which thus needs to be defined.
+value that thus needs to be defined.
 There are two main definitions used to give a value to the gap width: the first one defines it as the full width at half maximum of the radial profile density while
 the second one measures it as the radial distance between the minimum and the outer maximum.
 Due to the empirical nature of the analytical formulae that will be discussed, a change in the chosen definition requires to simply recompute
 some coefficients.                                        
 
 The depth is usually expressed as the minimum of the density profile normalized with the initial unperturbed value. Sometimes the intensity of the emitted light is used in place of the
-density.
+density to obtain a definition which depends upon directly measurable properties.
 
 \chapter{State-of-the-art investigative techniques}
 
@@ -441,7 +516,8 @@ very low computation. Furthermore, an analytical expression highlights relations
 which could be interpreted through theoretical arguments in order to achieve a better understanding 
 of the underlying physics.
 On the other end, analytical expressions, especially the empirical ones, suffer in accuracy due to 
-the extreme simplification of the functional forms used.
+the extreme simplification of the functional forms used, and highlight relationships between a restricted subset of
+the variables which characterize the disc.
 Additionally, in order to obtain the constants that characterize these formulae we need a set of
 data with known values of every variable involved. This requires having other methods to obtain this information
 or, in alternative resort to numerical simulations which starts from known values of the parameters and produce
@@ -467,25 +543,149 @@ the study of protoplanetary discs and explains how the images used to build the
 database were generated.
 \end{comment}
 
+Computer simulations apply the models developed to describe the physics of protoplanetary discs 
+and return predictions in the data space that can be directly compared with observations.
+The remarkable computational power that we can nowadays achieve allows the application of
+more low level and complex models which reduce the approximations and are thus able to obtain more 
+accurate results.
+This approach can be used to infer discs or planets features exploring some values through different simulations
+whose output can then be compared with the actual data.
+The simulation workflow consists in three steps. 
+First, starting from an appropriately chosen initial condition,
+we compute the fluidodynamical evolution of the disc obtaining the configuration
+of the disc matter at a given time. The second step is aimed at determining the radiative emission and trace it 
+to simulate an observation at a given distance and relative orientation.
+In order to predict the distribution and intensity of the light emitted, this step begins computing
+how the star radiates its energy producing a map of the disc temperature. These processes involving the
+transfer of energy in the form of electromagnetic radiation are grouped under the term ``radiative transfer''.
+Finally, the last step has the purpose to reproduce the noise and limited resolution of the instruments 
+used to collect the real data.
+I am now going to go into detail for each of these steps. The images collected in the database for machine learning
+applications that we designed were obtained through simulations of this kind. Among the possible choices
+of software available for each step, I am going to focus on the ones used to obtain the synthetic images used
+in this thesis.
+
 \subsection{Hydrodynamical simulations}
 
+\begin{comment}
 Here I am going to give some background about phantom and the type of 
 data it generates.
+\end{comment}
+
+Hydrodynamical simulations solve fluid dynamics equations to predict the evolution of the gas and dust 
+modelled as fluids with specific features as discussed in section 2.2.
+To run the models a starting configuration must be provided which is usually generated from given masses 
+of each component and specifying, assuming axisymmetric discs, the density and sound-speed radial profiles usually modelled
+as power laws such as:
+\begin{equation}
+    \Sigma(r) = \Sigma(R_{ref})\cdot\left(\frac{r}{R_{ref}}\right)^{-p}
+\end{equation}
+and
+\begin{equation}
+    c_s(r) = c_s(R_{ref})\cdot\left(\frac{r}{R_{ref}}\right)^{-q}
+\end{equation}
+where $R_{ref}$ is a reference radius. The density and sound-speed values at this radius, in addition to the indexes $p$ and $q$
+are the input constants that characterize the initial state.
+Other variables, such as the $\alpha$-viscosity, the planet and stellar masses and the orbital radius, are also provided as input parameters.
+
+One of the pr
+s, in addition to their velocity. All the information needed to restart the simulation is also stored inside these files.
+
+- something on the SPH algorithm ? -
 
 \subsection{Radiative transfer}
 
+\begin{comment}
 Here I am going to discuss the software used for radiative transfer: MCFOST.
 I will explain why this step is performed and the meaning of the results obtained.
+\end{comment}
+
+The next stage in the simulation workflow is the radiative transfer computation. For this
+step we chose to use \lstinline{MCFOST}, a code designed for this purpose and based on Monte Carlo methods.
+This program provides the possibility to run a simulation for gas and dust grains in the specific 
+spatial configurations stored in a \lstinline{PHANTOM} dump file.
+
+The aim is to obtain a synthetic observation of specific light tracers as seen from given angles and distance.
+To produce the images used in this thesis we are only interested in probing the dust component through the thermally
+emitted and scattered radiation at a fixed wavelength.
+First of all, the radiative transfer of energy from the star to the disc elements is calculated, generating a map of the disc temperature.
+At this point the thermal emission of the dust is computed and ray traced to obtain the resulting image.
+
+The model run by \lstinline{MCFOST} depends upon optical properties, such as the optical length and the opacity, which 
+are new parameters characterizing the results of the entire simulation process.
+
+The output obtained at this stage is a 1024x1024 pixels image in the \lstinline{FITS} (Flexible Image Transport System) format.
+The header of this file stores some input parameters: the wavelength of the light in the image, the inclination and position angle of
+the disc, its distance and the units of the data stored.
 
 \subsection{Generation of synthetic images}
 
+\begin{comment}
 Here I am going to discuss the different methods that can be used to simulate the limitations 
 of observing instruments. I will further explore some key features of pymcfost.
+\end{comment}
+
+The real observations of protoplanetary discs are, being experimental data, susceptible 
+to statistical and systematical errors and limited by the resolution of the instruments.
+The last step of the simulation process consists in reproducing these limits in order
+to obtain images as close as possible to those that we would obtain from a real observation.
+Among the different types of errors, the tools available reproduce the
+statistical fluctuations while, systematical errors are usually not introduced as they should be 
+looked for and removed or corrected from the original measurements.
+This step is needed to allow a better comparison with the real images or to train machine learning 
+models which should then be able to work with the real observations.
+
+There are different tools which could be used to achieve this purpose.
+The \lstinline{CASA} (Common Astronomy Software Applications) package is the most complete choice 
+which is specifically designed to reproduce images as they would be captured by ALMA, reproducing the noise in the data,
+the limited resolution of the instruments and taking into account the spatial configuration of the radio telescopes
+and other settings which could influence the observations.
+The images in the database assembled in this thesis were processed using \lstinline{pymcfost}, a less powerful 
+python package designed to work with the files produced by \lstinline{MCFOST}.
+I used this software only to reproduce the telescope limited resolution while statistical errors were not introduced.
+The method used is the convolution of the \lstinline{MCFOST} image with a two-dimensional Gaussian parametrized 
+by its full widths at half maximum called beam sizes.
 
 \subsection{Strengths and limitations}
 
+\begin{comment}
 Here I am going to discuss the strengths and limitations of numerical simulations in the context of 
 disc analysis. From this subsection the need for a faster method should emerge.
+\end{comment}
+
+strength:
+- solve directly the underlying equations, can account for secondary effects, more low levels models are needed
+- method to quantify the correcteness of prediction
+- universal method
+- consider the whole disc directly in the data space
+
+limitations:
+- long computational times needed                                              
+- degeneracies
+
+Computer simulations present numerous strengths which make them the preferred 
+method for characterizing protoplanetary discs. First, the models simulated can be 
+complex and describing the physics at a low level of abstraction
+allowing to account for secondary effects and unexpected interactions which would otherwise been neglected.
+They, furthermore, have a wide range of applicability as can be used, comparing the results with observations, to 
+search or confirm values of most of the physical parameters characterizing the disc. The comparisons can be evaluated through
+proper metrics that quantify the accuracy of the initial ansatz.
+Unlike the analytical formulae, in this method the whole disc image and thus, in principle, the whole set of the
+disc physical features are involved in the predictions that are being made.
+
+The power and flexibility of the computational approach comes at some costs.
+First, the fact that the whole disc modellization concur to the results might hide 
+the existence of simpler and more interesting links between some parameters.
+The biggest downsides is, however, the high computational cost of a simulation
+which hence can run for hours or days. To properly investigate a parameter, the process which
+is usually applied consists in executing of multiple simulations varying its value and finally
+comparing the results with observative data.
+The need of multiple simulations makes the time needed rise up to weeks.
+
+Last, a problem, which is worth mentioning, is that of degeneracies afflicting disc appearences at specific
+wavelengths. This means that different sets of parameters may result in the same disc structure and emission.
+They might be caused by the simplifications made in the model or be intrinsically due to the physics 
+underlying the disc. In the latter case the same degeneracies should also affect real observations.
 
 \chapter{Machine learning and neural networks}
 
@@ -527,6 +727,8 @@ of loss functions and metrics.
 In this section I am going to discuss the strengths and limitations 
 of machine learning techniques, focusing on aspects with direct relevance
 to this thesis.
+
+hybrid method: image + parameters
 
 \subsection{The universal approximation theorem}
 
