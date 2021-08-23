@@ -11,9 +11,9 @@
 \contentsline {section}{\numberline {3.2}Analytical formulae}{10}{}%
 \contentsline {subsection}{\numberline {3.2.1}Planet mass and gap width}{11}{}%
 \contentsline {subsection}{\numberline {3.2.2}Strengths and limitations}{11}{}%
-\contentsline {section}{\numberline {3.3}Numerical approach}{11}{}%
+\contentsline {section}{\numberline {3.3}Numerical approach}{12}{}%
 \contentsline {subsection}{\numberline {3.3.1}Hydrodynamical simulations}{12}{}%
-\contentsline {subsection}{\numberline {3.3.2}Radiative transfer}{12}{}%
+\contentsline {subsection}{\numberline {3.3.2}Radiative transfer}{13}{}%
 \contentsline {subsection}{\numberline {3.3.3}Generation of synthetic images}{13}{}%
 \contentsline {subsection}{\numberline {3.3.4}Strengths and limitations}{13}{}%
 \contentsline {chapter}{\numberline {4}Machine learning and neural networks}{15}{}%
