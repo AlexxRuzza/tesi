@@ -695,14 +695,36 @@ In the latter case the same degeneracies would also affect real observations.
 
 \chapter{Machine learning and neural networks}
 
+\begin{comment}
 Very brief introduction to machine learning. (Birth and definition)
+\end{comment}
+
+The term machine learning was introduced by Arthur Lee Samuel in 1959
+with his research on the subject applied to the game of checkers.
+In 1998, Tom Michael Mitchell defined machine learning as the study of
+computer algorithms that can improve automatically through experience and by the use of data.
+The past decades have shown an incredible development in this field supported by parallel 
+technological improvements. 
+
+In this chapter I am going to introduce a specific machine learning tool, neural networks, explaining
+the key properties and pondering their application to the problems, in the study of planet formation,
+discussed in the previous chapter. I am also going to review previous attempts to the use of this approach.
 
 \section{Neural networks}
 
+\begin{comment}
 Basic idea behind neural networks.
+\end{comment}
+
+Artificial Neural networks are a group of machine learning algorithms inspired by the structure and functioning 
+of the biological neural networks which constitute natural brains.
+They consist in a collection of artificial neurons linked in a specific structure. 
+Neural networks are an extremely manifold and versatile tool 
+????
 
 \subsection{The perceptron}
 
+\begin{comment}
 Here I am going to present the perceptron model explaining:
 
 — how outputs are generated from inputs
@@ -710,9 +732,47 @@ Here I am going to present the perceptron model explaining:
 — what are the weights tuned during the training process
 
 — what is the activation function
+\end{comment}
+
+Artificial neurons are the elementary units of neural networks.
+They are essentially parametric functions which take some input values 
+and return an output. To explore the arguments behind their design and unfold the
+comparison with the biological unit, the resulting functional form can be decomposed
+in two steps.
+We are going to consider the $i^{th}$ neuron.
+First, the $Sigma$ block does a weighted sum of the input values $a_{ij}$ and a bias $b_i$
+\begin{equation}
+   c_i = b_i + \Sigma_j w_{ij} \cdot a_{ij} 
+\end{equation}
+where the $j$ index identifies the input connections of the $i^{th}$ artificial neuron.
+The weights $w_{ij}$ and the bias of each neuron constitutes the set of parameters in which
+lies the plasticity of neural networks.
+This first block mimics the biological neuron ability of tuning the intensity of its connections
+modifying the ratio of neurotransmitters and inhibitors.
+Still in the biological counterpart, the signal obtained from the weighted sum is transmitted to the 
+connected neurons if it reaches a certain threshold.
+The same behaviour is modelled in artificial neurons in the second block, 
+with a function $f(\cdot)$, called activation function. It takes the $c_i$ value obtained in the
+previous step and returns the output $o_i = f(c_i)$ which is then transmitted to the connected neurons 
+becoming one of their input values.
+
+In the choice of the function $f$, its role as an activation threshold should be kept in mind.
+The simplest activation function is the Heaviside step function which
+returns 1 if the input value is positive and 0 otherwise, simulating the discrete behaviour of 
+biological neurons.
+An improvement to this choice can be achieved using the sigmoid
+\begin{equation}
+    o_i = f(c_i) = \frac{1}{1+e^{-k\cdot c_i}}
+\end{equation}
+which unlike the step function is continuous and infinitely differentiable in 0.
+Another example of a widely used activation function is the ReLU (Rectified Linear Unit) which returns the input value if 
+is positive and 0 otherwise. This is the most popular among the whole set of activation functions available
+both for its simplicity, requiring very little computation, and for making the training process using gradient
+descent methods particularly efficient.
 
 \subsection{Architecture and types}
 
+\begin{comment}
 In this subsection I am going to explain how perceptrons are organized 
 within a neural network. The concept of layer (and hidden layer) will be explained.
 After acknowledging the existence of many types of neural networks
@@ -721,6 +781,40 @@ I am going to focus on the Feedforward model.
 Then I am going to discuss the possibility to improve a 
 feedforward neural network with convolutional layers.
 I will explain how they work, what they are designed for and how they can be exploited.
+\end{comment}
+
+We have thus seen that artificial neurons, the building blocks of neural networks,
+are fundamentally simple.
+Just as biological brains, the complexity and flexibility
+of neural networks is due to the number and nature of neurons connections.
+An enormous number of different architectures were developed since the advent of the field,
+some of them are specifically designed for a certain task while others can be applied
+to a wider set of problems with specific strength and limits.
+
+The simpler and most used are called feedforward neural networks or sequential models.
+Their structure consists in set of neurons, not directly connected, called layers which are
+organized sequentially in a specific order. 
+The first and last layer are called respectively input and output layer because of
+their function in the network, they provide the interface for sending or reading data to and from 
+the model. Other layer, without connections with external resources, are called hidden layers.
+Neural networks with 2 or more hidden layers are called deep neural networks and their
+application constitutes the subject of deep learning.
+Neurons in each layer receive, through their input connections,
+the outputs produced by neurons of the previous layer. The information thus moves in
+only one direction: forward.
+
+Maintaining the formalism previously introduced, this means that in a fully connected 
+(dense) neural network the $n^{\text{th}}$ layer process the vector of input values 
+$a_i^{(n)}$ coming from the $(n-1)^{\text{th}}$ layer producing the output vector $o_j^{(n)}$ through
+\begin{equation}
+    o_j^{(n)} = b_j^{(n)} + \sum_i w^{(n)}_{ji}\cdot a^{(n)}_i
+\end{equation}
+
+where w and...
+\begin{equation}
+    o_s = b_s^{(n)} + w^{(n)}_{sr} \cdot f( ... \cdot f( b_k^{(2)} + w_{ki}^{(2)} \cdot f(b_i^{(1)} + w_{ij}^{(1)}a^j)) ... )
+\end{equation}
+
 
 \subsection{Training}
 

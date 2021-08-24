@@ -19,28 +19,28 @@
 \contentsline {chapter}{\numberline {4}Machine learning and neural networks}{15}{}%
 \contentsline {section}{\numberline {4.1}Neural networks}{15}{}%
 \contentsline {subsection}{\numberline {4.1.1}The perceptron}{15}{}%
-\contentsline {subsection}{\numberline {4.1.2}Architecture and types}{15}{}%
-\contentsline {subsection}{\numberline {4.1.3}Training}{15}{}%
-\contentsline {section}{\numberline {4.2}Strengths and limitations}{15}{}%
-\contentsline {subsection}{\numberline {4.2.1}The universal approximation theorem}{16}{}%
-\contentsline {subsection}{\numberline {4.2.2}Hyperparameters}{16}{}%
-\contentsline {subsection}{\numberline {4.2.3}Training data}{16}{}%
-\contentsline {subsection}{\numberline {4.2.4}Overlearning and underlearning}{16}{}%
-\contentsline {subsection}{\numberline {4.2.5}Computational complexity}{16}{}%
-\contentsline {section}{\numberline {4.3}Machine learning and protoplanetary discs}{16}{}%
-\contentsline {subsection}{\numberline {4.3.1}The proposed approach}{16}{}%
-\contentsline {subsection}{\numberline {4.3.2}Previous attempts in literature}{17}{}%
-\contentsline {chapter}{\numberline {5}Dataset design}{18}{}%
-\contentsline {section}{\numberline {5.1}The data}{18}{}%
-\contentsline {section}{\numberline {5.2}Structure and interface}{18}{}%
-\contentsline {section}{\numberline {5.3}Supporting scripts}{18}{}%
-\contentsline {section}{\numberline {5.4}Expanding the dataset}{18}{}%
-\contentsline {chapter}{\numberline {6}Proof of concept}{19}{}%
-\contentsline {section}{\numberline {6.1}Adopted model}{19}{}%
-\contentsline {section}{\numberline {6.2}Data pre-processing}{19}{}%
-\contentsline {section}{\numberline {6.3}Results}{19}{}%
-\contentsline {chapter}{\numberline {7}Conclusions}{20}{}%
-\contentsline {section}{\numberline {7.1}Conclusion}{20}{}%
-\contentsline {section}{\numberline {7.2}Future perspectives}{20}{}%
-\contentsline {chapter}{Acknowledgements}{21}{}%
-\contentsline {chapter}{Bibliography}{22}{}%
+\contentsline {subsection}{\numberline {4.1.2}Architecture and types}{16}{}%
+\contentsline {subsection}{\numberline {4.1.3}Training}{16}{}%
+\contentsline {section}{\numberline {4.2}Strengths and limitations}{16}{}%
+\contentsline {subsection}{\numberline {4.2.1}The universal approximation theorem}{17}{}%
+\contentsline {subsection}{\numberline {4.2.2}Hyperparameters}{17}{}%
+\contentsline {subsection}{\numberline {4.2.3}Training data}{17}{}%
+\contentsline {subsection}{\numberline {4.2.4}Overlearning and underlearning}{17}{}%
+\contentsline {subsection}{\numberline {4.2.5}Computational complexity}{17}{}%
+\contentsline {section}{\numberline {4.3}Machine learning and protoplanetary discs}{17}{}%
+\contentsline {subsection}{\numberline {4.3.1}The proposed approach}{17}{}%
+\contentsline {subsection}{\numberline {4.3.2}Previous attempts in literature}{18}{}%
+\contentsline {chapter}{\numberline {5}Dataset design}{19}{}%
+\contentsline {section}{\numberline {5.1}The data}{19}{}%
+\contentsline {section}{\numberline {5.2}Structure and interface}{19}{}%
+\contentsline {section}{\numberline {5.3}Supporting scripts}{19}{}%
+\contentsline {section}{\numberline {5.4}Expanding the dataset}{19}{}%
+\contentsline {chapter}{\numberline {6}Proof of concept}{20}{}%
+\contentsline {section}{\numberline {6.1}Adopted model}{20}{}%
+\contentsline {section}{\numberline {6.2}Data pre-processing}{20}{}%
+\contentsline {section}{\numberline {6.3}Results}{20}{}%
+\contentsline {chapter}{\numberline {7}Conclusions}{21}{}%
+\contentsline {section}{\numberline {7.1}Conclusion}{21}{}%
+\contentsline {section}{\numberline {7.2}Future perspectives}{21}{}%
+\contentsline {chapter}{Acknowledgements}{22}{}%
+\contentsline {chapter}{Bibliography}{23}{}%
