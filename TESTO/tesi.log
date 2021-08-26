@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.5)  24 AUG 2021 19:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.5)  26 AUG 2021 21:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -631,7 +631,13 @@ Package pdftex.def Info: images/profile-img1.png  used on input line 579.
 (pdftex.def)             Requested size: 11.74435pt x 233.96404pt.
 ) [4
 
-] [5 </home/alexxruzza/UNI/TESI/TESTO/images/profile-img0.png> </home/alexxruzza/UNI/TESI/TESTO/images/profile-img1.png>] [6] [7] [8] [9]
+] [5 </home/alexxruzza/UNI/TESI/TESTO/images/profile-img0.png> </home/alexxruzza/UNI/TESI/TESTO/images/profile-img1.png>] [6]
+<images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg, id=49, 522.753pt x 163.3302pt>
+File: images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg Graphic file (type jpg)
+<use images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg>
+Package pdftex.def Info: images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg  used on input line 302.
+(pdftex.def)             Requested size: 426.79135pt x 133.34595pt.
+ [7] [8 </home/alexxruzza/UNI/TESI/TESTO/images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg>] [9]
 Chapter 3.
 [10
 
@@ -639,36 +645,36 @@ Chapter 3.
 Chapter 4.
 [15
 
-] [16] [17] [18]
+] [16] [17] [18] [19]
 Chapter 5.
-[19
-
-]
-Chapter 6.
 [20
 
 ]
-Chapter 7.
+Chapter 6.
 [21
 
-] [22
+]
+Chapter 7.
+[22
 
 ] [23
 
+] [24
+
 ] (/home/alexxruzza/UNI/TESI/TESTO/tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 22777 strings out of 478994
- 475423 string characters out of 5864752
+ 22789 strings out of 478994
+ 475772 string characters out of 5864752
  767319 words of memory out of 5000000
- 39867 multiletter control sequences out of 15000+600000
- 416638 words of font info for 78 fonts, out of 8000000 for 9000
+ 39874 multiletter control sequences out of 15000+600000
+ 417257 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,10n,102p,529b,977s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on /home/alexxruzza/UNI/TESI/TESTO/tesi.pdf (25 pages, 297202 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on /home/alexxruzza/UNI/TESI/TESTO/tesi.pdf (26 pages, 841882 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
+ 171 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

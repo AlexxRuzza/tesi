@@ -297,6 +297,14 @@ properties (such as $\lambda \sim s/2\pi$).
 I am also going to explain which is the best image resolution currently achievable.
 \end{comment}
 
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=\textwidth]{images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg}
+    \end{center}
+    \caption{}
+\end{figure}
+
+
 Direct observations of protoplanetary discs are of crucial importance for the detection and study of their morphology.
 Properties of substructures, such as their shape and dimension, had, in fact, 
 been proved to reveal key features of the disc itself and
@@ -722,6 +730,8 @@ They consist in a collection of artificial neurons linked in a specific structur
 Neural networks are an extremely manifold and versatile tool 
 ????
 
+distinguish between classifiers and regressors
+
 \subsection{The perceptron}
 
 \begin{comment}
@@ -796,7 +806,7 @@ Their structure consists in set of neurons, not directly connected, called layer
 organized sequentially in a specific order. 
 The first and last layer are called respectively input and output layer because of
 their function in the network, they provide the interface for sending or reading data to and from 
-the model. Other layer, without connections with external resources, are called hidden layers.
+the model. The other layers, without connections with external resources, are called hidden layers.
 Neural networks with 2 or more hidden layers are called deep neural networks and their
 application constitutes the subject of deep learning.
 Neurons in each layer receive, through their input connections,
@@ -810,50 +820,183 @@ $a_i^{(n)}$ coming from the $(n-1)^{\text{th}}$ layer producing the output vecto
     o_j^{(n)} = b_j^{(n)} + \sum_i w^{(n)}_{ji}\cdot a^{(n)}_i
 \end{equation}
 
-where w and...
+where $w^{(n)}_{ij}$ is the matrix containing the weights of all the connections between the current and previous layer.
+The whole neural network is thus equivalent to a complex parametric function $\mathbb{R}^m \rightarrow \mathbb{R}^h$ where $m$ is 
+the number of input real variables while $h$ is the number of real variables returned:
 \begin{equation}
     o_s = b_s^{(n)} + w^{(n)}_{sr} \cdot f( ... \cdot f( b_k^{(2)} + w_{ki}^{(2)} \cdot f(b_i^{(1)} + w_{ij}^{(1)}a^j)) ... )
 \end{equation}
+The weight matrices and the bias vectors are the parameters that modify the functional form.
 
+For the specific problem addressed in this thesis, a possibly better alternative could be that of convolutional neural networks.
+This type of networks is specifically designed for image analysis.
+Their architecture is similar to feedforward neural networks with the addition
+of specific layers which process the input data in order to achieve 
+space invariance which is a basic feature of natural. With these features, convolutional neural networks can be trained
+to detect patterns independently of their position, size or orientation inside the image
+resulting in more flexible and effective models.
+These layers typically consists in two-dimensional filters which slide along the input image, usually of greater dimensions, 
+producing a response called ``feature map'' that is then sent forward to the next layer.
+In addition to the achievement of translational equivariance, a convolutional neural network
+applied to images, potentially of large dimensions, reduce the number of trainable parameters
+if compared to a regular neural network designed to work with the same images. This simplification improves the
+performance of the model and helps avoid problems, such as overlearning, during the training process.
 
 \subsection{Training}
 
+\begin{comment}
 Here I am going to explain the key steps of the training process.
 I will explain how it works, what algorithm can be used and the concepts
 of loss functions and metrics.
+\end{comment}
 
-\section{Strengths and limitations}
+In the context of machine learning, training algorithms are usually classified in three categories: 
+supervised, semi-supervised and unsupervised.
+As the name suggests, supervised machine learning algorithms use a set of pre-labelled data to 
+train the model applying it, comparing the results with the known correct answers and adjusting the parameters 
+accordingly.
+Instead, unsupervised machine learning models implement algorithms that are able to learn directly from 
+unlabeled data. This is can be achieved, for example, with the introduction of a feedback mechanism that rewards
+the best solutions.
+Methods which fuse parts from each approach are classified as semi-supervised. I am going to focus on the
+former which is the one suggested and used for the machine learning application object of this thesis.
 
-In this section I am going to discuss the strengths and limitations 
-of machine learning techniques, focusing on aspects with direct relevance
-to this thesis.
+In order to train the model it is necessary to give a definition of a ``good'' and a ``bad'' model.
+The function aimed at this evaluation is called ``loss function''. For neural networks built for 
+regressions, the mean squared error (MSE), of the predicted value in respect to the real value,
+is usually used. However, other choices are possible.
 
-hybrid method: image + parameters
+We have already seen that neural networks are essentially complex parametric functions
+which could potentially approximate any functional relation between the input and the
+output space by varying the weights of the connections. The evaluation of this model
+with the loss function can then be abstracted as a function from the space of the 
+weights parameters to $\mathbb{R}$:
+\begin{equation}
+    \mathcal{L}(\va{w}): \mathbb{R}^k \rightarrow \mathbb{R}
+\end{equation}
+where $k$ is the total number of trainable parameters in the model.
+At this point, it is clear that 
+training a neural network is simply an optimization problem.
+The aim is to find the set of parameters which minimizes the loss function evaluated using 
+the training dataset.
 
-\subsection{The universal approximation theorem}
+For this process numerous algorithms, called optimizers, were developed, revolving all around the process of gradient descent
+which is a technique based on the fact that if we compute the gradient of a multidimensional function, such as (4.5)
+at a specific point, it points towards the direction of maximal increase for the function.
+To exploit this property, the first step is starting from a set of initial weights, 
+then the gradient of the function to optimize is computed, and the parameters changed accordingly to reach the minimum.
 
-Here I am going to discuss the flexibility of neural networks and the
-theoretical framework that proves their potential.
+The computation of the gradient is itself a challenging task. The algorithm used for this purpose is called 
+back propagation.
+
+The steps unfolded here are simply the skeleton of every optimizer. They then differ in some modifications
+made to this main algorithm to achieve better performances and increase stability.
+For example momentum.
+
+\subsection{Training data}
+
+\begin{comment}
+Here I am going to discuss the importance of having a large dataset in the implementation
+of a machine learning model. I am going to weight pro and cons of this data driven 
+approach.
+\end{comment}
+
+The training process described requires a large set of data from which 
+the neural network could be trained.
+To implement supervised learning algorithms, this data has to be labeled, which means that
+for each item representing a possible input to the neural network, also the respective 
+expected output must be provided. 
+The dimension and quality of this 
+dataset deeply influence the results obtainable from the training process.
+In order to improve the possibility of training a successful model 
+this dataset should contain numerous items with varying features in order
+to properly represent the entire hypervolume of the values which could be acquired by the variables
+characterizing the input data.
+There is not a proper rule to establish how many items should be contained 
+in the dataset, generally they should be as many as possible.
+The minimum required depends upon the targeted accuracy and the complexity of
+the model which has to be trained.
+
 
 \subsection{Hyperparameters}
 
+\begin{comment}
 Here I am going to write about hyperparameters. I am going to list them
 providing basics explanations about how their value can affect the model.
 They will be presented as both a strength and a limitation.
 
 This subsection should highlight the importance of carefully tuning the hyperparameters.
 
-I am going to cite the existence of algorithm for doing this job automatically and more
+I am going to cite the existence of algorithms for doing this job automatically and more
 efficiently than by simple trial and error.
+\end{comment}
 
-\subsection{Training data}
+The training is an important step in the process of acquiring a successful model but, even
+having access to a large and exhaustive dataset, previous choices regarding the 
+building structure of the neural network might undermine the possibility to reach
+satisfying results.
 
-Here I am going to discuss the importance of having a large dataset in the implementation
-of a machine learning model. I am going to weight pro and cons of this data driven 
-approach.
+The parameters whose value is set during the definition of the model are called hyperparameters.
+They include the type and number of layers, the number of artificial neurons for each layer, 
+the choice of the activation function with its possible parameters and the choice of the optimizer with
+its parameters such as the learning rate.
+All these variables must be accurately tuned to build a model with the potentiality 
+to address the target problem. Understanding how varying specific features alters the behaviour of the neural 
+network might help in this tuning process pointing towards the right direction.
+However, most of the time there are not precise prescriptions regarding the choice of these parameters
+in relation to the addressed problem, and they are often set by trial and error.
+
+More sophisticated techniques had been developed to automate this process and 
+assure a better coverage of the hyperparameters space.
+
+\section{Strengths and limitations}
+
+\begin{comment}
+In this section I am going to discuss the strengths and limitations 
+of machine learning techniques, focusing on aspects with direct relevance
+to this thesis.
+
+
++ tasks in which they permorm better
++ large field of application, flexibility -> I am going to cite the approximation theorem and hyperparameters
++ data-driven: pro e cons is that no underlying relation needed just the data
+- error tolerant
+- unexplained behaviour
+- the problem must be modelled
+- generalize
+- no requirements on the input data
+\end{comment}
+
+Neural networks have been applied to a huge variety of problems spanning completely different fields.
+This flexibility is one of the main strength of this class of machine learning techniques.
+The universal approximation theorem has shown that 
+a finite number of hidden units can approximate any continuous function to any desired degree of accuracy.
+In addition, this tool has great tolerance to errors and noise in the data and generalize easily to
+new inputs.
+
+In order to address a specific question with a neural network two elements are necessary:
+a large set of data for the training process and a modellization of the problem that allows
+encoding the input data in numeric values sent to the neural network and interpret the results obtained.
+
+At one end, these features constitutes the strengths of neural networks.
+As a consequence of the data-driven approach, no prior knowledge of
+the studied processes is needed and any existing relation can be unraveled through
+an enough complex model.
+On the other end, the need for a large enough database is usually the main
+downside which complicates the application of machine learning techniques in some areas where
+collecting data or labelling them with other methods might result difficult.
+Furthermore, the behaviour of the model obtained with the training is unexplainable and 
+possible simple relationships between the involved variables remain hidden. 
+Hence, the use of this tool does not provide new knowledge on the studied phenomenons.
+In a minor set of cases encoding the problem in a model suitable for a neural network might also
+result challenging.
+
+In the next paragraphs, I am going to mention two problems that can occur during the training process 
+and discuss the computational complexity of artificial neural networks.
 
 \subsection{Overlearning and underlearning}
 
+\begin{comment}
 Here I am going to discuss overlearning and underlearning. 
 I am going to:
 
@@ -864,6 +1007,37 @@ I am going to:
     — provide a method for their  detection 
 
     — discuss the solutions (early stopping, vary the number of trainable parameters, ...)
+\end{comment}
+
+The training process of a neural network could end in three different ways.
+The figure () shows an example of application to the same data of three different models.
+The panel in the middle shows the desired result: the neural network has been able to predict the 
+functional form that originated the data without learning its statistical noise.
+The panels on the sides represents instead the two issues which might occur in place of 
+the expected behaviour.
+
+The situation depicted in the left panel is called underlearning. In this case the 
+function inferred with the model oversimplifies the correct underlying relation failing 
+to predict some of its characterizing features. The loss function and other metrics
+should return values indicative of the neural network bad performance, providing
+a way to detect this situation.
+To solve this problem, as the first attempt the number of epochs in the training process is
+usually increased. If a longer training does not improve the performances, the reason behind
+underlearning could be the inadequacy of the chosen neural network architecture. 
+Improvements can hence be obtained adding more layers or neurons, and thus raising the complexity of the model.
+
+The situation depicted in right panel is instead called overlearning.
+In this case the problem is essentially the opposite: the model learned the training data
+with their noise inferring a complicated functional form between the input values that performs
+well on the training set but fails when tested with new data. In order to detect this problem,
+the dataset built to train the model is divided in two subsets. The first one, the training set, is used to
+train the neural network while the second one, called test set, is used in a second phase to
+test the obtained model.
+Comparing the loss function values obtained on the train and test datasets we can
+detect the overlearning. 
+The possible solutions applied in this case are the exact opposite of that in the previous situation.
+We can reduce the number of epochs ``early stopping'' the training process or decrease the complexity of
+the model.
 
 \subsection{Computational complexity}
 Here I am going to discuss the computational complexity of machine learning
@@ -872,6 +1046,8 @@ Here I am going to discuss the computational complexity of machine learning
 I have to highlight that the most resource requiring part is the training process.
 The aim is thus to obtain a trained neural network that can be deployed and used for the study of
 a wide range of different disc images without the need to re-train it.
+
+pro: parallel processing capacity
 
 \section{Machine learning and protoplanetary discs}
 
