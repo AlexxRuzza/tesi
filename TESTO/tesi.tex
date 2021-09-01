@@ -151,7 +151,7 @@ gross estimates of their typical values. I am going to discuss:
 
 Most of protoplanetary discs are observed at distances of about 100-200 pc in the star-forming regions. 
 They exhibit typically a diameter of about 100 a.u. meaning that they span approximately
-1 arcsec of the sky as seen from earth.
+1 arcsec of the sky as seen from Earth.
 In the following sections I will use cylindrical coordinates 
 defining the frame of reference in figure 2.1a to discuss disc properties. Only axisymmetric discs will be considered.
 
@@ -191,8 +191,13 @@ Finally, I am going to cite other forces and effects which play a role in disc d
 such as magnetorotational instability, turbulence, winds, photoevaporation, ...
 \end{comment}
 
+\begin{comment}
 Now that the discs composition and some of their properties have been established, I am going 
 to investigate the physics governing each component and explain how they are shaped by it.
+\end{comment}
+
+The gas and dust components just discussed, 
+evolve and settle in characteristic structures, which I am now going to discuss.
 
 The disc evolution can be properly described by the laws of fluidodynamics in the gravitational potential of the central star.
 %add NS equations (?)
@@ -201,7 +206,7 @@ The first one is called ``thin-disc approximation'' which consists in assuming t
 the vertical typical length scale $H$, thus requiring $H/R \ll 1$. This quantity, called aspect-ratio, has been measured, 
 showing values in the range $10^{-3}-10^{-1}$ which justify the assumption. The thin disk approximation allows the study of disc properties integrating
 the equations along the vertical direction.
-The second simplification that is usually made consists in neglecting self-gravitation.
+The second simplification that is usually made consists in neglecting self-gravity.
 The stability condition of the disc against self-gravity can be written in the form
 \begin{equation}
     \frac{M_{disk}}{M_{star}} \lesssim  \frac{H}{R}
@@ -209,7 +214,7 @@ The stability condition of the disc against self-gravity can be written in the f
 which is well satisfied in the late epochs when protoplanetary discs are studied.
 
 Keeping in mind these assumptions, I am going to further explore how fluid dynamics can be applied to model the disc 
-structure and its internal motions. First, I am going to focus on the gas component which is modelled as an ideal fluid characterized
+structure and its internal motions. First, we have to focus on the gas component which is modelled as an ideal fluid characterized
 by the equation of state
 \begin{equation}
     P = \frac{k_BT}{m_p\mu}\cdot \rho \equiv c_s^2 \cdot \rho
@@ -220,7 +225,7 @@ Investigating the gas component is sufficient to predict most of the macroscopic
 predominance over the solid elements. 
 
 The vertical structure of the gas is determined by a steady-state solution of the hydrodynamical laws of motion together with the Poisson equation that
-accounts for the gravitational potential. The thin-disk approximation allows a great simplification
+accounts for the gravitational potential. The thin-disk assumption allows a great simplification
  of this problem leading to the vertical density profile
 \begin{equation}
     \rho(z, r) = \rho_0(r)\exp(-\frac{\Omega_K^2z^2}{2c_s^2}) \equiv \rho_0(r)\exp(-\frac{z^2}{2H^2})
@@ -251,7 +256,7 @@ and equation 2.3.
 
 The overall dynamics of the gas is driven by the star accretion process. In order to explain this motion, some mechanisms of energy dissipation and angular momentum transport
 are needed. Viscosity plays a central role in this context. Detailed calculations show that shear viscosity, 
-as modelled in an ideal gas, caused by molecular collisions is too weak to account for these processes. 
+as modelled in an ideal gas and caused by molecular collisions is too weak to account for these processes. 
 A proper model can be achieved assuming a highly turbulent regime that can produce a ``turbulent viscosity'' through the mixing of fluid elements
 at neighboring radii. The new parameter $\alpha$
 called ``Shakura-Seneyev viscosity'' which gathers all the ignorance on this process is introduced through the following reasoning:
@@ -278,7 +283,7 @@ must take values less than 1.
 The dust component is modelled as a pressureless fluid with grains of different dimensions coupled with the gas medium. 
 The strength of the coupling is expressed by the Stokes number $St$.
 Two drag forces come into play depending on the grain size $s$. 
-If $s \lesssim \lambda$, with $\lambda$ indicating the mean free path of molecules within the disc, 
+If $s \lesssim \lambda$, with $\lambda$ indicating the mean free path of gas molecules, 
 the drag force is called Epstein drag. 
 In this regime, which is usually the most relevant for most particle sizes, 
 the drag is caused by gas molecules which collide against the front and back sides of the grain with different 
@@ -307,7 +312,8 @@ I am also going to explain which is the best image resolution currently achievab
     \begin{center}
         \includegraphics[width=\textwidth]{images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg}
     \end{center}
-    \caption{TODO: immagini 3 tracers}
+    \caption{Comparison between observations of the RU Lup disc through the three main tracers.
+    Image taken from ()}
 \end{figure}
 
 
@@ -350,7 +356,9 @@ of small-scale substructures and inquire how they relate to the planet formation
     \begin{center}
         \includegraphics[width=\textwidth]{images/alma_pictures.jpg}
     \end{center}
-    \caption{TODO: immagini gaps dsharp}
+    \caption{Examples of gaps and double gaps. 
+    Observations of the dust continuum emission of some discs obtained from DSHARP.
+    Image adapted from ()}
 \end{figure}
 
 \begin{comment}
@@ -423,7 +431,7 @@ including magnetorotational instability turbulence, gravitational instabilities,
 large-scale vortices and self-induced dust pileups. The effective presence of a planet must hence be cautiously investigated and confirmed 
 before inferring its features from the gaps properties. 
 
-The figure 2.2 presents the radial profile of the gas and dust densities at a gap. Taking into exam 
+The figure 2.4 presents the radial profile of the gas and dust densities at a gap. Taking into exam 
 the graph relative to the dust density, I am going to highlight some recurrent features:
 at the core of the depletion zone, we can observe two minimums separated by a local maximum which usually coincides with the planet orbit.
 Sometimes this maximum reaches values comparable with the density of the unperturbed disc, a substructure that can be identified as a double gap. 
@@ -434,7 +442,9 @@ fail to form.
     \begin{center}
         \input{images/rad_profiles.pgf}
     \end{center}
-    \caption{TODO: profili radiali}
+    \caption{Azimuthally averaged radial profiles of the surface density of the gas component (left panel)
+    and of the dust (right panel). The graphs were computed from a snapshot of a hydrodynamical
+    simulation of a disc with an embedded planet.}
 \end{figure}
 
 Width and depths are the crucial properties of gaps used to investigate planet properties. Despite their importance there are not agreed on definitions.
