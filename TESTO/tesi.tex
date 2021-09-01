@@ -35,6 +35,12 @@
 %code listing
 \usepackage{listings}
 
+%linked toc
+\usepackage[bookmarks]{hyperref}
+
+%tables
+\usepackage{booktabs}
+
 %opening
 \title{Design of a machine learning model for the detection of young planets}
 \author{Alessandro Ruzza}
@@ -80,7 +86,7 @@ heavier elements, called interstellar medium. The gravitational collapse of a de
 accrete its mass drawing, from its surroundings, gas and dust that organizes in an accretion disc whose shape is a consequence of angular momentum conservation.
 At some point, after $\sim 10^5$ yr, most of the matter has accreted into the star,
 the disc temperature and thermal emission are maintained by the star irradiation while gravitational collapse becomes negligible as a source of energy (passive disc). 
-It is at this stage that the accretion disc get identified
+It is at this stage that the accretion disc gets identified
 as a protoplanetary disc due to its role as a planet formation cradle.
 Their study allows the development and test of theoretical models regarding planets and their genesis.
 
@@ -208,7 +214,7 @@ by the equation of state
 \begin{equation}
     P = \frac{k_BT}{m_p\mu}\cdot \rho \equiv c_s^2 \cdot \rho
 \end{equation}
-where $\mu$ represent the mass of a single gas molecule expressed in masses of the proton ($m_p$).
+where $\mu$ represents the mass of a single gas molecule expressed in masses of the proton ($m_p$).
 
 Investigating the gas component is sufficient to predict most of the macroscopical features of the discs structure due to its
 predominance over the solid elements. 
@@ -301,7 +307,7 @@ I am also going to explain which is the best image resolution currently achievab
     \begin{center}
         \includegraphics[width=\textwidth]{images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg}
     \end{center}
-    \caption{}
+    \caption{TODO: immagini 3 tracers}
 \end{figure}
 
 
@@ -339,6 +345,13 @@ The images with the best resolution currently obtained are those of the DSHARP (
 of small-scale substructures and inquire how they relate to the planet formation process. 
 
 \section{Planet formation}
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=\textwidth]{images/alma_pictures.jpg}
+    \end{center}
+    \caption{TODO: immagini gaps dsharp}
+\end{figure}
 
 \begin{comment}
 Here I am going to discuss how planets are formed within these discs. 
@@ -398,6 +411,8 @@ Here I am going to:
 — explain how depth and width are defined
 \end{comment}
 
+
+
 Gaps are going to be the object of application for the investigative approach proposed in this thesis due
 to their role in the detection of young planets.
 For this reason I am going to throw some light on their properties.
@@ -412,8 +427,15 @@ The figure 2.2 presents the radial profile of the gas and dust densities at a ga
 the graph relative to the dust density, I am going to highlight some recurrent features:
 at the core of the depletion zone, we can observe two minimums separated by a local maximum which usually coincides with the planet orbit.
 Sometimes this maximum reaches values comparable with the density of the unperturbed disc, a substructure that can be identified as a double gap. 
-The border also presents usually a local maximum. Gaps are usually wider and deeper in the dust rather than in the gas component where they could even
+The borders also presents local maximums. Gaps are usually wider and deeper in the dust rather than in the gas component where they could even
 fail to form.
+
+\begin{figure}
+    \begin{center}
+        \input{images/rad_profiles.pgf}
+    \end{center}
+    \caption{TODO: profili radiali}
+\end{figure}
 
 Width and depths are the crucial properties of gaps used to investigate planet properties. Despite their importance there are not agreed on definitions.
 For the work done in this thesis they are not needed as the neural network model we aim to build would work directly with disc images.
@@ -711,12 +733,16 @@ The term machine learning was introduced by Arthur Lee Samuel in 1959
 with his research on the subject applied to the game of checkers.
 In 1998, Tom Michael Mitchell defined machine learning as the study of
 computer algorithms that can improve automatically through experience and by the use of data.
-The past decades have shown an incredible development in this field supported by parallel 
-technological improvements. 
+This collection of tools and methods is usually considered a branch of artificial intelligence and 
+finds its natural application in pattern recognition and data analysis tasks for which is arduous or
+unfeasible the development of conventional algorithms.
+The past decades have shown an incredible development in this field,
+with applications in a wide variety of subjects.
 
 In this chapter I am going to introduce a specific machine learning tool, neural networks, explaining
-the key properties and pondering their application to the problems, in the study of planet formation,
-discussed in the previous chapter. I am also going to review previous attempts to the use of this approach.
+their key properties and pondering their application to the open issues, in the study of planet formation,
+discussed in the previous chapter. I am also going to review a previous attempt at the use of this approach in the 
+analysis of protoplanetary discs.
 
 \section{Neural networks}
 
@@ -724,15 +750,25 @@ discussed in the previous chapter. I am also going to review previous attempts t
 Basic idea behind neural networks.
 \end{comment}
 
-Artificial Neural networks are a group of machine learning algorithms inspired by the structure and functioning 
-of the biological neural networks which constitute natural brains.
-They consist in a collection of artificial neurons linked in a specific structure. 
-Neural networks are an extremely manifold and versatile tool 
-????
+Artificial Neural Networks (ANN) are a group of machine learning algorithms inspired by the structure and functioning 
+of biological brains.
+They consist in networks of artificial neurons,
+which are the elementary units capable of receiving input signals, processing
+them and activating their output accordingly. The connections between the neurons account for 
+the complexity of neural networks making them an extremely manifold and versatile tool:
+the overall architecture and additional parameters can be tuned to design 
+models specifically suited for the problems addressed.
+All these elements will be explained in the upcoming sections.
 
-distinguish between classifiers and regressors
+Across their different applications, the two main categories of problems they are commonly used for, are 
+classification and regression. In the first case, the neural network labels
+each input assigning it to one of a previously defined set of categories.
+A neural network that detects which animal is depicted in a given image is an example of a classifier.
+In the second category of problems, the neural network is instead used to infer, from the given data, a relation
+between some variables.
+The models presented in the next sections are all examples of regressors.
 
-\subsection{The perceptron}
+\subsection{The artificial neuron}
 
 \begin{comment}
 Here I am going to present the perceptron model explaining:
@@ -744,41 +780,54 @@ Here I am going to present the perceptron model explaining:
 — what is the activation function
 \end{comment}
 
-Artificial neurons are the elementary units of neural networks.
-They are essentially parametric functions which take some input values 
-and return an output. To explore the arguments behind their design and unfold the
-comparison with the biological unit, the resulting functional form can be decomposed
-in two steps.
-We are going to consider the $i^{th}$ neuron.
-First, the $Sigma$ block does a weighted sum of the input values $a_{ij}$ and a bias $b_i$
+The elementary units of neural networks, artificial neurons, are mathematical objects
+which model the structure in figure 3.1: they receive a set of input values
+and process them returning a single output signal.
+Essentially they are parametric functions $\nu(\va a): \mathbb R ^k \rightarrow \mathbb R$ 
+where $k$ indicates the dimension of the vector $\va a$, equal to the number of input connections.
+To explore the arguments behind their design and unfold the
+comparison with the biological unit, this relation can be rewritten 
+as the composition of two functions corresponding to the two blocks in figure:
+\begin{align}
+    \nu (\va a) = g \circ \Sigma = g(\Sigma (\va a)), \hspace{10pt}
+    \Sigma &: \mathbb R^k \rightarrow \mathbb R \\
+    g &: \mathbb R \rightarrow \mathbb R \nonumber
+\end{align}
+
+The first block, $\Sigma$, performs a weighted sum of the input values $a_{j}$ introducing also a bias $b$
 \begin{equation}
-   c_i = b_i + \Sigma_j w_{ij} \cdot a_{ij} 
+   c = b + \sum_j w_{j} \cdot a_{j} 
 \end{equation}
-where the $j$ index identifies the input connections of the $i^{th}$ artificial neuron.
-The weights $w_{ij}$ and the bias of each neuron constitutes the set of parameters in which
-lies the plasticity of neural networks.
-This first block mimics the biological neuron ability of tuning the intensity of its connections
+where the $j$ index identifies the input connections of the artificial neuron considered.
+The weights $w_{j}$ and the bias constitutes the set of parameters in which
+lies the potential of neural networks.
+This first process mimics the ability of biological neurons to adjust the intensity of the signals in its connections
 modifying the ratio of neurotransmitters and inhibitors.
-Still in the biological counterpart, the signal obtained from the weighted sum is transmitted to the 
+Still in the biological counterpart, the total potential obtained integrating the input signals is then transmitted to the 
 connected neurons if it reaches a certain threshold.
 The same behaviour is modelled in artificial neurons in the second block, 
-with a function $f(\cdot)$, called activation function. It takes the $c_i$ value obtained in the
-previous step and returns the output $o_i = f(c_i)$ which is then transmitted to the connected neurons 
+with a function $g(c)$, called activation function. It takes the $c$ value obtained in the
+previous step and returns the output $o = g(c)$ which is then transmitted to the connected neurons 
 becoming one of their input values.
 
-In the choice of the function $f$, its role as an activation threshold should be kept in mind.
-The simplest activation function is the Heaviside step function which
+In the choice of the function $g$, its role as an activation threshold should be kept in mind.
+The bottom panel of figure 3.1 shows three examples of functions that could be chosen for this purpose.
+The first and simpler is the Heaviside step function which
 returns 1 if the input value is positive and 0 otherwise, simulating the discrete behaviour of 
 biological neurons.
-An improvement to this choice can be achieved using the sigmoid
+An improvement to this choice, showed at its right, can be achieved using the sigmoid
 \begin{equation}
-    o_i = f(c_i) = \frac{1}{1+e^{-k\cdot c_i}}
+    o = f(c) = \frac{1}{1+e^{-k\cdot c}}
 \end{equation}
 which unlike the step function is continuous and infinitely differentiable in 0.
-Another example of a widely used activation function is the ReLU (Rectified Linear Unit) which returns the input value if 
-is positive and 0 otherwise. This is the most popular among the whole set of activation functions available
-both for its simplicity, requiring very little computation, and for making the training process using gradient
+
+Last, the third panel depict the ReLU (Rectified Linear Unit) activation function which returns the input value if 
+positive and 0 otherwise. This is the most popular among the whole set of activation functions available, due to its simplicity, requiring very little computation, and some mathematical properties that make the training process using gradient
 descent methods particularly efficient.
+Moreover, this function is non-linear, not limited and can return any real positive values.
+The replacement of discreet outputs with a value varying continuously is still supported by the biological comparison.
+In fact, even if real neurons can only send discreet signals deciding whether or not to activate their output, 
+the frequency of transmission might vary. The continuous output thus model this possible behaviour.
 
 \subsection{Architecture and types}
 
@@ -794,45 +843,47 @@ I will explain how they work, what they are designed for and how they can be exp
 \end{comment}
 
 We have thus seen that artificial neurons, the building blocks of neural networks,
-are fundamentally simple.
-Just as biological brains, the complexity and flexibility
+are fundamentally simple parametric functions.
+Just as in biological brains, the complexity and flexibility
 of neural networks is due to the number and nature of neurons connections.
-An enormous number of different architectures were developed since the advent of the field,
+An enormous collection of different architectures was developed since the advent of the field,
 some of them are specifically designed for a certain task while others can be applied
-to a wider set of problems with specific strength and limits.
+to a wider set of problems with specific strengths and limits.
 
-The simpler and most used are called feedforward neural networks or sequential models.
-Their structure consists in set of neurons, not directly connected, called layers which are
-organized sequentially in a specific order. 
-The first and last layer are called respectively input and output layer because of
-their function in the network, they provide the interface for sending or reading data to and from 
-the model. The other layers, without connections with external resources, are called hidden layers.
-Neural networks with 2 or more hidden layers are called deep neural networks and their
+The simplest and most used are called feedforward neural networks.
+Their structure can be decomposed in set of neurons, without any connection between them, called layers which are
+organized sequentially in a specific order.
+The first and last layers are called respectively input and output layer because of
+their function in the network, they provide the interface for sending and reading data to and from 
+the model. The other internal layers, without connections with external resources, are called hidden layers.
+Neural networks with 2 or more hidden layers are referred to as deep neural networks and their
 application constitutes the subject of deep learning.
-Neurons in each layer receive, through their input connections,
-the outputs produced by neurons of the previous layer. The information thus moves in
-only one direction: forward.
+The neurons in each layer receive, through their input connections,
+the outputs produced by the neurons of the previous layer.  The information thus moves in
+only one direction: forward. In a ``dense'' network all the neurons of two consecutive layers
+are connected.
 
-Maintaining the formalism previously introduced, this means that in a fully connected 
-(dense) neural network the $n^{\text{th}}$ layer process the vector of input values 
+Maintaining the formalism previously introduced, this means that in a dense 
+neural network the $n^{\text{th}}$ layer process the vector of input values 
 $a_i^{(n)}$ coming from the $(n-1)^{\text{th}}$ layer producing the output vector $o_j^{(n)}$ through
 \begin{equation}
     o_j^{(n)} = b_j^{(n)} + \sum_i w^{(n)}_{ji}\cdot a^{(n)}_i
 \end{equation}
-
 where $w^{(n)}_{ij}$ is the matrix containing the weights of all the connections between the current and previous layer.
-The whole neural network is thus equivalent to a complex parametric function $\mathbb{R}^m \rightarrow \mathbb{R}^h$ where $m$ is 
-the number of input real variables while $h$ is the number of real variables returned:
+The whole neural network is thus equivalent to a complex parametric function $N (\va a): \mathbb{R}^m \rightarrow \mathbb{R}^h$ where $m$ is 
+the number of input variables while $h$ is the number of values returned:
 \begin{equation}
-    o_s = b_s^{(n)} + w^{(n)}_{sr} \cdot f( ... \cdot f( b_k^{(2)} + w_{ki}^{(2)} \cdot f(b_i^{(1)} + w_{ij}^{(1)}a^j)) ... )
+    N(\va a) = o_s = b_s^{(n)} + w^{(n)}_{sr} 
+    \cdot f( ... \cdot f( b_k^{(2)} + w_{ki}^{(2)} \cdot f(b_i^{(1)} + w_{ij}^{(1)}a^j)) ... )
 \end{equation}
-The weight matrices and the bias vectors are the parameters that modify the functional form.
+The weight matrices and the bias vectors are the parameters that can modify the functional form.
 
-For the specific problem addressed in this thesis, a possibly better alternative could be that of convolutional neural networks.
-This type of networks is specifically designed for image analysis.
-Their architecture is similar to feedforward neural networks with the addition
-of specific layers which process the input data in order to achieve 
-space invariance which is a basic feature of natural. With these features, convolutional neural networks can be trained
+For the specific problem addressed in this thesis, convolutional neural networks could be a better alternative 
+to the feedforward architecture.
+This type of networks is specifically designed for image analysis, 
+it is similar to feedforward neural networks with the addition
+of specific layers that process the input data in order to achieve 
+space invariance. With this addition, convolutional neural networks can be trained
 to detect patterns independently of their position, size or orientation inside the image
 resulting in more flexible and effective models.
 These layers typically consists in two-dimensional filters which slide along the input image, usually of greater dimensions, 
@@ -853,24 +904,24 @@ of loss functions and metrics.
 In the context of machine learning, training algorithms are usually classified in three categories: 
 supervised, semi-supervised and unsupervised.
 As the name suggests, supervised machine learning algorithms use a set of pre-labelled data to 
-train the model applying it, comparing the results with the known correct answers and adjusting the parameters 
+train the model, comparing the results with the known correct answers and adjusting the parameters 
 accordingly.
 Instead, unsupervised machine learning models implement algorithms that are able to learn directly from 
-unlabeled data. This is can be achieved, for example, with the introduction of a feedback mechanism that rewards
+unlabeled data. This can be achieved, for example, with the introduction of a feedback mechanism that rewards
 the best solutions.
 Methods which fuse parts from each approach are classified as semi-supervised. I am going to focus on the
-former which is the one suggested and used for the machine learning application object of this thesis.
+former which is the one suggested and used in this thesis.
 
-In order to train the model it is necessary to give a definition of a ``good'' and a ``bad'' model.
-The function aimed at this evaluation is called ``loss function''. For neural networks built for 
-regressions, the mean squared error (MSE), of the predicted value in respect to the real value,
+In order to train the model, a tool to evaluate its performance is necessary.
+The ``loss function'' is introduced for this purpose. In the case of neural networks built for 
+regressions, the mean squared error (MSE) of the predicted value
 is usually used. However, other choices are possible.
 
 We have already seen that neural networks are essentially complex parametric functions
 which could potentially approximate any functional relation between the input and the
 output space by varying the weights of the connections. The evaluation of this model
-with the loss function can then be abstracted as a function from the space of the 
-weights parameters to $\mathbb{R}$:
+with the loss function can hence be abstracted as a function from the space of the 
+network's weights to $\mathbb{R}$:
 \begin{equation}
     \mathcal{L}(\va{w}): \mathbb{R}^k \rightarrow \mathbb{R}
 \end{equation}
@@ -880,18 +931,29 @@ training a neural network is simply an optimization problem.
 The aim is to find the set of parameters which minimizes the loss function evaluated using 
 the training dataset.
 
-For this process numerous algorithms, called optimizers, were developed, revolving all around the process of gradient descent
-which is a technique based on the fact that if we compute the gradient of a multidimensional function, such as (4.5)
-at a specific point, it points towards the direction of maximal increase for the function.
-To exploit this property, the first step is starting from a set of initial weights, 
+For this process numerous algorithms, called optimizers, were developed, 
+revolving all around the method of gradient descent
+which is a technique based on the fact that the gradient of a multidimensional function, such as (4.6), computed
+at a specific point, indicates the direction of steepest ascent.
+To exploit this property, the process starts from a set of initial weights which is a point in the parameters space, 
 then the gradient of the function to optimize is computed, and the parameters changed accordingly to reach the minimum.
+After each step $t$, the weights of the neural network are thus updated through
+\begin{equation}
+    \va w_t = \va w_{t-1} - \eta \va \nabla \cdot \mathcal{L}(\va w_{t-1})
+\end{equation}
+where the hyperparameter $\eta$ called learning rate was introduced. As the name suggests, it determines 
+the length of each step of the walk in the parameters space towards the minimum, varying, as a consequence,
+the speed of the process. The entire algorithm is divided in epochs, each of them consists in an update of $\va w_t$
+using all the data in the training set.
+Finally, the computation of the gradient is itself a challenging task. The algorithm used for this purpose in the context 
+of neural networks is called back propagation.
 
-The computation of the gradient is itself a challenging task. The algorithm used for this purpose is called 
-back propagation.
-
-The steps unfolded here are simply the skeleton of every optimizer. They then differ in some modifications
+The steps unfolded here are the skeleton of almost every optimizer developed for the training of artificial neural 
+networks. They then differ in some additions
 made to this main algorithm to achieve better performances and increase stability.
-For example momentum.
+For example, in some optimizers, the equation 4.7 is modified adding a term called momentum which is computed 
+considering the previous steps and thus adding history to the algorithm. The name derives from the analogy with physical momentum.
+This addition is designed to accelerate the optimization process and improve its capability.
 
 \subsection{Training data}
 
@@ -904,18 +966,20 @@ approach.
 The training process described requires a large set of data from which 
 the neural network could be trained.
 To implement supervised learning algorithms, this data has to be labeled, which means that
-for each item representing a possible input to the neural network, also the respective 
-expected output must be provided. 
+for each item representing a possible input, also the respective 
+expected output has to be provided.
+
+
 The dimension and quality of this 
 dataset deeply influence the results obtainable from the training process.
-In order to improve the possibility of training a successful model 
-this dataset should contain numerous items with varying features in order
-to properly represent the entire hypervolume of the values which could be acquired by the variables
+In order to improve the results and achieve a successful model 
+this dataset should contain numerous items with varying features
+representing the entire hypervolume of allowed values for the variables
 characterizing the input data.
 There is not a proper rule to establish how many items should be contained 
-in the dataset, generally they should be as many as possible.
-The minimum required depends upon the targeted accuracy and the complexity of
-the model which has to be trained.
+in this dataset, generally they should be as many as possible, while 
+the minimum required depends upon the targeted accuracy and the complexity of
+the chosen model to train.
 
 
 \subsection{Hyperparameters}
@@ -937,17 +1001,64 @@ building structure of the neural network might undermine the possibility to reac
 satisfying results.
 
 The parameters whose value is set during the definition of the model are called hyperparameters.
-They include the type and number of layers, the number of artificial neurons for each layer, 
-the choice of the activation function with its possible parameters and the choice of the optimizer with
-its parameters such as the learning rate.
-All these variables must be accurately tuned to build a model with the potentiality 
-to address the target problem. Understanding how varying specific features alters the behaviour of the neural 
+They include the type and number of layers, the number of artificial neurons for each layer and
+the choice of the activation function and of the optimizer, with
+its parameters such as the learning rate. In these variables lies the plasticity of neural networks as
+they can be accurately tuned to build a model with the potentiality 
+to address the targeted problem.
+
+Understanding how modifying specific features alters the behaviour of the neural 
 network might help in this tuning process pointing towards the right direction.
 However, most of the time there are not precise prescriptions regarding the choice of these parameters
-in relation to the addressed problem, and they are often set by trial and error.
+in relation to the addressed problem and they are often set by trial and error.
 
-More sophisticated techniques had been developed to automate this process and 
+More sophisticated techniques and algorithms had also been developed to automate this process and 
 assure a better coverage of the hyperparameters space.
+
+\subsection{Overlearning and underlearning}
+
+\begin{comment}
+Here I am going to discuss overlearning and underlearning. 
+I am going to:
+
+    — define them
+
+    — explain their causes
+
+    — provide a method for their  detection 
+
+    — discuss the solutions (early stopping, vary the number of trainable parameters, ...)
+\end{comment}
+
+The training process of a neural network could end in three different ways.
+The figure () shows an example of application to the same data of three different models.
+The panel in the middle represents the desired result: the neural network has been able to predict the 
+functional form which originated the data without learning its statistical noise.
+The panels on the sides depict instead the two issues that might occur.
+
+The situation in the left panel is called underlearning. In this case the 
+function inferred with the model oversimplifies the correct underlying relation failing 
+to predict some of its characterizing features. The loss function and other metrics
+should return values indicative of the neural network bad performance, providing
+a way to detect this situation.
+To solve this problem, as a first attempt the number of epochs in the training process is
+usually increased. If a longer training does not improve the performances, the reason behind
+underlearning could be the inadequacy of the chosen neural network architecture. 
+Improvements can hence be obtained adding more layers or neurons, and thus raising the complexity of the model.
+
+The situation depicted in the right panel is instead called overlearning.
+In this case the problem is essentially the opposite: the model learned the training data
+with its noise inferring a complicated functional form that performs
+well on the training set but fails when tested with new data. In order to detect this problem,
+the dataset built to train the model is divided in two subsets. The first one, the training set, is used to
+train the neural network while the second, smaller, one, called test set, is used in a second phase to
+test the obtained model. The training set is usually provided with about the 80\% of the items in the dataset
+available.
+Comparing the loss function values obtained on the train and test datasets we can
+detect the overlearning. 
+The possible solutions applied in this case are the exact opposite of that in the previous situation:
+we can reduce the number of epochs ``early stopping'' the training process or decrease the complexity of
+the model.
 
 \section{Strengths and limitations}
 
@@ -968,78 +1079,30 @@ to this thesis.
 \end{comment}
 
 Neural networks have been applied to a huge variety of problems spanning completely different fields.
-This flexibility is one of the main strength of this class of machine learning techniques.
+This flexibility is one of the main strengths of this class of machine learning techniques.
 The universal approximation theorem has shown that 
 a finite number of hidden units can approximate any continuous function to any desired degree of accuracy.
-In addition, this tool has great tolerance to errors and noise in the data and generalize easily to
+In addition, this tool has great tolerance to errors and noise in the data, and generalize easily to
 new inputs.
 
 In order to address a specific question with a neural network two elements are necessary:
-a large set of data for the training process and a modellization of the problem that allows
-encoding the input data in numeric values sent to the neural network and interpret the results obtained.
+a large set of data for the training process and a model for the problem that allows
+the encoding of the input and output data in numeric values read and produced by the neural network.
 
-At one end, these features constitutes the strengths of neural networks.
-As a consequence of the data-driven approach, no prior knowledge of
+At one end, these features constitutes the strengths of this tool:
+as a consequence of the data-driven approach, no prior knowledge of
 the studied processes is needed and any existing relation can be unraveled through
 an enough complex model.
 On the other end, the need for a large enough database is usually the main
-downside which complicates the application of machine learning techniques in some areas where
-collecting data or labelling them with other methods might result difficult.
-Furthermore, the behaviour of the model obtained with the training is unexplainable and 
-possible simple relationships between the involved variables remain hidden. 
+downside, which complicates the application of machine learning techniques in some areas where
+collecting data, or labelling them with other methods, might result difficult.
+Furthermore, the behaviour of the trained model is unexplainable and 
+possible simple analytical relationships between the involved variables remain hidden. 
 Hence, the use of this tool does not provide new knowledge on the studied phenomenons.
 In a minor set of cases encoding the problem in a model suitable for a neural network might also
 result challenging.
 
-In the next paragraphs, I am going to mention two problems that can occur during the training process 
-and discuss the computational complexity of artificial neural networks.
-
-\subsection{Overlearning and underlearning}
-
 \begin{comment}
-Here I am going to discuss overlearning and underlearning. 
-I am going to:
-
-    — define them
-
-    — explain their causes
-
-    — provide a method for their  detection 
-
-    — discuss the solutions (early stopping, vary the number of trainable parameters, ...)
-\end{comment}
-
-The training process of a neural network could end in three different ways.
-The figure () shows an example of application to the same data of three different models.
-The panel in the middle shows the desired result: the neural network has been able to predict the 
-functional form that originated the data without learning its statistical noise.
-The panels on the sides represents instead the two issues which might occur in place of 
-the expected behaviour.
-
-The situation depicted in the left panel is called underlearning. In this case the 
-function inferred with the model oversimplifies the correct underlying relation failing 
-to predict some of its characterizing features. The loss function and other metrics
-should return values indicative of the neural network bad performance, providing
-a way to detect this situation.
-To solve this problem, as the first attempt the number of epochs in the training process is
-usually increased. If a longer training does not improve the performances, the reason behind
-underlearning could be the inadequacy of the chosen neural network architecture. 
-Improvements can hence be obtained adding more layers or neurons, and thus raising the complexity of the model.
-
-The situation depicted in right panel is instead called overlearning.
-In this case the problem is essentially the opposite: the model learned the training data
-with their noise inferring a complicated functional form between the input values that performs
-well on the training set but fails when tested with new data. In order to detect this problem,
-the dataset built to train the model is divided in two subsets. The first one, the training set, is used to
-train the neural network while the second one, called test set, is used in a second phase to
-test the obtained model.
-Comparing the loss function values obtained on the train and test datasets we can
-detect the overlearning. 
-The possible solutions applied in this case are the exact opposite of that in the previous situation.
-We can reduce the number of epochs ``early stopping'' the training process or decrease the complexity of
-the model.
-
-\subsection{Computational complexity}
 Here I am going to discuss the computational complexity of machine learning
  algorithms in comparison with numerical simulations.
 
@@ -1049,13 +1112,38 @@ a wide range of different disc images without the need to re-train it.
 
 pro: parallel processing capacity
 
+\end{comment}
+
+Regarding computational complexity, depending on their architecture, neural networks might require a
+large amount of resources and time. They are however suited for parallel processing, even with GPUs, allowing
+an improvement of performances and a reduction of the time needed.
+
+The most demanding part is the training process because of the back propagation 
+algorithm and the repeated iterations.
+The forward propagation of the data can instead be performed  very quickly.
+This is an advantage since the training process should be run only once to eventually deploy the trained model
+and use it to analyze new data. Compared to numerical simulations, in the specific case of hydrodynamical models, 
+neural networks are more convenient in terms of computational cost.
+
 \section{Machine learning and protoplanetary discs}
 
+\begin{comment}
 In this section I am going to develop the idea of applying machine learning methods to the  study of protoplanetary
 discs.
+\end{comment}
+
+Machine learning algorithms, and specifically neural networks, had been successfully used in image analysis tasks.
+The flexibility along with the strengths in terms of computational cost and resistance to 
+errors, makes them ideal candidates for use in the study of protoplanetary discs.
+
+In this section, I am going to propose this new approach explaining the expected improvements and 
+suggesting possible solutions to the critical points. I will then review a recent paper in which the 
+authors used successfully similar methods to infer the mass of planets embedded in protoplanetary discs.
+I will hence highlight the differences with our approach explaining the reasons behind our choices.
 
 \subsection{The proposed approach}
 
+\begin{comment}
 Here I am going to discuss the approach we want to propose.
  I am going to give some details about the 
 suggested architecture for the neural network and what 
@@ -1065,32 +1153,263 @@ model.
 I am going to think about possible scenarios which can take advantage from this approach
 (ex. large surveys with lots of disc images: the neural network 
 could quickly provide measures of their physical properties (?) )
+\end{comment}
+
+In the third chapter we have discussed the current methods adopted to interpret discs observations.
+Among them, numerical simulations are preferred, as they provide images
+directly comparable with observations in the data space and are more accurate than the analytical expressions available.
+In order to run a simulation some parameters characterizing the disc dynamics and its optical properties are needed.
+They have hence to be inferred from observations or, otherwise, included in the set of variables which will be varied across different simulations
+and thus determined selecting the best fit to data. However, the high computational cost of hydrodynamical and radiative 
+computations limits the exploration of the parameters' space.
+
+A machine learning approach could overcome these restraints. We propose the development
+of a neural network designed to read 2D images of light intensity at specific wavelengths,
+which can be produced from interferometric measures, and return the inferred value of one or more 
+parameters characterizing that disc. Any feature related to the disc emission or the formation of visible substructures 
+has the potential of being inferrable using this technique.
+
+Among the possible applications, I will focus on the already mentioned problem of detecting young embedded planets and measuring their mass.
+Nevertheless, the same techniques could be easily generalised to other issues.
+In chapter 3 I mentioned some known analytical relationships which prove an existing underlying link
+between the planet mass and gaps morphologies. Picture 4.? shows the synthetic images obtained simulating
+three identical protoplanetary discs whose only difference resides in the mass of the orbiting planets. 
+Even without any specific measure we can appreciate the different features of their substructures.
+All these evidences suggest that a regression through a neural network might be possible.
+
+In our perspective the trained model should be able to analyze an image, obtained from direct observation of a protoplanetary disc
+presenting substructures due to forming planets, and provide measurements of the planet's properties.
+In order for the neural network to perform accurate predictions, it has to be trained with sundry images of discs with
+features properly varied to explore at best the ranges of their possible values. 
+The training dataset can be produced collecting synthetic images generated from numerical simulations. With this method
+all the physical properties of protoplanetary discs and their embedded planets are manually set, allowing the control of the 
+distribution of the values explored and assuring their correctness.
+Once the neural network has been trained, its application to a new input requires a few seconds which is a radical improvement
+if compared to the time needed by the numerical approach.
+
+It could be argued that since the training dataset is constructed from the results of hydrodynamical and radiative simulations,
+the computational resources exploited, and does the time needed, are analogous to the use of the computational approach
+which, thus, could have been used to
+directly infer the desired features from the best fit. However, while this is true, we could achieve significative
+advantages with two simple strategies.
+First, we exploit the results of simulations already run by different people and research groups, in the past years,
+for sundry independent studies. This allows the implementation of a large and diversified dataset which would have
+otherwise required months and significant resources to produce the data from the ground up. Further improvements could also be obtained opening 
+to the research community the possibility to contribute
+uploading their own images.
+Second, the neural network trained with a sufficiently exhaustive and representative dataset would be able to
+successfully analyze different images without having to iterate the training phase. If applied to a large pool of observations,
+the overall balance of the employed resources
+would thus favour the machine learning approach. Additionally, the evaluation of each image is fast enough to allow 
+the use of this tool in hypothetical large surveys of protoplanetary discs to detect the presence of planets
+and infer their mass, obtaining a quick classification of the observed images. In this case, depending on the size of the survey,
+the computational approach might even be unfeasible while the analytical relations availbale are less accurate.
 
 \subsection{Previous attempts in literature}
 
+\begin{comment}
 Here I am going to discuss the Sayantan Auddy and Min-Kai Lin's paper citing their results
 and explaining the main differences with the approach we propose.
+\end{comment}
+
+Some machine learning applications in this field have been already tried, 
+with an approach similar to the one proposed. For example, in <insert reference>
+Min Kai Lin and Sayantan Auddy realised a training dataset with <> two-dimensional simulations varying, in addtion to the mass of the embedded planet, the values of the $\alpha$-viscosity, the aspect-ratio, the Stokes number, the gas to dust ratio and the index of the power law used to model 
+the initial density. 
+They then measured, in the obtained results, the width of the gaps formed in the
+dust component due to its interaction with the orbiting planet. A neural network
+was thus trained to infer the planet mass from this last measure and the other parameters previously mentioned.
+
+The results achieved were promising. They compared the mass value predicted by the neural network
+with the results obtained applying the analytical formulae () and ().
+In the picture () we can observe this comparison.
+The neural network performed better than both the analytical approaches: its prediction error
+follows a normal distribution whose mean value and standard deviation are both smaller showing its
+better accuracy and precision.
+
+The approach we propose in this thesis present substantial differences. 
+First, we aim at reducing at its minimum the number of disc features needed and not 
+directly obtainable, with low uncertainty, from observations.
+For this reason, we opt for a neural network designed to receive the entire
+observed image as input which also allows, as a fortunate consequence, to consider the entire morphology of the disc substructures.
+
+Additionally, they considered only 2D simulations to reduce the computational power needed
+while we built our dataset with 3-dimensional results which allowed us to account for additional parameters, such as the different 
+inclinations of the disc. We also included in the training set, images of the same simulation
+produced at different times, thus introducing an additional variable.
 
 \chapter{Dataset design}
 
+\begin{comment}
 In this chapter I am going to unfold the main part of my work: the design and implementation of the dataset.
 Here I am going to recall the key features of a good dataset for machine learning.
+\end{comment}
+
+Every machine learning application depends heavily upon the training dataset. 
+Its realization is the most crucial aspect of the process and, in addition to the collecting,
+involves designing how to organize and store the data and checking their quality, 
+ensuring that the entire parameter space is properly represented and that no bias was introduced during
+the production and selection stages.
+
+In the approach we proposed, the aim is to build a database of synthetic images produced exploiting 
+the results of already run simulations. The design and implementation of this dataset is the heart of this
+thesis. In this chapter I am going to present its content and the structure developed to organize and store the information. 
+The scripts produced to support the use and maintenance of the database will also be explained, 
+providing an overview of their functions.
 
 \section{The data}
 
+\begin{comment}
 In this section I am going to present what the dataset is made of: fits images and the list of parameters included in the fits files 
 and in data.js. I am going to briefly explain why they were included and their possible use.
 
 I am also going to present images showing the data distribution over the parameters space, discussing
  which of them are properly explored and which not.
+\end{comment}
+
+As I already mentioned, the database we designed to train neural network models collects the results
+of hydrodynamical and radiative simulations. At this stage of the simulation process, the resulting images
+are spatially resolved maps of light intensity as specific wavelenghts as seen from a specific relative position.
+This fictitious images are further elaborated with pymcfost, whose function has been discussed in chapter 3, to siulate the limited resolution of
+the telescopes through a convolution with a gaussian beam.
+The final product are images in the FITS format. In the next section I will explain how they are organized
+and indexed, while here I am going to discuss the content of each image providing insights on the source and
+possible usages of each parameter included. I will also present some global features of the dataset.
+
+The FITS format structures the contained information in Header and Data Units (HDUs)
+which, as the name suggests consists in an ASCII text header followed by a binary, usually multidimensional, array where the data is stored.
+The header is organized in key/values tuples.
+
+In our dataset, each FITS file contains only one image corresponding to a single HDU.
+In its header, some parameters of the disc depicted in the image are stored. 
+Table () shows the list of keys of the parameters saved in each FITS files, providing also
+a brief description.
+
+\begin{table}
+    \begin{center}
+        \begin{tabular}{l r}
+        \toprule
+        KEY & content \\
+        \midrule   
+        %hydro simulations        
+        RIN & inner radius of the hydrodynamical simulation domain\\
+        ROUT & outer radius of the hydrodynamical simulation domain\\
+        RC & reference radius for the exponential taper in the radial profile density\\ 
+        MGAS & total mass of the gas component\\
+        MDUST & total mass of the dust\\
+        HRIN & aspect ratio at RIN \\ 
+        RHOG & intrinsic grain density\\ 
+        PINDEX & power law index for the initial surface density profiles\\
+        QINDEX & power law index for the initial sound speed profile \\
+        TIME & time of the snapshot in complete orbits of the planet \\
+
+        %star(s)
+        NSTARS & number of stars in the simulation \\
+        TSTAR\# & temperature of the star (K)\\
+        MSTAR\# & mass of the star in solar masses \\
+        RSTAR\# & radius of the star in solar radius \\ \\
+        
+        %planet(s)
+        NPLANETS & nnumber of planets in the simulation\\
+        MPLANET\# & planet's mass in Jupyter's masses \\
+        RORB\# & radius of the planet's orbit\\ \\
+        
+        %observational parameters
+        DISKPA & disc's position angle\\
+        INCL & disc's inclination\\
+        DISTANCE & disc's distance \\
+        WAVE & wavelenght of the radiation showed in the image\\
+        GDRATIO & gas-dust ratio used in the MCFOST simulation \\ \\
+
+        %units
+        BUNIT & units of the data in the image \\ 
+        CDELT1 & x pixel scale (deg) \\
+        CDELT2 & y pixel scale (deg)\\ \\
+        
+        %convolution beam's shape
+        BMAJ & major FWHM of the gaussian beam \\
+        BMIN & minor FWHM of the gaussian beam\\
+        BPA & beams's position angle \\ \\
+        
+
+        %computable
+        %TEMP & gas temperature at RIN\\
+        %GRSIZE & grain size ($\lambda/2\pi$)\\
+         \bottomrule
+        \end{tabular}
+        \end{center}
+
+        \caption{keywords in the fits file}
+\end{table}
+
+In the same table the parameters are listed divided in 6 groups. The first one contains
+variables which are read from the \lstinline{PHANTOM}'s dump file and are thus hydrodynamical features of
+the disc. The next two groups list the physical properties of stars and planets. These groups contain the 
+``multiple keys'', those in the ``KEY\#'' format, which appear more than once, substituting the ``\#'' character with an index,
+in case of multiple stars or planets.
+Except for the star temperature which is a parameter of the radiative transfer simulation, also these variables are retrieved from
+the saved output of \lstinline{MCFOST} which read these properties in the \lstinline{PHANTOM}'s dump file.
+The fourth set collects some input variables of the \lstinline{MCFOST}'s simulation.
+They set the relative position and orientation of the disc and the wavelength of the radiative emission to probe.
+The ``GDRATIO'' variable contains the value of the gas to dust ratio used when running \lstinline{MCFOST} which is simulated
+independently to the value of the same parameter used to obtain the respective \lstinline{PHANTOM} dump. For
+this reason computing MGAS/MDUST a different result is obtained.
+Finally, the fifth group provides the units of the data represented in the image while the last one contains
+the dimensions and orentation of the gaussian beam used to convolve the image.
+
+The images collected within the database in the version deployed with this thesis, come from two different sources.
+The first group of data, provided by Dr. Benedetta Veronesi (...), consists in numerous simulations, both hydrodynamical and radiative,
+of DS-TAU. I additionally re-run the radiative transfer through MCFOST to obtain images of the disc at different inclinations.
+The second group of data was provided by Dr. Enrico Ragusa (...) and consists in sets of snapshots
+obtained from hydrodynamical simulations from which I selected only the ones which showed the presence of gaps.
+In this case I selected only the results which showed the presence of gaps. I then simulated the radiative transfer.
+
+For each image obtained from a simulation, I used pymcfost to produce 10 images obtained convolving circular beams of different sizes
+logarithimically spaced between 0.01 and 1 arcsec. These values were chosen to explore resolutions
+realistically achievable, as proved by for example the DSHARP project, but also have images approaching the two limits.
+Very resolute images are included for applications where it might be preferable to remove instruments limitations
+or to test model in the perspective of future improvements in the observative techniques. 
+On the other end the less resoluted image is convolved with a beam of about the same dimensions of the disc. The
+images in this second limit may be useful to test what information could be extrapolated from very low resoluted observations
+which essentially provide only measures of the light intensity but can not reveal the disc substructures.
+
+(image with the 10 resolutions of the same disc?)
+
+The final product is a database made of 24720 FITS images 1024x1024 pixels. In this
+version each image contains only one star and one planet.
+Among the parameters listed in Table 5.1 only some of them vary significatively across different simulations.
+Apart from the beam sizes whose distribution has already been discussed, they are, the gas and dust masses, the gas to dust ratio, 
+the planet's mass and orbital radius and the time. Picture () shows the distribution of these parameters and the scatter
+plots showing some correlations between these variables. Some of this correlations are easily interpretable, for example the
+gas and dust masses decrease with time accompanied by the planet's mass increase can be understood as consequence of the planet's accretion
+process. There is also a strong correlation between the planet's orbital radius and its mass which is due to the third Keplerian law.
+
+The planet's mass, which is the target feature of the possible application on which we focused, shows an acceptable distribution among 
+a sufficiently large interval of values.
 
 \section{Structure and interface}
 
+\begin{comment}
 Here I am going to discuss the structure we designed for the db and the interface provided to 
 access the data.
+\end{comment}
+
+Every image presented in the previous section is saved as a different file whose name is in the format 
+described by the regular expression 
+\begin{center}
+    \begin{lstlisting}
+        ^\d{6}_.{3,5}TIME\d+GD\d+W\d+B\d+.fits$
+    \end{lstlisting}
+\end{center}
+which provide some information about the parameters used to produced that image. The first six 
+characters are numbers forming an index key which is used to uniquely identify each image.
+The collection is stored entirely inside a single directory where two additional files are generated: 
+\lstinline{index.js} and \lstinline{data.js}. They are json files aimed at indexing all the information stored in the FITS 
+files except for the images data in order to provide an easier access especially when the dataset is not completely
+available locally.
+The entire dataset is, in fact, stored in a public git-hub repository exploting the git lfs storage system.
 
 \section{Supporting scripts}
-
 Here I am going to write about the scripts I wrote which allow the user to handle the database
 and preprocess the results coming from MCFOST simulations.
 
@@ -1098,6 +1417,9 @@ and preprocess the results coming from MCFOST simulations.
 
 Here I will explain how the tools provided allow to easily expand the dataset. 
 Then I am going to give future perspectives on how the database could be improved.
+
+
+-update keys
 
 \chapter{Proof of concept}
 
@@ -1125,6 +1447,8 @@ Here I will discuss the results obtained.
 \chapter{Conclusions}
 \section{Conclusion}
 \section{Future perspectives}
+
+-server side
 
 \chapter*{Acknowledgements}
 \addcontentsline{toc}{chapter}{Acknowledgements}
