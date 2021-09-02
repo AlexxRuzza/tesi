@@ -461,6 +461,16 @@ density to obtain a definition which depends upon directly measurable properties
 
 \chapter{State-of-the-art investigative techniques}
 
+Protoplanetary discs are interesting objects both in their own dynamic and
+in the context of planet formation.
+Many models were developed to describe and explain the disc motion and the origin of substructures and
+some questions are still open. However, these problems will not be the object of this chapter, 
+here I am going to focus on the methods developed to interpret the
+disc images obtained through direct observations.
+
+\section{Addressed questions}
+
+
 The only property of protoplanetary discs that can be directly measured
 is the intensity of the light emitted with the different mechanisms previously discussed.
 The other features and parameters which characterize them and the embedded astronomical objects
@@ -469,14 +479,6 @@ Tools and methods to achieve this purpose are central branches of research. In t
 the techniques so far developed and used, comparing their strengths and limitations in order to present the context
 in which the use of machine learning techniques will be proposed.
 
-\section{Addressed questions}
-
-Protoplanetary discs are interesting objects both in their own dynamic and
-in the context of planet formation.
-Many models were developed to describe and explain the disc motion and the origin of substructures and
-some questions are still open. However, these problems will not be the object of this chapter, 
-here I am going to focus on the methods developed to interpret the
-disc images obtained through direct observations.
 
 Features that can be extrapolated from the data fall into three categories: optical properties, hydrodynamical properties
 and properties of the central star and orbiting planets.
@@ -596,7 +598,7 @@ accurate results.
 
 This approach can be used to infer discs or planets features, exploring some values through different simulations
 whose output is then compared with the actual data to decide the best fit.
-The simulation workflow consists in three steps. 
+The simulation workflow (Figure 3.1) consists in three steps. 
 First, starting from an appropriately chosen initial condition,
 we compute the fluidodynamical evolution of the disc obtaining its configuration
 at a given time. The second step is aimed at determining the radiative emission and trace it 
@@ -607,8 +609,16 @@ transfer of energy in the form of electromagnetic radiation are grouped under th
 Finally, the last step has the purpose to reproduce the noise and limited resolution of the instruments 
 used to collect the real data.
 
+\begin{figure}
+    \begin{center}
+        
+    \end{center}
+    \caption{Typical workflow of a numerical simulation
+     aimed at reproducing a synthetic image of a protoplanetary disc}
+\end{figure}
+
 I am now going to give some insights for each of these steps. The images collected in the database for machine learning
-applications that we designed were obtained through simulations of this kind. Among the possible choices
+applications that we designed, were obtained through simulations of this kind. Among the possible choices
 of software available for each step, I am going to focus on the ones used to obtain the synthetic images
 in this database.
 
@@ -676,6 +686,17 @@ the disc, its distance and the units of the data stored.
 Here I am going to discuss the different methods that can be used to simulate the limitations 
 of observing instruments. I will further explore some key features of pymcfost.
 \end{comment}
+
+\begin{figure}
+    \begin{center}
+        
+    \end{center}
+    \caption{Comparison of a real disc observation, in the dust continuum emission,
+    with synthetic images computed with the purpose of reproducing the real one.
+    Left: image obtained as a result of a radiative transfer simulation through MCFOST,
+    center: the same image at its left processed with pymcfost to reproduce the limited
+    resolution, right: the real image. Add sources...}
+\end{figure}
 
 The real observations of protoplanetary discs are, being experimental data, susceptible 
 to statistical and systematical errors and limited by the resolution of the instruments.
@@ -1459,6 +1480,7 @@ Here I will discuss the results obtained.
 \section{Future perspectives}
 
 -server side
+-noise through nn
 
 \chapter*{Acknowledgements}
 \addcontentsline{toc}{chapter}{Acknowledgements}
