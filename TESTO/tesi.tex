@@ -811,8 +811,17 @@ Here I am going to present the perceptron model explaining:
 — what is the activation function
 \end{comment}
 
+\begin{figure}
+    \begin{center}
+        
+    \end{center}
+    \caption{Top panel: scheme of an artificial neuron.
+     Bottom panel: graphs of three possible activation functions. 
+     From left to right: Heaviside step function, sigmoid and ReLU}
+\end{figure}
+
 The elementary units of neural networks, artificial neurons, are mathematical objects
-which model the structure in figure 3.1: they receive a set of input values
+which model the structure in figure 4.1: they receive a set of input values
 and process them returning a single output signal.
 Essentially they are parametric functions $\nu(\va a): \mathbb R ^k \rightarrow \mathbb R$ 
 where $k$ indicates the dimension of the vector $\va a$, equal to the number of input connections.
@@ -830,19 +839,19 @@ The first block, $\Sigma$, performs a weighted sum of the input values $a_{j}$ i
    c = b + \sum_j w_{j} \cdot a_{j} 
 \end{equation}
 where the $j$ index identifies the input connections of the artificial neuron considered.
-The weights $w_{j}$ and the bias constitutes the set of parameters in which
+The weights $w_{j}$ and the bias constitute the set of parameters in which
 lies the potential of neural networks.
 This first process mimics the ability of biological neurons to adjust the intensity of the signals in its connections
 modifying the ratio of neurotransmitters and inhibitors.
 Still in the biological counterpart, the total potential obtained integrating the input signals is then transmitted to the 
 connected neurons if it reaches a certain threshold.
 The same behaviour is modelled in artificial neurons in the second block, 
-with a function $g(c)$, called activation function. It takes the $c$ value obtained in the
-previous step and returns the output $o = g(c)$ which is then transmitted to the connected neurons 
+with a function $f(c)$, called activation function. It takes the $c$ value obtained in the
+previous step and returns the output $o = f(c)$ which is then transmitted to the connected neurons 
 becoming one of their input values.
 
-In the choice of the function $g$, its role as an activation threshold should be kept in mind.
-The bottom panel of figure 3.1 shows three examples of functions that could be chosen for this purpose.
+In the choice of the function $f$, its role as an activation threshold should be kept in mind.
+The bottom panel of figure 4.1 shows three examples of functions that could be chosen for this purpose.
 The first and simpler is the Heaviside step function which
 returns 1 if the input value is positive and 0 otherwise, simulating the discrete behaviour of 
 biological neurons.
@@ -976,6 +985,7 @@ where the hyperparameter $\eta$ called learning rate was introduced. As the name
 the length of each step of the walk in the parameters space towards the minimum, varying, as a consequence,
 the speed of the process. The entire algorithm is divided in epochs, each of them consists in an update of $\va w_t$
 using all the data in the training set.
+
 Finally, the computation of the gradient is itself a challenging task. The algorithm used for this purpose in the context 
 of neural networks is called back propagation.
 
@@ -1083,9 +1093,8 @@ with its noise inferring a complicated functional form that performs
 well on the training set but fails when tested with new data. In order to detect this problem,
 the dataset built to train the model is divided in two subsets. The first one, the training set, is used to
 train the neural network while the second, smaller, one, called test set, is used in a second phase to
-test the obtained model. The training set is usually provided with about the 80\% of the items in the dataset
-available.
-Comparing the loss function values obtained on the train and test datasets we can
+test the obtained model. The training set is usually assembled with about the 80\% of the items available in the dataset.
+Comparing the loss function values obtained with the train and test datasets we can
 detect the overlearning. 
 The possible solutions applied in this case are the exact opposite of that in the previous situation:
 we can reduce the number of epochs ``early stopping'' the training process or decrease the complexity of
@@ -1113,12 +1122,12 @@ Neural networks have been applied to a huge variety of problems spanning complet
 This flexibility is one of the main strengths of this class of machine learning techniques.
 The universal approximation theorem has shown that 
 a finite number of hidden units can approximate any continuous function to any desired degree of accuracy.
-In addition, this tool has great tolerance to errors and noise in the data, and generalize easily to
+In addition, this tool has great tolerance to errors and noise in the data, and generalizes easily to
 new inputs.
 
 In order to address a specific question with a neural network two elements are necessary:
 a large set of data for the training process and a model for the problem that allows
-the encoding of the input and output data in numeric values read and produced by the neural network.
+the encoding of the input and output data in numeric values readable and computable by the neural network.
 
 At one end, these features constitutes the strengths of this tool:
 as a consequence of the data-driven approach, no prior knowledge of
@@ -1234,7 +1243,7 @@ the overall balance of the employed resources
 would thus favour the machine learning approach. Additionally, the evaluation of each image is fast enough to allow 
 the use of this tool in hypothetical large surveys of protoplanetary discs to detect the presence of planets
 and infer their mass, obtaining a quick classification of the observed images. In this case, depending on the size of the survey,
-the computational approach might even be unfeasible while the analytical relations availbale are less accurate.
+the computational approach might even be unfeasible while the analytical relations available are less accurate.
 
 \subsection{Previous attempts in literature}
 
@@ -1244,8 +1253,8 @@ and explaining the main differences with the approach we propose.
 \end{comment}
 
 Some machine learning applications in this field have been already tried, 
-with an approach similar to the one proposed. For example, in <insert reference>
-Min Kai Lin and Sayantan Auddy realised a training dataset with <> two-dimensional simulations varying, in addtion to the mass of the embedded planet, the values of the $\alpha$-viscosity, the aspect-ratio, the Stokes number, the gas to dust ratio and the index of the power law used to model 
+with an approach similar to the one proposed. For example, in [insert reference]
+Min Kai Lin and Sayantan Auddy realised a training dataset with [insert number] two-dimensional simulations varying, in addtion to the mass of the embedded planet, the values of the $\alpha$-viscosity, the aspect-ratio, the Stokes number, the gas to dust ratio and the index of the power law used to model 
 the initial density. 
 They then measured, in the obtained results, the width of the gaps formed in the
 dust component due to its interaction with the orbiting planet. A neural network
@@ -1300,8 +1309,8 @@ I am also going to present images showing the data distribution over the paramet
 
 As I already mentioned, the database we designed to train neural network models collects the results
 of hydrodynamical and radiative simulations. At this stage of the simulation process, the resulting images
-are spatially resolved maps of light intensity as specific wavelenghts as seen from a specific relative position.
-This fictitious images are further elaborated with pymcfost, whose function has been discussed in chapter 3, to siulate the limited resolution of
+are spatially resolved maps of light intensity at specific wavelenghts as seen from a specific relative position.
+This fictitious images are further elaborated with pymcfost, whose function has been discussed in chapter 3, to simulate the limited resolution of
 the telescopes through a convolution with a gaussian beam.
 The final product are images in the FITS format. In the next section I will explain how they are organized
 and indexed, while here I am going to discuss the content of each image providing insights on the source and
@@ -1393,7 +1402,7 @@ The first group of data, provided by Dr. Benedetta Veronesi (...), consists in n
 of DS-TAU. I additionally re-run the radiative transfer through MCFOST to obtain images of the disc at different inclinations.
 The second group of data was provided by Dr. Enrico Ragusa (...) and consists in sets of snapshots
 obtained from hydrodynamical simulations from which I selected only the ones which showed the presence of gaps.
-In this case I selected only the results which showed the presence of gaps. I then simulated the radiative transfer.
+I then simulated the radiative transfer.
 
 For each image obtained from a simulation, I used pymcfost to produce 10 images obtained convolving circular beams of different sizes
 logarithimically spaced between 0.01 and 1 arcsec. These values were chosen to explore resolutions
