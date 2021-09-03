@@ -11,6 +11,7 @@
 \usepackage{pgf}
 \usepackage{tikz}
 \usetikzlibrary{shapes,snakes}
+\usetikzlibrary{backgrounds}
 \usepackage{subfig}
 
 %math symbols
@@ -40,6 +41,9 @@
 
 %tables
 \usepackage{booktabs}
+
+\usepackage{enumitem}
+\setlist[itemize]{align=parleft,left=0pt..1em}
 
 %opening
 \title{Design of a machine learning model for the detection of young planets}
@@ -611,7 +615,85 @@ used to collect the real data.
 
 \begin{figure}
     \begin{center}
-        
+        \begin{tikzpicture}
+            
+
+            %models
+            \tikzstyle{block} = [rectangle, rounded corners, text width=4cm, minimum height=3cm,text centered, draw=black, fill=gray!30]
+            \tikzstyle{io} = [rectangle, rounded corners,text width=4cm, minimum height=1cm,text centered, align=left, font=\scriptsize, draw=black]
+            \tikzstyle{block2} = [rectangle, rounded corners, text width=3cm, minimum height=6cm,text justified, draw=black, inner sep =0.5cm]
+            
+            
+            %main rectangles
+            \node (phantom) [block] {\large \bf Hydrodynamical simulation \\ \normalfont ... \\ \small Software choice: PHANTOM};
+            \node (mcfost) [block, right of=phantom, xshift=4cm]
+            {\large \bf Radiative \\transfer \\ \normalfont ... \\ \small Software choice: \\ MCFOST};
+            \node (pymcfost) [block, right of=mcfost, xshift=4cm] {\large \bf Observational \\limits \\ \normalfont ... \\ \small Software choice: \\ PYMCFOST};
+
+            %arrows
+            \draw [->] (phantom) -- (mcfost);
+            \draw [->] (mcfost) -- (pymcfost);
+
+            \begin{scope}[on background layer]
+            \node (iph) [block2, below of=phantom, yshift=-2cm] {
+                \scriptsize
+                \\ \\ \\ \\
+                \begin{itemize}
+                    \item requires hydrodynamical and structural parameter of the disc \\
+                    \item computes the dust and gas distribution at a given time \\
+                    \item produces dump files which can be directly read by MCFOST
+                \end{itemize}
+            
+            };
+
+
+            \node (iph2) [block2, below of=mcfost, yshift=-2cm] {
+                \scriptsize
+                 \\ \\ \\ \\
+                \begin{itemize}
+                    \item requires optical properties and relative position of the disc \\
+                    \item first, compute the disc temperature resulting from the star irradiation \\
+                    \item then, produces an intensity map of the emitted light at a specific wavelength
+                \end{itemize}
+            
+            };
+
+            \node (iph2) [block2, below of=pymcfost, yshift=-2cm] {
+                \scriptsize
+                 \\ \\ \\ \\
+                \begin{itemize}
+                    \item requires the parameters of the instruments used for the real observations \\
+                    \item reproduce noise and errors which afflict observations \\
+                    \item pymcfost was only used to simulate the telescopes limited resolution
+                \end{itemize}
+            
+            };
+
+            \end{scope}
+            \begin{comment}
+            \node (iph2) [io, below of=iph, yshift=-0.5cm] 
+            {
+                $    \rightarrow
+                \begin{cases}
+                 *\_00001 \\
+                 *\_00002 \\
+                 ... \\
+                \end{cases}$
+            };
+            \coordinate [right of=mcfost, yshift=1.3cm, xshift=2cm] (fn1) ;
+            \coordinate  [right of=iph2, xshift=1cm] (fn2);
+            
+            
+            %\node (imcf) [io, right of=mcfost, xshift=2.6cm, yshift=0.7cm]{ $\leftarrow$ *.para};
+            %\node (uuoutmcf) [io, below of=imcf, xshift=1.5cm, yshift=0.3cm]{ $\rightleftarrows$ data\_th/Temperature.fits.gz};
+            %\node (outmcf) [io, below of=uuoutmcf, xshift=-0.55cm, yshift=0.3cm]{ $\rightarrow$ data\_***/RT.fits.gz};
+            
+            %\coordinate [right of=pymcfost, yshift=1.3cm, xshift=2cm] (fn3) ;
+            %\coordinate  [right of=outmcf, xshift=1cm] (fn4);
+            %\draw[->] (outmcf) -- (fn4) |- (fn3);
+            %\node (ipymc) [io, below of=fn3, xshift=1.28cm, yshift=0.1cm] {$\leftarrow$ bpa, bmaj, bmin};
+            \end{comment}
+            \end{tikzpicture}
     \end{center}
     \caption{Typical workflow of a numerical simulation
      aimed at reproducing a synthetic image of a protoplanetary disc}
@@ -689,7 +771,7 @@ of observing instruments. I will further explore some key features of pymcfost.
 
 \begin{figure}
     \begin{center}
-        
+        \scalebox{0.45}{\input{images/fig3.2.pgf}}
     \end{center}
     \caption{Comparison of a real disc observation, in the dust continuum emission,
     with synthetic images computed with the purpose of reproducing the real one.
@@ -870,6 +952,13 @@ In fact, even if real neurons can only send discreet signals deciding whether or
 the frequency of transmission might vary. The continuous output thus model this possible behaviour.
 
 \subsection{Architecture and types}
+
+\begin{figure}
+    \begin{center}
+        
+    \end{center}
+    \caption{Scheme of a feedforward neural network}
+\end{figure}
 
 \begin{comment}
 In this subsection I am going to explain how perceptrons are organized 
@@ -1071,6 +1160,14 @@ I am going to:
     — discuss the solutions (early stopping, vary the number of trainable parameters, ...)
 \end{comment}
 
+\begin{figure}
+    \begin{center}
+        
+    \end{center}
+    \caption{Three different neural networks applied to a regression problem.
+    Left panel: underlearning, middle panel: successful regression, right panel: overlearning}
+\end{figure}
+
 The training process of a neural network could end in three different ways.
 The figure () shows an example of application to the same data of three different models.
 The panel in the middle represents the desired result: the neural network has been able to predict the 
@@ -1195,6 +1292,13 @@ I am going to think about possible scenarios which can take advantage from this 
 could quickly provide measures of their physical properties (?) )
 \end{comment}
 
+\begin{figure}
+    \begin{center}
+        
+    \end{center}
+    \caption{Three simulations of the same disc with planets of different masses.}
+\end{figure}
+
 In the third chapter we have discussed the current methods adopted to interpret discs observations.
 Among them, numerical simulations are preferred, as they provide images
 directly comparable with observations in the data space and are more accurate than the analytical expressions available.
@@ -1251,6 +1355,13 @@ the computational approach might even be unfeasible while the analytical relatio
 Here I am going to discuss the Sayantan Auddy and Min-Kai Lin's paper citing their results
 and explaining the main differences with the approach we propose.
 \end{comment}
+
+\begin{figure}
+    \begin{center}
+        
+    \end{center}
+    \caption{Figure 7 of Auddy and Lin paper}
+\end{figure}
 
 Some machine learning applications in this field have been already tried, 
 with an approach similar to the one proposed. For example, in [insert reference]
@@ -1447,19 +1558,114 @@ The collection is stored entirely inside a single directory where two additional
 \lstinline{index.js} and \lstinline{data.js}. They are json files aimed at indexing all the information stored in the FITS 
 files except for the images data in order to provide an easier access especially when the dataset is not completely
 available locally.
-The entire dataset is, in fact, stored in a public git-hub repository exploting the git lfs storage system.
+
+The entire dataset is, in fact, stored in a public git-hub repository exploting
+the git lfs storage system, and the typical usage workflow for which it was designed 
+consists in the following steps. First, through a script provided, and explained in the next section,
+the index files can be downloaded. They can then be read to obtain a pandas dataframe which containing
+a reference to each image and all the parameters stored in its reader. 
+It is thus possible to analyze this data to select, in case, a specific subset of the entire database.
+The keys of the images filtered in this way can thus be used to download the corresponding images without the need
+to get the entire dataset.
 
 \section{Supporting scripts}
+
+\begin{comment}
 Here I am going to write about the scripts I wrote which allow the user to handle the database
 and preprocess the results coming from MCFOST simulations.
+\end{comment}
+
+
+To populate and manage the database, I developed a python package \lstinline{dblib}
+and some command line scripts which provide immediate access to their main features.
+The structure of the package is the following:
+\begin{lstlisting}
+    structure of package
+\end{lstlisting}
+
+Three main functions are carried out by these modules: preprocessing through pymcfost 
+of the images obtained after the \lstinline{MCFOST} simulation, handling the data stored 
+in the index files and downloading the database or some parts from the remote server.
+
+The preprocessing is handled by the submodule pymcfost\_process.py which contains the function 
+``read\_dirs\_doimages()'' that reads the \lstinline{FITS} files produced by \lstinline{MCFOST},
+and some log files containing the parameters of the simulations, all  organized in a specific structure of subdirectories.
+These images are then convolved with gaussian beams of given sizes. Furthermore, some additional paramters are added to the header
+file to reach the complete list in table ().
+This module was thus used to preprocess and standardize the previously computed
+simulations that we collected before adding them to the final database.
+In order to simplify the use of this tool, I wrote a CLI script called \lstinline{pymc_prepro} which
+allows the use of the functions just mentioned through a command line interface.
+
+The second function of these scripts is the creation and handling of the index.
+The two submodules index and index\_keys fulfil this purpose. They provide functions
+that read the parameters stored in the \lstinline{FITS} file and generate or update the
+index files. Furthermore, they allow the access to this index through the function \lstinline{get_data()}
+which merges together, from the two different files, all the data required returning it as a python dictionary.
+This dictionary can then be passed to a pandas' function which returns a, more versatile, pandas DataFrame.
+The generation of the index files can be done through the CLI script \lstinline{generate_index} which has to be run from 
+the command line specifying the directory where the unindexed \lstinline{FITS} files are stored in addition
+to the optional parameters if needed.
+
+Last, the third function of these scripts, access and retrieving the dataset from the remote server where
+it is hosted, is carried out by the \lstinline{downloader} module.
+It implements functions which are able to determine the remote location of specific items of the database 
+given their unique keys, download them and check whether the download has succeeded.
+This functions are interfaced by the cli script \lstinline{get_db}.
 
 \section{Expanding the dataset}
 
-Here I will explain how the tools provided allow to easily expand the dataset. 
-Then I am going to give future perspectives on how the database could be improved.
+\begin{comment}
+    Here I will explain how the tools provided allow to easily expand the dataset. 
+    Then I am going to give future perspectives on how the database could be improved.
+    \end{comment}
+
+The version of the dataset deployed with this thesis is not intended to be the final version. 
+We have seen, in the previous section, that a small set of all the parameters exhibit different values distributed
+across a sufficiently large range. 
+In the development of the database structure, efforts had been made to allow an easy expansion with new
+data. The previously discussed scripts were also developed with this purpose.
+
+In order to integrate new images the raw material needed is FITS files obtained from a radiative 
+transfer simulation done with \lstinline{MCFOST} or a similar tool. If results of the hydrodynamical 
+simulations are available, this next step could be additionally run.
+Before using the \lstinline{pymc_prepro} script to preprocess the images and convolve them with the gaussian beam,
+they need to be organized in a specific tree of directories:
+each group of images with the same values for these parameters
 
 
--update keys
+have to be grouped inside the same directory organized according to the following substructure:
+
+The different simulation are thus divided in subdirectories according to the planet's mass simulated, the time of the
+snapshot and the gas to dust ratio. Additionally, inside each of the \lstinline{gd#} directories 
+there might be different subdirectories named \lstinline{data_#} automatically created by MCFOST 
+and containing results at different wavelengths (indicated by the \# in $\mu$m).
+Apart from the \lstinline{RT.fits.gz} file produced by the MCFOST there are two other files needed as it can be seen
+from the previous scheme: \lstinline{image.log} contains the redirected standard output of the \lstinline{MCFOST} run which 
+provides the parameters read from the phantom file,
+\lstinline{disc.para} is instead the input file used to run that simulation.
+When all the simulations available are properly grouped in this way, the \lstinline{pymc_prepro} script
+can be run. If some features in Table () vary significatively across multiple simulations this script 
+results inconvenient. In this case the functions implemented in the \lstinline{dblib} package can be used
+to build a script adapt for this situation.
+
+Once the FITS images have been preprocessed they can be added to the local directory containing the dataset 
+and indexed running the script \lstinline{generate_index} with the option \lstinline{--update}. 
+
+At this point the database has been expanded. To share the contribution merging it to the public remote database
+a pull request can be opened in the hosting repository. 
+
+The current version of this database can be improved under many aspects. The first suggestion
+is the addition of simulation exploring ranges of the parameters which do not vary across the images already present.
+For example, some hydrodynamical variables such as the $\alpha$-viscosity 
+or the density radial profile could generate different pictures which could then be interesting to probe with a neural network.
+Furthermore, we only included images of discs where the embedded planet interacted with the medium inducing the formation of
+gaps. It might be interesting to include in the dataset also simulations where the gap is not visible both for simulation with 
+and without planets. In this way, these images might be used, for example, to train a neural network for detecting the presence of
+planets. With this addition it may also be necessary to update the header of these files including some flags which would allow 
+the filtering of the data depending on what is needed.
+
+Images of discs with double stars or more than one planet might also be included to include all the possible morphologies.
 
 \chapter{Proof of concept}
 
