@@ -32,7 +32,7 @@
 \contentsline {section}{\numberline {5.1}The data}{24}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Structure and interface}{26}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Supporting scripts}{27}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Expanding the dataset}{27}{section.5.4}%
+\contentsline {section}{\numberline {5.4}Expanding the dataset}{28}{section.5.4}%
 \contentsline {chapter}{\numberline {6}Proof of concept}{29}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Adopted model}{29}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Data pre-processing}{29}{section.6.2}%

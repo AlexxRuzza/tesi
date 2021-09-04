@@ -1397,12 +1397,13 @@ Here I am going to recall the key features of a good dataset for machine learnin
 \end{comment}
 
 Every machine learning application depends heavily upon the training dataset. 
-Its realization is the most crucial aspect of the process and, in addition to the collecting,
-involves designing how to organize and store the data and checking their quality, 
+Its realization is the most crucial aspect of the process and, in addition to collecting the data,
+involves designing how to organize and store them and checking their quality, 
 ensuring that the entire parameter space is properly represented and that no bias was introduced during
 the production and selection stages.
 
-In the approach we proposed, the aim is to build a database of synthetic images produced exploiting 
+In the approach we proposed, the aim is to build a database of synthetic images of protoplanetary discs
+probed through thermal dust emission, produced exploiting 
 the results of already run simulations. The design and implementation of this dataset is the heart of this
 thesis. In this chapter I am going to present its content and the structure developed to organize and store the information. 
 The scripts produced to support the use and maintenance of the database will also be explained, 
@@ -1418,23 +1419,29 @@ I am also going to present images showing the data distribution over the paramet
  which of them are properly explored and which not.
 \end{comment}
 
-As I already mentioned, the database we designed to train neural network models collects the results
-of hydrodynamical and radiative simulations. At this stage of the simulation process, the resulting images
-are spatially resolved maps of light intensity at specific wavelenghts as seen from a specific relative position.
-This fictitious images are further elaborated with pymcfost, whose function has been discussed in chapter 3, to simulate the limited resolution of
-the telescopes through a convolution with a gaussian beam.
-The final product are images in the FITS format. In the next section I will explain how they are organized
+As I already mentioned, the starting data from which we built the database 
+we designed to train neural network models are results
+of hydrodynamical and radiative simulations.
+At this stage of the simulation process, the resulting images
+are spatially resolved maps of light intensity at a specific wavelength as seen 
+from a given relative position.
+This fictitious images are further elaborated with pymcfost,
+whose functioning has been discussed in chapter 3, to simulate the limited resolution of
+the telescopes through a convolution with a Gaussian beam.
+The final product is a set of images in the FITS format. In the next section I will explain how they are organized
 and indexed, while here I am going to discuss the content of each image providing insights on the source and
 possible usages of each parameter included. I will also present some global features of the dataset.
 
-The FITS format structures the contained information in Header and Data Units (HDUs)
-which, as the name suggests consists in an ASCII text header followed by a binary, usually multidimensional, array where the data is stored.
-The header is organized in key/values tuples.
+The FITS format encode the stored information in Header and Data Units (HDUs).
+Each one, as the name suggests, consists in an ASCII text header organized in key-values tuples, followed 
+by a binary, usually multidimensional, array where the data is stored.
 
 In our dataset, each FITS file contains only one image corresponding to a single HDU.
-In its header, some parameters of the disc depicted in the image are stored. 
-Table () shows the list of keys of the parameters saved in each FITS files, providing also
-a brief description.
+In the header, some parameters of the disc depicted are stored. 
+The preprocessing step, run on the files obtained from the radiative transfer simulations, ensures also
+the proper standardization of the header, retrieving and adding the missing variables.
+Table () shows the list of the keys corresponding to each of these parameters
+saved in the FITS files, and provides also brief descriptions.
 
 \begin{table}
     \begin{center}
@@ -1493,7 +1500,7 @@ a brief description.
         \caption{keywords in the fits file}
 \end{table}
 
-In the same table the parameters are listed divided in 6 groups. The first one contains
+In the same table, I divided the list in six different groups. The first one contains
 variables which are read from the \lstinline{PHANTOM}'s dump file and are thus hydrodynamical features of
 the disc. The next two groups list the physical properties of stars and planets. These groups contain the 
 ``multiple keys'', those in the ``KEY\#'' format, which appear more than once, substituting the ``\#'' character with an index,
@@ -1501,41 +1508,48 @@ in case of multiple stars or planets.
 Except for the star temperature which is a parameter of the radiative transfer simulation, also these variables are retrieved from
 the saved output of \lstinline{MCFOST} which read these properties in the \lstinline{PHANTOM}'s dump file.
 The fourth set collects some input variables of the \lstinline{MCFOST}'s simulation.
-They set the relative position and orientation of the disc and the wavelength of the radiative emission to probe.
-The ``GDRATIO'' variable contains the value of the gas to dust ratio used when running \lstinline{MCFOST} which is simulated
+They set the relative position and orientation of the disc and the wavelength of the radiative emission probed.
+The \lstinline{GDRATIO} variable contains the value of the gas to dust mass ratio set when running \lstinline{MCFOST}
+which is simulated
 independently to the value of the same parameter used to obtain the respective \lstinline{PHANTOM} dump. For
-this reason computing MGAS/MDUST a different result is obtained.
-Finally, the fifth group provides the units of the data represented in the image while the last one contains
-the dimensions and orentation of the gaussian beam used to convolve the image.
+this reason computing \lstinline{MGAS/MDUST} gives a different result.
+Finally, the fifth group provides the units of the stored data while the last one contains
+the dimensions and orientation of the Gaussian beam used to convolve the image.
 
 The images collected within the database in the version deployed with this thesis, come from two different sources.
-The first group of data, provided by Dr. Benedetta Veronesi (...), consists in numerous simulations, both hydrodynamical and radiative,
-of DS-TAU. I additionally re-run the radiative transfer through MCFOST to obtain images of the disc at different inclinations.
+The first group of data, provided by Dr. Benedetta Veronesi (...), consists in numerous simulations,
+both hydrodynamical and radiative,
+of the DS Tau disc run in the context of [add reference to paper]. 
+I additionally re-run the radiative transfer through MCFOST to obtain images of the disc at different inclinations.
+From this source, after the further processing through pymcfost, we obtained a total of () images.
 The second group of data was provided by Dr. Enrico Ragusa (...) and consists in sets of snapshots
 obtained from hydrodynamical simulations from which I selected only the ones which showed the presence of gaps.
-I then simulated the radiative transfer.
+I then simulated the radiative transfer and produced images with different gas to dust ratios and inclinations.
+From this source we eventually obtained () images.
 
-For each image obtained from a simulation, I used pymcfost to produce 10 images obtained convolving circular beams of different sizes
+For each result of a radiative transfer simulation, I used pymcfost to produce 10 images obtained convolving circular 
+Gaussian beams of different sizes (FWHM)
 logarithimically spaced between 0.01 and 1 arcsec. These values were chosen to explore resolutions
-realistically achievable, as proved by for example the DSHARP project, but also have images approaching the two limits.
+realistically achievable, as proved by for example the DSHARP project, and additionally explore the upper and lower limits.
 Very resolute images are included for applications where it might be preferable to remove instruments limitations
-or to test model in the perspective of future improvements in the observative techniques. 
-On the other end the less resoluted image is convolved with a beam of about the same dimensions of the disc. The
-images in this second limit may be useful to test what information could be extrapolated from very low resoluted observations
+or to test models in the perspective of future improvements in the observational techniques. 
+On the other end the less resoluted images are convolved with beams up to about the same dimensions of the disc. 
+This limit may be useful to test what information could be extrapolated from spatially unresolved observations
 which essentially provide only measures of the light intensity but can not reveal the disc substructures.
 
 (image with the 10 resolutions of the same disc?)
 
-The final product is a database made of 24720 FITS images 1024x1024 pixels. In this
-version each image contains only one star and one planet.
+The final product is a database made of 24720 FITS images with dimensions of 1024x1024 pixels. In this
+version each image contains only one star and one planet and exhibit an induced gap.
 Among the parameters listed in Table 5.1 only some of them vary significatively across different simulations.
 Apart from the beam sizes whose distribution has already been discussed, they are, the gas and dust masses, the gas to dust ratio, 
 the planet's mass and orbital radius and the time. Picture () shows the distribution of these parameters and the scatter
-plots showing some correlations between these variables. Some of this correlations are easily interpretable, for example the
+plots showing the correlations between these variables. Some of them are easily interpretable, for example the
 gas and dust masses decrease with time accompanied by the planet's mass increase can be understood as consequence of the planet's accretion
 process. There is also a strong correlation between the planet's orbital radius and its mass which is due to the third Keplerian law.
 
-The planet's mass, which is the target feature of the possible application on which we focused, shows an acceptable distribution among 
+Most of the discs were captured, in the images, from three different inclinations of approximately
+0, 30, and 60 degrees. The planet's mass, which is the target feature of the possible application on which we focused, shows an acceptable distribution over
 a sufficiently large interval of values.
 
 \section{Structure and interface}
@@ -1556,17 +1570,21 @@ which provide some information about the parameters used to produced that image.
 characters are numbers forming an index key which is used to uniquely identify each image.
 The collection is stored entirely inside a single directory where two additional files are generated: 
 \lstinline{index.js} and \lstinline{data.js}. They are json files aimed at indexing all the information stored in the FITS 
-files except for the images data in order to provide an easier access especially when the dataset is not completely
+files except for the images data, in order to provide an easier access especially when the dataset is not completely
 available locally.
 
-The entire dataset is, in fact, stored in a public git-hub repository exploting
+The entire dataset is, in fact, stored in a public github repository exploiting
 the git lfs storage system, and the typical usage workflow for which it was designed 
 consists in the following steps. First, through a script provided, and explained in the next section,
-the index files can be downloaded. They can then be read to obtain a pandas dataframe which containing
-a reference to each image and all the parameters stored in its reader. 
-It is thus possible to analyze this data to select, in case, a specific subset of the entire database.
-The keys of the images filtered in this way can thus be used to download the corresponding images without the need
-to get the entire dataset.
+the index files can be downloaded. They can then be read to obtain a dictionary which is loaded in a pandas DataFrame containing
+a reference to each image and all the parameters stored in their headers. 
+It is thus possible to analyze this data to select, in case, a specific subset of the entire database
+according to the implemented application.
+The keys of the images filtered in this way can thus be used to download them through the provided script, without the need
+to get the entire dataset whose size approaches hundreds of gigabytes.
+
+To allow these functionalities, inside the index file, some additional parameters regarding each image are stored.
+They include the file names, their hashes and the unique keys associated to each item.
 
 \section{Supporting scripts}
 
@@ -1575,63 +1593,65 @@ Here I am going to write about the scripts I wrote which allow the user to handl
 and preprocess the results coming from MCFOST simulations.
 \end{comment}
 
-
-To populate and manage the database, I developed a python package \lstinline{dblib}
+To populate and manage the database, I developed the python package \lstinline{dblib}
 and some command line scripts which provide immediate access to their main features.
 The structure of the package is the following:
 \begin{lstlisting}
     structure of package
 \end{lstlisting}
 
-Three main functions are carried out by these modules: preprocessing through pymcfost 
-of the images obtained after the \lstinline{MCFOST} simulation, handling the data stored 
-in the index files and downloading the database or some parts from the remote server.
+These modules fulfill three main functions: preprocessing through pymcfost and standardization
+of the images obtained after the \lstinline{MCFOST} simulation, generating and accessing
+the index files and last, downloading the database, entirely or partly, from the remote host.
 
-The preprocessing is handled by the submodule pymcfost\_process.py which contains the function 
-``read\_dirs\_doimages()'' that reads the \lstinline{FITS} files produced by \lstinline{MCFOST},
+The preprocessing is handled by the submodule \lstinline{pymcfost_process.py} which contains the function 
+\lstinline{read_dirs_doimages()} that reads the \lstinline{FITS} files produced by \lstinline{MCFOST},
 and some log files containing the parameters of the simulations, all  organized in a specific structure of subdirectories.
-These images are then convolved with gaussian beams of given sizes. Furthermore, some additional paramters are added to the header
-file to reach the complete list in table ().
-This module was thus used to preprocess and standardize the previously computed
-simulations that we collected before adding them to the final database.
-In order to simplify the use of this tool, I wrote a CLI script called \lstinline{pymc_prepro} which
-allows the use of the functions just mentioned through a command line interface.
+This function thus convolves the images with Gaussian beams of given sizes and adds some of the read parameters to the header
+file to reach the complete list in Table ().
+Therefore, we used this module to preprocess and standardize the previously computed
+simulations collected, before adding them to the final database.
+In order to simplify the use of this tool, I wrote a script called \lstinline{pymc_prepro} which
+allows the use of the functions just mentioned through a command line interface (CLI).
 
 The second function of these scripts is the creation and handling of the index.
-The two submodules index and index\_keys fulfil this purpose. They provide functions
-that read the parameters stored in the \lstinline{FITS} file and generate or update the
-index files. Furthermore, they allow the access to this index through the function \lstinline{get_data()}
-which merges together, from the two different files, all the data required returning it as a python dictionary.
+The two submodules \lstinline{index.py} and \lstinline{index_keys.py} fulfill this purpose. They provide functions
+that read the parameters stored in the \lstinline{FITS} files and generate or update the
+index. Furthermore, they allow to access the data stored in these index files, \lstinline{index.js} and \lstinline{data.js}, 
+through the function \lstinline{get_data()}
+which merges their content together, returning a python dictionary.
 This dictionary can then be passed to a pandas' function which returns a, more versatile, pandas DataFrame.
 The generation of the index files can be done through the CLI script \lstinline{generate_index} which has to be run from 
-the command line specifying the directory where the unindexed \lstinline{FITS} files are stored in addition
-to the optional parameters if needed.
+the terminal specifying the directory where the unindexed \lstinline{FITS} images are stored.
 
 Last, the third function of these scripts, access and retrieving the dataset from the remote server where
 it is hosted, is carried out by the \lstinline{downloader} module.
 It implements functions which are able to determine the remote location of specific items of the database 
 given their unique keys, download them and check whether the download has succeeded.
-This functions are interfaced by the cli script \lstinline{get_db}.
+The code developed employs the \lstinline{https} protocol to get the data and compute the \lstinline{sha1} 
+checksum to check the integrity of the files retrieved.
+These functions are interfaced by the CLI script \lstinline{get_db}.
 
 \section{Expanding the dataset}
 
 \begin{comment}
     Here I will explain how the tools provided allow to easily expand the dataset. 
     Then I am going to give future perspectives on how the database could be improved.
-    \end{comment}
+\end{comment}
 
 The version of the dataset deployed with this thesis is not intended to be the final version. 
-We have seen, in the previous section, that a small set of all the parameters exhibit different values distributed
-across a sufficiently large range. 
-In the development of the database structure, efforts had been made to allow an easy expansion with new
-data. The previously discussed scripts were also developed with this purpose.
+We have seen, in the previous section, that only a small set of all the parameters exhibit different values distributed
+across a sufficiently large range. Variations of the other ones could be explored in future updates.
 
-In order to integrate new images the raw material needed is FITS files obtained from a radiative 
-transfer simulation done with \lstinline{MCFOST} or a similar tool. If results of the hydrodynamical 
-simulations are available, this next step could be additionally run.
-Before using the \lstinline{pymc_prepro} script to preprocess the images and convolve them with the gaussian beam,
-they need to be organized in a specific tree of directories:
-each group of images with the same values for these parameters
+In the development of the database structure, great effort has been put into making the addition of new
+data as easy as possible. The previously discussed scripts were also developed with this purpose.
+
+In order to integrate new images FITS files obtained from a radiative 
+transfer simulation done with \lstinline{MCFOST} or a similar tool are needed. If results of hydrodynamical 
+simulations are available, they also can be used, additionally running the radiative transfer simulations.
+Before using the \lstinline{pymc_prepro} script to preprocess the images and convolve them with the Gaussian beam,
+they need to be organized in a specific tree of directories.
+Each group of images with the same values for these parameters
 
 
 have to be grouped inside the same directory organized according to the following substructure:
@@ -1644,29 +1664,32 @@ Apart from the \lstinline{RT.fits.gz} file produced by the MCFOST there are two 
 from the previous scheme: \lstinline{image.log} contains the redirected standard output of the \lstinline{MCFOST} run which 
 provides the parameters read from the phantom file,
 \lstinline{disc.para} is instead the input file used to run that simulation.
-When all the simulations available are properly grouped in this way, the \lstinline{pymc_prepro} script
+When all the data available are properly grouped in this way, the \lstinline{pymc_prepro} script
 can be run. If some features in Table () vary significatively across multiple simulations this script 
 results inconvenient. In this case the functions implemented in the \lstinline{dblib} package can be used
-to build a script adapt for this situation.
+to build a new script adapted to
+this situation.
 
 Once the FITS images have been preprocessed they can be added to the local directory containing the dataset 
 and indexed running the script \lstinline{generate_index} with the option \lstinline{--update}. 
 
-At this point the database has been expanded. To share the contribution merging it to the public remote database
-a pull request can be opened in the hosting repository. 
+At this point the database has been expanded. To share the contribution it is possible to merge it to the public remote database
+opening a pull request in the hosting repository. 
 
 The current version of this database can be improved under many aspects. The first suggestion
-is the addition of simulation exploring ranges of the parameters which do not vary across the images already present.
+is, as I anticipated, the addition of simulations exploring ranges of the parameters which do not vary across the images already present.
 For example, some hydrodynamical variables such as the $\alpha$-viscosity 
 or the density radial profile could generate different pictures which could then be interesting to probe with a neural network.
 Furthermore, we only included images of discs where the embedded planet interacted with the medium inducing the formation of
-gaps. It might be interesting to include in the dataset also simulations where the gap is not visible both for simulation with 
-and without planets. In this way, these images might be used, for example, to train a neural network for detecting the presence of
-planets. With this addition it may also be necessary to update the header of these files including some flags which would allow 
-the filtering of the data depending on what is needed.
+gaps. It might be interesting to include in the dataset also simulations where the gap does
+not form both with and without a planet.
+In this way, these images might be used, for example, to train a neural network to detect the presence of
+planets. 
 
-Images of discs with double stars or more than one planet might also be included to include all the possible morphologies.
-
+Images of discs with double stars or more than one planet might also be included, together with examples
+of the other possible substructures in order to include all the potential morphologies.
+With these additions it may also be necessary to update the headers of these files including some flags which would allow 
+a more selective filtering of the data depending on the needs.
 \chapter{Proof of concept}
 
 Here I am going to present an example of model trained to predict planet's mass from 
