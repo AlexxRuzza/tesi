@@ -12,6 +12,8 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,snakes}
 \usetikzlibrary{backgrounds}
+\usetikzlibrary{decorations.markings}
+
 \usepackage{subfig}
 
 %math symbols
@@ -45,8 +47,10 @@
 \usepackage{enumitem}
 \setlist[itemize]{align=parleft,left=0pt..1em}
 
+\usepackage{bm}
+
 %opening
-\title{Design of a machine learning model for the detection of young planets}
+\title{Design of a machine learning model for the characterisation of young planets from dust morphologies in discs}
 \author{Alessandro Ruzza}
 
 \begin{document}
@@ -463,7 +467,7 @@ some coefficients.
 The depth is usually expressed as the minimum of the density profile normalized with the initial unperturbed value. Sometimes the intensity of the emitted light is used in place of the
 density to obtain a definition which depends upon directly measurable properties.
 
-\chapter{State-of-the-art investigative techniques}
+\chapter{State-of-the-art characterisation methodologies}
 
 Protoplanetary discs are interesting objects both in their own dynamic and
 in the context of planet formation.
@@ -490,7 +494,7 @@ Determining them from observations is crucial
 to properly apply the developed models, test theories and make predictions on the disc behaviour.
 These features are not all unrelated, in some cases equations obtained from the theoretical
 models can link some of them while for other ones some empirical relationships can be found.
-This intricate net of dependencies come useful in the characterization of the disc and provides 
+This intricate net of dependencies come useful in the characterisation of the disc and provides 
 ways to check the results.
 
 The following sections focus on the analysis of the
@@ -895,7 +899,48 @@ Here I am going to present the perceptron model explaining:
 
 \begin{figure}
     \begin{center}
-        
+        \begin{tikzpicture}
+            \node[circle, draw, minimum size=1.5cm] (sigma) at (0, 0) {\huge $\Sigma$};
+            \node[rectangle, draw, inner sep=0.3cm ] (f) at (2, 0) {$\bm f$};
+            
+
+            \begin{scope}[decoration={
+                markings,
+                mark=at position 0.5 with {\arrow{>}}}
+                ] 
+            \draw[postaction={decorate}] (-3, 1) node[left] {$a_0$} -- (sigma);
+            \draw[postaction={decorate}] (-3, 0.5) node[left] {$a_1$}-- (sigma);
+            \draw[postaction={decorate}] (-3, -1) node[left] {$a_k$} -- (sigma);
+            \draw[postaction={decorate}] (sigma) -- (f);
+            \draw[postaction={decorate}] (f) -- (4, 0) node[right] {$o$};
+            \draw[postaction={decorate}] (0,1.2) node[above] {$\bm b$} -- (sigma);
+            \end{scope}
+
+            \path (-3, 0.5) -- (-3,-1) node [midway, sloped] {$\dots$};
+            \node at (-2, 0.9) {\small $\bm{w_0}$};
+            \node at (-2, 0.1) {\small $\bm{w_1}$};
+            \node at (-2, -0.9) {\small $\bm{w_k}$};
+            \node[above] at (1.1, 0) {$c$};
+
+            %activations
+            \draw[->] (-7, -5) -- (-3, -5) node[below] {$c$};
+            \draw[->] (-5, -5.3) -- (-5, -3) node[left] {$f(c)$};
+            \draw[very thick] (-6.5, -5) -- (-5,-5);
+            \draw[very thick] (-5, -3.5) -- (-3.5,-3.5);
+            \draw[very thick] (-5, -5) -- (-5,-3.5);
+
+
+            \draw[->] (-2, -5) -- (2, -5) node[below] {$c$};
+            \draw[->] (0, -5.3) -- (0, -3) node[left] {$f(c)$};
+            \begin{scope}[shift={(0,-5)}]
+                \draw[domain=-1.5:1.5, smooth, variable=\x, black, very thick]  plot ({\x}, {1.5/(1+exp(-5*\x))});
+            \end{scope}
+
+            \draw[->] (3, -5) -- (7, -5) node[below] {$c$};
+            \draw[->] (5, -5.3) -- (5, -3)node[left] {$f(c)$};
+            \draw[very thick] (3.5, -5) -- (5,-5);
+            \draw[very thick] (5, -5) -- (6.5,-3.5);
+        \end{tikzpicture}
     \end{center}
     \caption{Top panel: scheme of an artificial neuron.
      Bottom panel: graphs of three possible activation functions. 
@@ -955,7 +1000,41 @@ the frequency of transmission might vary. The continuous output thus model this 
 
 \begin{figure}
     \begin{center}
-        
+        \begin{tikzpicture}
+            %input layer
+            \node[circle, draw, minimum size=1cm] (01) at (-2, 0.75) {};
+            \node[circle, draw, minimum size=1cm] (02) at (-2, 2.25) {};
+            \node[circle, draw, minimum size=1cm] (03) at (-2, 3.75) {};
+
+            %hidden layer 1
+            \node[circle, draw, minimum size=1cm] (11) at (0, 0) {};
+            \node[circle, draw, minimum size=1cm] (12) at (0, 1.5) {};
+            \node[circle, draw, minimum size=1cm] (13) at (0, 3) {};
+            \node[circle, draw, minimum size=1cm] (14) at (0, 4.5) {};
+
+            %hidden layer 2
+            \node[circle, draw, minimum size=1cm] (21) at (2, 0) {};
+            \node[circle, draw, minimum size=1cm] (22) at (2, 1.5) {};
+            \node[circle, draw, minimum size=1cm] (23) at (2, 3) {};
+            \node[circle, draw, minimum size=1cm] (24) at (2, 4.5) {};
+
+            %hidden layer 2
+            \node[circle, draw, minimum size=1cm] (31) at (4, 0) {};
+            \node[circle, draw, minimum size=1cm] (32) at (4, 1.5) {};
+            \node[circle, draw, minimum size=1cm] (33) at (4, 3) {};
+            \node[circle, draw, minimum size=1cm] (34) at (4, 4.5) {};
+
+            %output layer
+            \node[circle, draw, minimum size=1cm] (sigma) at (6, 2.25) {};
+
+            %connections
+            \foreach \li in {0, ..., 2}{
+            \foreach \lo in {1,...,3}{
+            \foreach \i in {11,...,14}
+            {
+            \draw (\li\lo) -- (\i);
+            }}}
+        \end{tikzpicture}
     \end{center}
     \caption{Scheme of a feedforward neural network}
 \end{figure}
@@ -1692,22 +1771,130 @@ With these additions it may also be necessary to update the headers of these fil
 a more selective filtering of the data depending on the needs.
 \chapter{Proof of concept}
 
+\begin{comment}
 Here I am going to present an example of model trained to predict planet's mass from 
 disc images.
 From the different models I tested (and I will test)
 I am going to report here the one which gives the best result.
 I am also going to cite the python libraries used to implement this model (TensorFlow).
+\end{comment}
 
-\section{Adopted model}
+In order to prove the feasibility of our approach, we used the collected data to develop and train a neural network
+aimed at inferring planets' masses from the sole resolved intensity map of the dust continuum emission.
+The model was implemented using the Keras library.
 
-Here I am going to explain the model used: number of layers, type of neural network, activation functions,
-optimizer, metrics.
+In this chapter I am going to present the trained model, providing a usage example of
+the dataset developed which shows its versatility in the selection of subsets of data and the simple 
+steps required to interface them with a Keras model.
+
 
 \section{Data pre-processing}
 
+\begin{comment}
 Here I will explain how I chose the data used during the training process.
 This section should highlight the versatility of the dataset showing the possibility to split the 
 data according to our needs.
+\end{comment}
+
+The entire dataset developed contains 24720 images for a total size of approximately 190 GiB.
+In order to run the training process in reasonable times being thus able to explore different configurations, we 
+had to select a subset of the entire collection of data. In addition to the overcome of computational limits, 
+this selection is also useful to reduce the redundancy of the entire dataset which, in its completeness, cotains
+several images of the same disc convolved with different beam sizes
+that simulate different resolutions of the observative tools.
+These images were in fact, by design, intended to be filtered according to the expected resolution of the real
+images object of study.
+
+In this specific case I selected the images convolved with a beam dimension of 0.046 arcsec which is,
+among the available sizes, the closest to the currently achievable best resolution according to the DHSARP project.
+To further reduce the size of the dataset, I also selected only images with inclinations of about
+60°.
+Finally, I obtained a set of 1024 images which was randomly split in two subsets for the training and
+test phases containing respectevely the 80\% and 20\% of the whole data.
+The test set contains images which are not used during the training process which allow the evaluation
+of the model on never seen data reproducing the conditions of a real application.
+
+With the aim of showing how the database developed can be used in machine learning applications,
+I am going through the steps required to filter the data reporting the lines of code used.
+
+First, the dataset index has to be imported and loaded in a \lstinline{Pandas} DataFrame. 
+This operation can be carried out using the function \lstinline{get_data(())} developed for this purpose, which returns
+a pandas dataframe. It can then be filtered using pandas queries
+
+\begin{lstlisting}
+    data = pd.DataFrame(index.get_data())
+    data = data.set_index('KEY')
+    trial_data = data[(data.BMAJ>0.046) & (data.BMAJ<0.048)
+                        & (data.INCL>58)][['FILENAME', 'MPLANET0']]
+\end{lstlisting}
+
+In this line, the selection previously discussed is applied to the entire dataset and,
+for each item, only the name of the file that stores the disc image and the mass of the embedded planet are kept, as
+all the other parameters will not be used. However, if after the training process, for any reason, becomes necessary
+to access the other variables they can always be retrieved using the KEY parameter which, in the second line, is set as 
+the index column.
+
+The following step requires loading in memory all the images. This operation is achieved through the following
+instructions
+
+\begin{lstlisting}
+    def get_image(filepath):
+        with fits.open(filepath) as hdu:
+            return hdu[0].data
+    
+    train_images = np.array(
+                    [get_image(f"../../database/{filename}") 
+                    for filename in trial_data['FILENAME'].tolist()]
+                    )
+\end{lstlisting}
+
+where the function \lstinline{get_image()} opens the FITS file 
+and extracts
+the data of the disc image using the \lstinline{io.fits} module of 
+the \lstinline{astropy} package.
+
+The last step, before the split in training and test sets, consists 
+in the reshape of the numpy arrays which store the images data. The  
+function \lstinline{get_image()} return a 1024x1024 matrix of float containing
+the value of the light intensity at each pixel. 
+Tensorflow models require each 2D image to be, instead, a matrix of arrays.
+The additional dimension of the obtained tensor is introduced to account for 
+different channnels allowing, for example, the analysis of RGB images where 
+the intensity, at each pixel, of the three colors Red, Green and Blue is given.
+
+The data of the images stored in our database has only one channel. Therefore,
+the reshape can be obtained through
+
+\begin{lstlisting}
+    train_images = train_images.reshape(train_images.shape[0], 
+    train_images.shape[1], train_images.shape[2],  1)
+\end{lstlisting}
+
+obtaining the new array \lstinline{train_images} with the shape (n, 1024, 1024, 1)
+where n is the total number of items in the set.
+This array can be directly passed to the keras function that initiates
+the training process.
+
+It is worth noticing how easily the database we developed can be retrieved and filtered
+using standard and popular python packages.
+
+\section{Adopted model}
+
+\begin{comment}
+Here I am going to explain the model used: number of layers, type of neural network, activation functions,
+optimizer, metrics.
+\end{comment}
+
+This first machine learning application was primarly designed with the purpose of probing the limits and potentials
+of this new approach. For this reason, we chose the simplest model with the ability to solve the problem addressed among the
+sundry alternatives availables.
+
+More specifically we implemented a feedforward, densely connected, neural network with two hidden layers
+made of respectively 32 and 16 neurons and an output layer with a single neuron.
+Before reaching these layers, the information travels across two layers with specific functions.
+The input images, containing data organized in two dimensions, are provided to the input layer which is chosen
+between to specific types with ability of standardize the data.
+A standardization of some data is achieved substracting to each of the values the mean va
 
 \section{Results}
 
