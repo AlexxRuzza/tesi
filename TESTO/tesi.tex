@@ -13,6 +13,7 @@
 \usetikzlibrary{shapes,snakes}
 \usetikzlibrary{backgrounds}
 \usetikzlibrary{decorations.markings}
+\usetikzlibrary{math}
 
 \usepackage{subfig}
 
@@ -1001,6 +1002,8 @@ the frequency of transmission might vary. The continuous output thus model this 
 \begin{figure}
     \begin{center}
         \begin{tikzpicture}
+
+            
             %input layer
             \node[circle, draw, minimum size=1cm] (01) at (-2, 0.75) {};
             \node[circle, draw, minimum size=1cm] (02) at (-2, 2.25) {};
@@ -1025,15 +1028,38 @@ the frequency of transmission might vary. The continuous output thus model this 
             \node[circle, draw, minimum size=1cm] (34) at (4, 4.5) {};
 
             %output layer
-            \node[circle, draw, minimum size=1cm] (sigma) at (6, 2.25) {};
+            \node[circle, draw, minimum size=1cm] (o) at (6, 2.25) {};
 
-            %connections
-            \foreach \li in {0, ..., 2}{
+            \draw (o) -- (7, 2.25);
+
+            %connections hidden layyers
+            \foreach \le [count=\li] in {2, ..., 3}{
+            \foreach \lo in {1,...,4}{
+            \foreach \lu in {1,...,4}{
+                \draw (\li\lo) -- (\le\lu);
+            }}};
+
+            %connections input layer
             \foreach \lo in {1,...,3}{
-            \foreach \i in {11,...,14}
-            {
-            \draw (\li\lo) -- (\i);
-            }}}
+            \foreach \lu in {1,...,4}{
+                \draw (0\lo) -- (1\lu);
+            }};
+
+            %connections output layer
+            \foreach \lo in {1,...,4}{
+                \draw (3\lo) -- (o);
+            };
+
+            \begin{scope}[decoration={
+                markings,
+                mark=at position 0.5 with {\arrow{>}}}
+                ] 
+
+                \draw[postaction={decorate}] (-4, 3.75) node[left] {$a_0$} -- (03);
+                \draw[postaction={decorate}] (-4, 2.25) node[left] {$a_1$} -- (02);
+                \draw[postaction={decorate}] (-4, 0.75) node[left] {$a_2$} -- (01);
+                \draw[postaction={decorate}] (o)  -- (8,2.25) node[right] {$o_s$};
+            \end{scope}
         \end{tikzpicture}
     \end{center}
     \caption{Scheme of a feedforward neural network}
@@ -1373,9 +1399,12 @@ could quickly provide measures of their physical properties (?) )
 
 \begin{figure}
     \begin{center}
-        
+        \scalebox{0.5}{\input{images/m_diff.pgf}}
+        \scalebox{0.6}{\input{images/m_diff_rad.pgf}}
     \end{center}
-    \caption{Three simulations of the same disc with planets of different masses.}
+    \caption{Three simulations of the same disc with planets of different masses.
+    Top panel: map of the flux density of the dust emission at 1.3 mm, bottom panel:
+    radial profile of the azimuthally averaged flux}
 \end{figure}
 
 In the third chapter we have discussed the current methods adopted to interpret discs observations.
@@ -1437,7 +1466,7 @@ and explaining the main differences with the approach we propose.
 
 \begin{figure}
     \begin{center}
-        
+        \includegraphics[width=\textwidth]{images/4.5.fig7.auddy&lin/image.jpg}
     \end{center}
     \caption{Figure 7 of Auddy and Lin paper}
 \end{figure}
@@ -1890,15 +1919,72 @@ of this new approach. For this reason, we chose the simplest model with the abil
 sundry alternatives availables.
 
 More specifically we implemented a feedforward, densely connected, neural network with two hidden layers
-made of respectively 32 and 16 neurons and an output layer with a single neuron.
-Before reaching these layers, the information travels across two layers with specific functions.
-The input images, containing data organized in two dimensions, are provided to the input layer which is chosen
-between to specific types with ability of standardize the data.
-A standardization of some data is achieved substracting to each of the values the mean va
+made of respectively 32 and 16 neurons and an output layer with a single neuron that returns the predicted value of the planet's mass.
+The ReLU activation function was used in each unit, except for the output one, to introduce non-linearity.
+The input interface is made of two layers with specific functions.
+The input images, containing data organized in two dimensions, are provided to a layer which is able to standardize the data which
+is achieved substracting the mean value and dividing for the standard deviation.
+Tensorflow provides two different layrs which are able to achieve this standardization with specific difference.
+The first one is called \lstinline{LayerNormalization} and implements the standardization process described computing the mean and standard deviatin
+values indipendently on the flux density data of each image. The data of each image are thus standardized with their mean value and standard deviation.
+The alternative is instead called \lstinline{BatchNormalization} which, during the training process, 
+computes the mean and standard deviation of the current batch of inputs. Batches are groups in which the items in the training set are divided during 
+the training process, their size can be modified. After the training process, when the model is applied to the validation set or new data, 
+this layer normalizes the input using a moving average of the mean and standard deviation of the batches it has seen during training.
+The first option basically focus on the flux density variations inside each image enlightening the presence of substructures, such as gaps, 
+but, on the other end, removing the information carried by the absolute values of the flux density which are essentially measures
+of the dust mass. This information, more precisely the relative difference of the dust mass among different discs is instead preserved 
+with the second option which, however, has the risk of reducing the fluctuations inside each image potentially hiding the existence
+of substructures.
+By this arguments, we expected the first option to produce better results and some tests confirmed this hypothesis.
+After the normalization, the data, organized in two dimensional matrices are flattened by the Keras layer aimed at this purpose, before
+eventually, reaching the hidden layers.
+
+The optimizer used is \lstinline{Nadam} which is the \lstinline{adam} optimizer implemented with a Nesterov momentum.
+The \lstinline{adam} optimizer is a stochastic gradient descent method with the addition of first order and second order moments
+which are adaptively estimated during the training process. According to
+ Kingma et al., 2014, 
+ the method is ``computationally efficient, has little memory requirement, 
+ invariant to diagonal rescaling of gradients, 
+ and is well suited for problems that are large in terms of data/parameter''.
+The Nesterov momentum algorithms differ from the traditional ones essentially for where, at each step, the gradient is evaluated.
+Using a Nesterov momentum its contribution to the motion in the parameter space is considered before computing the gradient 
+which is evaluated in the new point reached instead of the original one. This simple modification usually boosts the training process allowing
+a faster convergence.
+We also lowered the learning rate reaching the value $10^{-4}$ to mitigate some undesired effects encountered.
+
+All these hyperparameters, including the number of hidden layers and of their neurons, were accurately chosen
+with a trial and error method. Here, we presented the model which showed the best performance with respect to its simplicity
+and thus the computational resources required.
+
+To evaluate the model, both during and after the training process, we used the mean squared error of the predicted mass values 
+with repect to the ones known from the simulation files and stored in our dataset.
 
 \section{Results}
 
+\begin{comment}
 Here I will discuss the results obtained.
+\end{comment}
+
+The training of the previously presented model took about 5 hours of wall time running on a laptop equipped with a dual core CPU
+with a clock frequency of 2GHz and the NVIDIA GeForce 840M GPU.
+
+We run the training for 200 epochs. The trends of the loss function evaluated on the training and test sets after each epoch are shown
+in figure () where their drop, after approximately () epochs can be appreciated.
+Furthermore, there are not evident signs of underlearning or overlearning as for both the samples the loss function keeps low values.
+
+Figure () can, alone, establish the successfull fullfilment of this first application purpose which was to evaluate the feasibility of
+a machine learning approach. However, we further analyzed the obtained results to provide 
+an estimation of the model's accuracy and precision. First, the mean squared error evaluated on the test set could 
+be assumed as the statistical uncertanty of the trained model which is () Jupyter masses.
+The relative error of each prediction 
+done on the test set was also computed. 
+Figure () shows the resulting distribution whith mean value of () and standard deviation of (). The trained model
+is thus afflicted by a slight bias which tends to overestimate the planet masses and presents, in some rare cases, errors up to
+the 200\% of the value which is trying to predict.
+
+
+
 
 \chapter{Conclusions}
 \section{Conclusion}
@@ -1914,6 +2000,8 @@ Here I will discuss the results obtained.
 \addcontentsline{toc}{chapter}{Bibliography}
 
 10.1093/mnras/stz913
+
+nadam citation: http://arxiv.org/abs/1412.6980
 
 
 
