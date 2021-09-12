@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.5)  10 SEP 2021 23:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.5)  12 SEP 2021 22:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -657,39 +657,58 @@ Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 \symboldsymbols=\mathgroup8
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 209.
+) (/usr/share/texmf-dist/tex/generic/dirtree/dirtree.sty
+Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
+ (/usr/share/texmf-dist/tex/generic/dirtree/dirtree.tex `dirtree' v0.32, 2012/12/11 (jcc)
+\DT@offset=\dimen316
+\DT@width=\dimen317
+\DT@sep=\dimen318
+\DT@all=\dimen319
+\DT@rulewidth=\dimen320
+\DT@dotwidth=\dimen321
+\DTbaselineskip=\dimen322
+\DT@counti=\count344
+\DT@countii=\count345
+\DT@countiii=\count346
+\DT@countiv=\count347
+\DT@indent=\dimen323
+\DT@parskip=\dimen324
+\DT@baselineskip=\dimen325
+)
+File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
 ) (/home/alexxruzza/UNI/TESI/TESTO/tesi.aux)
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count344
-\scratchdimen=\dimen316
+\scratchcounter=\count348
+\scratchdimen=\dimen326
 \scratchbox=\box96
-\nofMPsegments=\count345
-\nofMParguments=\count346
+\nofMPsegments=\count349
+\nofMParguments=\count350
 \everyMPshowfont=\toks42
-\MPscratchCnt=\count347
-\MPscratchDim=\dimen317
-\MPnumerator=\count348
-\makeMPintoPDFobject=\count349
+\MPscratchCnt=\count351
+\MPscratchDim=\dimen327
+\MPnumerator=\count352
+\makeMPintoPDFobject=\count353
 \everyMPtoPDFconversion=\toks43
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -741,8 +760,8 @@ Dictionary: translator-basic-dictionary, Language: English
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count350
-Package hyperref Info: Link coloring OFF on input line 91.
+\c@lstlisting=\count354
+Package hyperref Info: Link coloring OFF on input line 95.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -750,20 +769,20 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count351
+\c@section@level=\count355
 )
-LaTeX Info: Redefining \ref on input line 91.
-LaTeX Info: Redefining \pageref on input line 91.
-LaTeX Info: Redefining \nameref on input line 91.
+LaTeX Info: Redefining \ref on input line 95.
+LaTeX Info: Redefining \pageref on input line 95.
+LaTeX Info: Redefining \nameref on input line 95.
  (/home/alexxruzza/UNI/TESI/TESTO/tesi.out) (/home/alexxruzza/UNI/TESI/TESTO/tesi.out)
 \@outlinefile=\write4
 \openout4 = `tesi.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 91.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 95.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 91.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 95.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -771,11 +790,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.115 \end{abstract}
+l.119 \end{abstract}
                      [1] (/home/alexxruzza/UNI/TESI/TESTO/tesi.tocpdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.38 ...rline {6.2}Adopted model}{32}{section.6.2}
+l.38 ...rline {6.2}Adopted model}{34}{section.6.2}
                                                   % [1
 
 ])
@@ -805,190 +824,190 @@ Package pdftex.def Info: images/profile-img1.png  used on input line 579.
 <images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg, id=284, 522.753pt x 163.3302pt>
 File: images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg Graphic file (type jpg)
 <use images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg>
-Package pdftex.def Info: images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg  used on input line 356.
+Package pdftex.def Info: images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg  used on input line 360.
 (pdftex.def)             Requested size: 426.79135pt x 133.34595pt.
  [7]
 <images/alma_pictures.jpg, id=291, 509.2626pt x 125.268pt>
 File: images/alma_pictures.jpg Graphic file (type jpg)
 <use images/alma_pictures.jpg>
-Package pdftex.def Info: images/alma_pictures.jpg  used on input line 400.
+Package pdftex.def Info: images/alma_pictures.jpg  used on input line 404.
 (pdftex.def)             Requested size: 426.79135pt x 104.98355pt.
  [8 </home/alexxruzza/UNI/TESI/TESTO/images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg>] (/home/alexxruzza/UNI/TESI/TESTO/images/rad_profiles.pgf) [9 </home/alexxruzza/UNI/TESI/TESTO/images/alma_pictures.jpg>] [10]
 Chapter 3.
 [11
 
 ] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 677--681
+Underfull \hbox (badness 10000) in paragraph at lines 681--685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--681
+Underfull \hbox (badness 10000) in paragraph at lines 681--685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--681
+Underfull \hbox (badness 10000) in paragraph at lines 681--685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--681
+Underfull \hbox (badness 10000) in paragraph at lines 681--685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 681--682
+Underfull \hbox (badness 10000) in paragraph at lines 685--686
 \OT1/cmr/m/n/7 i-cal and struc-tural
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 681--682
+Underfull \hbox (badness 10000) in paragraph at lines 685--686
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 682--683
+Underfull \hbox (badness 10000) in paragraph at lines 686--687
 []\OT1/cmr/m/n/7 computes the dust
  []
 
 
-Underfull \hbox (badness 2027) in paragraph at lines 682--683
+Underfull \hbox (badness 2027) in paragraph at lines 686--687
 \OT1/cmr/m/n/7 and gas dis-tri-bu-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 682--683
+Underfull \hbox (badness 10000) in paragraph at lines 686--687
 
  []
 
 
-Underfull \hbox (badness 2753) in paragraph at lines 683--684
+Underfull \hbox (badness 2753) in paragraph at lines 687--688
 []\OT1/cmr/m/n/7 produces dump files
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 689--693
+Underfull \hbox (badness 10000) in paragraph at lines 693--697
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 689--693
+Underfull \hbox (badness 10000) in paragraph at lines 693--697
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 689--693
+Underfull \hbox (badness 10000) in paragraph at lines 693--697
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 689--693
+Underfull \hbox (badness 10000) in paragraph at lines 693--697
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 693--694
+Underfull \hbox (badness 10000) in paragraph at lines 697--698
 \OT1/cmr/m/n/7 er-ties and rel-a-tive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 693--694
+Underfull \hbox (badness 10000) in paragraph at lines 697--698
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 694--695
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
 []\OT1/cmr/m/n/7 first, com-pute the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 694--695
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
 \OT1/cmr/m/n/7 disc tem-per-a-ture
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 694--695
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
 \OT1/cmr/m/n/7 re-sult-ing from the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 694--695
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
 
  []
 
 
-Underfull \hbox (badness 3884) in paragraph at lines 695--696
+Underfull \hbox (badness 3884) in paragraph at lines 699--700
 \OT1/cmr/m/n/7 ten-sity map of the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 700--704
+Underfull \hbox (badness 10000) in paragraph at lines 704--708
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 700--704
+Underfull \hbox (badness 10000) in paragraph at lines 704--708
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 700--704
+Underfull \hbox (badness 10000) in paragraph at lines 704--708
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 700--704
+Underfull \hbox (badness 10000) in paragraph at lines 704--708
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 704--705
+Underfull \hbox (badness 10000) in paragraph at lines 708--709
 []\OT1/cmr/m/n/7 requires the pa-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 704--705
+Underfull \hbox (badness 10000) in paragraph at lines 708--709
 \OT1/cmr/m/n/7 ram-e-ters of the
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 704--705
+Underfull \hbox (badness 1082) in paragraph at lines 708--709
 \OT1/cmr/m/n/7 in-stru-ments used for
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 704--705
+Underfull \hbox (badness 10000) in paragraph at lines 708--709
 
  []
 
 
-Underfull \hbox (badness 2359) in paragraph at lines 705--706
+Underfull \hbox (badness 2359) in paragraph at lines 709--710
 []\OT1/cmr/m/n/7 reproduce noise and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 705--706
+Underfull \hbox (badness 10000) in paragraph at lines 709--710
 \OT1/cmr/m/n/7 er-rors which af-flict
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 705--706
+Underfull \hbox (badness 10000) in paragraph at lines 709--710
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 706--707
+Underfull \hbox (badness 10000) in paragraph at lines 710--711
 []\OT1/cmr/m/n/7 pymcfost was only
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 706--707
+Underfull \hbox (badness 10000) in paragraph at lines 710--711
 \OT1/cmr/m/n/7 tele-scopes lim-ited
  []
 
 [13]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 769.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 773.
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) (/home/alexxruzza/UNI/TESI/TESTO/images/fig3.2.pgf
@@ -1047,7 +1066,7 @@ File: images/m_diff-img2.png Graphic file (type png)
 Package pdftex.def Info: images/m_diff-img2.png  used on input line 730.
 (pdftex.def)             Requested size: 227.46pt x 227.46pt.
 ) (/home/alexxruzza/UNI/TESI/TESTO/images/m_diff_rad.pgf)
-Overfull \hbox (3.21492pt too wide) in paragraph at lines 1465--1467
+Overfull \hbox (3.21492pt too wide) in paragraph at lines 1469--1471
  [] 
  []
 
@@ -1055,62 +1074,209 @@ Overfull \hbox (3.21492pt too wide) in paragraph at lines 1465--1467
 <images/4.5.fig7.auddy&lin/image.jpg, id=405, 522.753pt x 236.8047pt>
 File: images/4.5.fig7.auddy&lin/image.jpg Graphic file (type jpg)
 <use images/4.5.fig7.auddy&lin/image.jpg>
-Package pdftex.def Info: images/4.5.fig7.auddy&lin/image.jpg  used on input line 1547.
+Package pdftex.def Info: images/4.5.fig7.auddy&lin/image.jpg  used on input line 1551.
 (pdftex.def)             Requested size: 426.79135pt x 193.33195pt.
  [23] [24 </home/alexxruzza/UNI/TESI/TESTO/images/4.5.fig7.auddy&lin/image.jpg>]
 Chapter 5.
 [25
 
-] [26]
-LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 1752.
+] [26] (/home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff.pgf
+<images/5.1.res.diff/res_diff-img0.png, id=426, interpolate=true, 887.315pt x 887.315pt>
+File: images/5.1.res.diff/res_diff-img0.png Graphic file (type png)
+<use images/5.1.res.diff/res_diff-img0.png>
+Package pdftex.def Info: images/5.1.res.diff/res_diff-img0.png  used on input line 60.
+(pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
+<images/5.1.res.diff/res_diff-img1.png, id=427, interpolate=true, 887.315pt x 887.315pt>
+File: images/5.1.res.diff/res_diff-img1.png Graphic file (type png)
+<use images/5.1.res.diff/res_diff-img1.png>
+Package pdftex.def Info: images/5.1.res.diff/res_diff-img1.png  used on input line 318.
+(pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
+<images/5.1.res.diff/res_diff-img2.png, id=428, interpolate=true, 887.315pt x 887.315pt>
+File: images/5.1.res.diff/res_diff-img2.png Graphic file (type png)
+<use images/5.1.res.diff/res_diff-img2.png>
+Package pdftex.def Info: images/5.1.res.diff/res_diff-img2.png  used on input line 576.
+(pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
+<images/5.1.res.diff/res_diff-img3.png, id=429, interpolate=true, 887.315pt x 887.315pt>
+File: images/5.1.res.diff/res_diff-img3.png Graphic file (type png)
+<use images/5.1.res.diff/res_diff-img3.png>
+Package pdftex.def Info: images/5.1.res.diff/res_diff-img3.png  used on input line 834.
+(pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
+<images/5.1.res.diff/res_diff-img4.png, id=430, interpolate=true, 887.315pt x 887.315pt>
+File: images/5.1.res.diff/res_diff-img4.png Graphic file (type png)
+<use images/5.1.res.diff/res_diff-img4.png>
+Package pdftex.def Info: images/5.1.res.diff/res_diff-img4.png  used on input line 1092.
+(pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
+<images/5.1.res.diff/res_diff-img5.png, id=431, interpolate=true, 887.315pt x 887.315pt>
+File: images/5.1.res.diff/res_diff-img5.png Graphic file (type png)
+<use images/5.1.res.diff/res_diff-img5.png>
+Package pdftex.def Info: images/5.1.res.diff/res_diff-img5.png  used on input line 1350.
+(pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
+<images/5.1.res.diff/res_diff-img6.png, id=432, interpolate=true, 887.315pt x 887.315pt>
+File: images/5.1.res.diff/res_diff-img6.png Graphic file (type png)
+<use images/5.1.res.diff/res_diff-img6.png>
+Package pdftex.def Info: images/5.1.res.diff/res_diff-img6.png  used on input line 1608.
+(pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
+<images/5.1.res.diff/res_diff-img7.png, id=433, interpolate=true, 887.315pt x 887.315pt>
+File: images/5.1.res.diff/res_diff-img7.png Graphic file (type png)
+<use images/5.1.res.diff/res_diff-img7.png>
+Package pdftex.def Info: images/5.1.res.diff/res_diff-img7.png  used on input line 1866.
+(pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
+<images/5.1.res.diff/res_diff-img8.png, id=434, interpolate=true, 887.315pt x 887.315pt>
+File: images/5.1.res.diff/res_diff-img8.png Graphic file (type png)
+<use images/5.1.res.diff/res_diff-img8.png>
+Package pdftex.def Info: images/5.1.res.diff/res_diff-img8.png  used on input line 2124.
+(pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
+<images/5.1.res.diff/res_diff-img9.png, id=435, interpolate=true, 887.315pt x 887.315pt>
+File: images/5.1.res.diff/res_diff-img9.png Graphic file (type png)
+<use images/5.1.res.diff/res_diff-img9.png>
+Package pdftex.def Info: images/5.1.res.diff/res_diff-img9.png  used on input line 2382.
+(pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
+)
+Overfull \hbox (3.1433pt too wide) in paragraph at lines 1740--1741
+ [] 
+ []
+
+<images/pairplot.png, id=436, 1058.7555pt x 1064.5371pt>
+File: images/pairplot.png Graphic file (type png)
+<use images/pairplot.png>
+Package pdftex.def Info: images/pairplot.png  used on input line 1758.
+(pdftex.def)             Requested size: 426.79135pt x 429.12097pt.
+[27]
+LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 1782.
  (/usr/share/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1752.
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1752.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1782.
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1782.
  (/usr/share/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-) [27] [28] [29] [30]
+)
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1816--1826
+[]$[]$ 
+ []
+
+[28 </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img0.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img1.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img2.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img3.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img4.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img5.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img6.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img7.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img8.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img9.png>] [29 </home/alexxruzza/UNI/TESI/TESTO/images/pairplot.png>] [30]
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1920--1920
+[][]||[] 
+ []
+
+[31] [32]
 Chapter 6.
-LaTeX Font Info:    Trying to load font information for OML+pcr on input line 1934.
-(/usr/share/texmf-dist/tex/latex/psnfss/omlpcr.fd
+[33
+
+]
+LaTeX Font Info:    Trying to load font information for OML+pcr on input line 2021.
+ (/usr/share/texmf-dist/tex/latex/psnfss/omlpcr.fd
 File: omlpcr.fd 
 )
 LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 1934.
- [31
-
-] [32] (/home/alexxruzza/UNI/TESI/TESTO/images/loss.pgf) (/home/alexxruzza/UNI/TESI/TESTO/images/corr&err.pgf)
-Overfull \hbox (11.20657pt too wide) in paragraph at lines 4536--2057
- [] 
- []
-
-[33] [34] [35]
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 2021.
+<images/inp_mod.png, id=488, 1027.84pt x 1027.84pt>
+File: images/inp_mod.png Graphic file (type png)
+<use images/inp_mod.png>
+Package pdftex.def Info: images/inp_mod.png  used on input line 2092.
+(pdftex.def)             Requested size: 85.35826pt x 85.3499pt.
+ [34] [35 </home/alexxruzza/UNI/TESI/TESTO/images/inp_mod.png>] (/home/alexxruzza/UNI/TESI/TESTO/images/loss.pgf) (/home/alexxruzza/UNI/TESI/TESTO/images/corr&err.pgf) [36] [37] [38]
 Chapter 7.
-[36
+[39
 
-] [37
+] (/home/alexxruzza/UNI/TESI/TESTO/tesi.bbl [40
 
-] [38
+]) [41
 
 ] (/home/alexxruzza/UNI/TESI/TESTO/tesi.aux)
 Package rerunfilecheck Info: File `tesi.out' has not changed.
-(rerunfilecheck)             Checksum: 2E42853B0A97045747ABB73CBA49591D;6789.
+(rerunfilecheck)             Checksum: 3D81DBE78F189FDD38AD7882BC68C55D;6789.
  ) 
 Here is how much of TeX's memory you used:
- 30868 strings out of 478994
- 604399 string characters out of 5864752
- 967746 words of memory out of 5000000
- 47628 multiletter control sequences out of 15000+600000
- 429884 words of font info for 126 fonts, out of 8000000 for 9000
+ 31127 strings out of 478994
+ 609870 string characters out of 5864752
+ 979018 words of memory out of 5000000
+ 47848 multiletter control sequences out of 15000+600000
+ 430230 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,10n,102p,558b,1383s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on /home/alexxruzza/UNI/TESI/TESTO/tesi.pdf (40 pages, 2891712 bytes).
+ 98i,10n,102p,591b,2231s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on /home/alexxruzza/UNI/TESI/TESTO/tesi.pdf (43 pages, 5121081 bytes).
 PDF statistics:
- 620 PDF objects out of 1000 (max. 8388607)
- 521 compressed objects within 6 object streams
- 136 named destinations out of 1000 (max. 500000)
- 435 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 677 PDF objects out of 1000 (max. 8388607)
+ 550 compressed objects within 6 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 495 words of extra memory for PDF output out of 10000 (max. 10000000)
 

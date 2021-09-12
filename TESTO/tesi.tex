@@ -50,6 +50,10 @@
 
 \usepackage{bm}
 
+\usepackage{dirtree}
+
+
+
 %setting for lst
 \def\lstbasicfont{\fontfamily{pcr}\selectfont\footnotesize}
 \lstset{%
@@ -302,7 +306,7 @@ are needed. Viscosity plays a central role in this context. Detailed calculation
 as modelled in an ideal gas and caused by molecular collisions is too weak to account for these processes. 
 A proper model can be achieved assuming a highly turbulent regime that can produce a ``turbulent viscosity'' through the mixing of fluid elements
 at neighboring radii. The new parameter $\alpha$
-called ``Shakura-Seneyev viscosity'' which gathers all the ignorance on this process is introduced through the following reasoning:
+called ``Shakura-Sunyaev viscosity'' which gathers all the ignorance on this process is introduced through the following reasoning:
 in the case of laminar flow, kinematic viscosity $\nu$ is defined as the constant of 
 proportionality between the shear stress $\tau$ and the velocity gradient  $\pdv{u}{y}$, normalized with the fluid density $\rho$
 \begin{equation}
@@ -1306,33 +1310,33 @@ I am going to:
             %activations
             \draw[->] (-7, 0) -- (-3, 0) node[below] {$x$};
             \draw[->] (-6.7, -0.3) -- (-6.7, 3) node[left] {$f(x)$};
-            \draw[red, fill=red] (-6.2, 0.2) circle [radius=0.4mm] {};
-            \draw[red, fill=red] (-5.3, 0.5) circle [radius=0.4mm] {};
-            \draw[red, fill=red] (-4.7, 1.3) circle [radius=0.4mm] {};
-            \draw[red, fill=red] (-4.4, 1.8) circle [radius=0.4mm] {};
-            \draw[red, fill=red] (-3.7, 2.4) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (-6.2, 0.2) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (-5.3, 0.5) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (-4.7, 1.3) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (-4.4, 1.8) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (-3.7, 2.4) circle [radius=0.4mm] {};
             \begin{scope}[shift={(-6.7,0)}]
-                \draw[domain=0:3.3, smooth, variable=\x, black]  plot ({\x}, {0.65*\x});
+                \draw[domain=0:3.4, smooth, variable=\x, black]  plot ({\x}, {0.65*\x});
             \end{scope}
 
             \draw[->] (-2, 0) -- (2, 0) node[below] {$x$};
             \draw[->] (-1.7, -0.3) -- (-1.7, 3) node[left] {$f(x)$};
-            \draw[red, fill=red] (-1.2, 0.2) circle [radius=0.4mm] {};
-            \draw[red, fill=red] (-0.3, 0.5) circle [radius=0.4mm] {};
-            \draw[red, fill=red] (0.3, 1.3) circle [radius=0.4mm] {};
-            \draw[red, fill=red] (0.6, 1.8) circle [radius=0.4mm] {};
-            \draw[red, fill=red] (1.3, 2.4) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (-1.2, 0.2) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (-0.3, 0.5) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (0.3, 1.3) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (0.6, 1.8) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (1.3, 2.4) circle [radius=0.4mm] {};
             \begin{scope}[shift={(-1.7,0)}]
                 \draw[domain=0:3.1, smooth, variable=\x, black]  plot ({\x}, {0.3*\x*\x});
             \end{scope}
 
             \draw[->] (3, 0) -- (7, 0) node[below] {$x$};
             \draw[->] (3.3, -0.3) -- (3.3, 3) node[left] {$f(x)$};
-            \draw[red, fill=red] (3.8, 0.2) circle [radius=0.4mm] {};
-            \draw[red, fill=red] (4.7, 0.5) circle [radius=0.4mm] {};
-            \draw[red, fill=red] (5.3, 1.3) circle [radius=0.4mm] {};
-            \draw[red, fill=red] (5.6, 1.8) circle [radius=0.4mm] {};
-            \draw[red, fill=red] (6.3, 2.4) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (3.8, 0.2) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (4.7, 0.5) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (5.3, 1.3) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (5.6, 1.8) circle [radius=0.4mm] {};
+            \draw[blue, fill=blue] (6.3, 2.4) circle [radius=0.4mm] {};
             \begin{scope}[shift={(3.3,0)}]
                 \draw[domain=0:3.3, smooth, variable=\x, black]  
                 plot ({\x}, 
@@ -1609,7 +1613,7 @@ As I already mentioned, the starting data from which we built the database
 we designed to train neural network models are results
 of hydrodynamical and radiative simulations.
 At this stage of the simulation process, the resulting images
-are spatially resolved maps of light intensity at a specific wavelength as seen 
+are spatially resolved maps of the flux density of light at a specific wavelength as seen 
 from a given relative position.
 This fictitious images are further elaborated with pymcfost,
 whose functioning has been discussed in chapter 3, to simulate the limited resolution of
@@ -1623,11 +1627,11 @@ Each one, as the name suggests, consists in an ASCII text header organized in ke
 by a binary, usually multidimensional, array where the data is stored.
 
 In our dataset, each FITS file contains only one image corresponding to a single HDU.
-In the header, some parameters of the disc depicted are stored. 
-The preprocessing step, run on the files obtained from the radiative transfer simulations, ensures also
+In the header, some parameters of the disc images depicted are stored. 
+The preprocessing step, run on the files obtained from the radiative transfer simulations, ensures
 the proper standardization of the header, retrieving and adding the missing variables.
-Table () shows the list of the keys corresponding to each of these parameters
-saved in the FITS files, and provides also brief descriptions.
+Table 5.1 shows the list of the header keys corresponding to each of these parameters
+saved in the FITS files. Brief descptions are also provided.
 
 \begin{table}
     \begin{center}
@@ -1646,6 +1650,8 @@ saved in the FITS files, and provides also brief descriptions.
         PINDEX & power law index for the initial surface density profiles\\
         QINDEX & power law index for the initial sound speed profile \\
         TIME & time of the snapshot in complete orbits of the planet \\
+        ALPHASS & Shakura-Sunyaev $\alpha$-viscosity\\
+        ECC & eccentricity of the planet's orbit\\\\
 
         %star(s)
         NSTARS & number of stars in the simulation \\
@@ -1686,36 +1692,42 @@ saved in the FITS files, and provides also brief descriptions.
         \caption{keywords in the fits file}
 \end{table}
 
-In the same table, I divided the list in six different groups. The first one contains
+In this table, I divided the list in six different groups. The first one contains
 variables which are read from the \lstinline{PHANTOM}'s dump file and are thus hydrodynamical features of
 the disc. The next two groups list the physical properties of stars and planets. These groups contain the 
-``multiple keys'', those in the ``KEY\#'' format, which appear more than once, substituting the ``\#'' character with an index,
+``multiple keys'', those in the \lstinline{KEY#} format, which appear more than once, substituting the \lstinline{#} character with an index,
 in case of multiple stars or planets.
 Except for the star temperature which is a parameter of the radiative transfer simulation, also these variables are retrieved from
-the saved output of \lstinline{MCFOST} which read these properties in the \lstinline{PHANTOM}'s dump file.
+the saved standard output of \lstinline{MCFOST} which read these properties in the \lstinline{PHANTOM}'s dump file.
 The fourth set collects some input variables of the \lstinline{MCFOST}'s simulation.
 They set the relative position and orientation of the disc and the wavelength of the radiative emission probed.
 The \lstinline{GDRATIO} variable contains the value of the gas to dust mass ratio set when running \lstinline{MCFOST}
 which is simulated
 independently to the value of the same parameter used to obtain the respective \lstinline{PHANTOM} dump. For
-this reason computing \lstinline{MGAS/MDUST} gives a different result.
+this reason computing \lstinline{MGAS/MDUST} gives a different result since these last parameters refer to the results 
+of the \lstinline{PHANTOM} simulation.
+This method is preferred due to the less time required to run a radiative transfer simulation with respect to a
+hydrodynamical one. The obtained results are valid in the assumption of negligible back reaction between gas and dust which
+is usually true for sufficiently large gas to dust ratios ($\gtrsim 10$).
+
 Finally, the fifth group provides the units of the stored data while the last one contains
 the dimensions and orientation of the Gaussian beam used to convolve the image.
 
 The images collected within the database in the version deployed with this thesis, come from two different sources.
 The first group of data, provided by Dr. Benedetta Veronesi (...), consists in numerous simulations,
 both hydrodynamical and radiative,
-of the DS Tau disc run in the context of [add reference to paper]. 
+of the DS Tau disc \cite{dstauv}. 
 I additionally re-run the radiative transfer through MCFOST to obtain images of the disc at different inclinations.
-From this source, after the further processing through pymcfost, we obtained a total of () images.
+From this source, after the further processing through pymcfost, we obtained a total of 20370 images.
 The second group of data was provided by Dr. Enrico Ragusa (...) and consists in sets of snapshots
 obtained from hydrodynamical simulations from which I selected only the ones which showed the presence of gaps.
 I then simulated the radiative transfer and produced images with different gas to dust ratios and inclinations.
-From this source we eventually obtained () images.
+From this source we eventually obtained 4350 images.
 
 For each result of a radiative transfer simulation, I used pymcfost to produce 10 images obtained convolving circular 
 Gaussian beams of different sizes (FWHM)
-logarithimically spaced between 0.01 and 1 arcsec. These values were chosen to explore resolutions
+logarithimically spaced between 0.01 and 1 arcsec. Figure 5.1 shows an example of the results obtained.
+These values were chosen to explore resolutions
 realistically achievable, as proved by for example the DSHARP project, and additionally explore the upper and lower limits.
 Very resolute images are included for applications where it might be preferable to remove instruments limitations
 or to test models in the perspective of future improvements in the observational techniques. 
@@ -1723,7 +1735,14 @@ On the other end the less resoluted images are convolved with beams up to about 
 This limit may be useful to test what information could be extrapolated from spatially unresolved observations
 which essentially provide only measures of the light intensity but can not reveal the disc substructures.
 
-(image with the 10 resolutions of the same disc?)
+\begin{figure}
+    \begin{center}
+        \scalebox{0.4}{\input{images/5.1.res.diff/res_diff.pgf}}
+    \end{center}
+    \caption{The ten different sizes of the gaussian beam used to convolve each synthetic image. 
+    In this figure all the images are obtained from the same simulation result varying only the
+    beam size whichis shown in the left bottom corner.}
+\end{figure}
 
 The final product is a database made of 24720 FITS images with dimensions of 1024x1024 pixels. In this
 version each image contains only one star and one planet and exhibit an induced gap.
@@ -1734,9 +1753,20 @@ plots showing the correlations between these variables. Some of them are easily 
 gas and dust masses decrease with time accompanied by the planet's mass increase can be understood as consequence of the planet's accretion
 process. There is also a strong correlation between the planet's orbital radius and its mass which is due to the third Keplerian law.
 
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=\textwidth]{images/pairplot.png}
+    \end{center}
+    \caption{Pairwise relationships in the deployed dataset. The diagonal shows how each parameter is distributed
+    while the off-diagonal plots highligth correlations among these variables. Only the parameters whose values vary
+    significantly within the dataset are shown.}
+\end{figure}
+
 Most of the discs were captured, in the images, from three different inclinations of approximately
-0, 30, and 60 degrees. The planet's mass, which is the target feature of the possible application on which we focused, shows an acceptable distribution over
-a sufficiently large interval of values.
+0, 30, and 60 degrees. Furthermore, all of them were computed for the dust continuum emission 
+at 1.3 mm wavelength.
+The planet's mass, which is the target feature of the possible application on which we focused, shows an acceptable distribution over
+a sufficiently large interval of values. The gas to dust ratio is another parameter which has been widely explored.
 
 \section{Structure and interface}
 
@@ -1756,7 +1786,7 @@ which provide some information about the parameters used to produced that image.
 characters are numbers forming an index key which is used to uniquely identify each image.
 The collection is stored entirely inside a single directory where two additional files are generated: 
 \lstinline{index.js} and \lstinline{data.js}. They are json files aimed at indexing all the information stored in the FITS 
-files except for the images data, in order to provide an easier access especially when the dataset is not completely
+files except for the images' data, in order to provide an easier access especially when the dataset is not completely
 available locally.
 
 The entire dataset is, in fact, stored in a public github repository exploiting
@@ -1782,11 +1812,19 @@ and preprocess the results coming from MCFOST simulations.
 To populate and manage the database, I developed the python package \lstinline{dblib}
 and some command line scripts which provide immediate access to their main features.
 The structure of the package is the following:
-\begin{lstlisting}
-    structure of package
-\end{lstlisting}
 
-These modules fulfill three main functions: preprocessing through pymcfost and standardization
+\begin{minipage}{\textwidth}
+\dirtree{%
+.1 dblib. 
+.2 index\_keys.py. 
+.2 index.py. 
+.2 pymcfost\_process.py. 
+.2 utils.py. 
+.2 \_\_init\_\_.py. 
+}
+\end{minipage}
+
+These modules fulfill three main functions: preprocessing through \lstinline{pymcfost} and standardization
 of the images obtained after the \lstinline{MCFOST} simulation, generating and accessing
 the index files and last, downloading the database, entirely or partly, from the remote host.
 
@@ -1794,19 +1832,22 @@ The preprocessing is handled by the submodule \lstinline{pymcfost_process.py} wh
 \lstinline{read_dirs_doimages()} that reads the \lstinline{FITS} files produced by \lstinline{MCFOST},
 and some log files containing the parameters of the simulations, all  organized in a specific structure of subdirectories.
 This function thus convolves the images with Gaussian beams of given sizes and adds some of the read parameters to the header
-file to reach the complete list in Table ().
+file to reach the complete list in Table 5.1.
 Therefore, we used this module to preprocess and standardize the previously computed
 simulations collected, before adding them to the final database.
 In order to simplify the use of this tool, I wrote a script called \lstinline{pymc_prepro} which
 allows the use of the functions just mentioned through a command line interface (CLI).
 
 The second function of these scripts is the creation and handling of the index.
-The two submodules \lstinline{index.py} and \lstinline{index_keys.py} fulfill this purpose. They provide functions
+The two submodules \lstinline{index.py} and \lstinline{index_keys.py} fulfill this purpose.
+They provide functions
 that read the parameters stored in the \lstinline{FITS} files and generate or update the
-index. Furthermore, they allow to access the data stored in these index files, \lstinline{index.js} and \lstinline{data.js}, 
+index. Furthermore, they allow to access the data stored in these index files,
+\lstinline{index.js} and \lstinline{data.js}, 
 through the function \lstinline{get_data()}
 which merges their content together, returning a python dictionary.
-This dictionary can then be passed to a pandas' function which returns a, more versatile, pandas DataFrame.
+This dictionary can then be passed to a function of \lstinline{pandas},
+a python library designed for data analysis and manipulation, obtaining a more versatile pandas \lstinline{DataFrame}.
 The generation of the index files can be done through the CLI script \lstinline{generate_index} which has to be run from 
 the terminal specifying the directory where the unindexed \lstinline{FITS} images are stored.
 
@@ -1832,15 +1873,52 @@ across a sufficiently large range. Variations of the other ones could be explore
 In the development of the database structure, great effort has been put into making the addition of new
 data as easy as possible. The previously discussed scripts were also developed with this purpose.
 
-In order to integrate new images FITS files obtained from a radiative 
+In order to integrate new images, FITS files obtained from a radiative 
 transfer simulation done with \lstinline{MCFOST} or a similar tool are needed. If results of hydrodynamical 
 simulations are available, they also can be used, additionally running the radiative transfer simulations.
 Before using the \lstinline{pymc_prepro} script to preprocess the images and convolve them with the Gaussian beam,
 they need to be organized in a specific tree of directories.
 Each group of images with the same values for these parameters
 
+\begin{center}
+    \begin{tabular}{lr}
+        \toprule
+        key & description \\
+        \midrule
+        RIN & inner radius of the hydrodynamical simulation domain \\
+        ROUT & outer radius of the hydrodynamical simulation domain\\
+        RC & reference radius for the exponential taper in the radial profile density\\ 
+        HRIN & aspect ratio at RIN \\ 
+        RHOG & intrinsic grain density\\ 
+        PINDEX & power law index for the initial surface density profiles\\
+        QINDEX & power law index for the initial sound speed profile \\
+        ALPHASS & Shakura-Sunyaev $\alpha$-viscosity\\
+        ECC & eccentricity of the planet's orbit\\
+        \bottomrule        
+    \end{tabular}
+\end{center}
 
 have to be grouped inside the same directory organized according to the following substructure:
+
+\dirtree{%
+.1 parent\_dir. 
+.2 MP1\_time050. 
+.3 gd50. 
+.4 data\_th. 
+.4 data\_1300. 
+.5 RT.fits.gz. 
+.5 disc.para. 
+.4 image.log. 
+.3 gd70. 
+.3 gd100. 
+.3 {...}. 
+.2 2HoR\_time100. 
+.3 {...}.
+.2 MP25\_time150. 
+.3 {...}.
+.2 {...}.
+}
+
 
 The different simulation are thus divided in subdirectories according to the planet's mass simulated, the time of the
 snapshot and the gas to dust ratio. Additionally, inside each of the \lstinline{gd#} directories 
@@ -1851,7 +1929,7 @@ from the previous scheme: \lstinline{image.log} contains the redirected standard
 provides the parameters read from the phantom file,
 \lstinline{disc.para} is instead the input file used to run that simulation.
 When all the data available are properly grouped in this way, the \lstinline{pymc_prepro} script
-can be run. If some features in Table () vary significatively across multiple simulations this script 
+can be run. If some of the features in the last table vary significatively across multiple simulations this script 
 results inconvenient. In this case the functions implemented in the \lstinline{dblib} package can be used
 to build a new script adapted to
 this situation.
@@ -1868,14 +1946,15 @@ For example, some hydrodynamical variables such as the $\alpha$-viscosity
 or the density radial profile could generate different pictures which could then be interesting to probe with a neural network.
 Furthermore, we only included images of discs where the embedded planet interacted with the medium inducing the formation of
 gaps. It might be interesting to include in the dataset also simulations where the gap does
-not form both with and without a planet.
-In this way, these images might be used, for example, to train a neural network to detect the presence of
-planets. 
+not form, both with and without a planet, or, on the contrary, where we observe gaps without the presence of planets.
+In this way, these images might be used, for example, to train a neural network to detect planets and investigate
+the existence of ways to confidently distinguish planet induced gaps from substructures due to different phenomena. 
 
 Images of discs with double stars or more than one planet might also be included, together with examples
 of the other possible substructures in order to include all the potential morphologies.
 With these additions it may also be necessary to update the headers of these files including some flags which would allow 
 a more selective filtering of the data depending on the needs.
+
 \chapter{Proof of concept}
 
 \begin{comment}
@@ -1887,13 +1966,16 @@ I am also going to cite the python libraries used to implement this model (Tenso
 \end{comment}
 
 In order to prove the feasibility of our approach, we used the collected data to develop and train a neural network
-aimed at inferring planets' masses from the sole resolved intensity map of the dust continuum emission.
-The model was implemented using the Keras library.
+aimed at inferring planets' masses from the sole flux density map of the dust continuum emission.
+The model was implemented using TensorFlow's libraries.
 
 In this chapter I am going to present the trained model, providing a usage example of
-the dataset developed which shows its versatility in the selection of subsets of data and the simple 
-steps required to interface them with a Keras model.
-
+the dataset developed. In this context I will show its versatility in the selection 
+of subsets of data, and the simple 
+steps required to interface it with standard TensorFlow's neural network models.
+The obtained results will be reviewed discussing the successfull achievements and the emerged limits.
+Finally, I will try to reach the final purpose of this approach applying the trained
+model to observations of real discs.
 
 \section{Data pre-processing}
 
@@ -1904,7 +1986,7 @@ data according to our needs.
 \end{comment}
 
 The entire dataset developed contains 24720 images for a total size of approximately 190 GiB.
-In order to run the training process in reasonable times being thus able to explore different configurations, we 
+In order to run the training process in reasonable times, remaining able to explore different configurations, we 
 had to select a subset of the entire collection of data. In addition to the overcome of computational limits, 
 this selection is also useful to reduce the redundancy of the entire dataset which, in its completeness, cotains
 several images of the same disc convolved with different beam sizes
@@ -1915,36 +1997,44 @@ images object of study.
 In this specific case I selected the images convolved with a beam dimension of 0.046 arcsec which is,
 among the available sizes, the closest to the currently achievable best resolution according to the DHSARP project.
 To further reduce the size of the dataset, I also selected only images with inclinations of about
-60°.
-Finally, I obtained a set of 1024 images which was randomly split in two subsets for the training and
+60° which constitutes the larger set.
+As a result, I obtained a set of 1024 images which was randomly split in two subsets for the training and
 test phases containing respectevely the 80\% and 20\% of the whole data.
-The test set contains images which are not used during the training process which allow the evaluation
-of the model on never seen data reproducing the conditions of a real application.
+The test set contains images which are not used during the training process allowing the evaluation
+of the model on never seen.
 
 With the aim of showing how the database developed can be used in machine learning applications,
 I am going through the steps required to filter the data reporting the lines of code used.
 
-First, the dataset index has to be imported and loaded in a \lstinline{Pandas} DataFrame. 
-This operation can be carried out using the function \lstinline{get_data(())} developed for this purpose, which returns
-a pandas dataframe. It can then be filtered using pandas queries
+First, the dataset index has to be imported and loaded using 
+the function \lstinline{dblib.index.get_data()} 
+developed for this purpose, which returns
+a python dictionaries. It that can then be loaded in a pandas \lstinline{DataFrame}
+which allows a simpler filtering using pandas queries:
 
 \begin{lstlisting}
+    import pandas as pd
+    import dblib.index as index
+
     data = pd.DataFrame(index.get_data())
     data = data.set_index('KEY')
     trial_data = data[(data.BMAJ>0.046) & (data.BMAJ<0.048)
                         & (data.INCL>58)][['FILENAME', 'MPLANET0']]
 \end{lstlisting}
 
-In this line, the selection previously discussed is applied to the entire dataset and,
+In these lines, the selection previously discussed is applied to the entire dataset and,
 for each item, only the name of the file that stores the disc image and the mass of the embedded planet are kept, as
 all the other parameters will not be used. However, if after the training process, for any reason, becomes necessary
-to access the other variables they can always be retrieved using the KEY parameter which, in the second line, is set as 
+to access the other variables they could be retrieved using the KEY parameter which, in line 5, is set as 
 the index column.
 
 The following step requires loading in memory all the images. This operation is achieved through the following
 instructions
 
 \begin{lstlisting}
+    from astropy.io import fits
+    import numpy as np
+
     def get_image(filepath):
         with fits.open(filepath) as hdu:
             return hdu[0].data
@@ -1955,13 +2045,15 @@ instructions
                     )
 \end{lstlisting}
 
-where the function \lstinline{get_image()} opens the FITS file 
+where the defined function \lstinline{get_image()} opens the FITS file 
 and extracts
-the data of the disc image using the \lstinline{io.fits} module of 
-the \lstinline{astropy} package.
+the data using the \lstinline{io.fits} module of 
+the \lstinline{astropy} package. All the images are thus
+stored in a \lstinline{numpy} array which results three-dimensional 
+with shape \lstinline{(n, 1024, 1024)} where \lstinline{n} is the total number of images loaded.
 
 The last step, before the split in training and test sets, consists 
-in the reshape of the numpy arrays which store the images data. The  
+in the reshaping of this array. The  
 function \lstinline{get_image()} return a 1024x1024 matrix of float containing
 the value of the light intensity at each pixel. 
 Tensorflow models require each 2D image to be, instead, a matrix of arrays.
@@ -1970,20 +2062,20 @@ different channnels allowing, for example, the analysis of RGB images where
 the intensity, at each pixel, of the three colors Red, Green and Blue is given.
 
 The data of the images stored in our database has only one channel. Therefore,
-the reshape can be obtained through
+the array can be reshaped through
 
 \begin{lstlisting}
     train_images = train_images.reshape(train_images.shape[0], 
     train_images.shape[1], train_images.shape[2],  1)
 \end{lstlisting}
 
-obtaining the new array \lstinline{train_images} with the shape (n, 1024, 1024, 1)
-where n is the total number of items in the set.
-This array can be directly passed to the keras function that initiates
+obtaining the new array \lstinline{train_images} with the shape \lstinline{(n, 1024, 1024, 1)}
+where \lstinline{n} is the total number of items in the set.
+This array can be directly passed to the \lstinline{TensorFlow} function that initiates
 the training process.
 
-It is worth noticing how easily the database we developed can be retrieved and filtered
-using standard and popular python packages.
+These are all the steps required to retrieve the database we developed, filter it according to the application
+and interface the data with standard and popular python packages.
 
 \section{Adopted model}
 
@@ -1992,6 +2084,50 @@ Here I am going to explain the model used: number of layers, type of neural netw
 optimizer, metrics.
 \end{comment}
 
+
+\begin{figure}
+    \begin{center}
+        \begin{tikzpicture}
+            
+            \node[rectangle, draw, minimum width=3cm, thick, inner sep=0cm] (input) at (0, 0) {\includegraphics[width=3cm]{images/inp_mod.png}};
+            \node[rectangle, draw, inner sep=1.5cm, thick, fill=gray, fill opacity=0.5 ] (norm) at (4, 0) {};
+            \node[rectangle, draw, minimum height=8cm, minimum width=0.3cm, thick, fill=gray, fill opacity=0.5] (flat) at (7,0) {};
+            \node[rectangle, draw, minimum height=3cm, minimum width=0.3cm, thick, fill=gray,  fill opacity=0.5] (h1) at (8.5,0) {};
+            \node[rectangle, draw, minimum height=1.5cm, minimum width=0.3cm, thick, fill=gray,  fill opacity=0.5] (h2) at (10,0) {};
+            \node[rectangle, draw, minimum height=0.3cm, minimum width=0.3cm, thick, fill=gray,  fill opacity=0.5] (output) at (11.5,0) {};
+            \draw[->, gray, thin] (output) -- (12.5, 0) node[right, black] {$M_p$};
+            \draw[color=gray, thin] (input.north east) -- (norm.north west);
+            \draw[color=gray, thin] (input.south east) -- (norm.south west);
+            \draw[color=gray, thin] (norm.north east) -- (flat.north west);
+            \draw[color=gray, thin] (norm.south east) -- (flat.south west);
+            \draw[color=gray, thin] (flat.north east) -- (h1.north west);
+            \draw[color=gray, thin] (flat.south east) -- (h1.south west);
+            \draw[color=gray, thin] (h1.north east) -- (h2.north west);
+            \draw[color=gray, thin] (h1.south east) -- (h2.south west);
+            \draw[color=gray, thin] (h2.north east) -- (output.north west);
+            \draw[color=gray, thin] (h2.south east) -- (output.south west);
+
+            \node at (0, 1.8) {1024x1024};
+            \node at (4, 1.8) {1024x1024};
+            \node at (7, 4.3) {1,048,576};
+            \node at (8.5, 1.8) {32};
+            \node at (10, 1.05) {16};
+            \node at (11.5, 0.45) {1};
+
+            \node at (0, -1.8) {Input};
+            \node at (4, -1.8) {LayerNormalization};
+            \node at (7, -4.3) {Flatten};
+            \node at (8.8, -1.8) {Dense};
+            \node at (10.1, -1.05) {Dense};
+            \node at (11.6, -0.45) {Dense};
+
+        \end{tikzpicture}
+    \end{center}
+    \caption{Scheme of the neural network model implemented for the proof of concept.
+    For each layer its dimension and type are indicated respectively above and below its representation.
+    This model has a total of 33,557,057 trainable parameters.}
+\end{figure}
+
 This first machine learning application was primarly designed with the purpose of probing the limits and potentials
 of this new approach. For this reason, we chose the simplest model with the ability to solve the problem addressed among the
 sundry alternatives availables.
@@ -1999,28 +2135,34 @@ sundry alternatives availables.
 More specifically we implemented a feedforward, densely connected, neural network with two hidden layers
 made of respectively 32 and 16 neurons and an output layer with a single neuron that returns the predicted value of the planet's mass.
 The ReLU activation function was used in each unit, except for the output one, to introduce non-linearity.
+
 The input interface is made of two layers with specific functions.
-The input images, containing data organized in two dimensions, are provided to a layer which is able to standardize the data which
-is achieved substracting the mean value and dividing for the standard deviation.
-Tensorflow provides two different layrs which are able to achieve this standardization with specific difference.
-The first one is called \lstinline{LayerNormalization} and implements the standardization process described computing the mean and standard deviatin
-values indipendently on the flux density data of each image. The data of each image are thus standardized with their mean value and standard deviation.
-The alternative is instead called \lstinline{BatchNormalization} which, during the training process, 
-computes the mean and standard deviation of the current batch of inputs. Batches are groups in which the items in the training set are divided during 
-the training process, their size can be modified. After the training process, when the model is applied to the validation set or new data, 
-this layer normalizes the input using a moving average of the mean and standard deviation of the batches it has seen during training.
+The input images, containing data organized in two dimensions, are provided to the first layer which is able to standardize the data 
+subtracting the mean value and dividing for the standard deviation.
+Tensorflow provides two different layers which implement this process with specific differences.
+The first one is called \lstinline{LayerNormalization} and computes the mean and standard deviation
+values indipendently for the flux density data of each image which are thus separately
+standardized.
+The alternative is instead called \lstinline{BatchNormalization}. During the training process, it works
+using the mean and standard deviation computed with the data of all the images in the current batch of inputs. 
+Batches are groups in which the items in the dataset are divided during 
+the training process, their size can be modified as a hyperparameter.
+After the training process, when the model is applied to the validation set or to new data, 
+this layer normalizes the input using a moving average of the means and standard deviations of the batches it has seen during training.
 The first option basically focus on the flux density variations inside each image enlightening the presence of substructures, such as gaps, 
 but, on the other end, removing the information carried by the absolute values of the flux density which are essentially measures
 of the dust mass. This information, more precisely the relative difference of the dust mass among different discs is instead preserved 
 with the second option which, however, has the risk of reducing the fluctuations inside each image potentially hiding the existence
 of substructures.
-By this arguments, we expected the first option to produce better results and some tests confirmed this hypothesis.
-After the normalization, the data, organized in two dimensional matrices are flattened by the Keras layer aimed at this purpose, before
+Following these arguments, we expected the first option to produce better results and some tests confirmed this hypothesis.
+Therefore, we used the \lstinline{LayerNormalization} layer in the implementation whose results are discussed in this chapter.
+
+After the normalisation, the data, organized in two-dimensional matrices are flattened by a layer aimed at this purpose, before
 eventually, reaching the hidden layers.
 
-The optimizer used is \lstinline{Nadam} which is the \lstinline{adam} optimizer implemented with a Nesterov momentum.
+The optimizer used is \lstinline{Nadam} which is analogous to the \lstinline{adam} optimizer but implemented with a Nesterov momentum.
 The \lstinline{adam} optimizer is a stochastic gradient descent method with the addition of first order and second order moments
-which are adaptively estimated during the training process. According to
+that are adaptively estimated during the training process. According to
  Kingma et al., 2014, 
  the method is ``computationally efficient, has little memory requirement, 
  invariant to diagonal rescaling of gradients, 
@@ -2032,10 +2174,11 @@ a faster convergence.
 We also lowered the learning rate reaching the value $10^{-4}$ to mitigate some undesired effects encountered.
 
 All these hyperparameters, including the number of hidden layers and of their neurons, were accurately chosen
-with a trial and error method. Here, we presented the model which showed the best performance with respect to its simplicity
-and thus the computational resources required.
+with a trial and error approach. Here, we presented the model which showed the best performance preserving a relative simplicity
+and thus economic computational requirements. 
+Figure () shows an overview of its main features.
 
-To evaluate the model, both during and after the training process, we used the mean squared error of the predicted mass values 
+To evaluate the model, both during and after the training process, we used, as the loss function, the mean squared error of the predicted mass values 
 with repect to the ones known from the simulation files and stored in our dataset.
 
 \section{Results}
@@ -2048,18 +2191,25 @@ Here I will discuss the results obtained.
     \begin{center}
         \input{images/loss.pgf}
     \end{center}
-    \caption{Add caption}
+    \caption{Trend of the loss function (mean squared error) 
+    evaluated on the training set (black line) and the test set (red line)
+    after each epoch. Both the curves converge towards 0
+    indicating that the neural network has been successfully trained to predict the planet's masses 
+    from images showing discs' morphologies. }
 \end{figure}
 
 \begin{figure}
     \begin{center}
-        \input{images/corr&err.pgf}
+        \scalebox{0.85}{\input{images/corr&err.pgf}}
     \end{center}
-    \caption{Add caption}
+    \caption{Left panel: correlation between the predicted mass and the real value obtained from the simulation files
+    for all the items in the test set. The black lines draws the $M_{pred} = M_{sim}$ curve.
+    Right panel: Distribution of the relative prediction error $(M_{pred} - M_{sim})/M_{sim}$ computed for the test set. The red box 
+    zooms in the -10\% to 10\% range which contains the 89\% of all the items.}
 \end{figure}
 
 The training of the previously presented model took about 5 hours of wall time running on a laptop equipped with a dual core CPU
-with a clock frequency of 2GHz and an NVIDIA GeForce 840M GPU. Additionally considering the opportunity to run
+with 2GHz clock frequency and an NVIDIA GeForce 840M GPU. Additionally considering the opportunity to run
 this process on a faster and better performing machine, the computational time required by the training of a neural network
 model appears to be significantly smaller than that needed for numerical simulations. We thus proved the
 first element in support of machine learning approaches.
@@ -2072,38 +2222,43 @@ show the successfull functioning of the trained model on new unseen data.
 
 This graph can, alone, establish the fullfilment of this first application purpose which was to evaluate the feasibility of
 a machine learning approach. However, we further analyzed the obtained results to provide 
-an estimation of the model's accuracy comparing it with the results obtained by Auddy and Lin with their
+an estimation of the model's accuracy also comparing it with the results obtained by Auddy and Lin with their
 approach. 
 
 The root mean squared error evaluated on the test set could be assumed as the
-prediction uncertainty of the trained model which is 0.15 Jupyter masses corresponding to respectively
+prediction uncertainty of the trained model which is $0.15 M_{Jup}$ corresponding to respectively
 the 15\% and 1.5\% of the less and the most massive planets
-for which it has been tested.
+for which it has been tested. Auddy and Lin achieved with their model an uncertainty estimated, with the same method,
+in the 11\% 
+of the most massive planet on which they tested their network. 
+Due to the different ranges of planet's masses adopted the comparison is possible only through the relative error.
 
-The left panel of Figure () shows the correlation between the predicted and simulated masses of the validation set which
+
+The left panel of figure () shows the correlation between the predicted and simulated masses of the validation set which
 lie along the $M_{predicted} = M_{simulated}$ line indicating a strong correlation.
 We also computed the relative prediction error $(M_{pred} - M_{sim})/M_{sim}$ for each item
 in the test set. The right panel of the same figure illustrates its distribution
 presenting a mean value and standard deviation respectively of 5\% and 27\%.
 The trained model is afflicted by a slight bias which tends to overestimate the planet masses.
-Furthermore the relative error distribution presents a large standard deviation which indicates the great
+Furthermore, the relative error distribution presents a large standard deviation which indicates the great
 variability of this quantity in its evaluation among the test set. For instance there are a few cases afflicted by
-prediction errors up to the 200\%.
-Auddy and Lin achieved with their model an uncertainty estimated in the 11\% of the most massive planet on which they tested their model. 
-Due to the different ranges of planet's masses adopted the comparison is possible only through the relative error.
+prediction errors up to 200\%.
 
 There are hence some margins for improvements partly due to the reduced size of
 the dataset and the low complexity of the neural network employed. With more sophisticated models and
 a larger dataset we are confident that better results could be obtained.
 
-Finally, we also tried to apply the obtained model in a real-case scenario. In this last test we used
-the real observation of the DS Tau disc in the dust continuum provided by .
-The image was adapted to meet the same specific of the ones collected in the employed dataset. We cropped it to
-approximately the same size and made sure that the data was in the same units.
-The image was thus passed to the trained model which predicted a planet's mass of ().
-Using numerical simulations () established thepresence of a planet with a mass of (),
-considering for our model the uncertainty of () previously discussed, the two values are compatible 
-with a difference of ().
+Finally, we also tried to apply the trained model in a real-case scenario. In this last test we used
+the ALMA observation of the DS Tau disc in the dust continuum at 1.3 mm.
+The image, obtained processing the raw data, was provided by ()
+We further adapted it to meet the same specifics of the ones collected in the employed dataset.
+First it was cropped to
+approximately the same size considering the pixel scale for each axis.
+We then checked that the data was in the same units and upscaled the image using
+\lstinline{scikit-image} functions to have the same resolution of the images in the training set (1024x1024).
+The obtained matrix of data was thus passed to the trained model which predicted a planet's mass of $M_p = 3.3 M_{Jup}$.
+Using numerical simulations () established the presence of a planet, hidden in the gap, with an estimated
+mass of $3.5 \pm 1 M_{Jup}$. The two results are thus compatible.
 
 \chapter{Conclusions}
 \section{Conclusion}
@@ -2111,17 +2266,19 @@ with a difference of ().
 
 -server side
 -noise through nn
-
 \chapter*{Acknowledgements}
 \addcontentsline{toc}{chapter}{Acknowledgements}
 
-\chapter*{Bibliography}
-\addcontentsline{toc}{chapter}{Bibliography}
 
+
+
+\nocite{book_planet_form}
+\bibliographystyle{plain} % We choose the &quot;plain&quot; reference style
+\bibliography{ref}
+
+
+\addcontentsline{toc}{chapter}{Bibliography}
 10.1093/mnras/stz913
 
 nadam citation: http://arxiv.org/abs/1412.6980
-
-
-
 \end{document}

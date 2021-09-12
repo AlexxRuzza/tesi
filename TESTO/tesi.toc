@@ -30,15 +30,15 @@
 \contentsline {subsection}{\numberline {4.3.2}Previous attempts in literature}{24}{subsection.4.3.2}%
 \contentsline {chapter}{\numberline {5}Dataset design}{25}{chapter.5}%
 \contentsline {section}{\numberline {5.1}The data}{25}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Structure and interface}{27}{section.5.2}%
+\contentsline {section}{\numberline {5.2}Structure and interface}{28}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Supporting scripts}{28}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Expanding the dataset}{29}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Proof of concept}{31}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Data pre-processing}{31}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Adopted model}{32}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Results}{33}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Conclusions}{36}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusion}{36}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Future perspectives}{36}{section.7.2}%
-\contentsline {chapter}{Acknowledgements}{37}{chapter*.16}%
-\contentsline {chapter}{Bibliography}{38}{chapter*.17}%
+\contentsline {section}{\numberline {5.4}Expanding the dataset}{30}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Proof of concept}{33}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Data pre-processing}{33}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Adopted model}{34}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Results}{36}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Conclusions}{39}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusion}{39}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Future perspectives}{39}{section.7.2}%
+\contentsline {chapter}{Acknowledgements}{40}{chapter*.19}%
+\contentsline {chapter}{Bibliography}{41}{chapter*.20}%
