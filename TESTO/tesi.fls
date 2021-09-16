@@ -1144,6 +1144,7 @@ INPUT /home/alexxruzza/UNI/TESI/TESTO/tesi.toc
 OUTPUT /home/alexxruzza/UNI/TESI/TESTO/tesi.toc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
@@ -1366,7 +1367,6 @@ INPUT /home/alexxruzza/UNI/TESI/TESTO/tesi.bbl
 INPUT /home/alexxruzza/UNI/TESI/TESTO/tesi.bbl
 INPUT /home/alexxruzza/UNI/TESI/TESTO/tesi.bbl
 INPUT /home/alexxruzza/UNI/TESI/TESTO/tesi.bbl
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /home/alexxruzza/UNI/TESI/TESTO/tesi.aux
 INPUT /home/alexxruzza/UNI/TESI/TESTO/tesi.out
 INPUT /home/alexxruzza/UNI/TESI/TESTO/tesi.out

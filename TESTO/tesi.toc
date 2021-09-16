@@ -1,44 +1,44 @@
 \contentsline {chapter}{Abstract}{1}{Doc-Start}%
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Protoplanetary discs}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Structural properties}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Disc dynamics}{6}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Observations}{7}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Planet formation}{8}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Gaps}{9}{section.2.5}%
-\contentsline {chapter}{\numberline {3}State-of-the-art characterisation methodologies}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Addressed questions}{11}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Analytical formulae}{11}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Planet mass and gap width}{12}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Strengths and limitations}{12}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Numerical approach}{13}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Hydrodynamical simulations}{13}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Radiative transfer}{14}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Generation of synthetic images}{14}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Strengths and limitations}{15}{subsection.3.3.4}%
-\contentsline {chapter}{\numberline {4}Machine learning and neural networks}{16}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Neural networks}{16}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}The artificial neuron}{16}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Architecture and types}{18}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Training}{19}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Training data}{20}{subsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.1.5}Hyperparameters}{20}{subsection.4.1.5}%
-\contentsline {subsection}{\numberline {4.1.6}Overlearning and underlearning}{20}{subsection.4.1.6}%
-\contentsline {section}{\numberline {4.2}Strengths and limitations}{21}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Machine learning and protoplanetary discs}{22}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}The proposed approach}{23}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Previous attempts in literature}{24}{subsection.4.3.2}%
-\contentsline {chapter}{\numberline {5}Dataset design}{25}{chapter.5}%
-\contentsline {section}{\numberline {5.1}The data}{25}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Structure and interface}{28}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Supporting scripts}{28}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Expanding the dataset}{30}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Proof of concept}{33}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Data pre-processing}{33}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Adopted model}{34}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Results}{36}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Conclusions}{39}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusion}{39}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Future perspectives}{39}{section.7.2}%
-\contentsline {chapter}{Acknowledgements}{40}{chapter*.19}%
-\contentsline {chapter}{Bibliography}{41}{chapter*.20}%
+\contentsline {chapter}{\numberline {2}Protoplanetary discs}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Structural properties}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Disc dynamics}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Observations}{8}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Planet formation}{9}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Gaps}{10}{section.2.5}%
+\contentsline {chapter}{\numberline {3}State-of-the-art characterisation methodologies}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Addressed questions}{12}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Analytical formulae}{12}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Planet mass and gap width}{13}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Strengths and limitations}{13}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Numerical approach}{14}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Hydrodynamical simulations}{14}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Radiative transfer}{15}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Generation of synthetic images}{15}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Strengths and limitations}{16}{subsection.3.3.4}%
+\contentsline {chapter}{\numberline {4}Machine learning and neural networks}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Neural networks}{17}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}The artificial neuron}{17}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Architecture and types}{19}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Training}{20}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Training data}{21}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Hyperparameters}{21}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}Overlearning and underlearning}{21}{subsection.4.1.6}%
+\contentsline {section}{\numberline {4.2}Strengths and limitations}{22}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Machine learning and protoplanetary discs}{23}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}The proposed approach}{24}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Previous attempts in literature}{25}{subsection.4.3.2}%
+\contentsline {chapter}{\numberline {5}Dataset design}{26}{chapter.5}%
+\contentsline {section}{\numberline {5.1}The data}{26}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Structure and interface}{29}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Supporting scripts}{29}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Expanding the dataset}{31}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Proof of concept}{34}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Data pre-processing}{34}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Adopted model}{35}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Results}{37}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Conclusions}{40}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusion}{40}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Future perspectives}{40}{section.7.2}%
+\contentsline {chapter}{Acknowledgements}{42}{chapter*.19}%
+\contentsline {chapter}{Bibliography}{43}{chapter*.20}%

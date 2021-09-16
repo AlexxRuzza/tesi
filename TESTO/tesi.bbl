@@ -5,6 +5,28 @@ Philip~J. Armitage.
 \newblock {\em Astrophysics of planet formation}.
 \newblock Cambridge university press, 2010.
 
+\bibitem{Auddy_2020}
+Sayantan Auddy and Min-Kai Lin.
+\newblock A machine learning model to infer planet masses from gaps observed in
+  protoplanetary disks.
+\newblock {\em The Astrophysical Journal}, 900(1):62, Sep 2020.
+
+\bibitem{kanagawa}
+K.~D. Kanagawa, H.~Tanaka, T.~Muto, T.~Tanigawa, and T.~Takeuchi.
+\newblock {Formation of a disc gap induced by a planet: effect of the deviation
+  from Keplerian disc rotation}.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  448(1):994--1006, 02 2015.
+
+\bibitem{Lodato_2019}
+Giuseppe Lodato, Giovanni Dipierro, Enrico Ragusa, Feng Long, Gregory~J
+  Herczeg, Ilaria Pascucci, Paola Pinilla, Carlo~F Manara, Marco Tazzari, Yao
+  Liu, and et~al.
+\newblock The newborn planet population emerging from ring-like structures in
+  discs.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  486(1):453–461, Mar 2019.
+
 \bibitem{dstauv}
 Benedetta Veronesi, Enrico Ragusa, Giuseppe Lodato, Hossam Aly, Christophe
   Pinte, Daniel~J Price, Feng Long, Gregory~J Herczeg, and Valentin

@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex tesi"] 1631475119 "tesi.aux" "tesi.bbl" "tesi" 1631479711
+["bibtex tesi"] 1631804810 "tesi.aux" "tesi.bbl" "tesi" 1631820165
   "/usr/share/texmf-dist/bibtex/bst/base/plain.bst" 1617738065 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "ref.bib" 1631441072 4573 bf5c9b9c60f6fc0338346fddfaf872de ""
-  "tesi.aux" 1631479711 12141 e4cfdaaefc79a80c66041d202dc49fc9 "pdflatex"
+  "ref.bib" 1631739620 12806 76b74628222fe6657e9f94169659dae5 ""
+  "tesi.aux" 1631820164 12335 7764544ca58029c0c0f8c0aaa034c46a "pdflatex"
   (generated)
-  "tesi.bbl"
   "tesi.blg"
-["pdflatex"] 1631479704 "/home/alexxruzza/UNI/TESI/TESTO/tesi.tex" "/home/alexxruzza/UNI/TESI/TESTO/tesi.pdf" "tesi" 1631479711
-  "/home/alexxruzza/UNI/TESI/TESTO/tesi.aux" 1631479711 12141 e4cfdaaefc79a80c66041d202dc49fc9 ""
-  "/home/alexxruzza/UNI/TESI/TESTO/tesi.tex" 1631479702 128067 147f7d7f3b95512541c46facb2bbdefb ""
+  "tesi.bbl"
+["pdflatex"] 1631820157 "/home/alexxruzza/UNI/TESI/TESTO/tesi.tex" "/home/alexxruzza/UNI/TESI/TESTO/tesi.pdf" "tesi" 1631820165
+  "/home/alexxruzza/UNI/TESI/TESTO/tesi.aux" 1631820164 12335 7764544ca58029c0c0f8c0aaa034c46a ""
+  "/home/alexxruzza/UNI/TESI/TESTO/tesi.tex" 1631820156 140601 9e9b7fc105fdbe73a5b43cdf1d366617 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1617738065 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1617738065 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1617738065 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -314,16 +314,16 @@
   "images/profile-img1.png" 1629628434 2574 ebc25c50fccac166a26e91195ee06337 ""
   "images/profile.pgf" 1630432291 29735 204f55eef011f202ba54cda1446ecb78 ""
   "images/rad_profiles.pgf" 1630702456 37323 61b4109ce59346eefce9f914baa9abe2 ""
-  "tesi.aux" 1631479711 12141 e4cfdaaefc79a80c66041d202dc49fc9 "pdflatex"
-  "tesi.bbl" 1631475119 524 104a340253e5570ac468eac6733df2be "bibtex tesi"
-  "tesi.out" 1631479711 6789 3d81dbe78f189fdd38ad7882bc68c55d "pdflatex"
-  "tesi.tex" 1631479702 128067 147f7d7f3b95512541c46facb2bbdefb ""
-  "tesi.toc" 1631479711 3578 14479e6e8bfb128d02d0c812fba7d959 "pdflatex"
+  "tesi.aux" 1631820164 12335 7764544ca58029c0c0f8c0aaa034c46a "pdflatex"
+  "tesi.bbl" 1631804810 1416 5bded03a99e73ccb7e7c621075276111 "bibtex tesi"
+  "tesi.out" 1631820164 6789 3d81dbe78f189fdd38ad7882bc68c55d "pdflatex"
+  "tesi.tex" 1631820156 140601 9e9b7fc105fdbe73a5b43cdf1d366617 ""
+  "tesi.toc" 1631820164 3579 5b980c4e3ce94174ab583947c8e4f9b8 "pdflatex"
   (generated)
-  "/home/alexxruzza/UNI/TESI/TESTO/tesi.log"
-  "tesi.pdf"
-  "tesi.out"
-  "tesi.log"
-  "tesi.aux"
   "tesi.toc"
   "/home/alexxruzza/UNI/TESI/TESTO/tesi.pdf"
+  "tesi.log"
+  "tesi.pdf"
+  "tesi.out"
+  "/home/alexxruzza/UNI/TESI/TESTO/tesi.log"
+  "tesi.aux"
