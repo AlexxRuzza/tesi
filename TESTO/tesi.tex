@@ -94,7 +94,7 @@
 
 \begin{document}
 
-\maketitle
+\input{copertina/Frontespizio_UniMi.tex}
 
 \addcontentsline{toc}{chapter}{Abstract}
 \begin{abstract}
@@ -130,18 +130,18 @@ formed from a primordial rotating disc of gas and dust. Quantitative description
 gradually developing on this idea the modern theory of planet formation.
 Despite the long history, it is only in the last decades,
 with recent breakthroughs in interferometric observations 
-and the advent of new telescopes such as the Atacama Large Millimiter Array that we were
+and the advent of new telescopes, such as the Atacama Large Millimiter Array, that we were
 finally able to detect extrasolar planets and obtain high resoluted images of their
 cradles, protoplanetary discs.
 
-Since 1995 over 4000 exoplanets and, more recently, hundreds of protoplanetary discs have been observed in an extraordinary 
+Since 1995 over 4000 exoplanets and, in more recent times, hundreds of protoplanetary discs have been observed in an extraordinary 
 diversity of properties and morphologies, 
 offering a precious statistically valid pool of data to evaluate and enhance
 the theoretical picture on planet formation.
 
 Many techniques have been proposed and developed to interpret these new observations
-with the aim of determining discs properties and detecting the presence of young planets
-from measures of their radiative emission and analysis of the morphologies revelead.
+with the aim of determining discs properties and detecting the presence of young planets,
+which exploit measures of their radiative emission and analysis of the morphologies revelead.
 The presence of gaps, annular regions of luminosity depletion, can, for example, be explained 
 by the presence of embedded interacting planets whose properties, such as their mass, are
 tied to the width and depth of these subbstructures.
@@ -152,47 +152,62 @@ inferred from data,
 for example, Lodato et al. \cite{Lodato_2019} and Kanagawa et al. \cite{kanagawa} proposed 
 two different formulae which allow estimating planet's masses measuring
 the width of the induced gap. These relations are usually simple polynomial or power laws, which 
-allow a fast computation of unknown properties and can be easily explained with theoretical arguments but
+allow a fast computation of unknown properties and can be easily explained with theoretical
+arguments but, on the other end,
 lack in accuracy and precision requiring the use of more advanced tools.
-Numerical simulations are today's response to these needs. Sophisticated code, such as phantom and mcfost, 
-are able to apply the physical models that describe the dynamic, interaction and radiative emission at a small scale 
-to simulate the overall disc evolution and synthetize fictious images which would be observed if the system was real.
-These results are thus directly compared in the data space. With this method, the masses of some planets embedded 
+Numerical simulations are today's response to these needs. Sophisticated codes,
+ like \lstinline{PHANTOM} \cite{phantom} and \lstinline{MCFOST} \cite{mcfost1,mcfost2}, 
+are able to apply the physical models that describe the dynamic, particle interaction and radiative emission at a small scale 
+to simulate the overall disc evolution and synthetize images reproducing hypothetical observations which would be 
+obtained if the system was real.
+These results can thus be directly compared  with observations in the data 
+space to check the assumptions made to start the simulation and 
+search the parameters which provide the best fit. With this method, the masses of some planets embedded 
 in discs' gaps were measured with relatively low uncertainty. Veronesi et al. \cite{dstauv}, for example, determined the
-presence of a planet in DS Tau gap with a mass of $3.5 \pm 1 M_{jup}$.
+presence of a planet in the gap of DS Tau disc estimating a mass of $3.5 \pm 1 M_{jup}$.
 
-Despite their power and virtual unlimited applications these tools are far to being the definitive solution
-to the characterisation problem due to the enormous amount of computational resources and time 
-required and the dozens of physical properties parametrizing the theoretical models which need to be 
+Despite their power and virtual unlimited applications, these tools are far to being the definitive solution
+to the characterisation problem, due to the enormous amount of computational resources and time 
+required to run a simulation, and the dozens of physical properties parametrizing the theoretical models which need to be 
 assumed or measured with different techniques.
 
-In this thesis we want to propose a new approach based on machine learning techniques to overcome 
+In this thesis we want to propose a new approach based on machine learning techniques, to overcome 
 the main limits of the currently used methodologies. We suggest training a neural network
 in order to obtain a model with the ability to inferr a set of the discs or planets features directly
 analyzing the high resoluted images of these objects. This approach would allow 
-to relax some of the assumption needed for running numerical simulations and would also require 
+to relax some of the assumptions needed for running numerical simulations and would also require 
 less computational resources.
 
 We thus designed a dataset of synthetic observations of protoplanetary discs collecting
 results of numerical simulations runned in the context of other researches and kindly shared with us
 for this project. We developed the storage structure, a python package and some scripts which interface 
-the main operation required to handle the database. At this stage we were able to collect 24720 different images 
-of protoplanetary discs sgnnificantly exploring * parameters.
+the main functions required to handle the database. At this stage we were able to collect 24720 different images 
+of protoplanetary discs, significantly exploring five parameters: the gas to dust mass ratio, the age of the disc, its inclination, the mass of
+the embedded planet and the size of a 
+gaussian beam used to convolve the image with the purpose of reproducing the limited resolutions
+of telescopes.
 We finally proved the feasibility of this new approach implementing 
 a simple neural network using TensorFlow libraries with encouraging results.
 
-In the first chapter of  this thesis, I will provide an
-introduction on the subject of protoplanetary discs and planet formation which 
-are the object of our study. Therefore, in the second chapter, I will review the current 
-methods used for the characterisation of protoplannetary discs discussing strengths and limitations
-of both analytical expressions and numerical simulations. Machine learning, and more specifically neural networks will 
+The content of this thesis is structured in seven chapters, comprehensive of this introduction and
+the conclusion.
+
+I will start, in chapter 2, introducing the subject of protoplanetary discs and planet formation which 
+are the object of our study. I will describe their key properties and explain the meaning of the parameters 
+which will be used to characterize the disc and its dynamic. Therefore, in the third chapter, I will review the current 
+methods used for the characterisation of protoplanetary discs discussing strengths and limitations
+of both analytical expressions and numerical simulations.
+
+Machine learning, and more specifically neural networks, will 
 be introduced in the following chapter explaining the principle at the core of their functioning and pondering 
 their power and limits. I will finally propose the application of these techniques on protoplanetary discs images
-reviewing previous attempts and analyzing the feasibility, the limits and the potential of our approach.
+reviewing a previous attempt \cite[S. Auddy and M. Lin]{Auddy_2020} and analyzing the feasibility, the limits and the potential of our approach.
+
 In the last two chapters I will present the work done in this thesis. The fifth chapter describes the database we built
 explaining our choices in its development and presenting the features of the version deployed with this thesis.
-Future perspectives about its improvement will also be provided.
-The last chapter concludes our work with a proof of concept.
+The python code implemented to facilitate its access and mantainance will also be discussed stressing on its future-proof design.
+Perspectives on its improvement will also be provided.
+The last chapter concludes the work with a proof of concept.
 
 \chapter{Protoplanetary discs}
 %Very brief introduction (1/2 sentences) about what a protoplanetary disc is,
@@ -2335,48 +2350,55 @@ mass of $3.5 \pm 1 M_{Jup}$. The two results are thus compatible.
 \section{Conclusion}
 
 
-The main goal of this thesis was the design of the dataset for machine learning application
-which was deployed in its first version and made publicly available. A total of 24720 different
-images were produced and collected from the results of two groups of numerical simulations allowing
-a significant representation of different gas to dust ratio, ages of the disc, inclinations and masses of the embedded 
-planets. Some additional parameters are also explored with less significant distributions.
+The main goal of this thesis was the design of the dataset for machine learning applications,
+which was eventually deployed and made publicly available in its first version. A total of 24720 different synthetic
+images of protoplanetary discs were produced and collected starting from the results of two groups of numerical simulations.
+We obtained a significant representation of the different values of the gas to dust ratio, the age of the discs,
+their inclination and the masses of the embedded 
+planets. We also convolved the images with gaussian beams of varying sizes to reproduce a set of possible limited resolutions
+of the telescopes used for real observations. 
+Some additional parameters are also explored with less significant distributions.
 Along with the storage structure we also developed a python package designed to handle the dataset
 running the main operations required for its manteinance and usage. 
 Some python scripts are provided to interface these functions
 from the command line.
 
-We showed an example of usage for the dataset and explained the steps required to expand its content.
-Processes which we believe to be simple and well interfaced with the modern technlogies used in the field
-of machine learning.
+We showed an example of usage of the dataset and explained the steps required to expand its content
+highlighting the simplicity of the steps required for these activities.
+We additionally explained how the dataset can be interfaced with modern python packages
+well known and daily used in the field
+of machine learning, i.e. TensorFlow and Pandas.
 
 The results obtained with the proof of concept are promising. The trained model successfully
-characterized the planets embedded in protoplanetary discs of the test set images
+characterized the planets embedded in the protoplanetary discs of the test set images predicting their mass
 with a mean absolute error of 8\% showing thus slightly better performances
 than the previous attempts reviewed \cite{Auddy_2020}.
-Furthermore, the final application of the trained model to the real observation of DS Tau 
-provided an estimation of the planet mass of $3.30 \pm 0.15 M_{jup}$ in agreement with the result,
+Furthermore, the final application of the trained model to the real observation of the DS Tau disc
+provided an estimation of the planet mass of $3.30 \pm 0.15 M_{jup}$ in agreement with the result, of
 $3.5 \pm 1 M_{jup}$,
 obtained by Veronesi et al. \cite{dstauv} employing numerical simulations. The uncertainty provided 
 with our measure was computed as the root mean squared error of the models' predictions on the data of the validation
 set and resulted in a significant improvement with respect to the numerical approach.
+
 We thus showed the potential of machine learning techniques for the characterisation of 
 young planets. The limited computational requirements and the ability to
-directly analyse the observations are the main advantages we highlighted which could
+directly analyse the observations are the main advantages, which could
 furthermore allow the application of an adequately trained model to hypothetical large surveys
-of protoplanetary discs. In a similar scenario, our approach would allow to obtain a fast characterization
+of protoplanetary discs. In a similar scenario, our approach would allow to obtain a fast characterisation
 and classification of the observed objects which then, taking advantage of this first selection,
 could be further analyzed later.
 
 \section{Future perspectives}
 
 The dataset of synthetic images assembled in this thesis was designed with an 
-eye to future developments. First, some parameters characterising the data
-did not properly represent the parameter space limiting the possibility of research over these 
-images. For example, each of them was obtained probing the simulated emission at $\SI{1.3}{\mu m}$,
+eye to future developments. Many improvements can be made. First, some parameters characterising the data
+assume, in all the images currently available, one of a restricted set of values failing to properly represent 
+the enitre parameter space and thus limiting the possibilities of research.
+For example, each synthetic image was obtained probing the simulated emission at $\SI{1.3}{\mm}$,
 observations at different wavelenghts might be useful to inquire how the
-performances of neural network algorothms change according to the type
-of observations. For the same reason, the inclusion of simulations showing the scattered light and the gas molecular
-emission might also be interesting. In addition to that, hydrodynamical parameters such as 
+performances of neural network algorithms change in relation to different observational primers.
+For the same reason, the inclusion of simulations where either the scattered light or the gas molecular
+emission is captured might also be interesting. In addition to that, hydrodynamical parameters such as 
 the $\alpha$-viscosity, the aspect ratio and the density profiles need to be better explored 
 because the interaction of these discs with planets of the same masses
 could lead to the formation of different substructures as proved by the existence of Kanagawa \cite{kanagawa}
@@ -2392,35 +2414,39 @@ planets would also be useful to develop models trained to detect their possible 
 
 In order to complete an expansion of this size we would also suggest improving the storage structure
 and the supporting package with more sophisticated tools which were not used in this thesis opting for
-simpler and easier to maintain solutions. First, the data should be moved in a databasse such as MongoDB or MySQL
-provided with more advanced tools for the management and indexing of large datasets.
-Then, it could be stored on an indipendent server developing a code to allow its access filtering the data on 
-this server to avoid the user time and memory consuming operations. A system of this type could also be coded to
-produce, when requested, new images convolved with beams of specific sizes.
+simpler and easier to maintain solutions. First, the data could be moved in a database such as MongoDB or MySQL
+provided with more advanced functions for the management and indexing of large datasets.
+Then, it could be stored on an indipendent server developing a code to allow its access filtering the data directly on 
+this server to avoid to the final user time and memory consuming operations. A system of this type could also be coded to
+produce, when requested, new images convolved with beams of given sizes.
 
 The absence of statistical noise in the synthetic images we collected is another important point
 which should be considered in future works. Even if, 
 in the proof of concept we successfully reproduced previous results, the difference with real observations 
-could be relevant in the application of a model trained on our dataset to real observations. 
-The influence of statistical errors and the background noise shoould thus be studied.
-A possible solution consists in using CASA to include all the sources of errors in the dataset images but
+could be relevant in other applications.
+The influence of statistical errors and the background noise should thus be studied.
+A possible solution consists in using \lstinline{CASA} in place of \lstinline{pymcfost} to 
+include all the sources of errors in the dataset images. Alternatively,
 the problem could also be attacked from the opposite side developing techniques,
-maybe even using machine learning methods, to clean the original observations from all types of errors.
+maybe even using machine learning methods, to clean the original observations from these types of errors.
 
 Finally, we would like to suggest some applications of machine learning
 models which we think would be worth exploring in future researches.
 Starting from the work done in this thesis with the proof of concept, similar 
-model could be implemented improving the choice of the hyperparameters with 
-specific algorithms designed at this purpose in order to discover neural networks
+models could be implemented improving the choice of the hyperparameters with 
+specific algorithms designed at this purpose, in order to discover neural networks
 with optimal structures for the specific problem addressed.
-Withoout the need for any addition but requiring better performing machines, our 
+Without the need for any addition but requiring better performing machines, our 
 dataset could be used to study the neural network susceptibility to the image resolution in terms of dimensions of
-the beam size used to convolve the original one. 
+the beam size used to convolve the original one. The aim could be, for example, that of determining the worst resolution which
+still allows the detection of the gap and the inferring of the planet's mass from its properties.
 
-Different architectures of the neural network could also be explored including, for example, convolutional
+Different architectures of the neural network could also be explored, including convolutional
 layers to account for discs symmetries and reduce errors induced by traslated or rotated images.
 The output layer might also be expanded using the same network to infer more features of the disc. We imagine, 
-for istance, a model that returns the planet's mass and the gas to dust ratio.
+for istance, a model that returns the planet's mass and the gas to dust ratio. Finally, the purpose of the neural network
+could be changed training new models to predict different features whose determination
+with traditional methods can be challenging.
 
 \begin{comment}
 -different wavelengths

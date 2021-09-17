@@ -27,6 +27,26 @@ Giuseppe Lodato, Giovanni Dipierro, Enrico Ragusa, Feng Long, Gregory~J
 \newblock {\em Monthly Notices of the Royal Astronomical Society},
   486(1):453–461, Mar 2019.
 
+\bibitem{mcfost2}
+C.~Pinte, T.~J. Harries, M.~Min, A.~M. Watson, C.~P. Dullemond, P.~Woitke,
+  F.~Ménard, and M.~C. Durán-Rojas.
+\newblock Benchmark problems for continuum radiative transfer.
+\newblock {\em Astronomy \& Astrophysics}, 498(3):967–980, Mar 2009.
+
+\bibitem{mcfost1}
+C.~Pinte, F.~Ménard, G.~Duchêne, and P.~Bastien Bastien.
+\newblock Monte carlo radiative transfer in protoplanetary disks.
+\newblock {\em Astronomy \& Astrophysics}, 459(3):797–804, Sep 2006.
+
+\bibitem{phantom}
+Daniel~J. Price, James Wurster, Terrence~S. Tricco, Chris Nixon, Stéven
+  Toupin, Alex Pettitt, Conrad Chan, Daniel Mentiplay, Guillaume Laibe, Simon
+  Glover, and et~al.
+\newblock Phantom: A smoothed particle hydrodynamics and magnetohydrodynamics
+  code for astrophysics.
+\newblock {\em Publications of the Astronomical Society of Australia}, 35:e031,
+  2018.
+
 \bibitem{dstauv}
 Benedetta Veronesi, Enrico Ragusa, Giuseppe Lodato, Hossam Aly, Christophe
   Pinte, Daniel~J Price, Feng Long, Gregory~J Herczeg, and Valentin

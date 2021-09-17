@@ -1,4 +1,4 @@
-\contentsline {chapter}{Abstract}{1}{Doc-Start}%
+\contentsline {chapter}{Abstract}{1}{figure.caption.1}%
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Protoplanetary discs}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Structural properties}{5}{section.2.1}%
@@ -39,6 +39,6 @@
 \contentsline {section}{\numberline {6.3}Results}{37}{section.6.3}%
 \contentsline {chapter}{\numberline {7}Conclusions}{40}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Conclusion}{40}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Future perspectives}{40}{section.7.2}%
-\contentsline {chapter}{Acknowledgements}{42}{chapter*.19}%
-\contentsline {chapter}{Bibliography}{43}{chapter*.20}%
+\contentsline {section}{\numberline {7.2}Future perspectives}{41}{section.7.2}%
+\contentsline {chapter}{Acknowledgements}{43}{chapter*.20}%
+\contentsline {chapter}{Bibliography}{44}{chapter*.21}%
