@@ -4,7 +4,7 @@
 \contentsline {section}{\numberline {2.1}Structural properties}{5}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Disc dynamics}{7}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Observations}{8}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Planet formation}{9}{section.2.4}%
+\contentsline {section}{\numberline {2.4}Planet formation}{10}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Gaps}{10}{section.2.5}%
 \contentsline {chapter}{\numberline {3}State-of-the-art characterisation methodologies}{12}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Addressed questions}{12}{section.3.1}%
@@ -26,19 +26,19 @@
 \contentsline {subsection}{\numberline {4.1.6}Overlearning and underlearning}{21}{subsection.4.1.6}%
 \contentsline {section}{\numberline {4.2}Strengths and limitations}{22}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Machine learning and protoplanetary discs}{23}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}The proposed approach}{24}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.1}The proposed approach}{23}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Previous attempts in literature}{25}{subsection.4.3.2}%
-\contentsline {chapter}{\numberline {5}Dataset design}{26}{chapter.5}%
-\contentsline {section}{\numberline {5.1}The data}{26}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Structure and interface}{29}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Supporting scripts}{29}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Expanding the dataset}{31}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Proof of concept}{34}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Data pre-processing}{34}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Adopted model}{35}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Results}{37}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Conclusions}{40}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusion}{40}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Future perspectives}{41}{section.7.2}%
-\contentsline {chapter}{Acknowledgements}{43}{chapter*.20}%
-\contentsline {chapter}{Bibliography}{44}{chapter*.21}%
+\contentsline {chapter}{\numberline {5}Dataset design}{27}{chapter.5}%
+\contentsline {section}{\numberline {5.1}The data}{27}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Structure and interface}{30}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Supporting scripts}{30}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Expanding the dataset}{32}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Proof of concept}{35}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Data pre-processing}{35}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Adopted model}{36}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Results}{38}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Conclusions}{41}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusion}{41}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Future perspectives}{42}{section.7.2}%
+\contentsline {chapter}{Acknowledgements}{44}{chapter*.20}%
+\contentsline {chapter}{Bibliography}{46}{chapter*.21}%

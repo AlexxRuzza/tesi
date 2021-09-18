@@ -139,12 +139,12 @@ diversity of properties and morphologies,
 offering a precious statistically valid pool of data to evaluate and enhance
 the theoretical picture on planet formation.
 
-Many techniques have been proposed and developed to interpret these new observations
-with the aim of determining discs properties and detecting the presence of young planets,
-which exploit measures of their radiative emission and analysis of the morphologies revelead.
-The presence of gaps, annular regions of luminosity depletion, can, for example, be explained 
+Many techniques have been proposed and developed to interpret these new observations,
+which exploit measures of the discs' radiative emission and analysis of the morphologies revelead
+with the aim of determining their properties and detecting the presence of young planets.
+Gaps, annular regions of luminosity depletion, can, for example, be explained 
 by the presence of embedded interacting planets whose properties, such as their mass, are
-tied to the width and depth of these subbstructures.
+tied to the width and depth of these substructures \cite{gap_opening1,gap_opening2,gap_opening3}.
 
 To exploit this relationship and more generally for the characterisation of protoplanetary discs
 two approaches are currently used. Some variables can be linked with empirical relationships 
@@ -169,7 +169,7 @@ presence of a planet in the gap of DS Tau disc estimating a mass of $3.5 \pm 1 M
 Despite their power and virtual unlimited applications, these tools are far to being the definitive solution
 to the characterisation problem, due to the enormous amount of computational resources and time 
 required to run a simulation, and the dozens of physical properties parametrizing the theoretical models which need to be 
-assumed or measured with different techniques.
+assumed or measured with different methods.
 
 In this thesis we want to propose a new approach based on machine learning techniques, to overcome 
 the main limits of the currently used methodologies. We suggest training a neural network
@@ -200,7 +200,7 @@ of both analytical expressions and numerical simulations.
 
 Machine learning, and more specifically neural networks, will 
 be introduced in the following chapter explaining the principle at the core of their functioning and pondering 
-their power and limits. I will finally propose the application of these techniques on protoplanetary discs images
+their potential. I will finally propose the application of these techniques on protoplanetary discs images
 reviewing a previous attempt \cite[S. Auddy and M. Lin]{Auddy_2020} and analyzing the feasibility, the limits and the potential of our approach.
 
 In the last two chapters I will present the work done in this thesis. The fifth chapter describes the database we built
@@ -282,7 +282,7 @@ gross estimates of their typical values. I am going to discuss:
 — temperature
 \end{comment}
 
-Most of protoplanetary discs are observed at distances of about 100-200 pc in the star-forming regions. 
+Most of protoplanetary discs are observed at distances of approximately 100-200 pc in the star-forming regions. 
 They exhibit typically a diameter of about 100 a.u. meaning that they span approximately
 1 arcsec of the sky as seen from Earth.
 In the following sections I will use cylindrical coordinates 
@@ -298,7 +298,7 @@ some unknown optical properties whose estimation introduces a source of uncertai
 Dust and solid fragments are embedded in the gaseous medium which provides the vast majority of the disc mass.
 Molecular hydrogen (H$_2$) is the main constituent which is challenging to observe due to
 its lack of a dipole moment. 
-Measures related to less abundant molecules, such as HD or CO, are used to probe the properties of the gas component. 
+Therefore, measures related to less abundant molecules, such as HD or CO, are used to probe the properties of the gas component. 
 
 The overall mass of a typical protoplanetary disc has been measured to be some Jupyter masses.
 Estimates of these quantities are relevant, for example, to provide upper limits
@@ -340,9 +340,9 @@ the vertical typical length scale $H$, thus requiring $H/R \ll 1$. This quantity
 showing values in the range $10^{-3}-10^{-1}$ which justify the assumption. The thin disk approximation allows the study of disc properties integrating
 the equations along the vertical direction.
 The second simplification that is usually made consists in neglecting self-gravity.
-The stability condition of the disc against self-gravity can be written in the form
+The stability condition of the disc against self-gravity can be written \cite[p. 40]{book_planet_form} as
 \begin{equation}
-    \frac{M_{disk}}{M_{star}} \lesssim  \frac{H}{R}
+    \frac{M_{disc}}{M_{star}} \lesssim  \frac{1}{2}\cdot \frac{H}{R}
 \end{equation}
 which is well satisfied in the late epochs when protoplanetary discs are studied.
 
@@ -359,7 +359,7 @@ predominance over the solid elements.
 
 The vertical structure of the gas is determined by a steady-state solution of the hydrodynamical laws of motion together with the Poisson equation that
 accounts for the gravitational potential. The thin-disk assumption allows a great simplification
- of this problem leading to the vertical density profile
+ of this problem leading to the vertical density profile \cite[pp. 38-41]{book_planet_form}
 \begin{equation}
     \rho(z, r) = \rho_0(r)\exp(-\frac{\Omega_K^2z^2}{2c_s^2}) \equiv \rho_0(r)\exp(-\frac{z^2}{2H^2})
 \end{equation}
@@ -392,7 +392,7 @@ are needed. Viscosity plays a central role in this context. Detailed calculation
 as modelled in an ideal gas and caused by molecular collisions is too weak to account for these processes. 
 A proper model can be achieved assuming a highly turbulent regime that can produce a ``turbulent viscosity'' through the mixing of fluid elements
 at neighboring radii. The new parameter $\alpha$
-called ``Shakura-Sunyaev viscosity'' which gathers all the ignorance on this process is introduced through the following reasoning:
+called ``Shakura-Sunyaev viscosity'' \cite{ssviscosity} which gathers all the ignorance on this process is introduced through the following reasoning:
 in the case of laminar flow, kinematic viscosity $\nu$ is defined as the constant of 
 proportionality between the shear stress $\tau$ and the velocity gradient  $\pdv{u}{y}$, normalized with the fluid density $\rho$
 \begin{equation}
@@ -415,7 +415,7 @@ must take values less than 1.
 
 The dust component is modelled as a pressureless fluid with grains of different dimensions coupled with the gas medium. 
 The strength of the coupling is expressed by the Stokes number $St$.
-Two drag forces come into play depending on the grain size $s$. 
+Two drag forces come into play depending on the grain size $s$ \cite[pp. 110,111]{book_planet_form}. 
 If $s \lesssim \lambda$, with $\lambda$ indicating the mean free path of gas molecules, 
 the drag force is called Epstein drag. 
 In this regime, which is usually the most relevant for most particle sizes, 
@@ -457,7 +457,8 @@ of the objects that drive their formation. I am going to discuss how they are de
 
 Due to their distance we can only look at their electromagnetic emission
 and exploit the natural diversity of structures and properties. 
-Three sources of light can be identified.
+Three sources of light can be identified \cite{disc_rev}. Examples of their
+observations can be seen in figure 2.2.
 
 The first one is the radiation, usually of micrometric wavelength, emitted by the host star and scattered by dust grains.
 This tracer is especially sensitive to the vertical structure 
@@ -480,8 +481,10 @@ which is an array of 66 high precision antennas that can be moved to achieve dif
 Other facilities that have given a significant contribution to the detection of protoplanetary discs are the Very Large Telescope (VLT), the W. M. Keck Observatory and the NASA
 Hubble Space Telescope.
 
-The images with the best resolution currently obtained are those of the DSHARP (Disk Substructures at High Angular Resolution Project) survey, $\sim 0.035$ arcsec, designed to examine properties
-of small-scale substructures and inquire how they relate to the planet formation process. 
+The images with the best resolution currently obtained are those of the DSHARP (Disk Substructures at High Angular Resolution Project) survey \cite{dsharp}, $\sim 0.035$ arcsec, designed to examine properties
+of small-scale substructures and inquire how they relate to the planet formation process. In figure 2.3, some of the images obtained in the context of this project
+can be appreciated.
+
 
 \section{Planet formation}
 
@@ -525,16 +528,17 @@ involving planets and their formation. Protoplanetary discs are the planets' bir
 Different mechanisms of planet formation have been proposed and some parts of the theories are not completely
 understood yet. 
 
-The core accretion process is believed to be the origin of planets from the dust component of the disc. 
+The core accretion process \cite[pp. 25-26]{veronesi_phdthesis} is believed to be the origin of planets from the dust component of the disc. 
 The process starts from the small dust grains which are well coupled with the gas.
 The coupling makes them acquire low relative velocities that result in gentle collisions forming aggregates called, when a significant mass is reached, planetesimals.
 While gradually accreting their mass, this aggregates settle towards the mid-plane and start to decouple from the gas experiencing a radial force 
 which makes them spiral inwards toward the global maximum in the gas pressure. This motion is called radial drift and it is usually more effective for grains of sizes in the range 
 1-10 mm.
-The accretion process of planetesimals continues until the local dust population is depleted by radial migration or the collisions become destructive.
+The accretion of planetesimals continues, with an increasing relevance of gravity in the process,
+until the local dust population is depleted by radial migration or the collisions become destructive.
 
 This process profoundly influences the morphology of the disc leaving us ways to detect and characterize newborn planets. 
-Gaps, annular regions of dust or gas depletion, are the pivotal substructure generated from the interaction of the disc with young planets.
+Gaps, annular regions of dust or gas depletion, are the pivotal substructure generated from the gravitational interaction of the disc with young planets.
 Links between their shape and planets features were found, which will be discussed in detail in the next chapter:
 a measure of their width allows, for example, an indirect estimation of the planet mass.
 
@@ -564,7 +568,7 @@ including magnetorotational instability turbulence, gravitational instabilities,
 large-scale vortices and self-induced dust pileups. The effective presence of a planet must hence be cautiously investigated and confirmed 
 before inferring its features from the gaps properties. 
 
-The figure 2.4 presents the radial profile of the gas and dust densities at a gap. Taking into exam 
+Figure 2.4 presents the radial profile of the gas and dust densities at a gap. Taking into exam 
 the graph relative to the dust density, I am going to highlight some recurrent features:
 at the core of the depletion zone, we can observe two minimums separated by a local maximum which usually coincides with the planet orbit.
 Sometimes this maximum reaches values comparable with the density of the unperturbed disc, a substructure that can be identified as a double gap. 
@@ -584,12 +588,12 @@ Width and depths are the crucial properties of gaps used to investigate planet p
 For the work done in this thesis they are not needed as the neural network model we aim to build would work directly with disc images.
 However, currently used methods, which will be discussed in the next chapter, include analytical tools which explicitly require the width
 value that thus needs to be defined.
-There are two main definitions used to give a value to the gap width: the first one defines it as the full width at half maximum of the radial profile density while
-the second one measures it as the radial distance between the minimum and the outer maximum.
+There are different definitions used to give a value to the gap width: one, for example, defines it as the full width at half depth \cite{Long_2018} where 
+the depth is computed as the difference between the density (or the emission intensity) at the minimum and at the outer peak.
 Due to the empirical nature of the analytical formulae that will be discussed, a change in the chosen definition requires to simply recompute
 some coefficients.                                        
 
-The depth is usually expressed as the minimum of the density profile normalized with the initial unperturbed value. Sometimes the intensity of the emitted light is used in place of the
+The depth can also be defined as the minimum of the density profile normalized with the initial unperturbed value. Sometimes the intensity of the emitted light is used in place of the
 density to obtain a definition which depends upon directly measurable properties.
 
 \chapter{State-of-the-art characterisation methodologies}
@@ -599,7 +603,7 @@ in the context of planet formation.
 Many models were developed to describe and explain the disc motion and the origin of substructures and
 some questions are still open. However, these problems will not be the object of this chapter, 
 here I am going to focus on the methods developed to interpret the
-disc images obtained through direct observations.
+images of protoplanetary discs, obtained through direct observations, in order to infer their properties.
 
 \section{Addressed questions}
 
@@ -638,13 +642,13 @@ applied to infer other properties of the planet or of the disc.
 
 Observations provide direct measures of the light tracers intensity, both spatially resolved and as
 the total disc luminosity, often expressed separately for wavelength or source.
-In addition to this data, from the images obtained, substructures' shapes and
+In addition to these data, from the images obtained, substructures' shapes and
 dimensions can be observed and computed.
-A first attempt to interpret the data consists in researching empirical patterns in their relation with some
+A first attempt to interpret the data consists in researching empirical patterns in their relations with some
 interesting features of the disc. These links are often expressed as power laws or polynomial equations whose parameters are
 determined through a regression of available data.
 For example, the scaling relation between the disc luminosity at millimetric wavelengths and the star mass $L_{mm} \propto M_*^{1.7\pm0.3}$
-is exhibited by discs with mean ages $\lesssim 3$ Myr.
+is exhibited by discs with mean ages $\lesssim 3$ Myr \cite[p. 13]{disc_rev}.
 In addition to empirical formulae, theoretical models, supported by assumptions on
 the optical properties of the gas and dust in the disc, offer some equations useful
 in the determination of structural properties.
@@ -660,7 +664,7 @@ In the context of planet formation special attention is reserved to the study of
 We have seen that a possible explanation regarding their origin can lie in the interaction with
 forming planets. If we consider axisymmetric gaps, their width is the main discriminative property and
 has been linked to the mass of the planet responsible for their origin.
-For example, a direct proportionality between the gap width and the planet's Hill radius has been suggested, where
+For example, a direct proportionality between the gap width and the planet's Hill radius has been suggested \cite{Lodato_2019}, where
 $
     R_H = (\frac{M_P}{3M_*})^{1/3}R_0
 $
@@ -672,7 +676,7 @@ This leads to
 providing a relation between the planet mass and the gap width $w_d$ measured in the dust component.
 The coefficient $k$ is introduced to model the proportionality and must be regressed from the data.
 
-A different approach which had been proposed suggests the following relation
+A different approach which had been proposed \cite{kanagawa} suggests the following relation
 \begin{equation}
     M_P = 0.0021 \cdot \left( \frac{w_g}{R_0}\right)^2
     \cdot \left(\frac{h_0}{0.05}\right)^{\frac 32}
@@ -856,7 +860,7 @@ where $R_{ref}$ is a reference radius. The density and sound-speed values at thi
 are the input constants that characterize the initial state.
 Other variables, such as the $\alpha$-viscosity, the planet and stellar masses and the orbital radius, are also provided as input parameters.
 
-One of the available programs for this step is \lstinline{PHANTOM}, a smoothed particle hydrodynamics (SPH) code 
+One of the available programs for this step is \lstinline{PHANTOM} \cite{phantom}, a smoothed particle hydrodynamics (SPH) code 
 specifically designed for astrophysical applications and which is the one used to produce
 the starting data for the synthetic images collected in the database that was developed in this thesis.
 If properly compiled, \lstinline{PHANTOM} is able to run a simulation of a protoplanetary disc with a planet orbiting around the central star. 
@@ -872,13 +876,13 @@ I will explain why this step is performed and the meaning of the results obtaine
 \end{comment}
 
 The next stage in the simulation workflow is the radiative transfer computation. For this
-step we chose to use \lstinline{MCFOST}, a code designed for this purpose and based on Monte Carlo methods.
+step we chose to use \lstinline{MCFOST} \cite{mcfost1,mcfost2}, a code designed for this purpose and based on Monte Carlo methods.
 This program provides the possibility to run a simulation for gas and dust grains in the specific 
 spatial configurations stored in a \lstinline{PHANTOM} dump file.
 
 The aim is to obtain a synthetic observation of specific light tracers as seen from given angles and distance.
 To produce the images used in this thesis we are only interested in probing the dust component through the thermally
-emitted and scattered radiation at a fixed wavelength.
+emitted radiation at a fixed wavelength.
 First of all, the radiative transfer of energy from the star to the disc elements is calculated, generating a map of the disc temperature.
 At this point the thermal emission of the dust is computed and ray traced to obtain the resulting image.
 
@@ -920,7 +924,7 @@ This step is needed to allow a better comparison with the real images or to trai
 models which should then be able to work with the real observations.
 
 There are different tools which could be used to achieve this purpose.
-The \lstinline{CASA} (Common Astronomy Software Applications) package is the most complete choice 
+The \lstinline{CASA} (Common Astronomy Software Applications) package \cite{casa} is the most complete choice 
 which is specifically designed to reproduce images as they would be captured by ALMA, reproducing the noise in the data,
 the limited resolution of the instruments and taking into account the spatial configuration of the radio telescopes
 and other settings which could influence the observations.
@@ -959,7 +963,7 @@ is usually applied consists in executing multiple simulations varying its value 
 comparing the results with observative data.
 The need of multiple simulations makes the time needed rise up to weeks.
 
-Last, a problem, which is worth mentioning since it affects all the investigative methods,
+Last, a problem, which is worth mentioning since it affects all the characterisation methods,
 is that of degeneracies afflicting disc appearances at specific
 wavelengths. This means that different sets of parameters may result in the same disc structure and emission.
 They might be caused by the simplifications made in the model or be intrinsically due to the disc physics. 
@@ -972,9 +976,9 @@ Very brief introduction to machine learning. (Birth and definition)
 \end{comment}
 
 The term machine learning was introduced by Arthur Lee Samuel in 1959
-with his research on the subject applied to the game of checkers.
-In 1998, Tom Michael Mitchell defined machine learning as the study of
-computer algorithms that can improve automatically through experience and by the use of data.
+with his research on the subject applied to the game of checkers \cite{ml_checkers}.
+In 1997, Tom Michael Mitchell defined machine learning as the study of
+computer algorithms that can improve automatically through experience and by the use of data \cite{book_ml}.
 This collection of tools and methods is usually considered a branch of artificial intelligence and 
 finds its natural application in pattern recognition and data analysis tasks for which is arduous or
 unfeasible the development of conventional algorithms.
@@ -1081,9 +1085,9 @@ To explore the arguments behind their design and unfold the
 comparison with the biological unit, this relation can be rewritten 
 as the composition of two functions corresponding to the two blocks in figure:
 \begin{align}
-    \nu (\va a) = g \circ \Sigma = g(\Sigma (\va a)), \hspace{10pt}
+    \nu (\va a) = f \circ \Sigma = f(\Sigma (\va a)), \hspace{10pt}
     \Sigma &: \mathbb R^k \rightarrow \mathbb R \\
-    g &: \mathbb R \rightarrow \mathbb R \nonumber
+    f &: \mathbb R \rightarrow \mathbb R \nonumber
 \end{align}
 
 The first block, $\Sigma$, performs a weighted sum of the input values $a_{j}$ introducing also a bias $b$
@@ -1116,7 +1120,7 @@ which unlike the step function is continuous and infinitely differentiable in 0.
 Last, the third panel depict the ReLU (Rectified Linear Unit) activation function which returns the input value if 
 positive and 0 otherwise. This is the most popular among the whole set of activation functions available, due to its simplicity, requiring very little computation, and some mathematical properties that make the training process using gradient
 descent methods particularly efficient.
-Moreover, this function is non-linear, not limited and can return any real positive values.
+Moreover, this function is non-linear, not limited and can return any real positive value.
 The replacement of discreet outputs with a value varying continuously is still supported by the biological comparison.
 In fact, even if real neurons can only send discreet signals deciding whether or not to activate their output, 
 the frequency of transmission might vary. The continuous output thus model this possible behaviour.
@@ -1200,7 +1204,7 @@ feedforward neural network with convolutional layers.
 I will explain how they work, what they are designed for and how they can be exploited.
 \end{comment}
 
-We have thus seen that artificial neurons, the building blocks of neural networks,
+We have seen that artificial neurons, the building blocks of neural networks,
 are fundamentally simple parametric functions.
 Just as in biological brains, the complexity and flexibility
 of neural networks is due to the number and nature of neurons connections.
@@ -1441,7 +1445,8 @@ I am going to:
 \end{figure}
 
 The training process of a neural network could end in three different ways.
-The figure () shows an example of application to the same data of three different models.
+Figure 4.3 shows an example of application of three different models to the same data obtained 
+from a parabolic function with the addition of small errors.
 The panel in the middle represents the desired result: the neural network has been able to predict the 
 functional form which originated the data without learning its statistical noise.
 The panels on the sides depict instead the two issues that might occur.
@@ -1466,7 +1471,7 @@ test the obtained model. The training set is usually assembled with about the 80
 Comparing the loss function values obtained with the train and test datasets we can
 detect the overlearning. 
 The possible solutions applied in this case are the exact opposite of that in the previous situation:
-we can reduce the number of epochs ``early stopping'' the training process or decrease the complexity of
+we can reduce the number of epochs ``early stopping'' the training process or decreasing the complexity of
 the model.
 
 \section{Strengths and limitations}
@@ -1592,7 +1597,7 @@ has the potential of being inferrable using this technique.
 Among the possible applications, I will focus on the already mentioned problem of detecting young embedded planets and measuring their mass.
 Nevertheless, the same techniques could be easily generalised to other issues.
 In chapter 3 I mentioned some known analytical relationships which prove an existing underlying link
-between the planet mass and gaps morphologies. Picture 4.? shows the synthetic images obtained simulating
+between the planet mass and gaps morphologies. Figure 4.4 shows the synthetic images obtained simulating
 three identical protoplanetary discs whose only difference resides in the mass of the orbiting planets. 
 Even without any specific measure we can appreciate the different features of their substructures.
 All these evidences suggest that a regression through a neural network might be possible.
@@ -1640,16 +1645,16 @@ and explaining the main differences with the approach we propose.
 \end{figure}
 
 Some machine learning applications in this field have been already tried, 
-with an approach similar to the one proposed. For example, in [insert reference]
-Min Kai Lin and Sayantan Auddy realised a training dataset with [insert number] two-dimensional simulations varying, in addtion to the mass of the embedded planet, the values of the $\alpha$-viscosity, the aspect-ratio, the Stokes number, the gas to dust ratio and the index of the power law used to model 
+with an approach similar to the one proposed. For example,
+S. Auddy and M. Lin \cite{Auddy_2020} realised a training dataset with 976 two-dimensional simulations varying, in addition to the mass of the embedded planet, the values of the $\alpha$-viscosity, the aspect-ratio, the Stokes number, the gas to dust ratio and the index of the power law used to model 
 the initial density. 
 They then measured, in the obtained results, the width of the gaps formed in the
 dust component due to its interaction with the orbiting planet. A neural network
 was thus trained to infer the planet mass from this last measure and the other parameters previously mentioned.
 
 The results achieved were promising. They compared the mass value predicted by the neural network
-with the results obtained applying the analytical formulae () and ().
-In the picture () we can observe this comparison.
+with the results obtained applying the analytical formulae 3.1 and 3.2.
+In picture 4.5 we can observe this comparison.
 The neural network performed better than both the analytical approaches: its prediction error
 follows a normal distribution whose mean value and standard deviation are both smaller showing its
 better accuracy and precision.
@@ -1657,7 +1662,7 @@ better accuracy and precision.
 The approach we propose in this thesis present substantial differences. 
 First, we aim at reducing at its minimum the number of disc features needed and not 
 directly obtainable, with low uncertainty, from observations.
-For this reason, we opt for a neural network designed to receive the entire
+For this reason, we opted for a neural network designed to receive the entire
 observed image as input which also allows, as a fortunate consequence, to consider the entire morphology of the disc substructures.
 
 Additionally, they considered only 2D simulations to reduce the computational power needed
@@ -1679,7 +1684,7 @@ ensuring that the entire parameter space is properly represented and that no bia
 the production and selection stages.
 
 In the approach we proposed, the aim is to build a database of synthetic images of protoplanetary discs
-probed through thermal dust emission, produced exploiting 
+probed through their thermal dust emission, produced exploiting 
 the results of already run simulations. The design and implementation of this dataset is the heart of this
 thesis. In this chapter I am going to present its content and the structure developed to organize and store the information. 
 The scripts produced to support the use and maintenance of the database will also be explained, 
@@ -1701,23 +1706,23 @@ of hydrodynamical and radiative simulations.
 At this stage of the simulation process, the resulting images
 are spatially resolved maps of the flux density of light at a specific wavelength as seen 
 from a given relative position.
-This fictitious images are further elaborated with pymcfost,
+This fictitious images are further elaborated with \lstinline{pymcfost},
 whose functioning has been discussed in chapter 3, to simulate the limited resolution of
 the telescopes through a convolution with a Gaussian beam.
-The final product is a set of images in the FITS format. In the next section I will explain how they are organized
+The final product is a set of images in the \lstinline{FITS} format. In the next section I will explain how they are organized
 and indexed, while here I am going to discuss the content of each image providing insights on the source and
 possible usages of each parameter included. I will also present some global features of the dataset.
 
-The FITS format encode the stored information in Header and Data Units (HDUs).
+The \lstinline{FITS} format encode the stored information in Header and Data Units (HDUs).
 Each one, as the name suggests, consists in an ASCII text header organized in key-values tuples, followed 
 by a binary, usually multidimensional, array where the data is stored.
 
-In our dataset, each FITS file contains only one image corresponding to a single HDU.
+In our dataset, each \lstinline{FITS} file contains only one image corresponding to a single HDU.
 In the header, some parameters of the disc images depicted are stored. 
 The preprocessing step, run on the files obtained from the radiative transfer simulations, ensures
 the proper standardization of the header, retrieving and adding the missing variables.
 Table 5.1 shows the list of the header keys corresponding to each of these parameters
-saved in the FITS files. Brief descptions are also provided.
+saved in the \lstinline{FITS} files. Brief descptions are also provided.
 
 \begin{table}
     \begin{center}
@@ -1784,7 +1789,7 @@ the disc. The next two groups list the physical properties of stars and planets.
 ``multiple keys'', those in the \lstinline{KEY#} format, which appear more than once, substituting the \lstinline{#} character with an index,
 in case of multiple stars or planets.
 Except for the star temperature which is a parameter of the radiative transfer simulation, also these variables are retrieved from
-the saved standard output of \lstinline{MCFOST} which read these properties in the \lstinline{PHANTOM}'s dump file.
+the saved standard output of \lstinline{MCFOST} which reads these properties in the \lstinline{PHANTOM}'s dump file.
 The fourth set collects some input variables of the \lstinline{MCFOST}'s simulation.
 They set the relative position and orientation of the disc and the wavelength of the radiative emission probed.
 The \lstinline{GDRATIO} variable contains the value of the gas to dust mass ratio set when running \lstinline{MCFOST}
@@ -1800,21 +1805,21 @@ Finally, the fifth group provides the units of the stored data while the last on
 the dimensions and orientation of the Gaussian beam used to convolve the image.
 
 The images collected within the database in the version deployed with this thesis, come from two different sources.
-The first group of data, provided by Dr. Benedetta Veronesi (...), consists in numerous simulations,
+The first group of data, provided by Dr. Benedetta Veronesi, consists in numerous simulations,
 both hydrodynamical and radiative,
 of the DS Tau disc \cite{dstauv}. 
 I additionally re-run the radiative transfer through MCFOST to obtain images of the disc at different inclinations.
 From this source, after the further processing through pymcfost, we obtained a total of 20370 images.
-The second group of data was provided by Dr. Enrico Ragusa (...) and consists in sets of snapshots
+The second group of data was provided by Dr. Enrico Ragusa and consists in sets of snapshots
 obtained from hydrodynamical simulations from which I selected only the ones which showed the presence of gaps.
 I then simulated the radiative transfer and produced images with different gas to dust ratios and inclinations.
 From this source we eventually obtained 4350 images.
 
-For each result of a radiative transfer simulation, I used pymcfost to produce 10 images obtained convolving circular 
+For each result of a radiative transfer simulation, I used \lstinline{pymcfost} to produce 10 images obtained convolving circular 
 Gaussian beams of different sizes (FWHM)
 logarithimically spaced between 0.01 and 1 arcsec. Figure 5.1 shows an example of the results obtained.
 These values were chosen to explore resolutions
-realistically achievable, as proved by for example the DSHARP project, and additionally explore the upper and lower limits.
+realistically achievable, as proved by for example the DSHARP project \cite{dsharp}, and additionally explore the upper and lower limits.
 Very resolute images are included for applications where it might be preferable to remove instruments limitations
 or to test models in the perspective of future improvements in the observational techniques. 
 On the other end the less resoluted images are convolved with beams up to about the same dimensions of the disc. 
@@ -1827,14 +1832,15 @@ which essentially provide only measures of the light intensity but can not revea
     \end{center}
     \caption{The ten different sizes of the gaussian beam used to convolve each synthetic image. 
     In this figure all the images are obtained from the same simulation result varying only the
-    beam size whichis shown in the left bottom corner.}
+    beam size which ++
+    is shown in the left bottom corner.}
 \end{figure}
 
-The final product is a database made of 24720 FITS images with dimensions of 1024x1024 pixels. In this
+The final product is a database made of 24720 \lstinline{FITS} images with dimensions of 1024x1024 pixels. In this
 version each image contains only one star and one planet and exhibit an induced gap.
 Among the parameters listed in Table 5.1 only some of them vary significatively across different simulations.
 Apart from the beam sizes whose distribution has already been discussed, they are, the gas and dust masses, the gas to dust ratio, 
-the planet's mass and orbital radius and the time. Picture () shows the distribution of these parameters and the scatter
+the planet's mass and orbital radius and the time. Picture 5.2 shows the distribution of these parameters and the scatter
 plots showing the correlations between these variables. Some of them are easily interpretable, for example the
 gas and dust masses decrease with time accompanied by the planet's mass increase can be understood as consequence of the planet's accretion
 process. There is also a strong correlation between the planet's orbital radius and its mass which is due to the third Keplerian law.
@@ -1871,7 +1877,7 @@ described by the regular expression
 which provide some information about the parameters used to produced that image. The first six 
 characters are numbers forming an index key which is used to uniquely identify each image.
 The collection is stored entirely inside a single directory where two additional files are generated: 
-\lstinline{index.js} and \lstinline{data.js}. They are json files aimed at indexing all the information stored in the FITS 
+\lstinline{index.js} and \lstinline{data.js}. They are json files aimed at indexing all the information stored in the \lstinline{FITS} 
 files except for the images' data, in order to provide an easier access especially when the dataset is not completely
 available locally.
 
@@ -1959,7 +1965,7 @@ across a sufficiently large range. Variations of the other ones could be explore
 In the development of the database structure, great effort has been put into making the addition of new
 data as easy as possible. The previously discussed scripts were also developed with this purpose.
 
-In order to integrate new images, FITS files obtained from a radiative 
+In order to integrate new images, \lstinline{FITS} files obtained from a radiative 
 transfer simulation done with \lstinline{MCFOST} or a similar tool are needed. If results of hydrodynamical 
 simulations are available, they also can be used, additionally running the radiative transfer simulations.
 Before using the \lstinline{pymc_prepro} script to preprocess the images and convolve them with the Gaussian beam,
@@ -2008,9 +2014,9 @@ have to be grouped inside the same directory organized according to the followin
 
 The different simulation are thus divided in subdirectories according to the planet's mass simulated, the time of the
 snapshot and the gas to dust ratio. Additionally, inside each of the \lstinline{gd#} directories 
-there might be different subdirectories named \lstinline{data_#} automatically created by MCFOST 
+there might be different subdirectories named \lstinline{data_#} automatically created by \lstinline{MCFOST} 
 and containing results at different wavelengths (indicated by the \# in $\mu$m).
-Apart from the \lstinline{RT.fits.gz} file produced by the MCFOST there are two other files needed as it can be seen
+Apart from the \lstinline{RT.fits.gz} file produced by the \lstinline{MCFOST} there are two other files needed as it can be seen
 from the previous scheme: \lstinline{image.log} contains the redirected standard output of the \lstinline{MCFOST} run which 
 provides the parameters read from the phantom file,
 \lstinline{disc.para} is instead the input file used to run that simulation.
@@ -2020,7 +2026,7 @@ results inconvenient. In this case the functions implemented in the \lstinline{d
 to build a new script adapted to
 this situation.
 
-Once the FITS images have been preprocessed they can be added to the local directory containing the dataset 
+Once the \lstinline{FITS} images have been preprocessed they can be added to the local directory containing the dataset 
 and indexed running the script \lstinline{generate_index} with the option \lstinline{--update}. 
 
 At this point the database has been expanded. To share the contribution it is possible to merge it to the public remote database
@@ -2081,13 +2087,13 @@ These images were in fact, by design, intended to be filtered according to the e
 images object of study.
 
 In this specific case I selected the images convolved with a beam dimension of 0.046 arcsec which is,
-among the available sizes, the closest to the currently achievable best resolution according to the DHSARP project.
+among the available sizes, the closest to the currently achievable best resolution according to the DHSARP project \cite{dsharp}.
 To further reduce the size of the dataset, I also selected only images with inclinations of about
 60° which constitutes the larger set.
 As a result, I obtained a set of 1024 images which was randomly split in two subsets for the training and
-test phases containing respectevely the 80\% and 20\% of the whole data.
+test phases containing respectevely the 80\% and 20\% of the whole set.
 The test set contains images which are not used during the training process allowing the evaluation
-of the model on never seen.
+of the model on never seen data.
 
 With the aim of showing how the database developed can be used in machine learning applications,
 I am going through the steps required to filter the data reporting the lines of code used.
@@ -2095,7 +2101,7 @@ I am going through the steps required to filter the data reporting the lines of 
 First, the dataset index has to be imported and loaded using 
 the function \lstinline{dblib.index.get_data()} 
 developed for this purpose, which returns
-a python dictionaries. It that can then be loaded in a pandas \lstinline{DataFrame}
+a python dictionary. It that can then be loaded in a pandas \lstinline{DataFrame}
 which allows a simpler filtering using pandas queries:
 
 \begin{lstlisting}
@@ -2131,17 +2137,17 @@ instructions
                     )
 \end{lstlisting}
 
-where the defined function \lstinline{get_image()} opens the FITS file 
+where the defined function \lstinline{get_image()} opens the \lstinline{FITS} file 
 and extracts
 the data using the \lstinline{io.fits} module of 
 the \lstinline{astropy} package. All the images are thus
-stored in a \lstinline{numpy} array which results three-dimensional 
+stored in a \lstinline{numpy} three-dimensional array 
 with shape \lstinline{(n, 1024, 1024)} where \lstinline{n} is the total number of images loaded.
 
 The last step, before the split in training and test sets, consists 
 in the reshaping of this array. The  
 function \lstinline{get_image()} return a 1024x1024 matrix of float containing
-the value of the light intensity at each pixel. 
+the value of the flux density at each pixel. 
 Tensorflow models require each 2D image to be, instead, a matrix of arrays.
 The additional dimension of the obtained tensor is introduced to account for 
 different channnels allowing, for example, the analysis of RGB images where 
@@ -2249,7 +2255,7 @@ eventually, reaching the hidden layers.
 The optimizer used is \lstinline{Nadam} which is analogous to the \lstinline{adam} optimizer but implemented with a Nesterov momentum.
 The \lstinline{adam} optimizer is a stochastic gradient descent method with the addition of first order and second order moments
 that are adaptively estimated during the training process. According to
- Kingma et al., 2014, 
+ Kingma et al. \cite{nadam},
  the method is ``computationally efficient, has little memory requirement, 
  invariant to diagonal rescaling of gradients, 
  and is well suited for problems that are large in terms of data/parameter''.
@@ -2262,10 +2268,10 @@ We also lowered the learning rate reaching the value $10^{-4}$ to mitigate some 
 All these hyperparameters, including the number of hidden layers and of their neurons, were accurately chosen
 with a trial and error approach. Here, we presented the model which showed the best performance preserving a relative simplicity
 and thus economic computational requirements. 
-Figure () shows an overview of its main features.
+Figure 6.1 shows an overview of its main features.
 
 To evaluate the model, both during and after the training process, we used, as the loss function, the mean squared error of the predicted mass values 
-with repect to the ones known from the simulation files and stored in our dataset.
+with respect to the ones known from the simulation files and stored in our dataset.
 
 \section{Results}
 
@@ -2301,7 +2307,7 @@ model appears to be significantly smaller than that needed for numerical simulat
 first element in support of machine learning approaches.
 
 The neural network was trained for 200 epochs. The trends of the loss function evaluated on the training and test sets after each epoch are shown
-in figure () where their drop, after approximately 125 epochs can be appreciated.
+in figure 6.2 where their drop, after approximately 125 epochs can be appreciated.
 Furthermore, there are not evident signs of underlearning or overlearning as the loss function keeps low values for both the samples.
 More precisely, low values of the mean squared error computed predicting the masses of planets in the test set images 
 show the successfull functioning of the trained model on new unseen data.
@@ -2320,7 +2326,7 @@ of the most massive planet on which they tested their network.
 Due to the different ranges of planet's masses adopted the comparison is possible only through the relative error.
 
 
-The left panel of figure () shows the correlation between the predicted and simulated masses of the validation set which
+The left panel of figure 6.3 shows the correlation between the predicted and simulated masses of the validation set which
 lie along the $M_{predicted} = M_{simulated}$ line indicating a strong correlation.
 We also computed the relative prediction error $(M_{pred} - M_{sim})/M_{sim}$ for each item
 in the test set. The right panel of the same figure illustrates its distribution
@@ -2336,14 +2342,14 @@ a larger dataset we are confident that better results could be obtained.
 
 Finally, we also tried to apply the trained model in a real-case scenario. In this last test we used
 the ALMA observation of the DS Tau disc in the dust continuum at 1.3 mm.
-The image, obtained processing the raw data, was provided by ()
+The image, obtained processing the raw data, was produced by F. Long \cite{Long_2018}.
 We further adapted it to meet the same specifics of the ones collected in the employed dataset.
 First it was cropped to
 approximately the same size considering the pixel scale for each axis.
 We then checked that the data was in the same units and upscaled the image using
 \lstinline{scikit-image} functions to have the same resolution of the images in the training set (1024x1024).
-The obtained matrix of data was thus passed to the trained model which predicted a planet's mass of $M_p = 3.3 M_{Jup}$.
-Using numerical simulations () established the presence of a planet, hidden in the gap, with an estimated
+The obtained matrix of data was thus passed to the trained model which predicted a planet's mass of $M_p = 3.3 \pm 0.15 M_{Jup}$.
+Using numerical simulations B. Veronesi et al. \cite{dstauv} established the presence of a planet, hidden in the gap, with an estimated
 mass of $3.5 \pm 1 M_{Jup}$. The two results are thus compatible.
 
 \chapter{Conclusions}
@@ -2384,7 +2390,7 @@ We thus showed the potential of machine learning techniques for the characterisa
 young planets. The limited computational requirements and the ability to
 directly analyse the observations are the main advantages, which could
 furthermore allow the application of an adequately trained model to hypothetical large surveys
-of protoplanetary discs. In a similar scenario, our approach would allow to obtain a fast characterisation
+of protoplanetary discs. In a similar scenario, our approach would allow us to obtain a fast characterisation
 and classification of the observed objects which then, taking advantage of this first selection,
 could be further analyzed later.
 
@@ -2473,13 +2479,11 @@ with traditional methods can be challenging.
 
 
 
-\nocite{book_planet_form}
+\nocite{*}
 \bibliographystyle{plain} % We choose the &quot;plain&quot; reference style
 \bibliography{ref}
 
 
 \addcontentsline{toc}{chapter}{Bibliography}
-10.1093/mnras/stz913
 
-nadam citation: http://arxiv.org/abs/1412.6980
 \end{document}

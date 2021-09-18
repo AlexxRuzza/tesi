@@ -1,4 +1,20 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{disc_rev}
+Sean~M. Andrews.
+\newblock Observations of protoplanetary disk structures.
+\newblock {\em Annual Review of Astronomy and Astrophysics}, 58(1):483--528,
+  2020.
+
+\bibitem{dsharp}
+Sean~M. Andrews, Jane Huang, Laura~M. P{\'{e}}rez, Andrea Isella, Cornelis~P.
+  Dullemond, Nicol{\'{a}}s~T. Kurtovic, Viviana~V. Guzm{\'{a}}n, John~M.
+  Carpenter, David~J. Wilner, Shangjia Zhang, Zhaohuan Zhu, Tilman Birnstiel,
+  Xue-Ning Bai, Myriam Benisty, A.~Meredith Hughes, Karin~I. Öberg, and Luca
+  Ricci.
+\newblock The disk substructures at high angular resolution project ({DSHARP}).
+  i. motivation, sample, calibration, and overview.
+\newblock {\em The Astrophysical Journal}, 869(2):L41, Dec 2018.
 
 \bibitem{book_planet_form}
 Philip~J. Armitage.
@@ -11,12 +27,37 @@ Sayantan Auddy and Min-Kai Lin.
   protoplanetary disks.
 \newblock {\em The Astrophysical Journal}, 900(1):62, Sep 2020.
 
+\bibitem{gap_opening2}
+G.~Bryden, Xingming Chen, D.~N.~C. Lin, Richard~P. Nelson, and John C.~B.
+  Papaloizou.
+\newblock Tidally induced gap formation in protostellar disks: Gap clearing and
+  suppression of protoplanetary growth.
+\newblock {\em The Astrophysical Journal}, 514(1):344--367, mar 1999.
+
+\bibitem{gap_opening3}
+Giovanni Dipierro, Guillaume Laibe, Daniel~J. Price, and Giuseppe Lodato.
+\newblock {Two mechanisms for dust gap opening in protoplanetary discs}.
+\newblock {\em Monthly Notices of the Royal Astronomical Society: Letters},
+  459(1):L1--L5, 03 2016.
+
+\bibitem{casa}
+S.~{Jaeger}.
+\newblock {The Common Astronomy Software Application (CASA)}.
+\newblock In R.~W. {Argyle}, P.~S. {Bunclark}, and J.~R. {Lewis}, editors, {\em
+  Astronomical Data Analysis Software and Systems XVII}, volume 394 of {\em
+  Astronomical Society of the Pacific Conference Series}, page 623, August
+  2008.
+
 \bibitem{kanagawa}
-K.~D. Kanagawa, H.~Tanaka, T.~Muto, T.~Tanigawa, and T.~Takeuchi.
-\newblock {Formation of a disc gap induced by a planet: effect of the deviation
-  from Keplerian disc rotation}.
-\newblock {\em Monthly Notices of the Royal Astronomical Society},
-  448(1):994--1006, 02 2015.
+Kazuhiro~D. Kanagawa, Takayuki Muto, Hidekazu Tanaka, Takayuki Tanigawa, Taku
+  Takeuchi, Takashi Tsukagoshi, and Munetake Momose.
+\newblock {MASS} {ESTIMATES} {OF} a {GIANT} {PLANET} {IN} a {PROTOPLANETARY}
+  {DISK} {FROM} {THE} {GAP} {STRUCTURES}.
+\newblock {\em The Astrophysical Journal}, 806(1):L15, Jun 2015.
+
+\bibitem{nadam}
+Diederik~P. Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization, 2017.
 
 \bibitem{Lodato_2019}
 Giuseppe Lodato, Giovanni Dipierro, Enrico Ragusa, Feng Long, Gregory~J
@@ -26,6 +67,22 @@ Giuseppe Lodato, Giovanni Dipierro, Enrico Ragusa, Feng Long, Gregory~J
   discs.
 \newblock {\em Monthly Notices of the Royal Astronomical Society},
   486(1):453–461, Mar 2019.
+
+\bibitem{Long_2018}
+Feng Long, Paola Pinilla, Gregory~J. Herczeg, Daniel Harsono, Giovanni
+  Dipierro, Ilaria Pascucci, Nathan Hendler, Marco Tazzari, Enrico Ragusa,
+  Colette Salyk, Suzan Edwards, Giuseppe Lodato, Gerrit van~de Plas, Doug
+  Johnstone, Yao Liu, Yann Boehler, Sylvie Cabrit, Carlo~F. Manara, Francois
+  Menard, Gijs~D. Mulders, Brunella Nisini, William~J. Fischer, Elisabetta
+  Rigliaco, Andrea Banzatti, Henning Avenhaus, and Michael Gully-Santiago.
+\newblock Gaps and rings in an {ALMA} survey of disks in the taurus
+  star-forming region.
+\newblock {\em The Astrophysical Journal}, 869(1):17, Dec 2018.
+
+\bibitem{book_ml}
+Tom Mitchell.
+\newblock {\em Machine Learning}.
+\newblock McGraw-Hill Education, 1997.
 
 \bibitem{mcfost2}
 C.~Pinte, T.~J. Harries, M.~Min, A.~M. Watson, C.~P. Dullemond, P.~Woitke,
@@ -47,12 +104,35 @@ Daniel~J. Price, James Wurster, Terrence~S. Tricco, Chris Nixon, Stéven
 \newblock {\em Publications of the Astronomical Society of Australia}, 35:e031,
   2018.
 
+\bibitem{gap_opening1}
+Barbara~Whitney Ruobing~Dong, Zhaohuan~Zhu.
+\newblock {OBSERVATIONAL} {SIGNATURES} {OF} {PLANETS} {IN} {PROTOPLANETARY}
+  {DISKS}. i. {GAPS} {OPENED} {BY} {SINGLE} {AND} {MULTIPLE} {YOUNG} {PLANETS}
+  {IN} {DISKS}.
+\newblock {\em The Astrophysical Journal}, 809(1):93, aug 2015.
+
+\bibitem{ml_checkers}
+A.~L. Samuel.
+\newblock Some studies in machine learning using the game of checkers.
+\newblock {\em IBM Journal of Research and Development}, 3(3):210--229, 1959.
+
+\bibitem{ssviscosity}
+N.~I. {Shakura} and R.~A. {Sunyaev}.
+\newblock Black holes in binary systems. observational appearance.
+\newblock {\em Astronomy \& Astrophysics}, 24:337--355, Jun 1973.
+
+\bibitem{veronesi_phdthesis}
+B.~M.~A. Veronesi.
+\newblock {\em EXPLORING THE ORIGIN OF SUBSTRUCTURES IN PLANET FORMING
+  DISCS.THE ROLE OF PROTOPLANETS AND OF GRAVITATIONAL INSTABILITIES}.
+\newblock PhD thesis, 2021.
+
 \bibitem{dstauv}
 Benedetta Veronesi, Enrico Ragusa, Giuseppe Lodato, Hossam Aly, Christophe
   Pinte, Daniel~J Price, Feng Long, Gregory~J Herczeg, and Valentin
   Christiaens.
 \newblock {Is the gap in the DS Tau disc hiding a planet?}
 \newblock {\em Monthly Notices of the Royal Astronomical Society},
-  495(2):1913--1926, 05 2020.
+  495(2):1913--1926, May 2020.
 
 \end{thebibliography}

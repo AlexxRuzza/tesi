@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.5)  17 SEP 2021 18:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.5)  18 SEP 2021 21:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -800,7 +800,7 @@ l.119 \end{abstract}
                      [1] (/home/alexxruzza/UNI/TESI/TESTO/tesi.tocpdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.38 ...rline {6.2}Adopted model}{35}{section.6.2}
+l.38 ...rline {6.2}Adopted model}{36}{section.6.2}
                                                   % [1
 
 ])
@@ -817,12 +817,12 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ] [4]
 Chapter 2.
 (/home/alexxruzza/UNI/TESI/TESTO/images/profile.pgf
-<images/profile-img0.png, id=278, interpolate=true, 650.43pt x 1299.85625pt>
+<images/profile-img0.png, id=284, interpolate=true, 650.43pt x 1299.85625pt>
 File: images/profile-img0.png Graphic file (type png)
 <use images/profile-img0.png>
 Package pdftex.def Info: images/profile-img0.png  used on input line 60.
 (pdftex.def)             Requested size: 117.07234pt x 233.96404pt.
-<images/profile-img1.png, id=280, interpolate=true, 65.24374pt x 1299.85625pt>
+<images/profile-img1.png, id=286, interpolate=true, 65.24374pt x 1299.85625pt>
 File: images/profile-img1.png Graphic file (type png)
 <use images/profile-img1.png>
 Package pdftex.def Info: images/profile-img1.png  used on input line 579.
@@ -830,218 +830,218 @@ Package pdftex.def Info: images/profile-img1.png  used on input line 579.
 ) [5
 
 ] [6 </home/alexxruzza/UNI/TESI/TESTO/images/profile-img0.png> </home/alexxruzza/UNI/TESI/TESTO/images/profile-img1.png>] [7]
-<images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg, id=307, 522.753pt x 163.3302pt>
+<images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg, id=318, 522.753pt x 163.3302pt>
 File: images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg Graphic file (type jpg)
 <use images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg>
 Package pdftex.def Info: images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg  used on input line 446.
 (pdftex.def)             Requested size: 426.79135pt x 133.34595pt.
  [8]
-<images/alma_pictures.jpg, id=314, 509.2626pt x 125.268pt>
+<images/alma_pictures.jpg, id=328, 509.2626pt x 125.268pt>
 File: images/alma_pictures.jpg Graphic file (type jpg)
 <use images/alma_pictures.jpg>
-Package pdftex.def Info: images/alma_pictures.jpg  used on input line 490.
+Package pdftex.def Info: images/alma_pictures.jpg  used on input line 493.
 (pdftex.def)             Requested size: 426.79135pt x 104.98355pt.
  [9 </home/alexxruzza/UNI/TESI/TESTO/images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg>] [10 </home/alexxruzza/UNI/TESI/TESTO/images/alma_pictures.jpg>] (/home/alexxruzza/UNI/TESI/TESTO/images/rad_profiles.pgf) [11]
 Chapter 3.
 [12
 
 ] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 767--771
+Underfull \hbox (badness 10000) in paragraph at lines 771--775
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 767--771
+Underfull \hbox (badness 10000) in paragraph at lines 771--775
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 767--771
+Underfull \hbox (badness 10000) in paragraph at lines 771--775
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 767--771
+Underfull \hbox (badness 10000) in paragraph at lines 771--775
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 771--772
+Underfull \hbox (badness 10000) in paragraph at lines 775--776
 \OT1/cmr/m/n/7 i-cal and struc-tural
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 771--772
+Underfull \hbox (badness 10000) in paragraph at lines 775--776
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 772--773
+Underfull \hbox (badness 10000) in paragraph at lines 776--777
 []\OT1/cmr/m/n/7 computes the dust
  []
 
 
-Underfull \hbox (badness 2027) in paragraph at lines 772--773
+Underfull \hbox (badness 2027) in paragraph at lines 776--777
 \OT1/cmr/m/n/7 and gas dis-tri-bu-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 772--773
+Underfull \hbox (badness 10000) in paragraph at lines 776--777
 
  []
 
 
-Underfull \hbox (badness 2753) in paragraph at lines 773--774
+Underfull \hbox (badness 2753) in paragraph at lines 777--778
 []\OT1/cmr/m/n/7 produces dump files
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 779--783
+Underfull \hbox (badness 10000) in paragraph at lines 783--787
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 779--783
+Underfull \hbox (badness 10000) in paragraph at lines 783--787
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 779--783
+Underfull \hbox (badness 10000) in paragraph at lines 783--787
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 779--783
+Underfull \hbox (badness 10000) in paragraph at lines 783--787
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 783--784
+Underfull \hbox (badness 10000) in paragraph at lines 787--788
 \OT1/cmr/m/n/7 er-ties and rel-a-tive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 783--784
+Underfull \hbox (badness 10000) in paragraph at lines 787--788
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 784--785
+Underfull \hbox (badness 10000) in paragraph at lines 788--789
 []\OT1/cmr/m/n/7 first, com-pute the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 784--785
+Underfull \hbox (badness 10000) in paragraph at lines 788--789
 \OT1/cmr/m/n/7 disc tem-per-a-ture
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 784--785
+Underfull \hbox (badness 10000) in paragraph at lines 788--789
 \OT1/cmr/m/n/7 re-sult-ing from the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 784--785
+Underfull \hbox (badness 10000) in paragraph at lines 788--789
 
  []
 
 
-Underfull \hbox (badness 3884) in paragraph at lines 785--786
+Underfull \hbox (badness 3884) in paragraph at lines 789--790
 \OT1/cmr/m/n/7 ten-sity map of the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 790--794
+Underfull \hbox (badness 10000) in paragraph at lines 794--798
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 790--794
+Underfull \hbox (badness 10000) in paragraph at lines 794--798
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 790--794
+Underfull \hbox (badness 10000) in paragraph at lines 794--798
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 790--794
+Underfull \hbox (badness 10000) in paragraph at lines 794--798
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 794--795
+Underfull \hbox (badness 10000) in paragraph at lines 798--799
 []\OT1/cmr/m/n/7 requires the pa-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 794--795
+Underfull \hbox (badness 10000) in paragraph at lines 798--799
 \OT1/cmr/m/n/7 ram-e-ters of the
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 794--795
+Underfull \hbox (badness 1082) in paragraph at lines 798--799
 \OT1/cmr/m/n/7 in-stru-ments used for
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 794--795
+Underfull \hbox (badness 10000) in paragraph at lines 798--799
 
  []
 
 
-Underfull \hbox (badness 2359) in paragraph at lines 795--796
+Underfull \hbox (badness 2359) in paragraph at lines 799--800
 []\OT1/cmr/m/n/7 reproduce noise and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 795--796
+Underfull \hbox (badness 10000) in paragraph at lines 799--800
 \OT1/cmr/m/n/7 er-rors which af-flict
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 795--796
+Underfull \hbox (badness 10000) in paragraph at lines 799--800
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 796--797
+Underfull \hbox (badness 10000) in paragraph at lines 800--801
 []\OT1/cmr/m/n/7 pymcfost was only
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 796--797
+Underfull \hbox (badness 10000) in paragraph at lines 800--801
 \OT1/cmr/m/n/7 tele-scopes lim-ited
  []
 
 [14] (/home/alexxruzza/UNI/TESI/TESTO/images/fig3.2.pgf
-<images/fig3.2-img0.png, id=352, interpolate=true, 1076.02pt x 1076.02pt>
+<images/fig3.2-img0.png, id=378, interpolate=true, 1076.02pt x 1076.02pt>
 File: images/fig3.2-img0.png Graphic file (type png)
 <use images/fig3.2-img0.png>
 Package pdftex.def Info: images/fig3.2-img0.png  used on input line 60.
 (pdftex.def)             Requested size: 193.67525pt x 193.67525pt.
-<images/fig3.2-img1.png, id=353, interpolate=true, 1076.02pt x 1076.02pt>
+<images/fig3.2-img1.png, id=379, interpolate=true, 1076.02pt x 1076.02pt>
 File: images/fig3.2-img1.png Graphic file (type png)
 <use images/fig3.2-img1.png>
 Package pdftex.def Info: images/fig3.2-img1.png  used on input line 462.
 (pdftex.def)             Requested size: 193.67525pt x 193.67525pt.
-<images/fig3.2-img2.png, id=354, interpolate=true, 501.875pt x 501.875pt>
+<images/fig3.2-img2.png, id=380, interpolate=true, 501.875pt x 501.875pt>
 File: images/fig3.2-img2.png Graphic file (type png)
 <use images/fig3.2-img2.png>
 Package pdftex.def Info: images/fig3.2-img2.png  used on input line 864.
 (pdftex.def)             Requested size: 193.68578pt x 193.68578pt.
-<images/fig3.2-img3.png, id=355, interpolate=true, 53.19875pt x 1076.02pt>
+<images/fig3.2-img3.png, id=381, interpolate=true, 53.19875pt x 1076.02pt>
 File: images/fig3.2-img3.png Graphic file (type png)
 <use images/fig3.2-img3.png>
 Package pdftex.def Info: images/fig3.2-img3.png  used on input line 1287.
 (pdftex.def)             Requested size: 9.57616pt x 193.67525pt.
-<images/fig3.2-img4.png, id=356, interpolate=true, 54.2025pt x 1076.02pt>
+<images/fig3.2-img4.png, id=382, interpolate=true, 54.2025pt x 1076.02pt>
 File: images/fig3.2-img4.png Graphic file (type png)
 <use images/fig3.2-img4.png>
 Package pdftex.def Info: images/fig3.2-img4.png  used on input line 1505.
 (pdftex.def)             Requested size: 9.75603pt x 193.67525pt.
-<images/fig3.2-img5.png, id=357, interpolate=true, 54.2025pt x 1076.02pt>
+<images/fig3.2-img5.png, id=383, interpolate=true, 54.2025pt x 1076.02pt>
 File: images/fig3.2-img5.png Graphic file (type png)
 <use images/fig3.2-img5.png>
 Package pdftex.def Info: images/fig3.2-img5.png  used on input line 1754.
@@ -1055,233 +1055,233 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [19] [20] [21] [22] (/home/alexxruzza/UNI/TESI/TESTO/images/m_diff.pgf
-<images/m_diff-img0.png, id=414, interpolate=true, 1263.72125pt x 1263.72125pt>
+<images/m_diff-img0.png, id=446, interpolate=true, 1263.72125pt x 1263.72125pt>
 File: images/m_diff-img0.png Graphic file (type png)
 <use images/m_diff-img0.png>
 Package pdftex.def Info: images/m_diff-img0.png  used on input line 60.
 (pdftex.def)             Requested size: 227.46pt x 227.46pt.
-<images/m_diff-img1.png, id=415, interpolate=true, 1263.72125pt x 1263.72125pt>
+<images/m_diff-img1.png, id=447, interpolate=true, 1263.72125pt x 1263.72125pt>
 File: images/m_diff-img1.png Graphic file (type png)
 <use images/m_diff-img1.png>
 Package pdftex.def Info: images/m_diff-img1.png  used on input line 395.
 (pdftex.def)             Requested size: 227.46pt x 227.46pt.
-<images/m_diff-img2.png, id=416, interpolate=true, 1263.72125pt x 1263.72125pt>
+<images/m_diff-img2.png, id=448, interpolate=true, 1263.72125pt x 1263.72125pt>
 File: images/m_diff-img2.png Graphic file (type png)
 <use images/m_diff-img2.png>
 Package pdftex.def Info: images/m_diff-img2.png  used on input line 730.
 (pdftex.def)             Requested size: 227.46pt x 227.46pt.
 ) (/home/alexxruzza/UNI/TESI/TESTO/images/m_diff_rad.pgf)
-Overfull \hbox (3.21492pt too wide) in paragraph at lines 1555--1557
+Overfull \hbox (3.21492pt too wide) in paragraph at lines 1560--1562
  [] 
  []
 
-[23 </home/alexxruzza/UNI/TESI/TESTO/images/m_diff-img0.png> </home/alexxruzza/UNI/TESI/TESTO/images/m_diff-img1.png> </home/alexxruzza/UNI/TESI/TESTO/images/m_diff-img2.png>]
-<images/4.5.fig7.auddy&lin/image.jpg, id=428, 522.753pt x 236.8047pt>
+[23] [24 </home/alexxruzza/UNI/TESI/TESTO/images/m_diff-img0.png> </home/alexxruzza/UNI/TESI/TESTO/images/m_diff-img1.png> </home/alexxruzza/UNI/TESI/TESTO/images/m_diff-img2.png>]
+<images/4.5.fig7.auddy&lin/image.jpg, id=464, 522.753pt x 236.8047pt>
 File: images/4.5.fig7.auddy&lin/image.jpg Graphic file (type jpg)
 <use images/4.5.fig7.auddy&lin/image.jpg>
-Package pdftex.def Info: images/4.5.fig7.auddy&lin/image.jpg  used on input line 1637.
+Package pdftex.def Info: images/4.5.fig7.auddy&lin/image.jpg  used on input line 1642.
 (pdftex.def)             Requested size: 426.79135pt x 193.33195pt.
- [24] [25 </home/alexxruzza/UNI/TESI/TESTO/images/4.5.fig7.auddy&lin/image.jpg>]
+ [25 </home/alexxruzza/UNI/TESI/TESTO/images/4.5.fig7.auddy&lin/image.jpg>] [26]
 Chapter 5.
-[26
+[27
 
-] [27] (/home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff.pgf
-<images/5.1.res.diff/res_diff-img0.png, id=448, interpolate=true, 887.315pt x 887.315pt>
+] [28] (/home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff.pgf
+<images/5.1.res.diff/res_diff-img0.png, id=487, interpolate=true, 887.315pt x 887.315pt>
 File: images/5.1.res.diff/res_diff-img0.png Graphic file (type png)
 <use images/5.1.res.diff/res_diff-img0.png>
 Package pdftex.def Info: images/5.1.res.diff/res_diff-img0.png  used on input line 60.
 (pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
-<images/5.1.res.diff/res_diff-img1.png, id=449, interpolate=true, 887.315pt x 887.315pt>
+<images/5.1.res.diff/res_diff-img1.png, id=488, interpolate=true, 887.315pt x 887.315pt>
 File: images/5.1.res.diff/res_diff-img1.png Graphic file (type png)
 <use images/5.1.res.diff/res_diff-img1.png>
 Package pdftex.def Info: images/5.1.res.diff/res_diff-img1.png  used on input line 318.
 (pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
-<images/5.1.res.diff/res_diff-img2.png, id=450, interpolate=true, 887.315pt x 887.315pt>
+<images/5.1.res.diff/res_diff-img2.png, id=489, interpolate=true, 887.315pt x 887.315pt>
 File: images/5.1.res.diff/res_diff-img2.png Graphic file (type png)
 <use images/5.1.res.diff/res_diff-img2.png>
 Package pdftex.def Info: images/5.1.res.diff/res_diff-img2.png  used on input line 576.
 (pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
-<images/5.1.res.diff/res_diff-img3.png, id=451, interpolate=true, 887.315pt x 887.315pt>
+<images/5.1.res.diff/res_diff-img3.png, id=490, interpolate=true, 887.315pt x 887.315pt>
 File: images/5.1.res.diff/res_diff-img3.png Graphic file (type png)
 <use images/5.1.res.diff/res_diff-img3.png>
 Package pdftex.def Info: images/5.1.res.diff/res_diff-img3.png  used on input line 834.
 (pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
-<images/5.1.res.diff/res_diff-img4.png, id=452, interpolate=true, 887.315pt x 887.315pt>
+<images/5.1.res.diff/res_diff-img4.png, id=491, interpolate=true, 887.315pt x 887.315pt>
 File: images/5.1.res.diff/res_diff-img4.png Graphic file (type png)
 <use images/5.1.res.diff/res_diff-img4.png>
 Package pdftex.def Info: images/5.1.res.diff/res_diff-img4.png  used on input line 1092.
 (pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
-<images/5.1.res.diff/res_diff-img5.png, id=453, interpolate=true, 887.315pt x 887.315pt>
+<images/5.1.res.diff/res_diff-img5.png, id=492, interpolate=true, 887.315pt x 887.315pt>
 File: images/5.1.res.diff/res_diff-img5.png Graphic file (type png)
 <use images/5.1.res.diff/res_diff-img5.png>
 Package pdftex.def Info: images/5.1.res.diff/res_diff-img5.png  used on input line 1350.
 (pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
-<images/5.1.res.diff/res_diff-img6.png, id=454, interpolate=true, 887.315pt x 887.315pt>
+<images/5.1.res.diff/res_diff-img6.png, id=493, interpolate=true, 887.315pt x 887.315pt>
 File: images/5.1.res.diff/res_diff-img6.png Graphic file (type png)
 <use images/5.1.res.diff/res_diff-img6.png>
 Package pdftex.def Info: images/5.1.res.diff/res_diff-img6.png  used on input line 1608.
 (pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
-<images/5.1.res.diff/res_diff-img7.png, id=455, interpolate=true, 887.315pt x 887.315pt>
+<images/5.1.res.diff/res_diff-img7.png, id=494, interpolate=true, 887.315pt x 887.315pt>
 File: images/5.1.res.diff/res_diff-img7.png Graphic file (type png)
 <use images/5.1.res.diff/res_diff-img7.png>
 Package pdftex.def Info: images/5.1.res.diff/res_diff-img7.png  used on input line 1866.
 (pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
-<images/5.1.res.diff/res_diff-img8.png, id=456, interpolate=true, 887.315pt x 887.315pt>
+<images/5.1.res.diff/res_diff-img8.png, id=495, interpolate=true, 887.315pt x 887.315pt>
 File: images/5.1.res.diff/res_diff-img8.png Graphic file (type png)
 <use images/5.1.res.diff/res_diff-img8.png>
 Package pdftex.def Info: images/5.1.res.diff/res_diff-img8.png  used on input line 2124.
 (pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
-<images/5.1.res.diff/res_diff-img9.png, id=457, interpolate=true, 887.315pt x 887.315pt>
+<images/5.1.res.diff/res_diff-img9.png, id=496, interpolate=true, 887.315pt x 887.315pt>
 File: images/5.1.res.diff/res_diff-img9.png Graphic file (type png)
 <use images/5.1.res.diff/res_diff-img9.png>
 Package pdftex.def Info: images/5.1.res.diff/res_diff-img9.png  used on input line 2382.
 (pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
 )
-Overfull \hbox (3.1433pt too wide) in paragraph at lines 1826--1827
+Overfull \hbox (3.1433pt too wide) in paragraph at lines 1831--1832
  [] 
  []
 
-<images/pairplot.png, id=458, 1058.7555pt x 1064.5371pt>
+<images/pairplot.png, id=497, 1058.7555pt x 1064.5371pt>
 File: images/pairplot.png Graphic file (type png)
 <use images/pairplot.png>
-Package pdftex.def Info: images/pairplot.png  used on input line 1844.
+Package pdftex.def Info: images/pairplot.png  used on input line 1850.
 (pdftex.def)             Requested size: 426.79135pt x 429.12097pt.
-[28]
-LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 1868.
+[29]
+LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 1874.
  (/usr/share/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1868.
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1868.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1874.
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1874.
  (/usr/share/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-Overfull \hbox (30.0pt too wide) in paragraph at lines 1902--1912
+Overfull \hbox (30.0pt too wide) in paragraph at lines 1908--1918
 []$[]$ 
  []
 
-[29 </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img0.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img1.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img2.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img3.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img4.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img5.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img6.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img7.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img8.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img9.png>] [30 </home/alexxruzza/UNI/TESI/TESTO/images/pairplot.png>] [31]
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+[30 </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img0.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img1.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img2.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img3.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img4.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img5.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img6.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img7.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img8.png> </home/alexxruzza/UNI/TESI/TESTO/images/5.1.res.diff/res_diff-img9.png>] [31 </home/alexxruzza/UNI/TESI/TESTO/images/pairplot.png>] [32]
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2012--2012
 [][]||[] 
  []
 
-[32] [33]
+[33] [34]
 Chapter 6.
-[34
+[35
 
 ]
-LaTeX Font Info:    Trying to load font information for OML+pcr on input line 2107.
+LaTeX Font Info:    Trying to load font information for OML+pcr on input line 2113.
  (/usr/share/texmf-dist/tex/latex/psnfss/omlpcr.fd
 File: omlpcr.fd 
 )
 LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 2107.
-<images/inp_mod.png, id=509, 1027.84pt x 1027.84pt>
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 2113.
+<images/inp_mod.png, id=549, 1027.84pt x 1027.84pt>
 File: images/inp_mod.png Graphic file (type png)
 <use images/inp_mod.png>
-Package pdftex.def Info: images/inp_mod.png  used on input line 2178.
+Package pdftex.def Info: images/inp_mod.png  used on input line 2184.
 (pdftex.def)             Requested size: 85.35826pt x 85.3499pt.
- [35] [36 </home/alexxruzza/UNI/TESI/TESTO/images/inp_mod.png>] (/home/alexxruzza/UNI/TESI/TESTO/images/loss.pgf) (/home/alexxruzza/UNI/TESI/TESTO/images/corr&err.pgf) [37] [38] [39]
+ [36] [37 </home/alexxruzza/UNI/TESI/TESTO/images/inp_mod.png>] (/home/alexxruzza/UNI/TESI/TESTO/images/loss.pgf) (/home/alexxruzza/UNI/TESI/TESTO/images/corr&err.pgf) [38] [39] [40]
 Chapter 7.
-[40
+[41
 
-] [41] [42] (/home/alexxruzza/UNI/TESI/TESTO/tesi.bbl [43
+] [42] [43] (/home/alexxruzza/UNI/TESI/TESTO/tesi.bbl [44
 
-]) [44
+] [45
 
-] (/home/alexxruzza/UNI/TESI/TESTO/tesi.aux)
+]) [46] (/home/alexxruzza/UNI/TESI/TESTO/tesi.aux)
 Package rerunfilecheck Info: File `tesi.out' has not changed.
 (rerunfilecheck)             Checksum: 3D237EA31CE636BFD0EC821EC7D770B8;6796.
  ) 
 Here is how much of TeX's memory you used:
- 31161 strings out of 478994
- 610462 string characters out of 5864752
- 978423 words of memory out of 5000000
- 47865 multiletter control sequences out of 15000+600000
+ 31188 strings out of 478994
+ 610798 string characters out of 5864752
+ 978852 words of memory out of 5000000
+ 47878 multiletter control sequences out of 15000+600000
  430531 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,10n,102p,591b,2231s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on /home/alexxruzza/UNI/TESI/TESTO/tesi.pdf (46 pages, 5297745 bytes).
+Output written on /home/alexxruzza/UNI/TESI/TESTO/tesi.pdf (48 pages, 5308267 bytes).
 PDF statistics:
- 713 PDF objects out of 1000 (max. 8388607)
- 581 compressed objects within 6 object streams
- 158 named destinations out of 1000 (max. 500000)
+ 762 PDF objects out of 1000 (max. 8388607)
+ 627 compressed objects within 7 object streams
+ 172 named destinations out of 1000 (max. 500000)
  500 words of extra memory for PDF output out of 10000 (max. 10000000)
 
