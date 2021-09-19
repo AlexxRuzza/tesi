@@ -16,6 +16,16 @@ Sean~M. Andrews, Jane Huang, Laura~M. P{\'{e}}rez, Andrea Isella, Cornelis~P.
   i. motivation, sample, calibration, and overview.
 \newblock {\em The Astrophysical Journal}, 869(2):L41, Dec 2018.
 
+\bibitem{Andrews_2018}
+Sean~M. Andrews, Jane Huang, Laura~M. P{\'{e}}rez, Andrea Isella, Cornelis~P.
+  Dullemond, Nicol{\'{a}}s~T. Kurtovic, Viviana~V. Guzm{\'{a}}n, John~M.
+  Carpenter, David~J. Wilner, Shangjia Zhang, Zhaohuan Zhu, Tilman Birnstiel,
+  Xue-Ning Bai, Myriam Benisty, A.~Meredith Hughes, Karin~I. Öberg, and Luca
+  Ricci.
+\newblock The disk substructures at high angular resolution project ({DSHARP}).
+  i. motivation, sample, calibration, and overview.
+\newblock {\em The Astrophysical Journal}, 869(2):L41, dec 2018.
+
 \bibitem{book_planet_form}
 Philip~J. Armitage.
 \newblock {\em Astrophysics of planet formation}.
@@ -39,6 +49,14 @@ Giovanni Dipierro, Guillaume Laibe, Daniel~J. Price, and Giuseppe Lodato.
 \newblock {Two mechanisms for dust gap opening in protoplanetary discs}.
 \newblock {\em Monthly Notices of the Royal Astronomical Society: Letters},
   459(1):L1--L5, 03 2016.
+
+\bibitem{img_2.2}
+Jane Huang, Sean~M. Andrews, Karin~I. Öberg, Megan Ansdell, Myriam Benisty,
+  John~M. Carpenter, Andrea Isella, Laura~M. P{\'{e}}rez, Luca Ricci,
+  Jonathan~P. Williams, David~J. Wilner, and Zhaohuan Zhu.
+\newblock Large-scale {CO} spiral arms and complex kinematics associated with
+  the t tauri star {RU} lup.
+\newblock {\em The Astrophysical Journal}, 898(2):140, aug 2020.
 
 \bibitem{casa}
 S.~{Jaeger}.
@@ -78,6 +96,13 @@ Feng Long, Paola Pinilla, Gregory~J. Herczeg, Daniel Harsono, Giovanni
 \newblock Gaps and rings in an {ALMA} survey of disks in the taurus
   star-forming region.
 \newblock {\em The Astrophysical Journal}, 869(1):17, Dec 2018.
+
+\bibitem{ml4physics}
+Pankaj Mehta, Marin Bukov, Ching-Hao Wang, Alexandre~G.R. Day, Clint
+  Richardson, Charles~K. Fisher, and David~J. Schwab.
+\newblock A high-bias, low-variance introduction to machine learning for
+  physicists.
+\newblock {\em Physics Reports}, 810:1–124, May 2019.
 
 \bibitem{book_ml}
 Tom Mitchell.

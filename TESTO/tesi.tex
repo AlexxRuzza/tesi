@@ -446,7 +446,9 @@ I am also going to explain which is the best image resolution currently achievab
         \includegraphics[width=\textwidth]{images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg}
     \end{center}
     \caption{Comparison between observations of the RU Lup disc through the three main tracers.
-    Image taken from ()}
+    Left: map of $^{12}$CO emmission. Center: map of $\lambda=1.25$mm emission from the thermal continuum.
+    Right: map of scattered light. Different morphologies can be observed depending on the tracer.
+    Reprinted from \cite{img_2.2}.}
 \end{figure}
 
 
@@ -493,8 +495,9 @@ can be appreciated.
         \includegraphics[width=\textwidth]{images/alma_pictures.jpg}
     \end{center}
     \caption{Examples of gaps and double gaps. 
-    Observations of the dust continuum emission of some discs obtained from DSHARP.
-    Image adapted from ()}
+    Observations of the 1.25 mm dust continuum emission of some discs obtained from DSHARP.
+    Beam sizes and 10 au scalebars are shown in the lower left and right corners of each panel, respectively.
+    Image adapted from \cite{Andrews_2018}.}
 \end{figure}
 
 \begin{comment}
@@ -772,7 +775,7 @@ used to collect the real data.
                 \scriptsize
                 \\ \\ \\ \\
                 \begin{itemize}
-                    \item requires hydrodynamical and structural parameter of the disc \\
+                    \item requires hydrodynamical and structural parameters of the disc \\
                     \item computes the dust and gas distribution at a given time \\
                     \item produces dump files which can be directly read by MCFOST
                 \end{itemize}
@@ -829,7 +832,7 @@ used to collect the real data.
             \end{tikzpicture}
     \end{center}
     \caption{Typical workflow of a numerical simulation
-     aimed at reproducing a synthetic image of a protoplanetary disc}
+     aimed at reproducing a synthetic image of a protoplanetary disc.}
 \end{figure}
 
 I am now going to give some insights for each of these steps. The images collected in the database for machine learning
@@ -906,11 +909,11 @@ of observing instruments. I will further explore some key features of pymcfost.
     \begin{center}
         \scalebox{0.45}{\input{images/fig3.2.pgf}}
     \end{center}
-    \caption{Comparison of a real disc observation, in the dust continuum emission,
+    \caption{Comparison of a real disc observation (DS Tau disc), in the 1.3 mm dust continuum emission,
     with synthetic images computed with the purpose of reproducing the real one.
-    Left: image obtained as a result of a radiative transfer simulation through MCFOST,
-    center: the same image at its left processed with pymcfost to reproduce the limited
-    resolution, right: the real image. Add sources...}
+    Left: image obtained as a result of a radiative transfer simulation through \lstinline{MCFOST}.
+    Center: the same image at its left processed with pymcfost to reproduce the limited
+    resolution. Right: the real observation. Images adapted from \cite{dstauv,Long_2018}.}
 \end{figure}
 
 The real observations of protoplanetary discs are, being experimental data, susceptible 
@@ -1073,7 +1076,7 @@ Here I am going to present the perceptron model explaining:
     \end{center}
     \caption{Top panel: scheme of an artificial neuron.
      Bottom panel: graphs of three possible activation functions. 
-     From left to right: Heaviside step function, sigmoid and ReLU}
+     From left to right: Heaviside step function, sigmoid and ReLU.}
 \end{figure}
 
 The elementary units of neural networks, artificial neurons, are mathematical objects
@@ -1136,6 +1139,8 @@ the frequency of transmission might vary. The continuous output thus model this 
             \node[circle, draw, minimum size=1cm] (01) at (-2, 0.75) {};
             \node[circle, draw, minimum size=1cm] (02) at (-2, 2.25) {};
             \node[circle, draw, minimum size=1cm] (03) at (-2, 3.75) {};
+            \node (label_i) at (-2.5, 6) {Input layer};
+            \draw[dashed, thin, gray] (-1, -1) -- (-1, 6.5);
 
             %hidden layer 1
             \node[circle, draw, minimum size=1cm] (11) at (0, 0) {};
@@ -1148,15 +1153,18 @@ the frequency of transmission might vary. The continuous output thus model this 
             \node[circle, draw, minimum size=1cm] (22) at (2, 1.5) {};
             \node[circle, draw, minimum size=1cm] (23) at (2, 3) {};
             \node[circle, draw, minimum size=1cm] (24) at (2, 4.5) {};
+            \node (label_i) at (2, 6) {Hidden layers};
 
             %hidden layer 2
             \node[circle, draw, minimum size=1cm] (31) at (4, 0) {};
             \node[circle, draw, minimum size=1cm] (32) at (4, 1.5) {};
             \node[circle, draw, minimum size=1cm] (33) at (4, 3) {};
             \node[circle, draw, minimum size=1cm] (34) at (4, 4.5) {};
+            \draw[dashed, thin, gray] (5, -1) -- (5, 6.5);
 
             %output layer
             \node[circle, draw, minimum size=1cm] (o) at (6, 2.25) {};
+            \node (label_i) at (6.5, 6) {Output layer};
 
             \draw (o) -- (7, 2.25);
 
@@ -1190,7 +1198,7 @@ the frequency of transmission might vary. The continuous output thus model this 
             \end{scope}
         \end{tikzpicture}
     \end{center}
-    \caption{Scheme of a feedforward neural network}
+    \caption{Scheme of a feedforward dense neural network.}
 \end{figure}
 
 \begin{comment}
@@ -1440,8 +1448,10 @@ I am going to:
             \end{scope}
         \end{tikzpicture}
     \end{center}
-    \caption{Three different neural networks applied to a regression problem.
-    Left panel: underlearning, middle panel: successful regression, right panel: overlearning}
+    \caption{Three possible outcomes of a neural netwwork application to a regression problem. Blue dots 
+    represent the data subject to statistical errors. The black line is the functional form 
+    inferred with the neural network.
+    Left panel: underlearning, middle panel: successful regression, right panel: overlearning.}
 \end{figure}
 
 The training process of a neural network could end in three different ways.
@@ -1561,8 +1571,10 @@ I will hence highlight the differences with our approach explaining the reasons 
         \scalebox{0.6}{\input{images/m_diff_rad.pgf}}
     \end{center}
     \caption{Three simulations of the same disc with planets of different masses.
-    Top panel: map of the flux density of the dust emission at 1.3 mm, bottom panel:
-    radial profile of the azimuthally averaged flux}
+    Differences in the gap widths can be observed.
+    Top panel: map of the flux density of the dust emission at 1.3 mm. Bottom panel:
+    radial profile of the azimuthally averaged fluxes plotted in the same graph to facilitate comparison.
+    Image produced using the results of simulations run for \cite{dstauv}.}
 \end{figure}
 
 \subsection{The proposed approach}
@@ -1641,7 +1653,11 @@ and explaining the main differences with the approach we propose.
     \begin{center}
         \includegraphics[width=\textwidth]{images/4.5.fig7.auddy&lin/image.jpg}
     \end{center}
-    \caption{Figure 7 of Auddy and Lin paper}
+    \caption{Results obtained by S. Auddy and M. Lin in the application
+    of a neural network aimed at inferring the planet mass from some features of the discs
+    and gap where it is embedded \cite{Auddy_2020}. A comparison with the application of G. Lodato \cite{Lodato_2019} and 
+    D. Kanagawa \cite{kanagawa} analytical formulae is also shown.
+    Image reprinted from \cite{Auddy_2020}.}
 \end{figure}
 
 Some machine learning applications in this field have been already tried, 
@@ -1780,7 +1796,9 @@ saved in the \lstinline{FITS} files. Brief descptions are also provided.
         \end{tabular}
         \end{center}
 
-        \caption{keywords in the fits file}
+        \caption{List of keys of the properties stored in the header of the \lstinline{FITS} files
+        collated in this thesis' database. For each key, a brief description is provided explaining which 
+        feature the respective field should contain.}
 \end{table}
 
 In this table, I divided the list in six different groups. The first one contains
@@ -1830,10 +1848,11 @@ which essentially provide only measures of the light intensity but can not revea
     \begin{center}
         \scalebox{0.4}{\input{images/5.1.res.diff/res_diff.pgf}}
     \end{center}
-    \caption{The ten different sizes of the gaussian beam used to convolve each synthetic image. 
+    \caption{The ten different telescope resolutions reproduced in our database 
+    convolving beams of different sizes for each synthetic image. 
     In this figure all the images are obtained from the same simulation result varying only the
-    beam size which ++
-    is shown in the left bottom corner.}
+    beam size which
+    is shown in the bottom left corner.}
 \end{figure}
 
 The final product is a database made of 24720 \lstinline{FITS} images with dimensions of 1024x1024 pixels. In this
@@ -1849,7 +1868,7 @@ process. There is also a strong correlation between the planet's orbital radius 
     \begin{center}
         \includegraphics[width=\textwidth]{images/pairplot.png}
     \end{center}
-    \caption{Pairwise relationships in the deployed dataset. The diagonal shows how each parameter is distributed
+    \caption{Pairwise relationships in the deployed dataset. The diagonal plots show how the values of each parameter are distributed
     while the off-diagonal plots highligth correlations among these variables. Only the parameters whose values vary
     significantly within the dataset are shown.}
 \end{figure}
@@ -2284,7 +2303,7 @@ Here I will discuss the results obtained.
         \input{images/loss.pgf}
     \end{center}
     \caption{Trend of the loss function (mean squared error) 
-    evaluated on the training set (black line) and the test set (red line)
+    evaluated on the training set (black line) and the test set (blue line)
     after each epoch. Both the curves converge towards 0
     indicating that the neural network has been successfully trained to predict the planet's masses 
     from images showing discs' morphologies. }
@@ -2296,8 +2315,11 @@ Here I will discuss the results obtained.
     \end{center}
     \caption{Left panel: correlation between the predicted mass and the real value obtained from the simulation files
     for all the items in the test set. The black lines draws the $M_{pred} = M_{sim}$ curve.
-    Right panel: Distribution of the relative prediction error $(M_{pred} - M_{sim})/M_{sim}$ computed for the test set. The red box 
-    zooms in the -10\% to 10\% range which contains the 89\% of all the items.}
+    Right panel: distribution of the relative prediction error $(M_{pred} - M_{sim})/M_{sim}$ 
+        computed for the test set. The blue box 
+    zooms in the -10\% to 10\% range which contains the 89\% of all the items. This distribution exhibits mean and standard 
+    deviation of respectively 5\% and 27\%. The root mean squared error is $0.15 M_{jup}$ which will be assumed
+    as the uncertainty of the predictions inferred with this model.}
 \end{figure}
 
 The training of the previously presented model took about 5 hours of wall time running on a laptop equipped with a dual core CPU
