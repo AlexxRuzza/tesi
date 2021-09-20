@@ -7,6 +7,10 @@
 %derivatives, ...
 \usepackage{physics}
 
+\usepackage{natbib}
+\bibliographystyle{plainnat} 
+\setcitestyle{round, comma}
+
 %for images
 \usepackage{pgf}
 \usepackage{tikz}
@@ -23,9 +27,6 @@
 
 %SI package
 \usepackage{siunitx}
-
-%line between paragraphs
-\usepackage[parfill]{parskip}
 
 \usepackage{geometry}
  \geometry{
@@ -128,13 +129,15 @@ Back to the eighteenth century, Kant and Laplace formulated the
 \emph{Nebula Hypothesis} proposing that the solar system
 formed from a primordial rotating disc of gas and dust. Quantitative descriptions followed in the upcoming centuries 
 gradually developing on this idea the modern theory of planet formation.
-Despite the long history, it is only in the last decades,
-with recent breakthroughs in interferometric observations 
-and the advent of new telescopes, such as the Atacama Large Millimiter Array, that we were
-finally able to detect extrasolar planets and obtain high resoluted images of their
+Despite the long history, the first extrasolar planet was only detected in 1995 using doppler spectroscopy to
+measure the star radial velocity. Figure () shows the real data obtained in this first observation
+interpolated with the sine curve that indicates the star motion around the centre of mass of the star-planet system.
+In more recent times, breakthroughs in interferometric observations 
+and the advent of new telescopes, such as the Atacama Large Millimiter Array which became operative in 2013, we were also
+finally able to obtain high resoluted images of planet's
 cradles, protoplanetary discs.
 
-Since 1995 over 4000 exoplanets and, in more recent times, hundreds of protoplanetary discs have been observed in an extraordinary 
+Since their first observations over 4000 exoplanets and hundreds of protoplanetary discs have been observed in an extraordinary 
 diversity of properties and morphologies, 
 offering a precious statistically valid pool of data to evaluate and enhance
 the theoretical picture on planet formation.
@@ -142,22 +145,22 @@ the theoretical picture on planet formation.
 Many techniques have been proposed and developed to interpret these new observations,
 which exploit measures of the discs' radiative emission and analysis of the morphologies revelead
 with the aim of determining their properties and detecting the presence of young planets.
-Gaps, annular regions of luminosity depletion, can, for example, be explained 
+Gaps, i.e. annular regions of luminosity depletion, can, for example, be explained 
 by the presence of embedded interacting planets whose properties, such as their mass, are
-tied to the width and depth of these substructures \cite{gap_opening1,gap_opening2,gap_opening3}.
+tied to the width and depth of these substructures \citep{gap_opening1,gap_opening2,gap_opening3}.
 
 To exploit this relationship and more generally for the characterisation of protoplanetary discs
 two approaches are currently used. Some variables can be linked with empirical relationships 
 inferred from data,
-for example, Lodato et al. \cite{Lodato_2019} and Kanagawa et al. \cite{kanagawa} proposed 
+for example, \citet{Lodato_2019} and \citet{kanagawa} proposed 
 two different formulae which allow estimating planet's masses measuring
 the width of the induced gap. These relations are usually simple polynomial or power laws, which 
 allow a fast computation of unknown properties and can be easily explained with theoretical
 arguments but, on the other end,
 lack in accuracy and precision requiring the use of more advanced tools.
 Numerical simulations are today's response to these needs. Sophisticated codes,
- like \lstinline{PHANTOM} \cite{phantom} and \lstinline{MCFOST} \cite{mcfost1,mcfost2}, 
-are able to apply the physical models that describe the dynamic, particle interaction and radiative emission at a small scale 
+ like \lstinline{PHANTOM} \citep{phantom} and \lstinline{MCFOST} \citep{mcfost1,mcfost2}, 
+are able to apply the physical models that describe the dynamics, particle interaction and radiative emission at a small scale 
 to simulate the overall disc evolution and synthetize images reproducing hypothetical observations which would be 
 obtained if the system was real.
 These results can thus be directly compared  with observations in the data 
@@ -173,13 +176,13 @@ assumed or measured with different methods.
 
 In this thesis we want to propose a new approach based on machine learning techniques, to overcome 
 the main limits of the currently used methodologies. We suggest training a neural network
-in order to obtain a model with the ability to inferr a set of the discs or planets features directly
-analyzing the high resoluted images of these objects. This approach would allow 
+in order to obtain a model with the ability to infer a set of the discs or planets features directly
+analyzing the highly resoluted images of these objects. This approach would allow 
 to relax some of the assumptions needed for running numerical simulations and would also require 
 less computational resources.
 
 We thus designed a dataset of synthetic observations of protoplanetary discs collecting
-results of numerical simulations runned in the context of other researches and kindly shared with us
+results of numerical simulations run in the context of other researches and kindly shared with us
 for this project. We developed the storage structure, a python package and some scripts which interface 
 the main functions required to handle the database. At this stage we were able to collect 24720 different images 
 of protoplanetary discs, significantly exploring five parameters: the gas to dust mass ratio, the age of the disc, its inclination, the mass of
@@ -201,7 +204,7 @@ of both analytical expressions and numerical simulations.
 Machine learning, and more specifically neural networks, will 
 be introduced in the following chapter explaining the principle at the core of their functioning and pondering 
 their potential. I will finally propose the application of these techniques on protoplanetary discs images
-reviewing a previous attempt \cite[S. Auddy and M. Lin]{Auddy_2020} and analyzing the feasibility, the limits and the potential of our approach.
+reviewing a previous attempt \citep{Auddy_2020} and analyzing the feasibility, the limits and the potential of our approach.
 
 In the last two chapters I will present the work done in this thesis. The fifth chapter describes the database we built
 explaining our choices in its development and presenting the features of the version deployed with this thesis.
@@ -217,7 +220,7 @@ Protoplanetary discs emerge in the context of star formation.
 The process takes place in specific ``star forming'' regions filled with a mixture of gases, mainly hydrogen and helium enriched with some
 heavier elements, called interstellar medium. The gravitational collapse of a denser zone gives birth to a star. Gradually the star
 accrete its mass drawing, from its surroundings, gas and dust that organizes in an accretion disc whose shape is a consequence of angular momentum conservation.
-At some point, after millions of years, most of the matter has accreted into the star,
+At some point, after a few $10^5$ years, most of the matter has accreted onto the star,
 the disc temperature and thermal emission are maintained by the star irradiation while gravitational collapse becomes negligible as a source of energy (passive disc). 
 It is at this stage that the accretion disc gets identified
 as a protoplanetary disc due to its role as a planet formation cradle.
@@ -290,7 +293,7 @@ defining the frame of reference in figure 2.1a to discuss disc properties. Only 
 
 After their shape and location, the first question we have to address regards what discs are made of.
 Two main structural constituents can be distinguished according to their physical state: gas and solids.
-The solid component consists in dust and debris of various dimensions, going from the micrometers to a few 
+The solid component consists in dust and debris of various dimensions, going from the micrometers to (maybe) a few 
 meters, and account for about the 1\% of the total mass. Despite being a small fraction of the disc, solid grains
 are actually easier to observe and measure through their thermal emission. Measures of their mass are, however, tied to
 some unknown optical properties whose estimation introduces a source of uncertainty.
@@ -300,7 +303,7 @@ Molecular hydrogen (H$_2$) is the main constituent which is challenging to obser
 its lack of a dipole moment. 
 Therefore, measures related to less abundant molecules, such as HD or CO, are used to probe the properties of the gas component. 
 
-The overall mass of a typical protoplanetary disc has been measured to be some Jupyter masses.
+The overall mass of a typical protoplanetary disc has been measured to be some Jupiter masses.
 Estimates of these quantities are relevant, for example, to provide upper limits
 to the masses of forming planets.
 
@@ -335,31 +338,55 @@ evolve and settle in characteristic structures, which I am now going to discuss.
 The disc evolution can be properly described by the laws of fluidodynamics in the gravitational potential of the central star.
 %add NS equations (?)
 Some assumptions need to be made in order to acquire a predictive model of practical use.
-The first one is called ``thin-disc approximation'' which consists in assuming that the radial distance is greater than 
+The first one is called ``thin-disc approximation'' which consists in assuming that the radial distance is larger than 
 the vertical typical length scale $H$, thus requiring $H/R \ll 1$. This quantity, called aspect-ratio, has been measured, 
 showing values in the range $10^{-3}-10^{-1}$ which justify the assumption. The thin disk approximation allows the study of disc properties integrating
 the equations along the vertical direction.
 The second simplification that is usually made consists in neglecting self-gravity.
-The stability condition of the disc against self-gravity can be written \cite[p. 40]{book_planet_form} as
+The stability condition of the disc against self-gravity can be written \citep[p. 40]{book_planet_form} as
 \begin{equation}
-    \frac{M_{disc}}{M_{star}} \lesssim  \frac{1}{2}\cdot \frac{H}{R}
+    \frac{M_{disc}}{M_{star}} \lesssim  \frac{H}{R}
 \end{equation}
 which is well satisfied in the late epochs when protoplanetary discs are studied.
 
 Keeping in mind these assumptions, I am going to further explore how fluid dynamics can be applied to model the disc 
-structure and its internal motions. First, we have to focus on the gas component which is modelled as an ideal fluid characterized
+structure and its internal motions.
+
+The models described below are simplifications of the complex dynamics of protoplanetary discs. 
+There are many secondary effects which will not be discussed but
+contributes to the proper description of discs evolution such as magnetorotational instability, photoevaporation and 
+turbulences or vortices generated by the fluid motion in the turbulent regime. All 
+this effects must be taken into account to obtain a complete description of the disc dynamics and evolution.
+
+\subsection{Gas}
+
+The gas component is modelled as an ideal fluid characterised
 by the equation of state
 \begin{equation}
     P = \frac{k_BT}{m_p\mu}\cdot \rho \equiv c_s^2 \cdot \rho
 \end{equation}
 where $\mu$ represents the mass of a single gas molecule expressed in masses of the proton ($m_p$).
+Most of the solutions discussed in this section are obtained starting from the momentum equation
+for an inviscid fluid
+\begin{equation}
+    \pdv{\va{v}}{t} + (\va{v}\cdot \va\nabla)\va{v} = -\frac{1}{\rho}\va  \nabla P - \va \nabla \Phi
+\end{equation}
+where $\va v$ is the velocity, $\rho$ the density, $P$ the pressure, and $\Phi$ the gravitational potential.
 
 Investigating the gas component is sufficient to predict most of the macroscopical features of the discs structure due to its
 predominance over the solid elements. 
 
-The vertical structure of the gas is determined by a steady-state solution of the hydrodynamical laws of motion together with the Poisson equation that
-accounts for the gravitational potential. The thin-disk assumption allows a great simplification
- of this problem leading to the vertical density profile \cite[pp. 38-41]{book_planet_form}
+The vertical structure of the gas can be described by the hydrostatic solution
+of equation 2.3 whose right term is thus set to zero giving the balancing condition of the vertical
+accelerations due to gravity and pressure \citep[pp. 38-41]{book_planet_form}. Assuming a vertically isothermal disc to write the pressure as $P=\rho c_s^2$ (equation 2.2)
+and exploiting the thin 
+disc assumption for the projection of the gravitational
+ force along the vertical direction,
+the balancing condition gives
+\begin{equation}
+    c_s^2\dv{\rho}{z}= -\Omega_K^2z\cdot \rho.
+\end{equation}
+The solution of this equation provides the vertical density profile
 \begin{equation}
     \rho(z, r) = \rho_0(r)\exp(-\frac{\Omega_K^2z^2}{2c_s^2}) \equiv \rho_0(r)\exp(-\frac{z^2}{2H^2})
 \end{equation}
@@ -368,9 +395,9 @@ $H$: it is identified as the
 standard deviation of the Gaussian vertical density profile.
 The following relation is also provided
 \begin{equation}
-    H = \frac{c_s}{\Omega_K}
+    H = \frac{c_s}{\Omega_K}.
 \end{equation}
-where $\Omega_K$ is the Keplerian 
+In all these equations $\Omega_K$ is the Keplerian 
 angular velocity while $c_s$ is the sound speed defined as $c_s^2 \equiv \dv{P}{\rho}$, which is equal to 
 \begin{equation}
     c_s = \sqrt{\frac{k_BT}{\mu m_p}}
@@ -381,7 +408,7 @@ ideal fluid described by the equation of state 2.2.
 The height scale $H$ is thus proportional to $T^{1/2}$. Its radial dependence
 can be studied computing the radiative equilibrium of the disc, in order to obtain the 
 radial temperature profile which is related to $H(r)$ through equations 2.4 and 2.5.
-Assuming a passive and flared disc, calculations lead to $T(r) \propto r^{-1/2}$ 
+Assuming a passive and flared disc, calculations usually lead to $T(r) \propto r^{-1/2}$ 
 meaning $H(r) \propto r^{5/4}$ which is consistent with the ``flared assumption'', requiring the index of this last
 power law to be greater than 1.
 Figure 2.1b shows the vertical density distribution in a disc characterized by the just mentioned $H(r)$ radial profile
@@ -398,7 +425,7 @@ proportionality between the shear stress $\tau$ and the velocity gradient  $\pdv
 \begin{equation}
     \tau = \nu \cdot \rho \cdot \pdv{u}{y}
 \end{equation}
-The definition above is than generalized in its tensorial form to generic fluids.
+The definition above is then generalized in its tensorial form to generic fluids.
 In an ideal gas the kinematic viscosity coefficient can be shown to satisfy $\nu = \frac{1}{3}c_s\lambda$,
 with $\lambda$ indicating the mean free path of particles in the fluid.
 To describe the turbulent viscosity we proceed by analogy assuming $\nu_T \sim u_T \lambda_T$. In this equation $u_T$ indicates a typical velocity of the turbulent regime
@@ -413,23 +440,94 @@ Therefore, we obtain the equation
 which provides a method to estimate the turbulent viscosity introducing the $\alpha$ coefficient that, following the arguments above,
 must take values less than 1.
 
-The dust component is modelled as a pressureless fluid with grains of different dimensions coupled with the gas medium. 
-The strength of the coupling is expressed by the Stokes number $St$.
+The orbital velocity of the gas is determined by the gravitational attraction of the 
+star inducing a keplerian orbit which is slightly modified by pressure forces.
+This effect can be determined starting from the momentum equation 2.3.
+Assuming a stationary ($\pdv{\va v}{t}= 0$) axisymmetric flow and the sole gravitational potential of the star,
+its radial component becomes
+\begin{equation}
+    \frac{v_{\Phi, gas}^2}{r} = \frac{GM_{star}}{r^2} + \frac 1 \rho \dv{P}{r}
+\end{equation}
+analogous to the keplerian expression for the orbital velocity with the additional
+term that describes the pressure support.
+Since near the disc midplane the pressure decreases outward, this term 
+is negative meaning that the gas azimuthal velocity is slightly less than the keplerian velocity 
+of a particle orbiting at the same radius.
+
+Describing the pressure radial dependence with a power las as 
+$P = P_0 \left(\frac{r}{r_0}\right)^{-\eta}$ with the introduction of 
+the positive index $\eta$, it can be shown that 
+\begin{equation}
+    v_{\phi, gas} = v_K \left[ 1 - \eta \left(\frac{H}{r} \right)^2 \right] ^{1/2}
+\end{equation}
+exposing also the role of the aspect ratio
+in the azimuthal motion of the gas.
+
+These corrections to the keplerian velocities are negligible when considering the motion of the gas alone.
+For example, for a disc with a constant aspect ratio $H/r = 0.05$ and the index $\eta = 3$, obtained from 
+a gas surface density $\Sigma(r) \propto r^{-1}$, we obtain
+\begin{equation}
+    v_{\phi,gas} \simeq 0.996v_K.
+\end{equation}
+However, these differences are important for the evolution
+of the solid grains due to mechanisms that will be explained in the next section.
+\subsection{Dust}
+
+The dust component is modelled as a pressureless fluid with grains of different dimensions coupled to the gas medium. 
+The strength of the coupling is expressed by the Stokes number $St$ characterizing the behaviour of
+the dust grains suspended in the gas.
+It is defined as the ratio of the friction timescale of the dust particle to the characteristich time of the flow.
+In protoplanetary discs, the main motion of the gas component is the (approximately)
+keplerian rotation around the central star, the Stokes number can thus be defined, in this case,
+as 
+\begin{equation}
+    St = t_{stop} \cdot \Omega_K
+\end{equation}
+using the keplerian angular velocity $\Omega_K = \sqrt{\frac{GM_{star}}{r^3}}$.
+The friction timescale $t_{stop}$ measures the time in which the drag modifies the relative velocity of the 
+gas particle considered significantly. It can be computed from the particle mass ($m$), 
+its relative velocity with respect to the gas ($v$)
+and the drag force module:
+\begin{equation}
+    t_{stop} = \frac{m\cdot v}{|F_D|}.
+\end{equation}
+
 Two drag forces come into play depending on the grain size $s$ \cite[pp. 110,111]{book_planet_form}. 
 If $s \lesssim \lambda$, with $\lambda$ indicating the mean free path of gas molecules, 
 the drag force is called Epstein drag. 
 In this regime, which is usually the most relevant for most particle sizes, 
 the drag is caused by gas molecules which collide against the front and back sides of the grain with different 
 frequencies due to its motion relative to the gas medium.
-The Stokes number in the Epstein regime is related to the size and density of the particles that experience the drag.
+From the equations 2.13 and 2.14 we can obtain the expression 
+for the Stokes number in the Epstein regime 
+\begin{equation}
+    St = \frac{\pi}{2}\frac{s\rho_{gr}}{\Sigma_g}.
+\end{equation}
+It thus depends on the size ($s$)
+and density ($\rho_{gr}$) of the particles that experience the drag
+and to the gas distribution through its
+surface density ($\Sigma_g$) assuming 
+$\Sigma_g = \sqrt{2\pi}H\cdot \rho_g(z=0)$ which is the result of the integration
+along the vertical direction $z$ of equation 2.5.
+
 Once sizes much larger than the molecular 
 mean free path are reached, the solid grains begin to experience a force of different nature called Stokes drag.
+In this condition the Stokes number is given by different
+equations depending on the laminar or turbulent regime
+of the flow.
 
-The model described above is a simplification of the complex dynamics of protoplanetary discs. 
-There are many secondary effects
-which contributes to the proper description of discs evolution such as magnetorotational instability, photoevaporation and 
-turbulences or vortices generated by the fluid motion in the turbulent regime. All 
-this effects must be taken into account to obtain a complete description of the disc dynamics and evolution.
+Strongly coupled grains, which thus exhibit $St \ll 1$ and are usually of small dimensions,
+are essentially stationary in the gas and thus dragged 
+at its subkeplerian velocity (see section 2.2.1). In addition to that,
+dust particles do not experience the same pressure force of the gas component.
+As a consequence, their centrifugal force is not sufficient to balance the gravitational attraction 
+that hence makes them spiral inward towards a pressure maximum where the gas orbital velocity, given by equation 
+2.10 becomes keplerian due to the vanishing of the pressure term.
+
+Large rocks poorly coupled to the gas, and thus with $St \gg 1$, exhibit the same radial drift. 
+In this case the solids start with a keplerian orbital motion, the high relative velocity with respect to the gas
+medium makes them esperience large drag forces in the opposite direction that remove angular momentum causing 
+the inward motion.
 
 \section{Observations}
 
@@ -462,31 +560,34 @@ and exploit the natural diversity of structures and properties.
 Three sources of light can be identified \cite{disc_rev}. Examples of their
 observations can be seen in figure 2.2.
 
-The first one is the radiation, usually of micrometric wavelength, emitted by the host star and scattered by dust grains.
+The first one is the radiation, usually of micrometric wavelength, emitted by the host star and scattered by small (micron-sized) 
+dust grains.
 This tracer is especially sensitive to the vertical structure 
 of the disc allowing measures of the height and of the dust distribution along this direction.
+This infrared emission is usually observed by either ground based high contrast imagers, such as SPHERE or the Very Large Telescope (VLT), 
+or by space observations, such as the Hubble Space Telescope (HST) and, in the near future, the James Webb Space Telescope (JWST).
 
 The second tracer is the thermal continuum emission of solids, typically at millimetric wavelengths,
 emitted in the optically thin regime which implies direct proportionality between the intensity of the radiation observed and the
-mass density of the dust. Images of the disc thermal emission are, thus, of specific interest in the investigation of the solid grains.
+mass density of the dust. 
+Images of the disc thermal emission are, thus, of specific interest in the investigation of larger (mm-sized) solid grains.
+This emission is typically detected by the Very Large Array (VLA) or the Atacama Large Millimiter Array (ALMA) which are both arrays
+of respectively 27 and 66 radio telescopes.
 
 On the contrary, the gas component eludes direct observations due to the nature of $H_2$ the dominant molecule.
-This part of the disc can be detected thanks to spectral line emission of less abundant molecules 
+This part of the disc can be detected thanks to spectral line emission of less abundant molecules,
+the most common being CO in its various isotopologues,
 that constitute the third category of observational primers. Measures made from these probes suffer from
 the uncertainties in the molecular abundance of the revealed gases along with other problems
 which make gas observation complex and uncertain.
 
 In all of these cases the range of wavelengths probed is approximately $\SI{1}{\micro\m} - \SI{10}{\mm}$, hence going from infrared to radio waves.
 As anticipated, protoplanetary discs have a diameter of about 100 a.u. at a typical distance of 100/150 pc. Therefore, telescopes need to acquire an angular
-resolution under the arc second which is done using interferometric techniques. The leader observatory able to carry out this type of observations is the Atacama Large Millimiter Array (ALMA)
-which is an array of 66 high precision antennas that can be moved to achieve different configurations. 
-Other facilities that have given a significant contribution to the detection of protoplanetary discs are the Very Large Telescope (VLT), the W. M. Keck Observatory and the NASA
-Hubble Space Telescope.
+resolution under the arc second which is done using interferometric techniques.
 
 The images with the best resolution currently obtained are those of the DSHARP (Disk Substructures at High Angular Resolution Project) survey \cite{dsharp}, $\sim 0.035$ arcsec, designed to examine properties
 of small-scale substructures and inquire how they relate to the planet formation process. In figure 2.3, some of the images obtained in the context of this project
 can be appreciated.
-
 
 \section{Planet formation}
 
@@ -523,7 +624,7 @@ In 2006 the International Astronomical Union defined a planet as a celestial bod
 to reach a hydrostatic equilibrium (nearly round) shape and which has cleared the neighbourhood around its orbit. Outside the solar system 
 the term planet indicates large bodies, in orbit around a star,
 with a mass below the limit for thermonuclear fusion of deuterium, 
-currently calculated to be 13 Jupyter masses for objects of sun metallicity. The lower mass threshold should instead be the same of that considered
+currently calculated to be 13 Jupiter masses for objects of solar metallicity. The lower mass threshold should instead be the same of that considered
 for the solar system.
 
 The study of extrasolar planets, often referred to as exoplanets, is of primary importance to make statistical studies of theories 
@@ -531,21 +632,21 @@ involving planets and their formation. Protoplanetary discs are the planets' bir
 Different mechanisms of planet formation have been proposed and some parts of the theories are not completely
 understood yet. 
 
-The core accretion process \cite[pp. 25-26]{veronesi_phdthesis} is believed to be the origin of planets from the dust component of the disc. 
-The process starts from the small dust grains which are well coupled with the gas.
+The core accretion process \citep[pp. 25-26]{veronesi_phdthesis} is believed to be the origin of planets from the dust component of the disc. 
+The process starts from the small dust grains which are well coupled to the gas.
 The coupling makes them acquire low relative velocities that result in gentle collisions forming aggregates called, when a significant mass is reached, planetesimals.
 While gradually accreting their mass, this aggregates settle towards the mid-plane and start to decouple from the gas experiencing a radial force 
 which makes them spiral inwards toward the global maximum in the gas pressure. This motion is called radial drift and it is usually more effective for grains of sizes in the range 
 1-10 mm.
 The accretion of planetesimals continues, with an increasing relevance of gravity in the process,
-until the local dust population is depleted by radial migration or the collisions become destructive.
+until, in a few million of years, the local dust population is depleted by radial migration or the collisions become destructive.
 
 This process profoundly influences the morphology of the disc leaving us ways to detect and characterize newborn planets. 
 Gaps, annular regions of dust or gas depletion, are the pivotal substructure generated from the gravitational interaction of the disc with young planets.
 Links between their shape and planets features were found, which will be discussed in detail in the next chapter:
 a measure of their width allows, for example, an indirect estimation of the planet mass.
 
-\section{Gaps}
+\section{Gaps and substructures}
 
 \begin{comment}
 Here I am going to:
@@ -559,7 +660,10 @@ Here I am going to:
 — explain how depth and width are defined
 \end{comment}
 
-
+A wide variety of substructures has been identified in the highly resoluted images
+of protoplanetary discs in their scattered light and millimetric emission. Some examples are shown 
+in figure () that depicts the four broad categories under which are group the various morphological types:
+from left to right, cavities, gaps, arcs and spirals.
 
 Gaps are going to be the object of application for the investigative approach proposed in this thesis due
 to their role in the detection of young planets.
@@ -575,7 +679,7 @@ Figure 2.4 presents the radial profile of the gas and dust densities at a gap. T
 the graph relative to the dust density, I am going to highlight some recurrent features:
 at the core of the depletion zone, we can observe two minimums separated by a local maximum which usually coincides with the planet orbit.
 Sometimes this maximum reaches values comparable with the density of the unperturbed disc, a substructure that can be identified as a double gap. 
-The borders also presents local maximums. Gaps are usually wider and deeper in the dust rather than in the gas component where they could even
+The edges also presents local maximums. Gaps are usually wider and deeper in the dust rather than in the gas component where they could even
 fail to form.
 
 \begin{figure}
@@ -1768,7 +1872,7 @@ saved in the \lstinline{FITS} files. Brief descptions are also provided.
         
         %planet(s)
         NPLANETS & nnumber of planets in the simulation\\
-        MPLANET\# & planet's mass in Jupyter's masses \\
+        MPLANET\# & planet's mass in Jupiter's masses \\
         RORB\# & radius of the planet's orbit\\ \\
         
         %observational parameters
@@ -2502,7 +2606,7 @@ with traditional methods can be challenging.
 
 
 \nocite{*}
-\bibliographystyle{plain} % We choose the &quot;plain&quot; reference style
+% We choose the &quot;plain&quot; reference style
 \bibliography{ref}
 
 

@@ -1,48 +1,48 @@
 This is BibTeX, Version 0.99d (TeX Live 2021/Arch Linux)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: tesi.aux
-The style file: plain.bst
+The style file: plainnat.bst
 Database file #1: ref.bib
 Warning--empty school in veronesi_phdthesis
-You've used 23 entries,
-            2118 wiz_defined-function locations,
-            639 strings with 9242 characters,
-and the built_in function-call counts, 10199 in all, are:
-= -- 864
-> -- 828
-< -- 2
-+ -- 333
-- -- 305
-* -- 961
-:= -- 1822
-add.period$ -- 68
-call.type$ -- 23
-change.case$ -- 217
-chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 260
-empty$ -- 570
-format.name$ -- 305
-if$ -- 1948
-int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 23
-newline$ -- 117
-num.names$ -- 48
-pop$ -- 200
+You've used 24 entries,
+            2773 wiz_defined-function locations,
+            784 strings with 11327 characters,
+and the built_in function-call counts, 15928 in all, are:
+= -- 1310
+> -- 1446
+< -- 13
++ -- 487
+- -- 462
+* -- 1580
+:= -- 2628
+add.period$ -- 113
+call.type$ -- 24
+change.case$ -- 222
+chr.to.int$ -- 23
+cite$ -- 49
+duplicate$ -- 495
+empty$ -- 907
+format.name$ -- 494
+if$ -- 3179
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 24
+newline$ -- 169
+num.names$ -- 98
+pop$ -- 388
 preamble$ -- 1
-purify$ -- 197
+purify$ -- 201
 quote$ -- 0
-skip$ -- 170
+skip$ -- 437
 stack$ -- 0
-substring$ -- 424
-swap$ -- 33
+substring$ -- 373
+swap$ -- 53
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
+type$ -- 254
 warning$ -- 1
-while$ -- 67
-width$ -- 25
-write$ -- 250
+while$ -- 94
+width$ -- 0
+write$ -- 398
 (There was 1 warning)
