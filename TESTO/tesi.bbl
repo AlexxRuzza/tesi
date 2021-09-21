@@ -1,4 +1,4 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{41}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -58,6 +58,25 @@ Sayantan Auddy and Min-Kai Lin.
 \newblock \doi{10.3847/1538-4357/aba95d}.
 \newblock URL \url{http://dx.doi.org/10.3847/1538-4357/aba95d}.
 
+\bibitem[{Barge, Pierre} et~al.(2017){Barge, Pierre}, {Ricci, Luca}, {Carilli,
+  Christopher Luke}, and {Previn-Ratnasingam, Rathish}]{vortix}
+{Barge, Pierre}, {Ricci, Luca}, {Carilli, Christopher Luke}, and
+  {Previn-Ratnasingam, Rathish}.
+\newblock Gaps and rings carved by vortices in protoplanetary dust.
+\newblock \emph{A\&A}, 605:\penalty0 A122, 2017.
+\newblock \doi{10.1051/0004-6361/201629918}.
+\newblock URL \url{https://doi.org/10.1051/0004-6361/201629918}.
+
+\bibitem[Benisty et~al.(2015)Benisty, Juhasz, Boccaletti, Avenhaus, Milli,
+  Thalmann, Dominik, Pinilla, Buenzli, Pohl, and et~al.]{subs8}
+M.~Benisty, A.~Juhasz, A.~Boccaletti, H.~Avenhaus, J.~Milli, C.~Thalmann,
+  C.~Dominik, P.~Pinilla, E.~Buenzli, A.~Pohl, and et~al.
+\newblock Asymmetric features in the protoplanetary disk mwc 758.
+\newblock \emph{Astronomy \& Astrophysics}, 578:\penalty0 L6, Jun 2015.
+\newblock ISSN 1432-0746.
+\newblock \doi{10.1051/0004-6361/201526011}.
+\newblock URL \url{http://dx.doi.org/10.1051/0004-6361/201526011}.
+
 \bibitem[Bryden et~al.(1999)Bryden, Chen, Lin, Nelson, and
   Papaloizou]{gap_opening2}
 G.~Bryden, Xingming Chen, D.~N.~C. Lin, Richard~P. Nelson, and John C.~B.
@@ -69,6 +88,29 @@ G.~Bryden, Xingming Chen, D.~N.~C. Lin, Richard~P. Nelson, and John C.~B.
 \newblock \doi{10.1086/306917}.
 \newblock URL \url{https://doi.org/10.1086/306917}.
 
+\bibitem[{Cazzoletti, P.} et~al.(2018){Cazzoletti, P.}, {van Dishoeck, E. F.},
+  {Pinilla, P.}, {Tazzari, M.}, {Facchini, S.}, {van der Marel, N.}, {Benisty,
+  M.}, {Garufi, A.}, and {P\'erez, L. M.}]{sub3}
+{Cazzoletti, P.}, {van Dishoeck, E. F.}, {Pinilla, P.}, {Tazzari, M.},
+  {Facchini, S.}, {van der Marel, N.}, {Benisty, M.}, {Garufi, A.}, and
+  {P\'erez, L. M.}
+\newblock Evidence for a massive dust-trapping vortex connected to spirals -
+  multi-wavelength analysis of the hd 135344b protoplanetary disk.
+\newblock \emph{A\&A}, 619:\penalty0 A161, 2018.
+\newblock \doi{10.1051/0004-6361/201834006}.
+\newblock URL \url{https://doi.org/10.1051/0004-6361/201834006}.
+
+\bibitem[Dipierro et~al.(2015)Dipierro, Price, Laibe, Hirsh, Cerioli, and
+  Lodato]{Dipierro_2015}
+Giovanni Dipierro, Daniel Price, Guillaume Laibe, Kieran Hirsh, Alice Cerioli,
+  and Giuseppe Lodato.
+\newblock On planet formation in hl tau.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society: Letters},
+  453\penalty0 (1):\penalty0 L73–L77, Aug 2015.
+\newblock ISSN 1745-3933.
+\newblock \doi{10.1093/mnrasl/slv105}.
+\newblock URL \url{http://dx.doi.org/10.1093/mnrasl/slv105}.
+
 \bibitem[Dipierro et~al.(2016)Dipierro, Laibe, Price, and Lodato]{gap_opening3}
 Giovanni Dipierro, Guillaume Laibe, Daniel~J. Price, and Giuseppe Lodato.
 \newblock {Two mechanisms for dust gap opening in protoplanetary discs}.
@@ -77,6 +119,38 @@ Giovanni Dipierro, Guillaume Laibe, Daniel~J. Price, and Giuseppe Lodato.
 \newblock ISSN 1745-3925.
 \newblock \doi{10.1093/mnrasl/slw032}.
 \newblock URL \url{https://doi.org/10.1093/mnrasl/slw032}.
+
+\bibitem[Fedele et~al.(2018)Fedele, Tazzari, Booth, Testi, Clarke, Pascucci,
+  Kospal, Semenov, Bruderer, Henning, and Teague]{refId0}
+D.~Fedele, M.~Tazzari, R.~Booth, L.~Testi, C.~J. Clarke, I.~Pascucci,
+  A.~Kospal, D.~Semenov, S.~Bruderer, Th. Henning, and R.~Teague.
+\newblock Alma continuum observations of the protoplanetary disk as 209 -
+  evidence of multiple gaps opened by a single planet.
+\newblock \emph{A\&A}, 610:\penalty0 A24, 2018.
+\newblock \doi{10.1051/0004-6361/201731978}.
+\newblock URL \url{https://doi.org/10.1051/0004-6361/201731978}.
+
+\bibitem[Gonzalez et~al.(2015)Gonzalez, Laibe, Maddison, Pinte, and
+  Ménard]{dust_pup}
+J.-F. Gonzalez, G.~Laibe, S.~T. Maddison, C.~Pinte, and F.~Ménard.
+\newblock {ALMA images of discs: are all gaps carved by planets?}
+\newblock \emph{Monthly Notices of the Royal Astronomical Society: Letters},
+  454\penalty0 (1):\penalty0 L36--L40, 09 2015.
+\newblock ISSN 1745-3925.
+\newblock \doi{10.1093/mnrasl/slv120}.
+\newblock URL \url{https://doi.org/10.1093/mnrasl/slv120}.
+
+\bibitem[Huang et~al.(2018)Huang, Andrews, Cleeves, Öberg, Wilner, Bai,
+  Birnstiel, Carpenter, Hughes, Isella, P{\'{e}}rez, Ricci, and Zhu]{sub4}
+Jane Huang, Sean~M. Andrews, L.~Ilsedore Cleeves, Karin~I. Öberg, David~J.
+  Wilner, Xuening Bai, Til Birnstiel, John Carpenter, A.~Meredith Hughes,
+  Andrea Isella, Laura~M. P{\'{e}}rez, Luca Ricci, and Zhaohuan Zhu.
+\newblock {CO} and dust properties in the {TW} hya disk from high-resolution
+  {ALMA} observations.
+\newblock \emph{The Astrophysical Journal}, 852\penalty0 (2):\penalty0 122, jan
+  2018.
+\newblock \doi{10.3847/1538-4357/aaa1e7}.
+\newblock URL \url{https://doi.org/10.3847/1538-4357/aaa1e7}.
 
 \bibitem[Huang et~al.(2020)Huang, Andrews, Öberg, Ansdell, Benisty, Carpenter,
   Isella, P{\'{e}}rez, Ricci, Williams, Wilner, and Zhu]{img_2.2}
@@ -98,6 +172,15 @@ S.~{Jaeger}.
   \emph{Astronomical Society of the Pacific Conference Series}, page 623,
   August 2008.
 
+\bibitem[Johansen et~al.(2009)Johansen, Youdin, and Klahr]{MRI}
+A.~Johansen, A.~Youdin, and H.~Klahr.
+\newblock {ZONAL} {FLOWS} {AND} {LONG}-{LIVED} {AXISYMMETRIC} {PRESSURE}
+  {BUMPS} {IN} {MAGNETOROTATIONAL} {TURBULENCE}.
+\newblock \emph{The Astrophysical Journal}, 697\penalty0 (2):\penalty0
+  1269--1289, may 2009.
+\newblock \doi{10.1088/0004-637x/697/2/1269}.
+\newblock URL \url{https://doi.org/10.1088/0004-637x/697/2/1269}.
+
 \bibitem[Kanagawa et~al.(2015)Kanagawa, Muto, Tanaka, Tanigawa, Takeuchi,
   Tsukagoshi, and Momose]{kanagawa}
 Kazuhiro~D. Kanagawa, Takayuki Muto, Hidekazu Tanaka, Takayuki Tanigawa, Taku
@@ -112,6 +195,18 @@ Kazuhiro~D. Kanagawa, Takayuki Muto, Hidekazu Tanaka, Takayuki Tanigawa, Taku
 \bibitem[Kingma and Ba(2017)]{nadam}
 Diederik~P. Kingma and Jimmy Ba.
 \newblock Adam: A method for stochastic optimization, 2017.
+
+\bibitem[Kraus et~al.(2017)Kraus, Kreplin, Fukugawa, Muto, Sitko, Young, Bate,
+  Grady, Harries, Monnier, Willson, and Wisniewski]{subs7}
+Stefan Kraus, Alexander Kreplin, Misato Fukugawa, Takayuki Muto, Michael~L.
+  Sitko, Alison~K. Young, Matthew~R. Bate, Carol Grady, Tim~T. Harries, John~D.
+  Monnier, Matthew Willson, and John Wisniewski.
+\newblock Dust-trapping vortices and a potentially planet-triggered spiral wake
+  in the pre-transitional disk of v1247 orionis.
+\newblock \emph{The Astrophysical Journal}, 848\penalty0 (1):\penalty0 L11, oct
+  2017.
+\newblock \doi{10.3847/2041-8213/aa8edc}.
+\newblock URL \url{https://doi.org/10.3847/2041-8213/aa8edc}.
 
 \bibitem[Lodato et~al.(2019)Lodato, Dipierro, Ragusa, Long, Herczeg, Pascucci,
   Pinilla, Manara, Tazzari, Liu, and et~al.]{Lodato_2019}
@@ -167,6 +262,30 @@ Tom Mitchell.
 \newblock \emph{Machine Learning}.
 \newblock McGraw-Hill Education, 1997.
 
+\bibitem[Monnier et~al.(2017)Monnier, Harries, Aarnio, Adams, Andrews, Calvet,
+  Espaillat, Hartmann, Hinkley, Kraus, McClure, Oppenheimer, Perrin, and
+  Wilner]{subs6}
+John~D. Monnier, Tim~J. Harries, Alicia Aarnio, Fred~C. Adams, Sean Andrews,
+  Nuria Calvet, Catherine Espaillat, Lee Hartmann, Sasha Hinkley, Stefan Kraus,
+  Melissa McClure, Rebecca Oppenheimer, Marshall Perrin, and David Wilner.
+\newblock Polarized disk emission from herbig ae/be stars observed using gemini
+  planet imager: {HD} 144432, {HD} 150193, {HD} 163296, and {HD} 169142.
+\newblock \emph{The Astrophysical Journal}, 838\penalty0 (1):\penalty0 20, mar
+  2017.
+\newblock \doi{10.3847/1538-4357/aa6248}.
+\newblock URL \url{https://doi.org/10.3847/1538-4357/aa6248}.
+
+\bibitem[Pinilla et~al.(2018)Pinilla, Benisty, de~Boer, Manara, Bouvier,
+  Dominik, Ginski, Loomis, and Aguilar]{subs5}
+P.~Pinilla, M.~Benisty, J.~de~Boer, C.~F. Manara, J.~Bouvier, C.~Dominik,
+  C.~Ginski, R.~A. Loomis, and A.~Sicilia Aguilar.
+\newblock Variable outer disk shadowing around the dipper star
+  {RXJ}1604.3{\textendash}2130.
+\newblock \emph{The Astrophysical Journal}, 868\penalty0 (2):\penalty0 85, nov
+  2018.
+\newblock \doi{10.3847/1538-4357/aae824}.
+\newblock URL \url{https://doi.org/10.3847/1538-4357/aae824}.
+
 \bibitem[Pinte et~al.(2006)Pinte, Ménard, Duchêne, and Bastien]{mcfost1}
 C.~Pinte, F.~Ménard, G.~Duchêne, and P.~Bastien Bastien.
 \newblock Monte carlo radiative transfer in protoplanetary disks.
@@ -220,6 +339,62 @@ N.~I. {Shakura} and R.~A. {Sunyaev}.
 \newblock Black holes in binary systems. observational appearance.
 \newblock \emph{Astronomy \& Astrophysics}, 24:\penalty0 337--355, Jun 1973.
 
+\bibitem[Takahashi and ichiro Inutsuka(2014)]{GI}
+Sanemichi~Z. Takahashi and Shu ichiro Inutsuka.
+\newblock {TWO}-{COMPONENT} {SECULAR} {GRAVITATIONAL} {INSTABILITY} {IN} a
+  {PROTOPLANETARY} {DISK}: A {POSSIBLE} {MECHANISM} {FOR} {CREATING}
+  {RING}-{LIKE} {STRUCTURES}.
+\newblock \emph{The Astrophysical Journal}, 794\penalty0 (1):\penalty0 55, sep
+  2014.
+\newblock \doi{10.1088/0004-637x/794/1/55}.
+\newblock URL \url{https://doi.org/10.1088/0004-637x/794/1/55}.
+
+\bibitem[Toci et~al.(2019)Toci, Lodato, Fedele, Testi, and Pinte]{Toci_2019}
+Claudia Toci, Giuseppe Lodato, Davide Fedele, Leonardo Testi, and Christophe
+  Pinte.
+\newblock Long-lived dust rings around hd 169142.
+\newblock \emph{The Astrophysical Journal}, 888\penalty0 (1):\penalty0 L4, Dec
+  2019.
+\newblock ISSN 2041-8213.
+\newblock \doi{10.3847/2041-8213/ab5c87}.
+\newblock URL \url{http://dx.doi.org/10.3847/2041-8213/ab5c87}.
+
+\bibitem[Toci et~al.(2020)Toci, Lodato, Christiaens, Fedele, Pinte, Price, and
+  Testi]{Toci_2020}
+Claudia Toci, Giuseppe Lodato, Valentin Christiaens, Davide Fedele, Christophe
+  Pinte, Daniel~J Price, and Leonardo Testi.
+\newblock Planet migration, resonant locking, and accretion streams in pds 70:
+  comparing models and data.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  499\penalty0 (2):\penalty0 2015–2027, Sep 2020.
+\newblock ISSN 1365-2966.
+\newblock \doi{10.1093/mnras/staa2933}.
+\newblock URL \url{http://dx.doi.org/10.1093/mnras/staa2933}.
+
+\bibitem[Tsukagoshi et~al.(2019)Tsukagoshi, Momose, Kitamura, Saito, Kawabe,
+  Andrews, Wilner, Kudo, Hashimoto, Ohashi, and Tamura]{sub1}
+Takashi Tsukagoshi, Munetake Momose, Yoshimi Kitamura, Masao Saito, Ryohei
+  Kawabe, Sean Andrews, David Wilner, Tomoyuki Kudo, Jun Hashimoto, Nagayoshi
+  Ohashi, and Motohide Tamura.
+\newblock The flared gas structure of the transitional disk around sz 91.
+\newblock \emph{The Astrophysical Journal}, 871\penalty0 (1):\penalty0 5, jan
+  2019.
+\newblock \doi{10.3847/1538-4357/aaf4f1}.
+\newblock URL \url{https://doi.org/10.3847/1538-4357/aaf4f1}.
+
+\bibitem[Ubeira Gabellini et~al.(2019)Ubeira Gabellini, Miotello, Facchini,
+  Ragusa, Lodato, Testi, Benisty, Bruderer, T. Kurtovic, Andrews, and
+  et~al.]{Ubeira_Gabellini_2019}
+M~Giulia Ubeira Gabellini, Anna Miotello, Stefano Facchini, Enrico Ragusa,
+  Giuseppe Lodato, Leonardo Testi, Myriam Benisty, Simon Bruderer, Nicolás
+  T. Kurtovic, Sean Andrews, and et~al.
+\newblock A dust and gas cavity in the disc around cq tau revealed by alma.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  486\penalty0 (4):\penalty0 4638–4654, Apr 2019.
+\newblock ISSN 1365-2966.
+\newblock \doi{10.1093/mnras/stz1138}.
+\newblock URL \url{http://dx.doi.org/10.1093/mnras/stz1138}.
+
 \bibitem[Veronesi(2021)]{veronesi_phdthesis}
 B.~M.~A. Veronesi.
 \newblock \emph{EXPLORING THE ORIGIN OF SUBSTRUCTURES IN PLANET FORMING
@@ -237,5 +412,14 @@ Benedetta Veronesi, Enrico Ragusa, Giuseppe Lodato, Hossam Aly, Christophe
 \newblock ISSN 0035-8711.
 \newblock \doi{10.1093/mnras/staa1278}.
 \newblock URL \url{https://doi.org/10.1093/mnras/staa1278}.
+
+\bibitem[Zhang et~al.(2015)Zhang, Blake, and Bergin]{cond}
+Ke~Zhang, Geoffrey~A. Blake, and Edwin~A. Bergin.
+\newblock {EVIDENCE} {OF} {FAST} {PEBBLE} {GROWTH} {NEAR} {CONDENSATION}
+  {FRONTS} {IN} {THE} {HL} {TAU} {PROTOPLANETARY} {DISK}.
+\newblock \emph{The Astrophysical Journal}, 806\penalty0 (1):\penalty0 L7, jun
+  2015.
+\newblock \doi{10.1088/2041-8205/806/1/l7}.
+\newblock URL \url{https://doi.org/10.1088/2041-8205/806/1/l7}.
 
 \end{thebibliography}

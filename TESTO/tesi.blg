@@ -4,45 +4,45 @@ The top-level auxiliary file: tesi.aux
 The style file: plainnat.bst
 Database file #1: ref.bib
 Warning--empty school in veronesi_phdthesis
-You've used 24 entries,
+You've used 41 entries,
             2773 wiz_defined-function locations,
-            784 strings with 11327 characters,
-and the built_in function-call counts, 15928 in all, are:
-= -- 1310
-> -- 1446
-< -- 13
-+ -- 487
-- -- 462
-* -- 1580
-:= -- 2628
-add.period$ -- 113
-call.type$ -- 24
-change.case$ -- 222
-chr.to.int$ -- 23
-cite$ -- 49
-duplicate$ -- 495
-empty$ -- 907
-format.name$ -- 494
-if$ -- 3179
+            915 strings with 16755 characters,
+and the built_in function-call counts, 28759 in all, are:
+= -- 2363
+> -- 2721
+< -- 14
++ -- 912
+- -- 870
+* -- 2933
+:= -- 4764
+add.period$ -- 204
+call.type$ -- 41
+change.case$ -- 409
+chr.to.int$ -- 40
+cite$ -- 83
+duplicate$ -- 851
+empty$ -- 1557
+format.name$ -- 921
+if$ -- 5715
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 24
-newline$ -- 169
-num.names$ -- 98
-pop$ -- 388
+missing$ -- 41
+newline$ -- 294
+num.names$ -- 166
+pop$ -- 688
 preamble$ -- 1
-purify$ -- 201
+purify$ -- 371
 quote$ -- 0
-skip$ -- 437
+skip$ -- 765
 stack$ -- 0
-substring$ -- 373
-swap$ -- 53
+substring$ -- 642
+swap$ -- 84
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 254
+type$ -- 441
 warning$ -- 1
-while$ -- 94
+while$ -- 163
 width$ -- 0
-write$ -- 398
+write$ -- 699
 (There was 1 warning)
