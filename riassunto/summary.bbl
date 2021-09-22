@@ -1,0 +1,57 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bryden et~al.(1999)]{gap_opening2}
+G.~Bryden et~al.
+\newblock Tidally induced gap formation in protostellar disks: Gap clearing and
+  suppression of protoplanetary growth.
+\newblock \emph{The Astrophysical Journal}, 514\penalty0 (1):\penalty0
+  344--367, mar 1999.
+\newblock \doi{10.1086/306917}.
+
+\bibitem[Dipierro et~al.(2016)]{gap_opening3}
+Giovanni Dipierro et~al.
+\newblock {Two mechanisms for dust gap opening in protoplanetary discs}.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society: Letters},
+  459\penalty0 (1):\penalty0 L1--L5, 03 2016.
+\newblock ISSN 1745-3925.
+\newblock \doi{10.1093/mnrasl/slw032}.
+
+\bibitem[Kanagawa et~al.(2015)]{kanagawa}
+Kazuhiro~D. Kanagawa et~al.
+\newblock {MASS} {ESTIMATES} {OF} a {GIANT} {PLANET} {IN} a {PROTOPLANETARY}
+  {DISK} {FROM} {THE} {GAP} {STRUCTURES}.
+\newblock \emph{The Astrophysical Journal}, 806\penalty0 (1):\penalty0 L15, Jun
+  2015.
+\newblock \doi{10.1088/2041-8205/806/1/l15}.
+
+\bibitem[Lodato et~al.(2019)]{Lodato_2019}
+Giuseppe Lodato et~al.
+\newblock The newborn planet population emerging from ring-like structures in
+  discs.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  486\penalty0 (1):\penalty0 453–461, Mar 2019.
+\newblock ISSN 1365-2966.
+\newblock \doi{10.1093/mnras/stz913}.
+
+\bibitem[Mehta et~al.(2019)]{ml4physics}
+Pankaj Mehta et~al.
+\newblock A high-bias, low-variance introduction to machine learning for
+  physicists.
+\newblock \emph{Physics Reports}, 810:\penalty0 1–124, May 2019.
+\newblock ISSN 0370-1573.
+\newblock \doi{10.1016/j.physrep.2019.03.001}.
+
+\bibitem[Veronesi et~al.(2020)]{dstauv}
+Benedetta Veronesi et~al.
+\newblock {Is the gap in the DS Tau disc hiding a planet?}
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  495\penalty0 (2):\penalty0 1913--1926, May 2020.
+\newblock ISSN 0035-8711.
+\newblock \doi{10.1093/mnras/staa1278}.
+
+\end{thebibliography}
