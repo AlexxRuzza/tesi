@@ -8,7 +8,7 @@
 \usepackage{physics}
 
 \usepackage{natbib}
-\bibliographystyle{plainnat} 
+\bibliographystyle{plainnat2} 
 \setcitestyle{round, comma}
 
 %for images
@@ -456,12 +456,19 @@ as modelled in an ideal gas and caused by molecular collisions is too weak to ac
 A proper model can be achieved assuming a highly turbulent regime that can produce a ``turbulent viscosity'' through the mixing of fluid elements
 at neighboring radii. The new parameter $\alpha$
 called ``Shakura-Sunyaev viscosity'' \citep{ssviscosity} which gathers all the ignorance on this process is introduced through the following reasoning:
-in the case of laminar flow, kinematic viscosity $\nu$ is defined as the constant of 
-proportionality between the shear stress $\tau$ and the velocity gradient  $\pdv{u}{y}$, normalized with the fluid density $\rho$
+in the case of an isotropic and newtonian fluid, dynamic viscosity $\mu$ is introduced as a scalar constant of 
+proportionality between the off-diagonal component of the stress tensor $\sigma_{ij}$ and the strain rate tensor $e_{ij}$ which is the symmetrised gradient of velocity \citep{fluid}
 \begin{equation}
-    \tau = \nu \cdot \rho \cdot \pdv{u}{y}
+    \sigma_{ij} = 2 \cdot \mu \cdot e_{ij} = \mu \cdot \left( \pdv{u_i}{x_j} + \pdv{u_j}{x_i} \right), \hspace{5pt} i \neq j
 \end{equation}
-The definition above is then generalized in its tensorial form to generic fluids.
+where the stress tensor $\sigma_{ij}$ is the force in the direction $i$ acting on a surface whose
+normal is in direction $j$.
+This additional effect to the fluid dynamics lead to the addition of a new term to the momentum equation (equation 2.3):
+\begin{equation}
+    \pdv{\va{v}}{t} + (\va{v}\cdot \va\nabla)\va{v} = -\frac{1}{\rho}\va  \nabla P - \va \nabla \Phi + \frac{\mu}{\rho}
+    \left[ \nabla^2\va u + \frac 1 3 \va \nabla \left( \va \nabla \cdot \va u\right) \right]
+\end{equation}
+From the dynamic viscosity $\mu$ a new constant, called kinematic viscosity $\nu$, is introduced as $\nu=\mu/\rho$.
 In an ideal gas the kinematic viscosity coefficient can be shown to satisfy $\nu = \frac{1}{3}c_s\lambda$,
 with $\lambda$ indicating the mean free path of particles in the fluid.
 To describe the turbulent viscosity we proceed by analogy assuming $\nu_T \sim u_T \lambda_T$. In this equation $u_T$ indicates a typical velocity of the turbulent regime
@@ -717,10 +724,19 @@ to their role in the detection of young planets.
 For this reason I am going to throw some light on their properties.
 
 They are one of the most common substructure observed in images of protoplanetary discs, and
-planets are often the cause of their formation. However, other mechanisms were recognized to generate gaps
+planets are often the cause of their formation \citep{gap_opening1, gap_opening2, gap_opening3}. However, other mechanisms were recognized to generate gaps
 including magnetorotational instability turbulence \citep{MRI}, gravitational instabilities \citep{GI}, condensation of molecular species along different snowlines \citep{cond},
 large-scale vortices \citep{vortix} and self-induced dust pileups \citep{dust_pup}. The effective presence of a planet must hence be cautiously investigated and confirmed 
 before inferring its features from the gaps properties. 
+
+The ability of a planet to carve a gap in the disc depends upon several elements. 
+\citet{Dipierro_2017} have derived an analytical criterion relating the minimum mass required for a planet
+to open a gap to the key properties of the dust: the Stokes number, the aspect ratio and the gas to dust mass ratio.
+They showed that the critical mass required to open a gap in the dust is lower for large Stokes numbers
+and large aspect ratio.
+The order of magnitude, for typical discs, of the planet's mass threshold for gap opening was computed in $10^{-3}M_{Jup}$
+which is in the order of the earth mass. They also determined that low mass planet could carve gaps only if the
+Stokes number was above a critical value of order unity.
 
 Figure 2.4 presents the radial profile of the gas and dust densities at a gap. Taking into exam 
 the graph relative to the dust density, I am going to highlight some recurrent features:
@@ -844,9 +860,15 @@ which links the planet mass to the gap width measured in the gas component $w_g$
 This last equation includes more features related to the hydrodynamic of the disc which could, in principle,
 influence the development of different gap structures: the aspect ratio at the planet position
 $h_0$ and the $\alpha$-viscosity. Accounting for these additional features should result in more accurate predictions
-across protoplanetary discs in which they differ significantly. However, measuring the $\alpha$-viscosity or the aspect-ratio 
+across protoplanetary discs in which they differ significantly. It has indeed been shown
+\citep{Dipierro_2017} that some physical properties of the disc 
+ influence the gap opening mechanism varying the ability of planets to carve gaps
+ in the disc with differences depending on their mass. In the same paper they also 
+ determined an analytical relation linking the distance of the planet to the outer edge of the gap
+ to the gas to dust density ratio, the Stokes number, an index related to the pressure profile and the aspect ratio. 
+ However, measuring these properties, such as the $\alpha$-viscosity or the aspect-ratio,
 is not an easy task, and it introduces a source of error.
-Another downside of this equation is that it uses the gap width $w_g$ measured in the gas component 
+Another downside of the \citet{kanagawa} equation is that it uses the gap width $w_g$ measured in the gas component 
 whose density map is more difficult to observe and resolve.
 
 \subsection{Strengths and limitations}
@@ -2633,7 +2655,7 @@ with traditional methods can be challenging.
 \begin{comment}
 -different wavelengths
 -more planets e/o more stars
--observations in gas and scatter
+-observations in  gas and scatter
 -understand different morphologies
 
 -put the database on a server and do server side operations, even pymcfost or rotate
