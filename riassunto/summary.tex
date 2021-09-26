@@ -96,12 +96,12 @@ and the advent of new telescopes, such as the Atacama Large Millimiter Array,
 led to the first high resolution observations of protoplanetary discs,
 the planets' birthplace. These images have to be interpreted to characterise the observed discs and the
 embedded planets.
-The approaches currently used present some limitations which keep the problem open to improvements and new solutions.
+Currently used approaches present some limitations which keep the problem open to improvements and new solutions.
 In this thesis we propose the adoption of machine learning methods 
 for this purpose.
 More specifically we focused on neural networks, a class of algorithms that can learn underlying patterns in the available complete data
 and later apply the acquired model to analyse partial data predicting the unknown features.
-We collated synthetic images obtained from numerical simulations implementing a dataset aimed at this purpose which
+We thus collated synthetic images obtained from numerical simulations implementing a dataset aimed at this purpose, which
 was made publicly available along with a python package and some scripts developed for its usage and mantainance.
 We also provided a proof of concept in support of the new approach proposed.
 
@@ -122,7 +122,7 @@ which is the tracer probed in the simulations used in this thesis.
 Among the various tracers probed to obtain images 
 \end{comment}
 
-In this thesis we focused on observations of the thermal emission of the dust component in the
+In this thesis we focused on observations of the dust thermal emission in the
 millimetric region of the spectrum. The images obtained consist in spatially resolved maps of
 the flux density at specific wavelengths. From them,
 all the other properties of the disc and embedded planets have to be inferred to 
@@ -130,13 +130,13 @@ obtain a complete characterisation. The models describing the dynamics and optic
 of these objects depends upon numerous parameters, such as the gas and dust total masses, their ratio, viscosity and so on.
 These studies allow the development and test of theories
 regarding protoplanetary discs and
-planet formation offering, in this last case, a statistically valid pool of data beyond the sole information obtained from the solar system.
+planet formation offering a statistically valid pool of data beyond, in the latter case, the sole information obtainable from the solar system.
 
 Among the different variables that could be inferred we chose to focus, as an interesting 
 example, on the masses of gap opening planets. The methods presented can, however, be applied,
 with the appropriate changes, to different problems. 
-The width of gaps has been linked with some empirical formulae to the masses of the planets responsible for
-their origin \citep{Lodato_2019,kanagawa}. Both these cases and more generally all the empirical relations 
+The width of gaps has been linked through some empirical formulae to the masses of the planets responsible for
+their origin \citep{Lodato_2019,kanagawa}. Both these and more generally all the empirical relations 
 proposed to determine specific disc features, are usually simple polynomial or power laws, which 
 allow a fast computation of unknown properties and can be easily explained with theoretical
 arguments. On the other end, they lack in accuracy and precision requiring the use of more advanced tools.
@@ -154,7 +154,7 @@ select the parameters which provide the best fit.
     \scalebox{0.8}{\input{histo.pgf}}
   \end{center}
   \caption{Histograms showing the distributions of values, among the dataset, for
-  the three parameters more significantly explored. From left to right, this parameters are: the gas to mass gas ratio, 
+  the three parameters more significantly explored. From left to right, these parameters are: the gas to dust mass ratio, 
   the mass of the embedded planet and the number of orbits completed by the planet during the hydrodynamical simulation
   before saving the snapshot. The total number of items is 24720.}
 \end{figure}
@@ -169,7 +169,7 @@ Neural netoworks could combine the convenience of analytical expressions with th
 of the numerical method. These types of algorithms are modelled on the functioning of a biological brain implementing 
 elementary units, i.e. artificial neurons, connected in a specific structure \citep{ml4physics}. In this thesis we used a feedforward neural network 
 proposing a future improvement with convolutional layers.
-Hiding the details, a neural network appears as a black box which takes an input and returns a related output with the ability 
+Hiding the details, a neural network is just a black box which takes an input and returns a related output with the ability 
 to learn, in a previous step called training process, the correct relation from data. We propose, for example, to use neural networks
 to analyse the entire image of a protoplanetary disc presenting a gap, which will be provided in input, and return the mass of the 
 planet that could have carved that gap, which will be the output of the network. 
@@ -178,11 +178,11 @@ The training process requires a set of data where the expected value for each ob
 The main objective of this thesis was the design of this dataset in both its content and interface.
 We collated fictious images of protoplanetary discs
 obtained through numerical hydrodynamical and then radiative simulations, with
-an additional step aimed at reproducing the limited resolution of the telescopes that consisted in the convolution
+an additional step aimed at reproducing the limited resolution of the telescopes, which consisted in the convolution
 of the images with
 Gaussian beams of different dimensions.
 Since one of the downsides of the numerical approach is its high computational cost, running all the simulations 
-from scratch would partly defeat the purpose of proposing this new method. 
+from the beginning would partly defeat the purpose of proposing this new method. 
 We thus designed the dataset on a collaborative basis, granting open access to this resource, and allowing people working in the field
 to contribute providing the results of any numerical simulations that they could have performed in the context of their research.
 In the version deployed with this thesis, the results of the first step, and for some of them 
@@ -192,26 +192,26 @@ We then run the remaining steps of the simulations.
 
 \begin{figure}
   \begin{center}
-    \scalebox{0.85}{\input{corr&err.pgf}}
+    \scalebox{0.85}{\input{corr&err8.pgf}}
   \end{center}
 
-  \caption{Left panel: correlation between the predicted mass and the real value obtained from the simulation files
-    for all the items in the test set. The black lines draws the $M_{pred} = M_{sim}$ curve.
+  \caption{Left panel: correlation between the predicted planet's mass and the real value used to run the simulation
+    for all the items in the test set. The black line draws the $M_{pred} = M_{sim}$ curve.
     Right panel: distribution of the relative prediction error $(M_{pred} - M_{sim})/M_{sim}$ 
         computed for the test set. The blue box 
-    zooms in the -10\% to 10\% range which contains the 89\% of all the items. This distribution exhibits mean and standard 
-    deviation of respectively 5\% and 27\%. The root mean squared error is $0.15 M_{jup}$ which will be assumed
-    as the uncertainty of the predictions inferred with this model.}
+    zooms in the -10\% to 10\% range which contains the 88\% of all the items. This distribution exhibits mean and standard 
+    deviation of respectively 4\% and 28\%. The root mean squared error is $0.14 M_{jup}$.}
 
 \end{figure}
 
-In total, we collated 24720 different images significantly exploring the three parameters in figure 2 (gas to dust mass ratio, planet mass and
+In total, we collated 24720 different images significantly exploring the three parameters in figure 1 (gas to dust mass ratio, planet mass and
 time of the snapshot) where the distribution of the explored values is shown. Additionally, the dataset contains images depicting discs from three main inclinations (0°, 30° and 60°) and convolved 
-with Gaussian beams of ten different sizes, in order to reproduce the current best resolutions achievable and to explore the upper and lower limits.
+with Gaussian beams of ten different sizes, in order to reproduce the current best resolutions achievable with existing observatories
+and to explore the upper and lower limits.
 The data of each image is stored in a separate file in the \lstinline{FITS} format whose header stores all the parameters
 characterising the disc, which are known from being used to perform the simulations.
 They are then indexed by two files. One of them contains only the basic information
-needed to uniquely identify each item while the other one stores all the information saved in the files' header.
+needed to uniquely identify each item while the other one stores all the information saved in the files' headers.
 
 This structure was conceived in the perspective of making the dataset publicly available online.
 In this scenario the user would have first to download the index to obtain the remote location
@@ -224,9 +224,9 @@ checking the integrity of the retrieved files.
 The second submodule handles the index files providing functions for reading their data
 returning a python dictionary and for adding new entries 
 with an automated process for large collections of \lstinline{FITS} files.
-The last one contains functions aimed at assembling the dataset 
+The last one contains functions aimed at assembling the dataset and
 preprocessing each image obtained 
-from the radiative simulation, retrieving the parameters stored in different files,
+from the radiative simulation, which is done retrieving the parameters stored in different files,
 convolving the image with the gaussian beams and, eventually, generating the file where all these data are stored.
 Some python scripts were also developed to interface these functions from the command line.
 Both the database and the code developed are published in two GitHub repositiories accessible at this link: \lstinline{https://github.com/dust-busters/}.
@@ -244,13 +244,15 @@ and a validation set. The elements of this last group were not used during the t
 on never seen images. 
 
 Figure 2 shows the final results obtained testing the trained model on the validation set. The histogram shows the
-distribution of the relative error which exhibit a mean value of 5\% and a standard deviation of 27\%.
+distribution of the relative error which exhibit a mean value of 4\% and a standard deviation of 28\%.
 The planet's masses are thus slightly overestimated, and the errors are highly variable depending on the analysed image.
 The mean value of the absolute relative errors computed on the test set is 8\% while the root mean square error is
-0.15M$_{Jup}$. We considered this last metric the prediction uncertainty of our model.
+0.14M$_{Jup}$. We considered this last metric the prediction uncertainty of our model.
 
 We also tested the trained model on the real image of the DS Tau disc. \cite{dstauv} showed using numerical simulations
-the presence of an embedded planet estimating a mass of $3.5\pm1M_{Jup}$ which is in fair agreement with the mass predicted by our neural network of $3.3\pm0.15M_{Jup}$.
+the presence of an embedded planet estimating a mass of $3.5\pm1M_{Jup}$ which is in fair agreement with the mass predicted by our neural network of $4.12\pm0.14M_{Jup}$.
+ This estimate has
+been computed averaging the results obtained with three identical neural networks, which have been trained on the same set but shuffled in different ways.
 Notice the significant reduction of the uncertainty.
 
 The results obtained are thus promising and successfully proved the feasibility 
