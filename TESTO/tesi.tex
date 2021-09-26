@@ -103,11 +103,11 @@
     and the advent of new telescopes, such as the Atacama Large Millimiter Array,
      allowed astronomers to obtain the first highly resoluted images of protoplanetary discs,
       planet's cradles, unrevealing an astonishing variety of substructures and morphologies. 
-    Two are today's leading approaches used to interpret these images and characterise protoplanetary 
+    Two are today's leading approaches used to interpret these images and characterise protoplanetary discs
      and their embedded planets:
       research of empirical relationships among disc’s features and 
       employment of numerical simulation to reproduce,  from starting assumptions,
-        synthetic observations that are then compared with  observations  directly  in  the  data  space.   
+        synthetic images that are then compared with  observations  directly  in  the  data  space.   
     Both  these  methods  present  some  limitations  which  keep  the problem open to improvements 
     or new solutions.  In this thesis we propose the use of machine learning techiniques,
      more specifically neural networks, to operate the characterisation of protoplanetary
@@ -118,18 +118,18 @@
      a dataset aimed at this purpose which was made publicly available through GitHub
       along with a python package and some scripts developed for its usage and mantainance.
       The structure was indeed developed to allow and encourage contributions with synthetic images
-      obtained in different context in order to allow a better exploration of the parameter's space
-       overcoming
+      obtained in different context, in order to allow a better exploration of the parameter's space
+       and overcome
       the computational costs of numerical simulations.
       In this thesis we focused on the particular problem of determining the mass of a gap opening planet.
       For this reason all the images collected were obtained with a simulation that involved the presence of a 
       planet and that led to the formation of a gap.
        We addressed this problem to provide a proof of concept in support of the new approach proposed
-       obtaining a trained model that, on a test set of about 200 images, predicted the planet mass with 
-       relative absolute error of () and a mean squared error of ()  which was assumed as the prediction uncertainty
+       obtaining a trained model that, on a test set of about 200 images, predicted the planet masses with 
+       a mean absolute percentage error of 8\% and a mean squared error of 0.14$M_{Jup}$ which was assumed as the prediction uncertainty
         of the model.
-        Finally, we applied the trained model to the real observation of DS Tau disc predicting a mass of 
-        for the embedded planet, in fair agreement with the mass of () established in a previous study.
+        Finally, we applied the trained model to the real observation of DS Tau disc predicting a mass of $4.12\pm0.14 M_{Jup}$
+        for the embedded planet, in fair agreement with the mass of $3.5\pm 1M_{Jup}$ established in a previous study.
 \end{abstract}
 
 \tableofcontents
