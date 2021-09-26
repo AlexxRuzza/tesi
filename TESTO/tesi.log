@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.5)  23 SEP 2021 22:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.5)  26 SEP 2021 22:21
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -797,7 +797,7 @@ Package pdftex.def Info: copertina/logo.jpg  used on input line 15.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./copertina/logo.jpg>])pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.120 \end{abstract}
+l.133 \end{abstract}
                      [1] (./tesi.tocpdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -813,7 +813,7 @@ Chapter 1.
 <images/51pegasib.png, id=263, 252.44313pt x 263.48438pt>
 File: images/51pegasib.png Graphic file (type png)
 <use images/51pegasib.png>
-Package pdftex.def Info: images/51pegasib.png  used on input line 148.
+Package pdftex.def Info: images/51pegasib.png  used on input line 161.
 (pdftex.def)             Requested size: 184.28194pt x 192.34198pt.
 (./images/1.1.exoplanets/exop2.pgf
 LaTeX Font Info:    Calculating math sizes for size <8.8> on input line 7799.
@@ -851,7 +851,7 @@ LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <4.4> not available
 (Font)              size <5> substituted on input line 7799.
 
 )
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 175.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 188.
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [3
@@ -860,7 +860,7 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 <images/hltau.jpg, id=313, 1417.54594pt x 555.57562pt>
 File: images/hltau.jpg Graphic file (type jpg)
 <use images/hltau.jpg>
-Package pdftex.def Info: images/hltau.jpg  used on input line 222.
+Package pdftex.def Info: images/hltau.jpg  used on input line 235.
 (pdftex.def)             Requested size: 426.79135pt x 167.26738pt.
  [4 <./images/51pegasib.png>] [5 <./images/hltau.jpg>]
 Chapter 2.
@@ -881,191 +881,191 @@ Package pdftex.def Info: images/profile-img1.png  used on input line 579.
 <images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg, id=408, 522.753pt x 163.3302pt>
 File: images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg Graphic file (type jpg)
 <use images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg>
-Package pdftex.def Info: images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg  used on input line 587.
+Package pdftex.def Info: images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg  used on input line 600.
 (pdftex.def)             Requested size: 426.79135pt x 133.34595pt.
  [11 <./images/2.2.tracers.comparison/apjaba1e1f9_hr.jpg>]
 <images/alma_pictures.jpg, id=425, 509.2626pt x 125.268pt>
 File: images/alma_pictures.jpg Graphic file (type jpg)
 <use images/alma_pictures.jpg>
-Package pdftex.def Info: images/alma_pictures.jpg  used on input line 639.
+Package pdftex.def Info: images/alma_pictures.jpg  used on input line 652.
 (pdftex.def)             Requested size: 426.79135pt x 104.98355pt.
  [12 <./images/alma_pictures.jpg>]
 <images/subs.png, id=441, 248.127pt x 122.859pt>
 File: images/subs.png Graphic file (type png)
 <use images/subs.png>
-Package pdftex.def Info: images/subs.png  used on input line 713.
+Package pdftex.def Info: images/subs.png  used on input line 726.
 (pdftex.def)             Requested size: 426.79135pt x 211.32455pt.
  [13 <./images/subs.png>] (./images/rad_profiles.pgf) [14]
 Chapter 3.
 [15
 
 ] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 950--954
+Underfull \hbox (badness 10000) in paragraph at lines 962--966
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 950--954
+Underfull \hbox (badness 10000) in paragraph at lines 962--966
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 950--954
+Underfull \hbox (badness 10000) in paragraph at lines 962--966
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 950--954
+Underfull \hbox (badness 10000) in paragraph at lines 962--966
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 954--955
+Underfull \hbox (badness 10000) in paragraph at lines 966--967
 \OT1/cmr/m/n/7 i-cal and struc-tural
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 954--955
+Underfull \hbox (badness 10000) in paragraph at lines 966--967
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 955--956
+Underfull \hbox (badness 10000) in paragraph at lines 967--968
 []\OT1/cmr/m/n/7 computes the dust
  []
 
 
-Underfull \hbox (badness 2027) in paragraph at lines 955--956
+Underfull \hbox (badness 2027) in paragraph at lines 967--968
 \OT1/cmr/m/n/7 and gas dis-tri-bu-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 955--956
+Underfull \hbox (badness 10000) in paragraph at lines 967--968
 
  []
 
 
-Underfull \hbox (badness 2753) in paragraph at lines 956--957
+Underfull \hbox (badness 2753) in paragraph at lines 968--969
 []\OT1/cmr/m/n/7 produces dump files
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 962--966
+Underfull \hbox (badness 10000) in paragraph at lines 974--978
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 962--966
+Underfull \hbox (badness 10000) in paragraph at lines 974--978
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 962--966
+Underfull \hbox (badness 10000) in paragraph at lines 974--978
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 962--966
+Underfull \hbox (badness 10000) in paragraph at lines 974--978
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 966--967
+Underfull \hbox (badness 10000) in paragraph at lines 978--979
 \OT1/cmr/m/n/7 er-ties and rel-a-tive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 966--967
+Underfull \hbox (badness 10000) in paragraph at lines 978--979
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 967--968
+Underfull \hbox (badness 10000) in paragraph at lines 979--980
 []\OT1/cmr/m/n/7 first, com-pute the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 967--968
+Underfull \hbox (badness 10000) in paragraph at lines 979--980
 \OT1/cmr/m/n/7 disc tem-per-a-ture
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 967--968
+Underfull \hbox (badness 10000) in paragraph at lines 979--980
 \OT1/cmr/m/n/7 re-sult-ing from the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 967--968
+Underfull \hbox (badness 10000) in paragraph at lines 979--980
 
  []
 
 
-Underfull \hbox (badness 3884) in paragraph at lines 968--969
+Underfull \hbox (badness 3884) in paragraph at lines 980--981
 \OT1/cmr/m/n/7 ten-sity map of the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 973--977
+Underfull \hbox (badness 10000) in paragraph at lines 985--989
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 973--977
+Underfull \hbox (badness 10000) in paragraph at lines 985--989
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 973--977
+Underfull \hbox (badness 10000) in paragraph at lines 985--989
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 973--977
+Underfull \hbox (badness 10000) in paragraph at lines 985--989
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 977--978
+Underfull \hbox (badness 10000) in paragraph at lines 989--990
 []\OT1/cmr/m/n/7 requires the pa-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 977--978
+Underfull \hbox (badness 10000) in paragraph at lines 989--990
 \OT1/cmr/m/n/7 ram-e-ters of the
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 977--978
+Underfull \hbox (badness 1082) in paragraph at lines 989--990
 \OT1/cmr/m/n/7 in-stru-ments used for
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 977--978
+Underfull \hbox (badness 10000) in paragraph at lines 989--990
 
  []
 
 
-Underfull \hbox (badness 2359) in paragraph at lines 978--979
+Underfull \hbox (badness 2359) in paragraph at lines 990--991
 []\OT1/cmr/m/n/7 reproduce noise and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 978--979
+Underfull \hbox (badness 10000) in paragraph at lines 990--991
 \OT1/cmr/m/n/7 er-rors which af-flict
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 978--979
+Underfull \hbox (badness 10000) in paragraph at lines 990--991
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 979--980
+Underfull \hbox (badness 10000) in paragraph at lines 991--992
 []\OT1/cmr/m/n/7 pymcfost was only
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 979--980
+Underfull \hbox (badness 10000) in paragraph at lines 991--992
 \OT1/cmr/m/n/7 tele-scopes lim-ited
  []
 
@@ -1125,7 +1125,7 @@ File: images/m_diff-img2.png Graphic file (type png)
 Package pdftex.def Info: images/m_diff-img2.png  used on input line 730.
 (pdftex.def)             Requested size: 227.46pt x 227.46pt.
 ) (./images/m_diff_rad.pgf)
-Overfull \hbox (3.21492pt too wide) in paragraph at lines 1746--1748
+Overfull \hbox (3.21492pt too wide) in paragraph at lines 1760--1762
  [] 
  []
 
@@ -1133,7 +1133,7 @@ Overfull \hbox (3.21492pt too wide) in paragraph at lines 1746--1748
 <images/4.5.fig7.auddy&lin/image.jpg, id=658, 522.753pt x 236.8047pt>
 File: images/4.5.fig7.auddy&lin/image.jpg Graphic file (type jpg)
 <use images/4.5.fig7.auddy&lin/image.jpg>
-Package pdftex.def Info: images/4.5.fig7.auddy&lin/image.jpg  used on input line 1830.
+Package pdftex.def Info: images/4.5.fig7.auddy&lin/image.jpg  used on input line 1844.
 (pdftex.def)             Requested size: 426.79135pt x 193.33195pt.
  [27] [28 <./images/4.5.fig7.auddy&lin/image.jpg>]
 Chapter 5.
@@ -1191,80 +1191,75 @@ File: images/5.1.res.diff/res_diff-img9.png Graphic file (type png)
 Package pdftex.def Info: images/5.1.res.diff/res_diff-img9.png  used on input line 2382.
 (pdftex.def)             Requested size: 159.70981pt x 159.70981pt.
 )
-Overfull \hbox (3.1433pt too wide) in paragraph at lines 2025--2026
+Overfull \hbox (3.1433pt too wide) in paragraph at lines 2039--2040
  [] 
  []
 
 <images/pairplot.png, id=711, 1058.7555pt x 1064.5371pt>
 File: images/pairplot.png Graphic file (type png)
 <use images/pairplot.png>
-Package pdftex.def Info: images/pairplot.png  used on input line 2045.
+Package pdftex.def Info: images/pairplot.png  used on input line 2059.
 (pdftex.def)             Requested size: 426.79135pt x 429.12097pt.
 [31]
-LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 2069.
+LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 2083.
  (/usr/share/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2069.
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 2069.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2083.
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 2083.
  (/usr/share/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-)
-Overfull \hbox (15.0pt too wide) in paragraph at lines 2103--2113
-[]$[]$ 
- []
-
-[32 <./images/5.1.res.diff/res_diff-img0.png> <./images/5.1.res.diff/res_diff-img1.png> <./images/5.1.res.diff/res_diff-img2.png> <./images/5.1.res.diff/res_diff-img3.png> <./images/5.1.res.diff/res_diff-img4.png> <./images/5.1.res.diff/res_diff-img5.png> <./images/5.1.res.diff/res_diff-img6.png> <./images/5.1.res.diff/res_diff-img7.png> <./images/5.1.res.diff/res_diff-img8.png> <./images/5.1.res.diff/res_diff-img9.png>] [33 <./images/pairplot.png>] [34] [35] [36]
+) [32 <./images/5.1.res.diff/res_diff-img0.png> <./images/5.1.res.diff/res_diff-img1.png> <./images/5.1.res.diff/res_diff-img2.png> <./images/5.1.res.diff/res_diff-img3.png> <./images/5.1.res.diff/res_diff-img4.png> <./images/5.1.res.diff/res_diff-img5.png> <./images/5.1.res.diff/res_diff-img6.png> <./images/5.1.res.diff/res_diff-img7.png> <./images/5.1.res.diff/res_diff-img8.png> <./images/5.1.res.diff/res_diff-img9.png>] [33 <./images/pairplot.png>] [34] [35] [36]
 Chapter 6.
 
-Overfull \hbox (4.47266pt too wide) in paragraph at lines 2296--2301
-[]\OT1/cmr/m/n/10 First, the dataset in-dex has to be im-ported and loaded us-ing the func-tion [][][][][][][][]
+Overfull \hbox (52.55609pt too wide) in paragraph at lines 2325--2330
+[]\OT1/cmr/m/n/10 First, the dataset in-dex has to be im-ported and loaded in mem-ory us-ing the func-tion [][][][][][][][]
  []
 
 [37
 
 ]
-LaTeX Font Info:    Trying to load font information for OML+pcr on input line 2308.
+LaTeX Font Info:    Trying to load font information for OML+pcr on input line 2337.
  (/usr/share/texmf-dist/tex/latex/psnfss/omlpcr.fd
 File: omlpcr.fd 
 )
 LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 2308.
-<images/inp_mod.png, id=764, 1027.84pt x 1027.84pt>
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 2337.
+<images/inp_mod.png, id=768, 1027.84pt x 1027.84pt>
 File: images/inp_mod.png Graphic file (type png)
 <use images/inp_mod.png>
-Package pdftex.def Info: images/inp_mod.png  used on input line 2379.
+Package pdftex.def Info: images/inp_mod.png  used on input line 2408.
 (pdftex.def)             Requested size: 85.35826pt x 85.3499pt.
- [38] [39 <./images/inp_mod.png>] (./images/loss.pgf) (./images/corr&err.pgf) [40] [41] [42]
+ [38] [39 <./images/inp_mod.png>] (./images/loss.pgf) (./images/corr&err8.pgf) [40] [41] [42]
 Chapter 7.
 [43
 
-] [44] (./tesi.bbl [45
+] (./tesi.bbl [44] [45
 
-] [46
+] [46]) [47] [48
 
-] [47]) [48] (./tesi.aux)
+] (./tesi.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.6pt have occurred.
 
 Package rerunfilecheck Info: File `tesi.out' has not changed.
-(rerunfilecheck)             Checksum: 0CA33EAB1C39CEF1EBDFB9690CB20316;7051.
+(rerunfilecheck)             Checksum: A718B721C23A952CB19CBC41D3520B8B;7051.
  ) 
 Here is how much of TeX's memory you used:
- 31383 strings out of 478994
- 612885 string characters out of 5864752
- 1514718 words of memory out of 5000000
+ 31387 strings out of 478994
+ 612947 string characters out of 5864752
+ 1517721 words of memory out of 5000000
  48033 multiletter control sequences out of 15000+600000
  432455 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,10n,102p,805b,2231s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on tesi.pdf (50 pages, 6284075 bytes).
+ 98i,10n,102p,804b,2233s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on tesi.pdf (50 pages, 6298034 bytes).
 PDF statistics:
- 1011 PDF objects out of 1200 (max. 8388607)
- 821 compressed objects within 9 object streams
- 211 named destinations out of 1000 (max. 500000)
+ 1020 PDF objects out of 1200 (max. 8388607)
+ 829 compressed objects within 9 object streams
+ 215 named destinations out of 1000 (max. 500000)
  531 words of extra memory for PDF output out of 10000 (max. 10000000)
 
